@@ -14,6 +14,8 @@ echo  '.env*' >> .gitignore
 ``` 
 
 # Team workflow
+IMPORTANT: Everyone must complete all these steps to complete a feature. Our workflow will lead us to success, don't ever destroy it. 
+
 1. Choose a feature, assign your name on it in the [trello board](https://trello.com/b/KvPE3ned/unify) and drag and drop it in the Doing section </br>
 
 2. Understand every aspect of your feature. Ask questions in slack if everything is not crystal clear. </br>
