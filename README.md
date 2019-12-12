@@ -2,15 +2,21 @@
 Unify is a web application for isep students. Its main goal is to promote school clubs. 
 
 # Get the repository
+Make sure you're in the folder where you want the repo to be.
 ```bash
 git clone git@github.com:juliencol/unify.git
-cd unify
 ```
 
 # Adding the .gitignore file (do this once)
 ```bash 
 touch .env
 echo  '.env*' >> .gitignore
+``` 
+
+# Host a local server
+Make sure you're in the unify repo
+```bash 
+rails s
 ``` 
 
 # Team workflow
