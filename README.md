@@ -7,6 +7,12 @@ git clone git@github.com:juliencol/unify.git
 cd unify
 ```
 
+# Adding the .gitignore file (do this once)
+```bash 
+touch .env
+echo  '.env*' >> .gitignore
+``` 
+
 # Team workflow
 1. Choose a feature and assign your name on trello </br>
 
@@ -23,7 +29,12 @@ git pull origin master
 git checkout -b sexy-feature
 ```
 
-5. Code your feature locally </br>
+5. Assure you have everything set up and code your feature locally </br>
+```bash
+bundle install
+yarn install
+rails db:create db:migrate
+```
 
 6. Push your feature
 ```bash
