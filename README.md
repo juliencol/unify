@@ -29,10 +29,9 @@ git checkout -b sexy-feature
 git add .
 git commit -m "sexy feature added"
 git push origin sexy-feature
-hub browse
 ```
 
-7. Create a pull request </br>
+7. Create a pull request on github</br>
 
 8. Drag and drop your feature case in the Code Review part on trello </br>
 
