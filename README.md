@@ -1,4 +1,4 @@
-# Context
+# Description
 Unify is a web application for isep students. Its main goal is to promote school clubs. 
 
 # Get the repository
