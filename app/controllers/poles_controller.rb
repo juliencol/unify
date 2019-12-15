@@ -1,0 +1,2 @@
+class PolesController < ApplicationController
+end
