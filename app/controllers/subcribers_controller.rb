@@ -1,0 +1,2 @@
+class SubcribersController < ApplicationController
+end

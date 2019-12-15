@@ -1,0 +1,2 @@
+class AssociationsController < ApplicationController
+end
