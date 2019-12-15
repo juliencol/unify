@@ -7,7 +7,7 @@ Make sure you're in the folder where you want the repo to be.
 git clone git@github.com:juliencol/unify.git
 ```
 
-# Adding the .gitignore file (do this once)
+# Adding the the hidden folder for safety (do this once)
 ```bash 
 touch .env
 echo  '.env*' >> .gitignore
