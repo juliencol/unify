@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_200950) do
+ActiveRecord::Schema.define(version: 2019_12_16_221424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.datetime "creation_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
-    t.bigint "association_id", null: false
+    t.bigint "club_id", null: false
     t.string "name"
     t.text "description"
     t.string "image"
@@ -25,23 +33,15 @@ ActiveRecord::Schema.define(version: 2019_12_16_200950) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["association_id"], name: "index_events_on_association_id"
-  end
-
-  create_table "associations", force: :cascade do |t|
-    t.string "name"
-    t.string "logo"
-    t.datetime "creation_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_events_on_club_id"
   end
 
   create_table "poles", force: :cascade do |t|
-    t.bigint "association_id", null: false
+    t.bigint "club_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["association_id"], name: "index_poles_on_association_id"
+    t.index ["club_id"], name: "index_poles_on_club_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -52,14 +52,14 @@ ActiveRecord::Schema.define(version: 2019_12_16_200950) do
     t.index ["user_id"], name: "index_subscribers_on_user_id"
   end
 
-  create_table "user_associations", force: :cascade do |t|
+  create_table "user_clubs", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "association_id", null: false
+    t.bigint "club_id", null: false
     t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["association_id"], name: "index_user_associations_on_association_id"
-    t.index ["user_id"], name: "index_user_associations_on_user_id"
+    t.index ["club_id"], name: "index_user_clubs_on_club_id"
+    t.index ["user_id"], name: "index_user_clubs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,9 +81,9 @@ ActiveRecord::Schema.define(version: 2019_12_16_200950) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "associations", column: "association_id"
-  add_foreign_key "poles", "associations", column: "association_id"
+  add_foreign_key "events", "clubs", column: "club_id"
+  add_foreign_key "poles", "clubs", column: "club_id"
   add_foreign_key "subscribers", "users"
-  add_foreign_key "user_associations", "associations", column: "association_id"
-  add_foreign_key "user_associations", "users"
+  add_foreign_key "user_clubs", "clubs", column: "club_id"
+  add_foreign_key "user_clubs", "users"
 end

@@ -1,2 +1,0 @@
-class AssociationsController < ApplicationController
-end
