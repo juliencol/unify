@@ -1,7 +1,7 @@
 puts "Cleaning database..."
 Subscriber.destroy_all
 User.destroy_all
-Association.destroy_all
+Club.destroy_all
 
 
 
@@ -84,144 +84,186 @@ Subscriber.create!(
 puts "5 subcribers were created successfully."
 
 
-puts "Creating Associations..."
-genesis = Association.create!(
+puts "Creating Clubs..."
+genesis = Club.create!(
     name: "Genesis BDE",
     logo: "",
     creation_date: ""
 )
-hustle = Association.create!(
+hustle = Club.create!(
     name: "Hustle",
     logo: "",
     creation_date: ""
 )
-garage = Association.create!(
+garage = Club.create!(
     name: "Garage",
     logo: "",
     creation_date: ""
 )
-junior_isep = Association.create!(
+junior_isep = Club.create!(
     name: "Junior isep",
     logo: "",
     creation_date: ""
 )
-move_your_as = Association.create!(
+move_your_as = Club.create!(
     name: "Move your AS",
     logo: "",
     creation_date: ""
 )
-dyonisos = Association.create!(
+dyonisos = Club.create!(
     name: "Dyonisos",
     logo: "",
     creation_date: ""
 )
-ludisep = Association.create!(
+ludisep = Club.create!(
     name: "Ludisep",
     logo: "",
     creation_date: ""
 )
-travel = Association.create!(
+travel = Club.create!(
     name: "Travel",
     logo: "",
     creation_date: ""
 )
-board_to_ride = Association.create!(
+board_to_ride = Club.create!(
     name: "Board to ride",
     logo: "",
     creation_date: ""
 )
-isep_live = Association.create!(
+isep_live = Club.create!(
     name: "isep live",
     logo: "",
     creation_date: ""
 )
-isep_bands = Association.create!(
+isep_bands = Club.create!(
     name: "isep bands",
     logo: "",
     creation_date: ""
 )
-isep_voiles = Association.create!(
+isep_voiles = Club.create!(
     name: "isep voiles",
     logo: "",
     creation_date: ""
 )
-jardisep = Association.create!(
+jardisep = Club.create!(
     name: "jardisep",
     logo: "",
     creation_date: ""
 )
-mixep = Association.create!(
+mixep = Club.create!(
     name: "mixep",
     logo: "",
     creation_date: ""
 )
-air_isep = Association.create!(
+air_isep = Club.create!(
     name: "Air",
     logo: "",
     creation_date: ""
 )
-aumonerie = Association.create!(
+aumonerie = Club.create!(
     name: "Aumonerie",
     logo: "",
     creation_date: ""
 )
-demosthene = Association.create!(
+demosthene = Club.create!(
     name: "Démosthène",
     logo: "",
     creation_date: ""
 )
-discover_isep = Association.create!(
+discover_isep = Club.create!(
     name: "Discover isep",
     logo: "",
     creation_date: ""
 )
-get_down = Association.create!(
+get_down = Club.create!(
     name: "Get down",
     logo: "",
     creation_date: ""
 )
-isep_gaming_club = Association.create!(
+isep_gaming_club = Club.create!(
     name: "Isep Gaming Club",
     logo: "",
     creation_date: ""
 )
-isepa = Association.create!(
+isepa = Club.create!(
     name: "isepa",
     logo: "",
     creation_date: ""
 )
-isehelp = Association.create!(
+isehelp = Club.create!(
     name: "isHelp",
     logo: "",
     creation_date: ""
 )
-numeris = Association.create!(
+numeris = Club.create!(
     name: "Numeris",
     logo: "",
     creation_date: ""
 )
-transaharienne = Association.create!(
+transaharienne = Club.create!(
     name: "Transaharienne",
     logo: "",
     creation_date: ""
 )
-winter = Association.create!(
+winter = Club.create!(
     name: "Winter",
     logo: "",
     creation_date: ""
 )
-puts "Associations were created successfully."
+puts "Clubs were created successfully."
+isep_alumni = Club.create!(
+    name: "isep Alumni",
+    logo: "",
+    creation_date: ""
+)
+puts "Clubs were created successfully."
 
 
 
-# puts "Creating 5 events..."
-# Event.create!(
-#     organization: genesis.id,
-#     name: "Gala 2019",
-#     description: "ça va être lourd comme jamais",
-#     image: "",
-#     date: "",
-#     price: 20,
-#     location: "chez Cyril Bennarosh"
-# )
-# puts "5 events were created successfully."
+puts "Creating 5 events..."
+Event.create!(
+    club_id: genesis.id,
+    name: "Soirée stylée",
+    description: "ça va être lourd comme jamais",
+    image: "",
+    date: "",
+    price: 20,
+    location: "chez Cyril Bennarosh"
+)
+Event.create!(
+    club_id: genesis.id,
+    name: "AW claqué au sol",
+    description: "ça va être claqué au sol comme jamais",
+    image: "",
+    date: "",
+    price: 20,
+    location: "dans un endroit claqué au sol"
+)
+Event.create!(
+    club_id: hustle.id,
+    name: "Startup Weekend de folie",
+    description: "probablement le plus bel événement de l'école",
+    image: "",
+    date: "",
+    price: 20,
+    location: "chez Cyril Bennarosh"
+)
+Event.create!(
+    club_id: isep_alumni.id,
+    name: "Conférence l'IA n'existe pas",
+    description: "Luc Julia démysthifie le mythe de l'intelligence artificielle.",
+    image: "",
+    date: "",
+    price: 20,
+    location: "N28"
+)
+Event.create!(
+    club_id: junior_isep.id,
+    name: "Workshop React",
+    description: "Petit workshop pour apprendre React",
+    image: "",
+    date: "",
+    price: 20,
+    location: "NDL"
+)
+puts "5 events were created successfully."
