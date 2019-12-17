@@ -1,0 +1,30 @@
+.unify-title {
+	margin-top: 25px;
+	margin-left: 25px;
+}
+
+.login-container {
+	background-color: white;
+	border: solid grey 1px;
+	margin: 0 450px;
+	padding: 12px;
+}
+
+.logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5% 50%;
+}
+
+.logo-genesis {
+	width: 100px;
+	margin-right: 12px;
+}
+
+.logo-isep {
+	width: 200px;
+	margin-left: 12px;
+}
+
+// Add media queries for responsiveness
