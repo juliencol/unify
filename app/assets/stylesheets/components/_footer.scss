@@ -1,147 +1,148 @@
 .footer {
-  background-color: AliceBlue;
-  padding: 45px 0 20px;
-  font-size: 15px;
-  line-height: 24px;
-  color: #737373;
-  
-  .row {
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-  }
+	background-color: AliceBlue;
+	padding: 45px 0 20px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #737373;
 
-  hr {
-    border-top-color: #bbb;
-    opacity: 0.5;
+	.row {
+		display: flex;
+		justify-content: flex-end;
+		text-align: right;
+	}
 
-    &.small {
-      margin: 20px 0;
-    }
-  }
+	hr {
+		border-top-color: #bbb;
+		opacity: 0.5;
 
-  h6 {
-    color: #000;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-top: 5px;
-    letter-spacing: 2px;
-  }
+		&.small {
+			margin: 20px 0;
+		}
+	}
 
-  .footer-links {
-    padding-left: 0;
-    list-style: none;
+	h6 {
+		color: #000;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-top: 5px;
+		letter-spacing: 2px;
+	}
 
-    li {
-      display: block;
-    }
+	.footer-links {
+		padding-left: 0;
+		list-style: none;
 
-    a {
-      color: DarkGray;
+		li {
+			display: block;
+		}
 
-      &:active, &:focus, &:hover {
-        color: MediumBlue;
-        text-decoration: none;
-      }
-    }
+		a {
+			color: DarkGray;
 
-    &.inline li {
-      display: inline-block;
-    }
-  }
+			&:active,
+			&:focus,
+			&:hover {
+				color: MediumBlue;
+				text-decoration: none;
+			}
+		}
 
-  a {
-    color: DarkGray;
+		&.inline li {
+			display: inline-block;
+		}
+	}
 
-    &:hover {
-      color: MediumBlue;
-      text-decoration: none;
-    }
-  }
+	a {
+		color: DarkGray;
 
-  .social-icons {
-    text-align: right;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+		&:hover {
+			color: MediumBlue;
+			text-decoration: none;
+		}
+	}
 
-    li {
-      display: inline-block;
-      margin-bottom: 4px;
-    }
+	.social-icons {
+		text-align: right;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
 
-    a {
-      background-color: DarkGray;
-      color: Gainsboro;
-      font-size: 16px;
-      display: inline-block;
-      line-height: 44px;
-      width: 44px;
-      height: 44px;
-      text-align: center;
-      margin-right: 8px;
-      border-radius: 100%;
-      -webkit-transition: all .2s linear;
-      -o-transition: all .2s linear;
-      transition: all 0.2s linear;
+		li {
+			display: inline-block;
+			margin-bottom: 4px;
+		}
 
-      &:active, &:focus, &:hover {
-        color: #fff;
-        background-color: #29aafe;
-      }
-    }
+		a {
+			background-color: DarkGray;
+			color: Gainsboro;
+			font-size: 16px;
+			display: inline-block;
+			line-height: 44px;
+			width: 44px;
+			height: 44px;
+			text-align: center;
+			margin-right: 8px;
+			border-radius: 100%;
+			-webkit-transition: all .2s linear;
+			-o-transition: all .2s linear;
+			transition: all 0.2s linear;
 
-    &.size-sm a {
-      line-height: 34px;
-      height: 34px;
-      width: 34px;
-      font-size: 14px;
-    }
+			&:active,
+			&:focus,
+			&:hover {
+				color: #fff;
+				background-color: #29aafe;
+			}
+		}
 
-    a {
-      &.instagram:hover {
-        background-color: #c13584;
-      }
+		&.size-sm a {
+			line-height: 34px;
+			height: 34px;
+			width: 34px;
+			font-size: 14px;
+		}
 
-      &.twitter:hover {
-        background-color: #00aced;
-      }
+		a {
+			&.fa-instagram:hover {
+				background-color: #c13584;
+			}
 
-      &.linkedin:hover {
-        background-color: #007bb6;
-      }
+			&.twitter:hover {
+				background-color: #00aced;
+			}
 
-      &.dribbble:hover {
-        background-color: #ea4c89;
-      }
-    }
-  }
+			&.linkedin:hover {
+				background-color: #007bb6;
+			}
+		}
+	}
 
-  .copyright-text {
-    margin: 0;
-  }
+	.copyright-text {
+		margin: 0;
+	}
 }
 
 @media (max-width: 991px) {
-  .site-footer [class^=col-] {
-    margin-bottom: 30px;
-  }
+	.site-footer [class^=col-] {
+		margin-bottom: 30px;
+	}
 }
 
 @media (max-width: 767px) {
-  .footer {
-    padding-bottom: 0;
+	.footer {
+		padding-bottom: 0;
 
-    .copyright-text, .social-icons {
-      text-align: center;
-    }
-  }
+		.copyright-text,
+		.social-icons {
+			text-align: center;
+		}
+	}
 }
 
 @media (max-width: 767px) {
-  .social-icons li.title {
-    display: block;
-    margin-right: 0;
-    font-weight: 600;
-  }
+	.social-icons li.title {
+		display: block;
+		margin-right: 0;
+		font-weight: 600;
+	}
 }
