@@ -2,6 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   before_action :disable_navbar, only: [:new, :sign_in]
+  before_action :disable_footer, only: [:new, :sign_in]
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
