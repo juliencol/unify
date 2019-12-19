@@ -1,9 +1,17 @@
+body {
+	padding-bottom: 6rem;
+}
+
 .footer {
 	background-color: AliceBlue;
 	padding: 45px 0 20px;
 	font-size: 15px;
 	line-height: 24px;
 	color: #737373;
+  	position: absolute;
+  	right: 0;
+ 	bottom: 0;
+  	left: 0;
 
 	.row {
 		display: flex;
@@ -86,13 +94,6 @@
 			-webkit-transition: all .2s linear;
 			-o-transition: all .2s linear;
 			transition: all 0.2s linear;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: #fff;
-				background-color: #29aafe;
-			}
 		}
 
 		&.size-sm a {
@@ -103,16 +104,19 @@
 		}
 
 		a {
-			&.fa-instagram:hover {
+			&.instagram:hover {
 				background-color: #c13584;
+        color: #fff;
 			}
 
 			&.twitter:hover {
 				background-color: #00aced;
+        color: #fff;
 			}
 
 			&.linkedin:hover {
 				background-color: #007bb6;
+        color: #fff;
 			}
 		}
 	}
