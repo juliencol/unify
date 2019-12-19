@@ -17,7 +17,8 @@ echo  '.env*' >> .gitignore
 Make sure you're in the unify repo
 ```bash 
 rails s
-``` 
+```
+then open your browser and go to the url http://localhost:3000/
 
 # Team workflow
 IMPORTANT: Everyone must complete all these steps to complete a feature. Our workflow will lead us to success, don't ever destroy it. 
