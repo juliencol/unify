@@ -86,13 +86,6 @@
 			-webkit-transition: all .2s linear;
 			-o-transition: all .2s linear;
 			transition: all 0.2s linear;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: #fff;
-				background-color: #29aafe;
-			}
 		}
 
 		&.size-sm a {
@@ -103,16 +96,19 @@
 		}
 
 		a {
-			&.fa-instagram:hover {
+			&.instagram:hover {
 				background-color: #c13584;
+        color: #fff;
 			}
 
 			&.twitter:hover {
 				background-color: #00aced;
+        color: #fff;
 			}
 
 			&.linkedin:hover {
 				background-color: #007bb6;
+        color: #fff;
 			}
 		}
 	}

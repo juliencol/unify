@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_221424) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.bigint "club_id", null: false
+    t.bigint "association_id", null: false
     t.string "name"
     t.text "description"
     t.string "image"
@@ -33,15 +33,15 @@ ActiveRecord::Schema.define(version: 2019_12_16_221424) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["club_id"], name: "index_events_on_club_id"
+    t.index ["association_id"], name: "index_events_on_association_id"
   end
 
   create_table "poles", force: :cascade do |t|
-    t.bigint "club_id", null: false
+    t.bigint "association_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["club_id"], name: "index_poles_on_club_id"
+    t.index ["association_id"], name: "index_poles_on_association_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 2019_12_16_221424) do
 
   create_table "user_clubs", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "club_id", null: false
+    t.bigint "association_id", null: false
     t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["club_id"], name: "index_user_clubs_on_club_id"
+    t.index ["association_id"], name: "index_user_clubs_on_association_id"
     t.index ["user_id"], name: "index_user_clubs_on_user_id"
   end
 
@@ -81,9 +81,9 @@ ActiveRecord::Schema.define(version: 2019_12_16_221424) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "clubs", column: "club_id"
-  add_foreign_key "poles", "clubs", column: "club_id"
+  add_foreign_key "events", "clubs", column: "association_id"
+  add_foreign_key "poles", "clubs", column: "association_id"
   add_foreign_key "subscribers", "users"
-  add_foreign_key "user_clubs", "clubs", column: "club_id"
+  add_foreign_key "user_clubs", "clubs", column: "association_id"
   add_foreign_key "user_clubs", "users"
 end
