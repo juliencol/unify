@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
+  
   <body>
     <div>
       <%= render 'shared/navbar' unless @disable_navbar %>
@@ -20,7 +22,7 @@
     </div>
 
     <div>
-      <%= render 'shared/footer' %>
+      <%= render 'shared/footer' unless @disable_footer %>
     </div>
 
     <%= javascript_include_tag 'application' %>
