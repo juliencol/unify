@@ -1,0 +1,30 @@
+<h2 class="unify-title">Unify</h2>
+<h2 class="mt-5 mb-3 text-center">Renvoyer l'email de confirmation</h2>
+
+<div class="login-container">
+  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.full_error :confirmation_token %>
+
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                  input_html: { autocomplete: "email" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Renvoyer l'email de confirmation" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="text-center mt-5">
+  <%= render "users/shared/links" %>
+</div>
+
+<div class="logo-container">
+  <%= image_tag "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/de/ec/a9/deeca9b9-37c4-7bda-dd22-76b8906089ce/source/512x512bb.jpg", class:"logo-genesis" %>
+  <%= image_tag "https://isepalumni.fr/wp-content/uploads/2016/12/logoISEP.png", class:"logo-isep" %>
+</div>
