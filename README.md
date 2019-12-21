@@ -23,7 +23,7 @@ then open your browser and go to the url http://localhost:3000/
 # Team workflow
 IMPORTANT: Everyone must complete all these steps to complete a feature. Our workflow will lead us to success, don't ever destroy it. 
 
-1. Choose a feature, assign your name on it in the [trello board](https://trello.com/b/KvPE3ned/unify) and drag and drop it in the Doing section </br>
+1. Choose a feature, assign your name on it in the [glo board](https://app.gitkraken.com/glo/board/XftSI3ieeQAQ582N) and drag and drop it in the Doing section </br>
 
 2. Understand every aspect of your feature. Ask questions in slack if everything is not crystal clear. </br>
 
@@ -54,7 +54,7 @@ git push origin sexy-feature
 
 7. Create a pull request on github </br>
 
-8. Drag and drop your feature case in the Code Review part in the [trello board](https://trello.com/b/KvPE3ned/unify) </br>
+8. Drag and drop your feature case in the Code Review part in the [glo board](https://app.gitkraken.com/glo/board/XftSI3ieeQAQ582N) </br>
 
 9. Message [tech channel](https://app.slack.com/client/TKF4P6WH4/CKF69AQMC) in slack to say you completed your feature and Harass everyone until your feature is reviewed and merged to master branch
 
