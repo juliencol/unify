@@ -1,0 +1,33 @@
+.info-group{
+  background-color : white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 12px #555;
+}
+
+.avatar-group{
+  display: flex;
+  justify-content: center;
+}
+
+.info-group .avatar{
+  width: 200px;
+}
+
+.profile-btn{
+  border-radius: 20px;
+  background-color: #032d63;
+  border: none;
+  margin: 30px 0;
+  color: white !important;
+}
+
+.modal-btn{
+  background-color: white;
+  border: 2px solid #032d63;
+  border-radius: 7px;
+  color: black !important;
+}
+
+.modal .avatar {
+  width: 100px;
+}
