@@ -1,8 +1,25 @@
+<svg id="cercle-bleu" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
+<svg id="cercle-gris" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
+<svg id="cercle-jaune" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
+
 <div class="mb-5">
-  <h2 class="unify-title">Unify</h2>
-  <h2 class="mt-5 mb-3 text-center">Mot de passe oublié ?</h2>
 
   <div class="login-container">
+    <h2 class="unify-title">Unify</h2>
+    <h5 class="mt-5 mb-3 text-center">Mot de passe oublié ?</h5>
+
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
 
@@ -10,24 +27,23 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" } %>
+                      input_html: { autocomplete: "email" },
+                      placeholder: "Email" %>
         </div>
 
         <div class="form-actions">
           <%= f.button :submit, "Envoyer les instructions" %>
         </div>
     <% end %>
+
+    <div class="text-center mt-3">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="text-center mt-3">
-    <%= render "devise/shared/links" %>
-  </div>
 
   <div class="logo-container">
-    <%= image_tag "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/de/ec/a9/deeca9b9-37c4-7bda-dd22-76b8906089ce/source/512x512bb.jpg", class:"logo-genesis" %>
-    <%= image_tag "https://isepalumni.fr/wp-content/uploads/2016/12/logoISEP.png", class:"logo-isep" %>
+      <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
+      <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
   </div>
 </div>
-
-
-

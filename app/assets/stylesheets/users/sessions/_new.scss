@@ -1,30 +1,104 @@
-.unify-title {
-	margin-top: 25px;
-	margin-left: 25px;
+#cercle-bleu {
+  width: 70%;
+  position: fixed;
+  bottom: -60%;
+  left: -20%;
+  fill: $isep-bleu;
+}
+#cercle-jaune {
+  width: 50%;
+  position: fixed;
+  top: -40%;
+  right: -15%;
+  fill: $isep-jaune;
+}
+#cercle-gris {
+  width: 18%;
+  position: fixed;
+  top: 15%;
+  right: 30%;
+  fill: $isep-gris;
+}
+
+body {
+  height: 100vh;
 }
 
 .login-container {
-	background-color: white;
-	border: solid grey 1px;
-	margin: 0 450px;
-	padding: 12px;
+  position: relative;
+	text-align: center;
+  padding-bottom: 20px;
+  border: none;
+  border-radius: 1em;
+  padding: 1em 2em;
+	background-color: #fff;
+  filter: drop-shadow(0 5px .5em rgba(0,0,0,.2));
+
+  .logo-container {
+    font-weight: 700;
+  }
+
+	.selected-section {
+		cursor: pointer;
+		background: rgb(235,235,235);
+		padding: .4em;
+		border-radius: 2em;
+    margin-bottom: 20px;
+
+		span {
+			background: rgb(235,235,235);
+			border-radius: 2em;
+			color: rgb(180,180,180);
+			padding: .5em;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+    .forgot-password {
+      display: none;
+      position: absolute;
+      bottom: 100px;
+      right: -20px;
+
+      &.focused {
+        display: block;
+      }
+    }
+	}
+
+  .form-inputs {
+
+    input {
+      border: 1px solid rgb(235,235,235);
+      border-radius: 1em;
+    }
+  }
+
+  .form-actions {
+    position: absolute;
+    bottom: -20px;
+    left: 25%;
+    padding: 0 1em;
+    border-radius: 1em;
+    background: $isep-jaune;
+
+    .btn {
+      color: #fff!important;
+      text-transform: uppercase;
+    }
+  }
 }
 
 .logo-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 5% 50%;
-}
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 20%;
 
-.logo-genesis {
-	width: 100px;
-	margin-right: 12px;
+	img {
+		max-width: 100px;
+	}
 }
-
-.logo-isep {
-	width: 200px;
-	margin-left: 12px;
-}
-
-// Add media queries for responsiveness
