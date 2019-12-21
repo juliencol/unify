@@ -1,8 +1,23 @@
+<svg id="cercle-bleu" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
-<h2 class="unify-title">Unify</h2>
-<h2 class="mt-5 mb-3 text-center">Modifier password</h2>
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
+<svg id="cercle-gris" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
+<svg id="cercle-jaune" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <circle cx="50" cy="50" r="50"/>
+
+</svg>
 
 <div class="login-container">
+  <h2 class="unify-title">Unify</h2>
+  <h5 class="mt-5 mb-3 text-center">Modifier password</h5>
+
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
@@ -38,6 +53,3 @@
 
 
 <%= link_to "Back", :back %>
-
-
-
