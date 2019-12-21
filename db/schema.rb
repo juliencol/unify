@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_175142) do
+ActiveRecord::Schema.define(version: 2019_12_21_210032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,17 @@ ActiveRecord::Schema.define(version: 2019_12_19_175142) do
     t.datetime "creation_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "website_url"
+    t.string "linkedin_url"
+    t.string "instagram_url"
+    t.text "description"
   end
 
   create_table "events", force: :cascade do |t|
     t.bigint "club_id", null: false
     t.string "name"
-    t.text "description"
+    t.string "short_description"
+    t.text "long_description"
     t.string "image"
     t.datetime "date"
     t.float "price"
