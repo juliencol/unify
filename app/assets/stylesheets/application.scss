@@ -1,9 +1,11 @@
-html {height: 100vh;}
+html {
+	height: 100vh;
+}
 
 body {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr 1fr;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr 1fr;
 }
 
 // Graphical variables
@@ -18,5 +20,4 @@ body {
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
 @import "users/index";

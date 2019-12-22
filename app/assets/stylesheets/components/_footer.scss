@@ -1,13 +1,13 @@
 .footer {
 	grid-row-start: 3;
-  grid-row-end: 4;
+	grid-row-end: 4;
 	background-color: AliceBlue;
 	padding: 45px 0 20px;
 	font-size: 15px;
 	line-height: 24px;
 	color: #737373;
 
-.text-row {
+	.text-row {
 		display: flex;
 		justify-content: flex-end;
 		text-align: right;
@@ -100,17 +100,17 @@
 		a {
 			&.instagram:hover {
 				background-color: #c13584;
-        color: #fff;
+				color: #fff;
 			}
 
 			&.twitter:hover {
 				background-color: #00aced;
-        color: #fff;
+				color: #fff;
 			}
 
 			&.linkedin:hover {
 				background-color: #007bb6;
-        color: #fff;
+				color: #fff;
 			}
 		}
 	}
