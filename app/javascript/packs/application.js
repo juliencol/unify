@@ -1,3 +1,6 @@
-import "bootstrap";
-import { forgotPopupIn } from '../components/forgotpopupin';
-import { forgotPopupOut } from '../components/forgotpopupout';
+import 'bootstrap';
+
+import { forgotPopupIn } from '../components/forgot_popup_in';
+global.forgotPopupIn = forgotPopupIn;
+import { forgotPopupOut } from '../components/forgot_popup_out';
+global.forgotPopupOut = forgotPopupOut;
