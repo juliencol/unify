@@ -90,9 +90,9 @@ ActiveRecord::Schema.define(version: 2019_12_21_210032) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "clubs"
-  add_foreign_key "poles", "clubs"
+  add_foreign_key "events", "clubs", column: "club_id"
+  add_foreign_key "poles", "clubs", column: "club_id"
   add_foreign_key "subscribers", "users"
-  add_foreign_key "user_clubs", "clubs"
+  add_foreign_key "user_clubs", "clubs", column: "club_id"
   add_foreign_key "user_clubs", "users"
 end

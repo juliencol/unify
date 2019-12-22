@@ -12,18 +12,14 @@
   </head>
 
   <body>
-    <div>
-      <%= render 'shared/navbar' unless @disable_navbar %>
-      <%= render 'shared/flashes' %>
-    </div>
+    <%= render 'shared/navbar' unless @disable_navbar %>
+    <%= render 'shared/flashes' %>
 
-    <div>
+    <div class="wrapper">
       <%= yield %>
     </div>
 
-    <div>
-      <%= render 'shared/footer' unless @disable_footer %>
-    </div>
+    <%= render 'shared/footer' unless @disable_footer %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
