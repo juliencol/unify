@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,20 +10,16 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  
-  <body>
-    <div>
-      <%= render 'shared/navbar' unless @disable_navbar %>
-      <%= render 'shared/flashes' %>
-    </div>
 
-    <div>
+  <body>
+    <%= render 'shared/navbar' unless @disable_navbar %>
+    <%= render 'shared/flashes' %>
+
+    <div class="wrapper">
       <%= yield %>
     </div>
 
-    <div>
-      <%= render 'shared/footer' unless @disable_footer %>
-    </div>
+    <%= render 'shared/footer' unless @disable_footer %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

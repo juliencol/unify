@@ -1,3 +1,11 @@
+html {height: 100vh;}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+}
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
