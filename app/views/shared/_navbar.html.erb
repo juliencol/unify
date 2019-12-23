@@ -9,7 +9,7 @@
         class: "form-control",
         placeholder: "Rechercher une association ou un événement" %>
     </div>
-    <%= link_to "Calendrier", "#", class: "navbar-brand" %>
+    <%= link_to "Calendrier", calendar_path, class: "navbar-brand" %>
     <%= link_to "Associations", clubs_path, class: "navbar-brand" %>
     <%= link_to "BDE Genesis", "#", class: "navbar-brand" %>
   </div>
@@ -26,7 +26,11 @@
          <i class="fas fa-bell notifications-icon"></i>
         </li>
         <li class="nav-item dropdown mr-3">
-          <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+            <%=image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <h1><%= %></h1>
             <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
