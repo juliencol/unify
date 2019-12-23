@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 2019_12_16_221424) do
   create_table "events", force: :cascade do |t|
     t.bigint "club_id", null: false
     t.string "name"
-    t.text "description"
+    t.string "short_description"
+    t.text "long_description"
     t.string "image"
     t.datetime "date"
     t.float "price"
