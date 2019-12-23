@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-unify">
   <div>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577087960/unify/unify-logo_qvbcvn.png" %>
@@ -7,8 +7,7 @@
         <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Rechercher une association ou un événement"
-      %>
+        placeholder: "Rechercher une association ou un événement" %>
     </div>
     <%= link_to "Calendrier", "#", class: "navbar-brand" %>
     <%= link_to "Associations", "#", class: "navbar-brand" %>

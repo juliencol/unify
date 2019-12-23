@@ -1,21 +1,23 @@
-.navbar-lewagon {
+.navbar-unify {
 	justify-content: space-between;
 	background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-unify .navbar-collapse {
 	flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-	width: 30px;
-}
-
-#search-bar {
-	width: 30vw;
+.navbar-unify .navbar-logo-unify img {
+	width: 38px;
+	margin-right: 10px;
+	border-radius: 50%;
 }
 
 .notifications-icon {
 	font-size: 28px;
 	margin-right: 20px;
+}
+
+#search-bar {
+	width: 30vw;
 }
