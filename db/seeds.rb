@@ -323,7 +323,7 @@ Event.create!(
     club_id: genesis.id,
     name: "Soirée stylée",
     short_description: "ça va être lourd comme jamais",
-    image: "",
+    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh"
@@ -332,7 +332,7 @@ Event.create!(
     club_id: genesis.id,
     name: "AW claqué au sol",
     short_description: "ça va être claqué au sol comme jamais",
-    image: "",
+    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
     location: "dans un endroit claqué au sol"
@@ -341,7 +341,7 @@ Event.create!(
     club_id: hustle.id,
     name: "Startup Weekend de folie",
     short_description: "probablement le plus bel événement de l'école",
-    image: "",
+    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh"
@@ -350,7 +350,7 @@ Event.create!(
     club_id: isep_alumni.id,
     name: "Conférence l'IA n'existe pas",
     short_description: "Luc Julia démysthifie le mythe de l'intelligence artificielle.",
-    image: "",
+    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
     location: "N28"
@@ -359,7 +359,7 @@ Event.create!(
     club_id: junior_isep.id,
     name: "Workshop React",
     short_description: "Petit workshop pour apprendre React",
-    image: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/juniorisep580_n0okcb.png",
+    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
     location: "NDL"
