@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'events#index'
   get '/events', to: 'events#index', as: '/events'
   get '/users', to: 'users#show', as: '/profile'
+  resources :clubs, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
