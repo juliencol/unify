@@ -1,7 +1,11 @@
 <div class="container center info-group mt-5 mb-5">
   <div class="row align-items-center pt-5">
     <div class="col-xl avatar-group">
-      <%= image_tag current_user.profile_picture, class: "avatar"%>
+      <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+        <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
+      <% else %>
+        <%= image_tag current_user.profile_picture, class: "avatar" %>
+      <% end %>
     </div>
     <div class="col-xl">
       <h1><%= @user.first_name %> <%= @user.last_name %> </h1>
@@ -30,7 +34,11 @@
             <h3>Modifier ma photo de profil<h3>
           </div>
           <div class="row justify-content-center">
-            <%= image_tag current_user.profile_picture, class: "avatar"%>
+            <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+              <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
+            <% else %>
+              <%= image_tag current_user.profile_picture, class: "avatar" %>
+            <% end %>
             <button type="button" class="btn modal-btn col-xl-6 offset-xl-2 download-picture">Télécharger une photo</button>
           </div>
           <div class="row mt-5 justify-content-center">
