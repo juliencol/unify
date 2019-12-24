@@ -14,9 +14,8 @@
 
 </svg>
 
-<div class="mb-5">
-
-  <div class="login-container">
+<div class="row align-items-center justify-content-center h-100">
+  <div class="col-auto shrink login-container">
     <h2 class="unify-title">Unify</h2>
     <h5 class="mt-5 mb-3 text-center">Mot de passe oublié ?</h5>
 
@@ -28,7 +27,8 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" },
-                      placeholder: "Email" %>
+                      placeholder: "Email",
+                      label: false %>
         </div>
 
         <div class="form-actions">
@@ -39,10 +39,10 @@
     <div class="text-center mt-3">
       <%= render "devise/shared/links" %>
     </div>
-
-
-  <div class="logo-container">
-      <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
-      <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
   </div>
+</div>
+
+<div class="logo-container">
+    <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
+    <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
 </div>

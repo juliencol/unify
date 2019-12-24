@@ -1,40 +1,32 @@
+body {
+  display: initial;
+}
+
 #cercle-bleu {
-  width: 70%;
   position: fixed;
-  bottom: -60%;
-  left: -20%;
   fill: $isep-bleu;
 }
 #cercle-jaune {
-  width: 50%;
   position: fixed;
-  top: -40%;
-  right: -15%;
   fill: $isep-jaune;
 }
 #cercle-gris {
-  width: 18%;
   position: fixed;
-  top: 15%;
-  right: 30%;
   fill: $isep-gris;
 }
 
-body {
-  height: 100vh;
-}
-
 .login-container {
+  z-index: 1;
   position: relative;
 	text-align: center;
   padding-bottom: 20px;
   border: none;
   border-radius: 1em;
-  padding: 1em 2em;
+  padding: 2em;
 	background-color: #fff;
-  filter: drop-shadow(0 5px .5em rgba(0,0,0,.2));
+  box-shadow: 0 5px .5em rgba(0,0,0,.2);
 
-  .logo-container {
+  .unify-title {
     font-weight: 700;
   }
 
@@ -58,10 +50,29 @@ body {
 		}
 
     .forgot-password {
+      position: relative;
       display: none;
       position: absolute;
-      bottom: 100px;
-      right: -20px;
+      bottom: 90px;
+      right: -200px;
+      background: $isep-bleu;
+      color: #fff;
+      padding: .5em;
+      border-radius: 1em;
+
+      &:after {
+        content: '';
+      	position: absolute;
+      	left: 0;
+      	top: 50%;
+      	width: 0;
+      	height: 0;
+      	border: 8px solid transparent;
+      	border-right-color: $isep-bleu;
+      	border-left: 0;
+      	margin-top: -8px;
+      	margin-left: -8px;
+      }
 
       &.focused {
         display: block;
@@ -96,9 +107,114 @@ body {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	width: 20%;
 
 	img {
 		max-width: 100px;
 	}
+}
+
+// Responsive
+
+@include media-breakpoint-between(xs,sm) {
+  #cercle-bleu {
+    width: 80%;
+    bottom: -2%;
+    left: -25%;
+  }
+  #cercle-jaune {
+    width: 70%;
+    top: -10%;
+    right: -25%;
+  }
+
+  .login-container, .btn {
+    font-size: .8em;
+  }
+
+  .forgot-password {
+    bottom: -30px;
+    right: 25%;
+
+    &:after {
+      display:none;
+    }
+  }
+}
+
+@include media-breakpoint-between(sm,md) {
+  #cercle-bleu {
+    width: 80%;
+    bottom: -10%;
+    left: -20%;
+  }
+  #cercle-jaune {
+    width: 65%;
+    top: -10%;
+    right: -10%;
+  }
+  #cercle-gris {
+    width: 20%;
+    top: 25%;
+    right: 40%;
+  }
+
+  .login-container {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    font-size: .9em;
+  }
+}
+
+@include media-breakpoint-between(md,lg) {
+  #cercle-bleu {
+    width: 70%;
+    bottom: -10%;
+    left: -10%;
+  }
+  #cercle-jaune {
+    width: 60%;
+    top: -10%;
+    right: -15%;
+  }
+  #cercle-gris {
+    width: 25%;
+    top: 15%;
+    right: 25%;
+  }
+
+  .login-container {
+    font-size: 1.4em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
+}
+
+@include media-breakpoint-between(lg,xl) {
+  #cercle-bleu {
+    width: 65%;
+    bottom: -70%;
+    left: -20%;
+  }
+  #cercle-jaune {
+    width: 50%;
+    top: -40%;
+    right: -15%;
+  }
+  #cercle-gris {
+    width: 18%;
+    top: 15%;
+    right: 30%;
+  }
+
+  .login-container {
+    font-size: 1em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
 }

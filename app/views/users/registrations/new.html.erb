@@ -14,44 +14,41 @@
 
 </svg>
 
-<div class="login-container">
+<div class="row align-items-center justify-content-center h-100">
+  <div class="col-auto shrink login-container">
 
-  <h2 class="unify-title">Unify</h2>
-  <div class="selected-section">
-    <span><%= render "devise/shared/links" %></span>
-    <span style="background: #095FA0; color: #fff;">Créer un compte</span>
+    <h2 class="unify-title">Unify</h2>
+    <div class="selected-section">
+      <span><%= render "devise/shared/links" %></span>
+      <span style="background: #095FA0; color: #fff;">Créer un compte</span>
+    </div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "prenom.nom@isep.fr",
+                    label: false %>
+          <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "Mot de passe",
+                    label: false %>
+        </div>
+
+        <p class="warning">
+          Il est nécessaire de vous inscrire avec<br/>votre <span style="color:#F5A300">adresse ISEP</span>
+        </p>
+
+        <div class="form-actions">
+          <%= f.button :submit, "S'inscrire" %>
+        </div>
+      <% end %>
   </div>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" },
-                  placeholder: "prenom.nom@isep.fr",
-                  label: false %>
-        <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" },
-                  placeholder: "Mot de passe",
-                  label: false %>
-        <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" },
-                  placeholder: "Confirmez le mot de passe",
-                  label: false  %>
-      </div>
-
-      <p class="warning">
-        Il est nécessaire de vous inscrire avec<br/>votre <span style="color:#F5A300">adresse ISEP</span>
-      </p>
-
-      <div class="form-actions">
-        <%= f.button :submit, "S'inscrire" %>
-      </div>
-    <% end %>
 </div>
 
 <div class="logo-container">
