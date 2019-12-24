@@ -3,11 +3,11 @@
     <% @clubs.each do |club| %>
         <div>
             <% if club.logo.nil? || club.logo == "" %>
-                <%= link_to "#" do %>
+                <%= link_to club_path(club) do %>
                     <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
                 <% end %>
             <% else %>  
-                <%= link_to "#" do %>
+                <%= link_to club_path(club) do %>
                     <%= image_tag club.logo, class:"club-logo" %>
                 <% end %>
             <% end %>
