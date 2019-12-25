@@ -18,7 +18,9 @@
     <ul class="navbar-nav mr-auto mr-3 align-items-center">
       <% if user_signed_in? %>
         <li class="nav-item dropdown mr-3">
-          <i class="fas fa-bell notifications-icon"></i>
+          <%= link_to activities_path do %>
+            <i class="fas fa-bell notifications-icon"></i>
+          <% end %>
         </li>
         <li class="nav-item dropdown mr-3">
           <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
