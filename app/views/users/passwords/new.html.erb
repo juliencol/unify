@@ -1,18 +1,4 @@
-<svg id="cercle-bleu" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-gris" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-jaune" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
+<%= render "users/shared/background" %>
 
 <div class="row align-items-center justify-content-center h-100">
   <div class="col-auto shrink login-container">
@@ -21,7 +7,6 @@
 
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
-
         <div class="form-inputs">
           <%= f.input :email,
                       required: true,
@@ -30,19 +15,14 @@
                       placeholder: "Email",
                       label: false %>
         </div>
-
         <div class="form-actions">
           <%= f.button :submit, "Envoyer les instructions" %>
         </div>
     <% end %>
-
-    <div class="text-center mt-3">
-      <%= render "devise/shared/links" %>
+    <div class="text-center mt-3 d-flex flex-column">
+      <%= render "users/shared/links" %>
     </div>
   </div>
 </div>
 
-<div class="logo-container">
-    <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
-    <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
-</div>
+<%= render "users/shared/logos" %>

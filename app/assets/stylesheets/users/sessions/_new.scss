@@ -1,46 +1,46 @@
 body {
-  display: initial;
+	display: initial;
 }
 
 #cercle-bleu {
-  position: fixed;
-  fill: $isep-bleu;
+	position: fixed;
+	fill: $isep-bleu;
 }
 #cercle-jaune {
-  position: fixed;
-  fill: $isep-jaune;
+	position: fixed;
+	fill: $isep-jaune;
 }
 #cercle-gris {
-  position: fixed;
-  fill: $isep-gris;
+	position: fixed;
+	fill: $isep-gris;
 }
 
 .login-container {
-  z-index: 1;
-  position: relative;
+	z-index: 1;
+	position: relative;
 	text-align: center;
-  padding-bottom: 20px;
-  border: none;
-  border-radius: 1em;
-  padding: 2em;
+	padding-bottom: 20px;
+	border: none;
+	border-radius: 1em;
+	padding: 2em;
 	background-color: #fff;
-  box-shadow: 0 5px .5em rgba(0,0,0,.2);
+	box-shadow: 0 5px .5em rgba(0, 0, 0, .2);
 
-  .unify-title {
-    font-weight: 700;
-  }
+	.unify-title {
+		font-weight: 700;
+	}
 
 	.selected-section {
 		cursor: pointer;
-		background: rgb(235,235,235);
+		background: rgb(235, 235, 235);
 		padding: .4em;
 		border-radius: 2em;
-    margin-bottom: 20px;
+		margin-bottom: 20px;
 
 		span {
-			background: rgb(235,235,235);
+			background: rgb(235, 235, 235);
 			border-radius: 2em;
-			color: rgb(180,180,180);
+			color: rgb(180, 180, 180);
 			padding: .5em;
 
 			a {
@@ -49,58 +49,57 @@ body {
 			}
 		}
 
-    .forgot-password {
-      position: relative;
-      display: none;
-      position: absolute;
-      bottom: 90px;
-      right: -200px;
-      background: $isep-bleu;
-      color: #fff;
-      padding: .5em;
-      border-radius: 1em;
+		.forgot-password {
+			position: relative;
+			display: none;
+			position: absolute;
+			bottom: 90px;
+			right: -200px;
+			background: $isep-bleu;
+			color: #fff;
+			padding: .5em;
+			border-radius: 1em;
 
-      &:after {
-        content: '';
-      	position: absolute;
-      	left: 0;
-      	top: 50%;
-      	width: 0;
-      	height: 0;
-      	border: 8px solid transparent;
-      	border-right-color: $isep-bleu;
-      	border-left: 0;
-      	margin-top: -8px;
-      	margin-left: -8px;
-      }
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 0;
+				height: 0;
+				border: 8px solid transparent;
+				border-right-color: $isep-bleu;
+				border-left: 0;
+				margin-top: -8px;
+				margin-left: -8px;
+			}
 
-      &.focused {
-        display: block;
-      }
-    }
+			&.focused {
+				display: block;
+			}
+		}
 	}
 
-  .form-inputs {
+	.form-inputs {
+		input {
+			border: 1px solid rgb(235, 235, 235);
+			border-radius: 1em;
+		}
+	}
 
-    input {
-      border: 1px solid rgb(235,235,235);
-      border-radius: 1em;
-    }
-  }
+	.form-actions {
+		position: absolute;
+		bottom: -20px;
+		left: 25%;
+		padding: 0 1em;
+		border-radius: 1em;
+		background: $isep-jaune;
 
-  .form-actions {
-    position: absolute;
-    bottom: -20px;
-    left: 25%;
-    padding: 0 1em;
-    border-radius: 1em;
-    background: $isep-jaune;
-
-    .btn {
-      color: #fff!important;
-      text-transform: uppercase;
-    }
-  }
+		.btn {
+			color: #fff !important;
+			text-transform: uppercase;
+		}
+	}
 }
 
 .logo-container {
@@ -116,105 +115,106 @@ body {
 // Responsive
 
 @include media-breakpoint-between(xs,sm) {
-  #cercle-bleu {
-    width: 80%;
-    bottom: -2%;
-    left: -25%;
-  }
-  #cercle-jaune {
-    width: 70%;
-    top: -10%;
-    right: -25%;
-  }
+	#cercle-bleu {
+		width: 80%;
+		bottom: -2%;
+		left: -25%;
+	}
+	#cercle-jaune {
+		width: 70%;
+		top: -10%;
+		right: -25%;
+	}
 
-  .login-container, .btn {
-    font-size: .8em;
-  }
+	.login-container,
+	.btn {
+		font-size: .8em;
+	}
 
-  .forgot-password {
-    bottom: -30px;
-    right: 25%;
+	.forgot-password {
+		bottom: -30px;
+		right: 25%;
 
-    &:after {
-      display:none;
-    }
-  }
+		&:after {
+			display: none;
+		}
+	}
 }
 
 @include media-breakpoint-between(sm,md) {
-  #cercle-bleu {
-    width: 80%;
-    bottom: -10%;
-    left: -20%;
-  }
-  #cercle-jaune {
-    width: 65%;
-    top: -10%;
-    right: -10%;
-  }
-  #cercle-gris {
-    width: 20%;
-    top: 25%;
-    right: 40%;
-  }
+	#cercle-bleu {
+		width: 80%;
+		bottom: -10%;
+		left: -20%;
+	}
+	#cercle-jaune {
+		width: 65%;
+		top: -10%;
+		right: -10%;
+	}
+	#cercle-gris {
+		width: 20%;
+		top: 25%;
+		right: 40%;
+	}
 
-  .login-container {
-    font-size: 1.2em;
-  }
+	.login-container {
+		font-size: 1.2em;
+	}
 
-  .btn {
-    font-size: .9em;
-  }
+	.btn {
+		font-size: .9em;
+	}
 }
 
 @include media-breakpoint-between(md,lg) {
-  #cercle-bleu {
-    width: 70%;
-    bottom: -10%;
-    left: -10%;
-  }
-  #cercle-jaune {
-    width: 60%;
-    top: -10%;
-    right: -15%;
-  }
-  #cercle-gris {
-    width: 25%;
-    top: 15%;
-    right: 25%;
-  }
+	#cercle-bleu {
+		width: 70%;
+		bottom: -10%;
+		left: -10%;
+	}
+	#cercle-jaune {
+		width: 60%;
+		top: -10%;
+		right: -15%;
+	}
+	#cercle-gris {
+		width: 25%;
+		top: 15%;
+		right: 25%;
+	}
 
-  .login-container {
-    font-size: 1.4em;
-  }
+	.login-container {
+		font-size: 1.4em;
+	}
 
-  .btn {
-    font-size: 1em;
-  }
+	.btn {
+		font-size: 1em;
+	}
 }
 
 @include media-breakpoint-between(lg,xl) {
-  #cercle-bleu {
-    width: 65%;
-    bottom: -70%;
-    left: -20%;
-  }
-  #cercle-jaune {
-    width: 50%;
-    top: -40%;
-    right: -15%;
-  }
-  #cercle-gris {
-    width: 18%;
-    top: 15%;
-    right: 30%;
-  }
+	#cercle-bleu {
+		width: 65%;
+		bottom: -70%;
+		left: -20%;
+	}
+	#cercle-jaune {
+		width: 50%;
+		top: -40%;
+		right: -15%;
+	}
+	#cercle-gris {
+		width: 18%;
+		top: 15%;
+		right: 30%;
+	}
 
-  .login-container {
-    font-size: 1em;
-  }
+	.login-container {
+		font-size: 1em;
+	}
 
-  .btn {
-    font-size: 1em;
-  }
+	.btn {
+		font-size: 1em;
+	}
 }
