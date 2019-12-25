@@ -1,29 +1,12 @@
-<svg id="cercle-bleu" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-gris" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-jaune" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
+<%= render "users/shared/background" %>
 
 <div class="row align-items-center justify-content-center h-100">
   <div class="col-auto shrink login-container">
     <h2 class="mt-5 mb-3">Change your password</h2>
-
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
-
       <%= f.input :reset_password_token, as: :hidden %>
       <%= f.full_error :reset_password_token %>
-
       <div class="form-inputs">
         <%= f.input :password,
                     placeholder: "New password",
@@ -38,7 +21,6 @@
                     input_html: { autocomplete: "new-password" },
                     label: false %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Change my password" %>
       </div>

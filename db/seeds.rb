@@ -1,8 +1,8 @@
 puts "Cleaning database..."
+UserClub.destroy_all
 Subscriber.destroy_all
 User.destroy_all
 Club.destroy_all
-
 
 puts "Creating 5 users..."
 julien_colombain = User.create!(
@@ -365,3 +365,10 @@ Event.create!(
     location: "NDL"
 )
 puts "5 events were created successfully."
+
+puts "Adding clubs to users..."
+UserClub.create!(
+    user: julien_colombain,
+    club: hustle
+)
+puts "Clubs added to users successfully."
