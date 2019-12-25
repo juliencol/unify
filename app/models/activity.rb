@@ -1,0 +1,2 @@
+class Activity::PublicActivity
+end

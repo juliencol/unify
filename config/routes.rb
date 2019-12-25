@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index] do
   end
+
+  resources :activities, only: [:index]
   
   resources :clubs, only: [:index, :show] do
     get 'bde', to: 'clubs#bde', as: :bde
