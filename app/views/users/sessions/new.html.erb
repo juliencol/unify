@@ -1,27 +1,13 @@
-<svg id="cercle-bleu" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-gris" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
-<svg id="cercle-jaune" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-  <circle cx="50" cy="50" r="50"/>
-
-</svg>
+<%= render "users/shared/background" %>
 
 <div class="row align-items-center justify-content-center h-100">
   <div class="col-auto shrink login-container">
-
     <h2 class="unify-title">Unify</h2>
     <div class="selected-section">
       <span style="background: #095FA0; color: #fff;">Se connecter</span>
-      <span><%= render "devise/shared/links" %></span>
+      <span><%= render "users/shared/links" %></span>
     </div>
+    
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
@@ -37,7 +23,6 @@
                     label: false %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Se connecter" %>
       </div>
@@ -45,7 +30,4 @@
   </div>
 </div>
 
-<div class="logo-container">
-    <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
-    <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
-</div>
+<%= render "users/shared/logos" %>
