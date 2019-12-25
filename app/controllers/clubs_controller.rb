@@ -6,6 +6,7 @@ class ClubsController < ApplicationController
 
     def index
         @clubs = Club.all
+        @bde = Club.where(name: "Genesis BDE").take
     end
 
     def show
