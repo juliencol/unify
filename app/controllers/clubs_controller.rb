@@ -8,19 +8,6 @@ class ClubsController < ApplicationController
         @club = Club.find(params[:id])
     end
 
-    def new
-        @club = Club.new
-    end
-    
-    def create
-        @club = Club.new(set_params)
-        if @club.save
-            redirect_to club_path(@club)
-        else
-          render :new
-        end
-    end
-
     def edit
         @club = Club.find(params[:id])
     end
