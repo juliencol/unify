@@ -44,9 +44,9 @@ class ClubsController < ApplicationController
 
     def subscribe
     end
-
-    def candidate
-    end
+  
+    def apply
+        @club = Club.find(params[:club_id])
 
     private
 
