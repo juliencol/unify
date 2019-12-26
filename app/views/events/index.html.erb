@@ -1,55 +1,71 @@
 <div class="container-fluid">
 
-    <div class="row">
+  <div class="row">
 
-        <div class="col-md text-center">
-            <div class="btn-group-vertical mt-5">
-                <h1 class="">Thèmes</h1>
-                <a class="btn btn-light mt-5 mb-4 border">Soirée</a>
-                <a class="btn btn-light mt-5 mb-4 border">Afterwork</a>
-                <a class="btn btn-light mt-5 mb-4 border">Conférence</a>
-            </div>
+    <div class="col">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="width: 80vw; margin: 0 auto;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80" alt="Premier slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://visualhunt.com/photos/1/people-walking-towards-eiffel-tower-at-night.jpg?s=l" alt="Deuxième slide">
+          </div>
         </div>
+      </div>
+    </div>
 
+  </div>
 
-        <div class="col-6">
+  <div class="row">
 
-            <div class="container text-center">
+    <div class="col-md text-center">
+      <div class="btn-group-vertical mt-5">
+        <h1 class="">Thèmes</h1>
+        <a class="btn btn-light mt-5 mb-4 border">Soirée</a>
+        <a class="btn btn-light mt-5 mb-4 border">Afterwork</a>
+        <a class="btn btn-light mt-5 mb-4 border">Conférence</a>
+      </div>
+    </div>
 
-                <h1 class="mt-5">Events</h1>
-                <% @events.each do |event| %>
+    <div class="col-6">
 
-                        <div class="row d-flex justify-content-center mb-5">
+      <div class="container text-center">
 
+        <h1 class="mt-5">Events</h1>
+        <% @events.each do |event| %>
 
-                            <div class="card mt-4" style="width: 50rem;">
-                                <img class ="mt-4 ml-4" src="<%=event.club.logo%>" style="width: 5rem;" alt="...">
-                                <div class="card-body">
-                                    <img src="<%= event.image%>" class="card-img-top" style="width:30%; margin-top: -5rem" alt="...">
-                                    <h5 class="card-title"><%= event.name %></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Proposé par <%= event.club.name %></h6>
-                                    <p class="card-text"><%= event.short_description%></p>
-                                    <a href="#" class="btn btn-primary">S'inscrire</a>
-                                </div>
-                            </div>
-                        
-                        </div>
+          <div class="row d-flex justify-content-center mb-5">
 
-                <% end %>
-
+            <div class="card mt-4" style="width: 50rem;">
+              <img class="mt-4 ml-4" src="<%=event.club.logo%>" style="width: 5rem;" alt="...">
+              <div class="card-body">
+                <img src="<%= event.image%>" class="card-img-top" style="width:30%; margin-top: -5rem" alt="...">
+                <h5 class="card-title"><%= event.name %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Proposé par
+                  <%= event.club.name %></h6>
+                <p class="card-text"><%= event.short_description%></p>
+                <a href="#" class="btn btn-primary">S'inscrire</a>
+              </div>
             </div>
-        
-        </div>
 
-        <div class="col-md text-center">
-            <div class="btn-group-vertical mt-5">
-                <h1 class="mb-5">Abonnements</h1>
-                <% @clubs.each do |club| %>
-                    <a class="btn btn-light mb-4 border"><img class="mr-4" src="<%=club.logo%>" style="width:3rem" alt="..."><%=club.name%></a>
-                <% end %>
-            </div>
-        </div>
+          </div>
+
+        <% end %>
+
+      </div>
 
     </div>
+
+    <div class="col-md text-center">
+      <div class="btn-group-vertical mt-5">
+        <h1 class="mb-5">Abonnements</h1>
+        <% @clubs.each do |club| %>
+          <a class="btn btn-light mb-4 border"><img class="mr-4" src="<%=club.logo%>" style="width:3rem" alt="..."><%=club.name%></a>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 
 </div>
