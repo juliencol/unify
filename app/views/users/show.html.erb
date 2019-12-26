@@ -13,6 +13,16 @@
       <p><%= @user.promotion %></p>
       <p><%= @user.section %></p>
     </div>
+    <div class="col-xl">
+      <% if @user.clubs.nil? || @user.clubs == [] %>
+        <p>Membre d'aucune association</p>
+      <% else %>
+        <h3>Associations</h3>
+        <% @user.clubs.each do |club| %>
+          <%= link_to club.name, club_path(club) %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="row justify-content-center">
     <button type="button" class="btn btn-primary profile-btn" data-toggle="modal" data-target="#editProfile">Modifier mon profil</button>

@@ -1,19 +1,19 @@
-<%= render "clubs/shared/banner" %>
+<div class="banner" style="background-image: url(https://res.cloudinary.com/isep/image/upload/v1577142992/unify/image_3_hmuovd.png);">
+</div>
 
-<div class="club-content">
-    <div class="club-identity ml-5 pr-5 pl-5">
+<div class="d-flex mt-3">
+    <div class="ml-5 pr-5 pl-5">
         <%= image_tag @club.logo, class:"club-logo" %>
-        <h3 class="text-center mb-3"><%= @club.name.upcase %></h3>
+        <p class="text-center"><%= @club.name.upcase %></p>
         <ul>
-            <%= link_to "Evénements", club_path(@club) %>
-            <%= link_to "Membres", club_members_path(@club) %>
-            <%= link_to "Site web", @club.website_url unless @club.website_url.nil? %>
-            <%= link_to "Instagram", @club.instagram_url unless @club.instagram_url.nil? %>
-            <%= link_to "Linkedin", @club.linkedin_url unless @club.linkedin_url.nil? %>
+            <li>Evenements</li>
+            <li>Membres</li>
+            <li>Site web</li>
+            <li>Instagram</li>
         </ul>
     </div>
     
-    <div class="club-feed">
+    <div class="ml-5 mr-5 text-center pr-5 pl-5">
         <% if @club.events.nil? || @club.events == [] %>
             <p>Pas d'événements disponibles</p>
         <% else %>
@@ -34,7 +34,7 @@
         <% end %>
     </div>
    
-    <div class="club-buttons">
+    <div class="d-flex flex-column">
         <button class="btn btn-primary m-3">S'abonner</button>
         <button class="btn btn-primary m-3">Candidater</button>
     </div>

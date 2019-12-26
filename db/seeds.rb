@@ -371,4 +371,12 @@ UserClub.create!(
     user: julien_colombain,
     club: hustle
 )
+UserClub.create!(
+    user: julien_colombain,
+    club: garage
+)
+UserClub.create!(
+    user: julien_colombain,
+    club: isep_alumni
+)
 puts "Clubs added to users successfully."
