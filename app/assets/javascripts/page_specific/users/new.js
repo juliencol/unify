@@ -1,4 +1,4 @@
-var UsersController = Paloma.controller('Users');
+const UsersController = Paloma.controller('Users');
 
 UsersController.prototype.sign_in = function() {
   const button = document.querySelector(".form-actions"),
