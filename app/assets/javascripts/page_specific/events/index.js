@@ -1,4 +1,4 @@
-var EventsController = Paloma.controller('Events');
+const EventsController = Paloma.controller('Events');
 
 EventsController.prototype.index = function() {
   window.onscroll = function() {
