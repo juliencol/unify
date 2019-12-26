@@ -23,33 +23,32 @@
       <div class="selected-section">
         <span style="background: #095FA0; color: #fff;">Se connecter</span>
         <span><%= render "devise/shared/links" %></span>
-      </div>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" },
-                      placeholder: "prenom.nom@isep.fr",
-                      label: false %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password", onFocus: "forgotPopupIn();", onBlur: "setTimeout(forgotPopupOut, 1000);" },
-                      placeholder: "Mot de passe",
-                      label: false %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Se connecter" %>
-        </div>
-      <% end %>
+<div class="row align-items-center justify-content-center h-100">
+  <div class="col-auto shrink login-container">
+    <h2 class="unify-title">Unify</h2>
+    <div class="selected-section">
+      <span style="background: #095FA0; color: #fff;">Se connecter</span>
+      <span><%= render "users/shared/links" %></span>
     </div>
-  </div>
+    
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "prenom.nom@isep.fr",
+                    label: false %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password", onFocus: "forgotPopupIn();", onBlur: "setTimeout(forgotPopupOut, 1000);" },
+                    placeholder: "Mot de passe",
+                    label: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Se connecter" %>
 
-  <div class="logo-container">
-      <%= image_tag "https://iseplive.fr/img/login/genesis.png", class:"logo-genesis" %>
-      <%= image_tag "https://mcetv.fr/wp-content/uploads/2017/10/logo_isep.png", class:"logo-isep" %>
-  </div>
 
-</div>
+<%= render "users/shared/logos" %>

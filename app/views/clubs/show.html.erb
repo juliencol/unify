@@ -1,41 +1,35 @@
-<div class="banner" style="background-image: url(https://res.cloudinary.com/isep/image/upload/v1577142992/unify/image_3_hmuovd.png);">
-</div>
+<%= render "clubs/shared/banner" %>
 
-<div class="d-flex mt-3">
-    <div class="ml-5 pr-5 pl-5">
+<div class="club-content">
+    <div class="club-identity ml-5 pr-5 pl-5">
         <%= image_tag @club.logo, class:"club-logo" %>
-        <p class="text-center"><%= @club.name.upcase %></p>
+        <h3 class="text-center mb-3"><%= @club.name.upcase %></h3>
         <ul>
-            <li>Evenements</li>
-            <li>Membres</li>
-            <li>Site web</li>
-            <li>Instagram</li>
+            <%= link_to "Evénements", club_path(@club) %>
+            <%= link_to "Membres", club_members_path(@club) %>
+            <%= link_to "Site web", @club.website_url unless @club.website_url.nil? %>
+            <%= link_to "Instagram", @club.instagram_url unless @club.instagram_url.nil? %>
+            <%= link_to "Linkedin", @club.linkedin_url unless @club.linkedin_url.nil? %>
         </ul>
     </div>
     
-    <div class="ml-5 mr-5 text-center pr-5 pl-5">
+    <div class="club-feed">
         <% if @club.events.nil? || @club.events == [] %>
             <p>Pas d'événements disponibles</p>
         <% else %>
             <% @club.events.each do |event| %>
-                <div class="row d-flex justify-content-center mb-5">
-                    <div class="card mt-4" style="width: 50rem;">
-                        <img class ="mt-4 ml-4" src="<%=event.club.logo%>" style="width: 5rem;" alt="...">
-                        <div class="card-body">
-                            <img src="<%= event.image%>" class="card-img-top" style="width:30%; margin-top: -5rem" alt="...">
-                            <h5 class="card-title"><%= event.name %></h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Proposé par <%= event.club.name %></h6>
-                            <p class="card-text"><%= event.short_description%></p>
-                            <a href="#" class="btn btn-primary">S'inscrire</a>
-                        </div>
-                    </div>        
-                </div>
+               <p><%= event.name %></p>
             <% end %>
         <% end %>
     </div>
    
     <div class="d-flex flex-column">
-        <button class="btn btn-primary m-3">S'abonner</button>
-        <button class="btn btn-primary m-3">Candidater</button>
+        <%= link_to "S'abonner", "#", class:"btn btn-primary m-3" %>
+        
+        <% if @club.applications_open? %>
+            <%= link_to "Candidater", club_apply_path(@club), class:"btn btn-primary" %>
+        <% else %>
+            <p>Candidatures fermées pour l'instant</p>
+        <% end %>
     </div>
 </div>

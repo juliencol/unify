@@ -83,3 +83,4 @@ production:
   database: unify_production
   username: unify
   password: <%= ENV['UNIFY_DATABASE_PASSWORD'] %>
+
