@@ -1,20 +1,38 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-unify">
-  <div>
+<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-unify">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <%= link_to root_path, class: "navbar-brand navbar-logo-unify" do %>
       <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577087960/unify/unify-logo_qvbcvn.png" %>
     <% end %>
-    <div id="search-bar" class="navbar-brand" >
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Rechercher une association ou un événement" %>
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :name,
+                  label: false,
+                  class: "form-control mr-sm-2",
+                  input_html: {value: ""},
+                  placeholder: "Rechercher une association ou un événement" %>
+      <%= f.submit "Go", class: "btn btn-primary my-2 my-sm-0" %>
+    <% end %>
+    <div class="navbar-nav">
+      <h3>Liens</h3>
+      <%= link_to "Calendrier", calendar_path, class: "nav-item  nav-link" %>
+      <%= link_to "Associations", clubs_path, class: "nav-item nav-link" %>
+      <%= link_to "BDE Genesis", club_bde_path(Club.where(name: "Genesis BDE")), class: "nav-item nav-link" %>
+      <div class="d-md-none">
+        <h3>Mon compte</h3>
+        <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+          <%=image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <%= link_to "Mon profil", user_path(current_user), class: "nav-item  nav-link" %>
+        <%= link_to "Mes associations", "#", class: "nav-item  nav-link" %>
+        <%= link_to "Mes événements", "#", class: "nav-item  nav-link" %>
+        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-item  nav-link" %>
+      </div>
     </div>
-    <%= link_to "Calendrier", calendar_path, class: "navbar-brand" %>
-    <%= link_to "Associations", clubs_path, class: "navbar-brand" %>
-    <%= link_to "BDE Genesis", club_bde_path(Club.where(name: "Genesis BDE")), class: "navbar-brand" %>
   </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div>
     <ul class="navbar-nav mr-auto mr-3 align-items-center">
       <% if user_signed_in? %>
         <li class="nav-item dropdown mr-3">
@@ -22,7 +40,7 @@
             <i class="fas fa-bell notifications-icon"></i>
           <% end %>
         </li>
-        <li class="nav-item dropdown mr-3">
+        <li class="nav-item dropdown mr-3 d-none d-md-block">
           <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
             <%=image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>

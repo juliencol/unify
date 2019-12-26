@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'paloma', '~> 5.1.0'
 gem 'pundit'
 
 group :development do

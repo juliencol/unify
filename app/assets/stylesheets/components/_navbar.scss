@@ -1,21 +1,16 @@
 .navbar-unify {
 	justify-content: space-between;
-	background: white;
-}
+	background: transparent;
 
-.navbar-unify .navbar-collapse {
-	flex-grow: 0;
-}
+ .navbar-collapse {
+		flex-grow: 0;
+	}
 
-.navbar-unify .navbar-logo-unify img {
-	width: 38px;
-	margin-right: 10px;
-	border-radius: 50%;
-}
-
-.notifications-icon {
-	font-size: 28px;
-	margin-right: 20px;
+	.navbar-logo-unify img {
+		width: 38px;
+		margin-right: 10px;
+		border-radius: 50%;
+	}
 }
 
 #search-bar {
