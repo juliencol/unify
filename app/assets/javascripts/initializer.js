@@ -1,3 +1,3 @@
-$(document).ready( function(){
-  Paloma.engine.start();
+$(document).ready(() => {
+	Paloma.engine.start();
 });
