@@ -35,7 +35,12 @@
     </div>
    
     <div class="d-flex flex-column">
-        <button class="btn btn-primary m-3">S'abonner</button>
-        <button class="btn btn-primary m-3">Candidater</button>
+        <%= link_to "S'abonner", "#", class:"btn btn-primary m-3" %>
+        
+        <% if @club.applications_open? %>
+            <%= link_to "Candidater", club_apply_path(@club), class:"btn btn-primary" %>
+        <% else %>
+            <p>Candidatures fermées pour l'instant</p>
+        <% end %>
     </div>
 </div>

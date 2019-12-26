@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   
   resources :clubs, only: [:index, :show] do
     get 'bde', to: 'clubs#bde', as: :bde
+    get 'apply', to: "clubs#apply", as: :apply
   end
   get 'calendar', to: 'clubs#calendar', as: :calendar
 end
