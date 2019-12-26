@@ -13,7 +13,6 @@
       <%= f.submit "Go", class: "btn btn-primary my-2 my-sm-0" %>
     <% end %>
     <div class="navbar-nav">
-      <h3>Liens</h3>
       <%= link_to "Calendrier", calendar_path, class: "nav-item  nav-link" %>
       <%= link_to "Associations", clubs_path, class: "nav-item nav-link" %>
       <%= link_to "BDE Genesis", club_bde_path(Club.where(name: "Genesis BDE")), class: "nav-item nav-link" %>
