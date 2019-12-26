@@ -1,7 +1,9 @@
 .club-content {
 	display: flex;
+	border: solid black 1px;
 
 	.club-identity {
+		border: solid black 1px;
 		margin-right: 10px;
 		width: 20%;
 		display: flex;
@@ -9,11 +11,13 @@
 	}
 
 	.club-feed {
+		border: solid black 1px;
 		width: 60%;
 		margin: 0 10px;
 	}
 
 	.club-buttons {
+		border: solid black 1px;
 		margin-left: 10px;
 		width: 20%;
 	}
