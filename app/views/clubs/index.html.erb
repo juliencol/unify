@@ -1,4 +1,7 @@
-<h1 class="text-center mt-3">Associations</h1>
+<div class="d-flex flex-column text-center justify-content-center m-3 mb-3">
+    <h1 class="text-center mt-3">Associations</h1>
+    <%= link_to "Créer votre association", new_club_path, class:"btn btn-primary" %>
+</div>
 <div class="container text-center d-flex flex-wrap justify-content-center">
     <% @clubs.each do |club| %>
         <div>
@@ -7,19 +10,20 @@
                     <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577281751/unify/512x512bb_rrfz2x.jpg", class:"club-logo" %>
                 <% end %>
                 <p class="text-center"><%= @bde.name %></p>
-            <% end %>
-        </div>
-        <div>
-            <% if club.logo.nil? || club.logo == "" %>
-                    <%= link_to club_path(club) do %>
-                        <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
+            <% else %>
+                <div>
+                    <% if club.logo.nil? || club.logo == "" %>
+                            <%= link_to club_path(club) do %>
+                                <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
+                            <% end %>
+                    <% else %>  
+                            <%= link_to club_path(club) do %>
+                                <%= image_tag club.logo, class:"club-logo" %>
+                            <% end %>
                     <% end %>
-            <% else %>  
-                    <%= link_to club_path(club) do %>
-                        <%= image_tag club.logo, class:"club-logo" %>
-                    <% end %>
+                    <p class="text-center"><%= club.name %></p>
+                </div>
             <% end %>
-            <p class="text-center"><%= club.name %></p>
         </div>
     <% end %>
 </div>

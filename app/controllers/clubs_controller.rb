@@ -44,10 +44,9 @@ class ClubsController < ApplicationController
 
     def subscribe
     end
-
+  
     def apply
         @club = Club.find(params[:club_id])
-    end
 
     private
 
