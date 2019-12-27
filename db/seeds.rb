@@ -4,7 +4,7 @@ Subscriber.destroy_all
 User.destroy_all
 Club.destroy_all
 
-puts "Creating 5 users..."
+puts "Creating users..."
 julien_colombain = User.create!(
     first_name: "Julien",
     last_name: "Colombain",
@@ -75,7 +75,145 @@ maelle_jumel = User.create!(
 Subscriber.create!(
     user_id: maelle_jumel.id
 )
-puts "5 users were created successfully."
+nathan_rolland = User.create!(
+    first_name: "Nathan",
+    last_name: "Rolland",
+    email: "nathan.rolland@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2022,
+    section: "A1",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: nathan_rolland.id
+)
+sarah_shobanbabu = User.create!(
+    first_name: "Sarah",
+    last_name: "Shobanbabu",
+    email: "sarah.shobanbabu@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: sarah_shobanbabu.id
+)
+juliette_sebillotte = User.create!(
+    first_name: "Juliette",
+    last_name: "Sebillotte",
+    email: "juliette.sebillotte@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2023,
+    section: "P2",
+    classe: "P2B",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: juliette_sebillotte.id
+)
+clement_tisseau = User.create!(
+    first_name: "Clément",
+    last_name: "Tisseau",
+    email: "clement.tisseau@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2023,
+    section: "P2",
+    classe: "P2C",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: clement_tisseau.id
+)
+hugo_chemiller = User.create!(
+    first_name: "Hugo",
+    last_name: "Chemiller",
+    email: "hugo.chemiller@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2022,
+    section: "A1",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: hugo_chemiller.id
+)
+constance_malgrain = User.create!(
+    first_name: "Maëlle",
+    last_name: "Jumel",
+    email: "constance_malgrain@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2022,
+    section: "A1",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: constance_malgrain.id
+)
+alaina_guiraud = User.create!(
+    first_name: "Alaine",
+    last_name: "Guiraud",
+    email: "alaina.guiraud@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2022,
+    section: "A1",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: alaina_guiraud.id
+)
+billy_dosreis = User.create!(
+    first_name: "Billy",
+    last_name: "Dos Reis",
+    email: "billy.dosreis@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2022,
+    section: "A1",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: billy_dosreis.id
+)
+arthur_latourrette = User.create!(
+    first_name: "Arthur",
+    last_name: "Latourrette",
+    email: "arthur.latourrette@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2023,
+    section: "P2",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: arthur_latourrette.id
+)
+ruben_groschtern = User.create!(
+    first_name: "Ruben",
+    last_name: "Groschtern",
+    email: "ruben.groschtern@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    promotion: 2023,
+    section: "I2",
+    classe: "",
+    is_ndc: false
+)
+Subscriber.create!(
+    user_id: ruben_groschtern.id
+)
+puts "Users were created successfully."
 
 
 
@@ -313,8 +451,77 @@ isep_alumni = Club.create!(
     website_url: "https://isepalumni.fr/",
     linkedin_url: "",
     instagram_url: ""
-)
+    )
 puts "Clubs were created successfully."
+
+
+
+puts "Adding clubs to users..."
+UserClub.create!(
+    user: julien_colombain,
+    club: hustle
+)
+UserClub.create!(
+    user: julien_colombain,
+    club: garage
+)
+UserClub.create!(
+    user: julien_colombain,
+    club: isep_alumni
+)
+UserClub.create!(
+    user: nathan_rolland,
+    club: hustle
+)
+UserClub.create!(
+    user: juliette_sebillotte,
+    club: hustle
+)
+UserClub.create!(
+    user: clement_tisseau,
+    club: hustle
+)
+UserClub.create!(
+    user: hugo_chemiller,
+    club: hustle
+)
+UserClub.create!(
+    user: constance_malgrain,
+    club: hustle
+)
+UserClub.create!(
+    user: alaina_guiraud,
+    club: hustle
+)
+UserClub.create!(
+    user: billy_dosreis,
+    club: hustle
+)
+UserClub.create!(
+    user: arthur_latourrette,
+    club: hustle
+)
+UserClub.create!(
+    user: ruben_groschtern,
+    club: hustle
+)
+UserClub.create!(
+    user: tom_sanitas,
+    club: hustle
+)
+UserClub.create!(
+    user: dylan_hu,
+    club: hustle
+)
+UserClub.create!(
+    user: david_lamy,
+    club: hustle
+)
+UserClub.create!(
+    user: maelle_jumel,
+    club: hustle
+)
+puts "Clubs added to users successfully."
 
 
 
@@ -365,18 +572,3 @@ Event.create!(
     location: "NDL"
 )
 puts "5 events were created successfully."
-
-puts "Adding clubs to users..."
-UserClub.create!(
-    user: julien_colombain,
-    club: hustle
-)
-UserClub.create!(
-    user: julien_colombain,
-    club: garage
-)
-UserClub.create!(
-    user: julien_colombain,
-    club: isep_alumni
-)
-puts "Clubs added to users successfully."
