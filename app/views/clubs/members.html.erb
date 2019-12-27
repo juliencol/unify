@@ -1,10 +1,18 @@
 <%= render "clubs/shared/banner" %>
 <h1 class="text-center">Membres</h1>
 
+<div class="container text-center justify-content-center d-flex flex-wrap">
 
-<% @club.users.each do |user| %>
-    <%= image_tag user.profile_picture %>
-    <p><%= user.first_name %> <%= user.last_name %></p>
-<% end %>
+    <% @club.users.each do |user| %>
+
+        <div  class="d-block">
+            <%= image_tag user.profile_picture, class:"avatar-member mb-4"%>
+            <p><%= user.first_name %> <%= user.last_name %></p>  
+            <p>Rôle</p>
+        </div>
+
+    <% end %>
+
+</div>
 
 
