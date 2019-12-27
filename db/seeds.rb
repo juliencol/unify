@@ -145,7 +145,7 @@ ludisep = Club.create!(
 )
 travel = Club.create!(
     name: "Travel",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/travel580_glnqfx.png",
     description: "association de voyages de l'isep",
     creation_date: "",
     website_url: "",
@@ -208,7 +208,7 @@ mixep = Club.create!(
 )
 air_isep = Club.create!(
     name: "Air",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/AIR580_tplwmw.png",
     description: "association de robotique de l'isep",
     creation_date: "",
     website_url: "",
@@ -244,7 +244,7 @@ discover_isep = Club.create!(
 )
 get_down = Club.create!(
     name: "Get down",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/GetDown580_zj1vfv.png",
     description: "association de danse",
     creation_date: "",
     website_url: "",
@@ -280,7 +280,7 @@ isehelp = Club.create!(
 )
 numeris = Club.create!(
     name: "Numeris",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/Numeris580_peglrd.png",
     description: "association pour faire du bif",
     creation_date: "",
     website_url: "",
@@ -289,7 +289,7 @@ numeris = Club.create!(
 )
 transaharienne = Club.create!(
     name: "Transaharienne",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/Trans580_yb0oog.png",
     description: "association humanitaire",
     creation_date: "",
     website_url: "",
@@ -307,7 +307,7 @@ winter = Club.create!(
 )
 isep_alumni = Club.create!(
     name: "isep Alumni",
-    logo: "",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/isepAlumni580_lxlg4h.png",
     description: "association des diplomés de l'isep",
     creation_date: "",
     website_url: "https://isepalumni.fr/",
