@@ -1,6 +1,4 @@
 .navbar {
-	justify-content: space-between;
-	background: transparent;
 	transition: filter ease 0.5s;
 
 	.navbar-brand img {
@@ -24,10 +22,10 @@
 			width: 90vw;
 		}
 
-		.search_terms {
+		.search_name {
 			width: 100%;
 
-			#search_terms {
+			#search_name {
 				width: 100%!important;
 
 				&::placeholder {
@@ -43,9 +41,6 @@
 	}
 
 	.navbar-nav {
-
-		.nav-item {
-		}
 
 		#search-form {
 			width: 30vw !important;

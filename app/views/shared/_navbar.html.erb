@@ -8,7 +8,7 @@
 
   <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
     <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline mr-auto my-2 my-lg-0', id: 'search-form' } do |f| %>
-      <%= f.input :terms,
+      <%= f.input :name,
                   label: false,
                   class: "form-control form-control-sm mr-sm-2",
                   input_html: {value: ""},
