@@ -1,0 +1,52 @@
+// COLORS
+
+$isep-jaune: rgba(245, 163, 0, 1);
+$isep-bleu: rgba(9, 95, 160, 1);
+$isep-gris: rgba(226, 226, 226, 1);
+$orange: #E67E22;
+$green: #1EDD88;
+$gray: #0E0000;
+$light-gray: rgba(248, 248, 248, 1);
+
+// FONTS
+@import url("https://fonts.googleapis.com/css?family=Inria+Serif|Questrial|Raleway&display=swap");
+
+// Define fonts for body and headers
+$body-font: 'Raleway', sans-serif;
+$headers-font: 'Questrial', sans-serif;
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+
+// This is where you override default Bootstrap variables
+// 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
+// 3. You can override them below!
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 $light-gray;
+$font-size-base: 1rem;
+
+// Colors
+$body-color: $gray;
+$primary:    $isep-bleu;
+$success:    $green;
+$info:       $isep-jaune;
+$danger:     #ff0000;
+$warning:    $orange;
+
+// Buttons & inputs' radius
+$border-radius:    2px;
+$border-radius-lg: 2px;
+$border-radius-sm: 2px;
+
+// Override other variables below!

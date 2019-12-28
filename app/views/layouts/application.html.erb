@@ -7,7 +7,8 @@
     <title>unifyisep</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all'%>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -17,7 +18,5 @@
     <%= yield %>
 
     <%= render 'shared/footer' unless @disable_footer %>
-
-    
   </body>
 </html>

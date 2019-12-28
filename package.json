@@ -13,6 +13,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.5",
     "webpack-dev-server": "^3.10.1"
   }
 }

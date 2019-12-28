@@ -1,0 +1,16 @@
+html {
+	height: 100vh;
+}
+
+body {
+	height: 100vh;
+}
+
+// External libraries
+@import "custom";
+@import "bootstrap/scss/bootstrap";
+
+// Your CSS partials
+@import "../../assets/stylesheets/components/index";
+@import "../../assets/stylesheets/users/index";
+@import "../../assets/stylesheets/clubs/index";
