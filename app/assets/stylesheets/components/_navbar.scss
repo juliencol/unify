@@ -1,17 +1,54 @@
-.navbar-unify {
+.navbar {
 	justify-content: space-between;
 	background: transparent;
-
- .navbar-collapse {
-		flex-grow: 0;
-	}
+	transition: filter ease 0.5s;
 
 	.navbar-brand img {
 		margin-right: 10px;
 		border-radius: 50%;
 	}
-}
 
-#search-bar {
-	width: 30vw;
+	.navbar-toggler {
+  	border: none;
+
+		&:focus {
+			outline: none;
+    	box-shadow: none;
+		}
+	}
+
+	#search-form {
+		width: 30vw;
+
+		@include media-breakpoint-between(xs,sm) {
+			width: 90vw;
+		}
+
+		.search_terms {
+			width: 100%;
+
+			#search_terms {
+				width: 100%!important;
+
+				&::placeholder {
+				  font-size: 0.9rem;
+				  color: #aaa;
+
+					@include media-breakpoint-between(xs,sm) {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+
+	.navbar-nav {
+
+		.nav-item {
+		}
+
+		#search-form {
+			width: 30vw !important;
+		}
+	}
 }
