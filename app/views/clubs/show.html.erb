@@ -1,17 +1,8 @@
 <%= render "clubs/shared/banner" %>
 
 <div class="club-content">
-    <div class="club-identity ml-5 pr-5 pl-5">
-        <%= image_tag @club.logo, class:"club-logo" %>
-        <h3 class="text-center mb-3"><%= @club.name.upcase %></h3>
-        <ul>
-            <%= link_to "Evénements", club_path(@club) %>
-            <%= link_to "Membres", club_members_path(@club) %>
-            <%= link_to "Site web", @club.website_url unless @club.website_url.nil? %>
-            <%= link_to "Instagram", @club.instagram_url unless @club.instagram_url.nil? %>
-            <%= link_to "Linkedin", @club.linkedin_url unless @club.linkedin_url.nil? %>
-        </ul>
-    </div>
+    
+    <%= render "clubs/shared/links" %>
     
     <div class="club-feed">
         <% if @club.events.nil? || @club.events == [] %>
@@ -24,6 +15,11 @@
                         <div class="card-event-infos">
                             <h2><%= event.name %></h2>
                             <p class="card-event-text"><%= event.short_description %></p>
+                        <% if event.price.nil? || event.price == 0 %>
+                            <p>gratuit</p>
+                        <% else %>  
+                            <p><%= event.price %> €</p>
+                        <% end %>
                         </div>
                     </div>
                 <% end %>
@@ -31,13 +27,6 @@
         <% end %>
     </div>
    
-    <div class="d-flex flex-column">
-        <%= link_to "S'abonner", "#", class:"btn btn-primary m-3" %>
-        
-        <% if @club.applications_open? %>
-            <%= link_to "Candidater", club_apply_path(@club), class:"btn btn-primary" %>
-        <% else %>
-            <p>Candidatures fermées pour l'instant</p>
-        <% end %>
-    </div>
+    <%= render "clubs/shared/buttons" %>
+
 </div>
