@@ -15,10 +15,18 @@
     
     <div class="club-feed">
         <% if @club.events.nil? || @club.events == [] %>
-            <p>Pas d'événements disponibles</p>
+            <p>Pas d'événements disponibles.</p>
         <% else %>
             <% @club.events.each do |event| %>
-               <p><%= event.name %></p>
+                <%= link_to "#" do %>
+                    <div class="card-event">
+                        <img src=<%= event.image %> >
+                        <div class="card-event-infos">
+                            <h2><%= event.name %></h2>
+                            <p class="card-event-text"><%= event.short_description %></p>
+                        </div>
+                    </div>
+                <% end %>
             <% end %>
         <% end %>
     </div>
