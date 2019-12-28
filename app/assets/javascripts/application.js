@@ -1,9 +1,1 @@
-//= require rails-ujs
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap
-//= require paloma
-//= require initializer
-//= require_tree ./sitewide
-//= require page_specific/users/new
-//= require page_specific/events/navbar
+
