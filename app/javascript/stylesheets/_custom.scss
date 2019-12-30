@@ -1,12 +1,60 @@
+// Transforms
+
+@mixin transform($args) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin transform-origin($args) {
+  -webkit-transform-origin: $args;
+  -moz-transform-origin: $args;
+  -ms-transform-origin: $args;
+  -o-transform-origin: $args;
+  transform-origin: $args;
+}
+
+// Keyframes
+@mixin keyframes($animation-name) {
+@keyframes #{$animation-name} {
+  @content;
+}
+}
+
+//animations
+@mixin animation($args) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -ms-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
 // COLORS
 
 $isep-jaune: rgba(245, 163, 0, 1);
 $isep-bleu: rgba(9, 95, 160, 1);
 $isep-gris: rgba(226, 226, 226, 1);
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: rgba(248, 248, 248, 1);
+
+//
+// Color system
+//
+
+$theme-colors: (
+  primary: $isep-bleu,
+  secondary: $isep-jaune,
+);
+
 
 // FONTS
 @import url("https://fonts.googleapis.com/css?family=Inria+Serif|Questrial|Raleway&display=swap");
@@ -15,41 +63,95 @@ $light-gray: rgba(248, 248, 248, 1);
 $body-font: 'Raleway', sans-serif;
 $headers-font: 'Questrial', sans-serif;
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
-
-// This is where you override default Bootstrap variables
-// 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
-// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
-// 3. You can override them below!
 
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
 $font-size-base: 1rem;
-
-// Colors
-$body-color: $gray;
-$primary:    $isep-bleu;
-$success:    $green;
-$info:       $isep-jaune;
-$danger:     #ff0000;
-$warning:    $orange;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
-// Override other variables below!
+// Variables
+//
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-shadows:            true;
+$enable-gradients:          false;
+$enable-hover-media-query:  false;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:       #f8f9fa;
+$body-color:    #212529;
+
+
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+.z-depth-1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.z-depth-1-half {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.z-depth-2 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.z-depth-3 {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.z-depth-4 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+.z-depth-5 {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+a {
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+//Disabled cursor
+.disabled {
+  cursor: not-allowed!important;
+}
+
+.flex-center {
+  ul {
+    list-style-type:none;
+    padding:0;
+  }
+}
+
+// Media
+.media {
+  .avatar-sm {
+    width: 56px;
+    border-radius: 50%;
+  }
+}
 
 .spacer {
   margin-top: 100px!important;

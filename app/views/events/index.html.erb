@@ -19,7 +19,7 @@
 
   <div class="row">
 
-    <div class="col-md text-center">
+    <div class="col-3 text-center">
       <div class="btn-group-vertical mt-5">
         <h1 class="">Thèmes</h1>
         <a class="btn btn-light mt-5 mb-4 border">Soirée</a>
@@ -30,34 +30,47 @@
 
     <div class="col-6">
 
-      <div class="container text-center">
+      <h1 class="mt-5">Events</h1>
+      <% @events.each do |event| %>
 
-        <h1 class="mt-5">Events</h1>
-        <% @events.each do |event| %>
+        <div class="card card-cascade wider mt-4 <%= event.club.name.parameterize.underscore %>">
 
-          <div class="row d-flex justify-content-center mb-5">
+          <!-- Card image -->
+          <div class="view view-cascade overlay">
+            <img src="<%= event.image%>" class="card-img-top" style="margin-top: -5rem" alt="...">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
 
-            <div class="card mt-4" style="width: 50rem;">
-              <img class="mt-4 ml-4" src="<%=event.club.logo%>" style="width: 5rem;" alt="...">
-              <div class="card-body">
-                <img src="<%= event.image%>" class="card-img-top" style="width:30%; margin-top: -5rem" alt="...">
-                <h5 class="card-title"><%= event.name %></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Proposé par
-                  <%= event.club.name %></h6>
-                <p class="card-text"><%= event.short_description%></p>
-                <a href="#" class="btn btn-primary">S'inscrire</a>
-              </div>
-            </div>
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+
+            <!-- Title -->
+            <h4 class="card-title">
+              <strong><%= event.name %></strong>
+            </h4>
+            <!-- Subtitle -->
+            <h5 class="blue-text pb-2">
+              <strong>Proposé par
+                <%= event.club.name %></strong>
+            </h5>
+            <!-- Text -->
+            <p class="card-text"><%= event.short_description%></p>
+
+            <!-- Button -->
+            <a class="btn btn-secondary">S'inscrire</a>
 
           </div>
 
-        <% end %>
+          <!-- End Events Card -->
+        </div>
 
-      </div>
+      <% end %>
 
     </div>
 
-    <div class="col-md text-center">
+    <div class="col-3 text-center">
       <div class="btn-group-vertical mt-5">
         <h1 class="mb-5">Abonnements</h1>
         <% @clubs.each do |club| %>
