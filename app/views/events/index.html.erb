@@ -37,7 +37,7 @@
 
           <!-- Card image -->
           <div class="view view-cascade overlay">
-            <img src="<%= event.image%>" class="card-img-top" style="margin-top: -5rem" alt="...">
+            <img src="<%= event.image%>" class="card-img-top" alt="...">
             <a href="#!">
               <div class="mask rgba-white-slight"></div>
             </a>
@@ -52,14 +52,13 @@
             </h4>
             <!-- Subtitle -->
             <h5 class="blue-text pb-2">
-              <strong>Proposé par
-                <%= event.club.name %></strong>
+              <strong>Proposé par <%= event.club.name %></strong>
             </h5>
             <!-- Text -->
             <p class="card-text"><%= event.short_description%></p>
 
             <!-- Button -->
-            <a class="btn btn-secondary">S'inscrire</a>
+            <a class="btn btn-secondary text-white">S'inscrire</a>
 
           </div>
 
