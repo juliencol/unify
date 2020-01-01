@@ -1,0 +1,126 @@
+.card {
+  &.card-image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .card-data {
+    background-color: $primary;
+    color: #fff;
+    text-align: center;
+    height: auto;
+    padding: 10px;
+
+    ul {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+
+      li {
+        display: inline;
+
+        .fa-clock-o {
+          margin-left: 10px;
+        }
+      }
+
+      a {
+        color: #fff;
+
+        .fa {
+          margin-left: 5px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  // Cascading cards
+  &.card-cascade {
+    width: 100%;
+
+    .view {
+      @extend .z-depth-2;
+      border-radius: 4px;
+
+      &.gradient-card-header {
+        padding: 1.6rem 1rem;
+        text-align: center;
+        @extend .text-white;
+
+        h2 {
+          font-weight: 400;
+        }
+
+        .btn-floating {
+          background-color: rgba(255, 255, 255, .2);
+        }
+      }
+    }
+
+    &.wider {
+      border: none;
+      background-color: transparent;
+      @extend .z-depth-0;
+
+      .view {
+        z-index: 2;
+      }
+
+      .card-body {
+        margin-left: 4%;
+        margin-right: 4%;
+        @extend .z-depth-1;
+        background: #fff;
+        z-index: 1;
+        border-radius: 0 0 0.3rem 0.3rem;
+      }
+    }
+    // activator
+    .activator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      @extend .text-dark;
+    }
+
+    .btn-action {
+      margin: -23px 20px -23px auto;
+      background-color: $secondary;
+      height: 47px;
+      width: 47px;
+      line-height: 0;
+
+      .fa {
+        font-size: 18px;
+
+        &.fa-chevron-right {
+          margin-top: 2px;
+          margin-left: 2px;
+        }
+      }
+    }
+
+    &.ovf-hidden {
+      overflow: hidden;
+    }
+  }
+}
+
+/* Controls
+---------------------------------------------------------------------- */
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.control {
+  border-radius: 1em;
+  transition: background 150ms;
+}
+
+body .mixitup-control-active {
+  @extend .btn-secondary;
+}
