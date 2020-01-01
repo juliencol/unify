@@ -1,4 +1,4 @@
-<div class="container-fluid spacer">
+<div class="container-fluid spacer cd-main-content">
 
   <div class="row">
 
@@ -28,12 +28,12 @@
       </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 mix-container">
 
       <h1 class="mt-5">Events</h1>
       <% @events.each do |event| %>
 
-        <div class="card card-cascade wider mt-4 <%= event.club.name.parameterize.underscore %>">
+        <div class="card card-cascade wider mt-4 mix <%= event.club.name.parameterize.underscore %>">
 
           <!-- Card image -->
           <div class="view view-cascade overlay">
@@ -52,7 +52,8 @@
             </h4>
             <!-- Subtitle -->
             <h5 class="blue-text pb-2">
-              <strong>Proposé par <%= event.club.name %></strong>
+              <strong>Proposé par
+                <%= event.club.name %></strong>
             </h5>
             <!-- Text -->
             <p class="card-text"><%= event.short_description%></p>
@@ -69,14 +70,16 @@
 
     </div>
 
-    <div class="col-3 text-center">
-      <div class="btn-group-vertical mt-5">
-        <h1 class="mb-5">Abonnements</h1>
-        <% @clubs.each do |club| %>
-          <a class="btn btn-light mb-4 border"><img class="mr-4" src="<%=club.logo%>" style="width:3rem" alt="..."><%=club.name%></a>
-        <% end %>
-      </div>
+    <div class="col-3 controls">
+      <h1 class="mt-5">Abonnements</h1>
+
+      <button type="button" data-mixitup-control class="control btn-primary mt-4" data-filter="all">Show all</button>
+      <% @clubs.each do |club| %>
+      <button type="button" data-mixitup-control class="control btn-primary mt-4" data-toggle=".<%=club.name.parameterize.underscore%>"><%=club.name%></button>
+      <% end %>
+
     </div>
+    <!-- controls -->
 
   </div>
 

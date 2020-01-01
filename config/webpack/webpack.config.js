@@ -1,4 +1,5 @@
 module.exports = {
+  entry: '../javascript/packs/application.js',
   module: {
     rules: [
       {
@@ -26,6 +27,12 @@ module.exports = {
           'file-loader',
         ],
       },
+      {
+          test: /\.js$/,
+          use: {
+              loader: 'babel-loader'
+          }
+      }
     ],
   },
 };
