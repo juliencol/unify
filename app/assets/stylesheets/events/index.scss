@@ -1,3 +1,24 @@
+/* Carousel
+---------------------------------------------------------------------- */
+.carousel-control-down {
+  @extend .carousel-control-next;
+  top: auto;
+  flex-direction: column;
+  width: 100vw;
+  height: 20%;
+  cursor: pointer;
+
+  svg {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: white;
+  }
+}
+
+/* Events
+---------------------------------------------------------------------- */
+
 .card {
   &.card-image {
     background-size: cover;
@@ -34,9 +55,9 @@
       }
     }
   }
-  // Cascading cards
   &.card-cascade {
-    width: 100%;
+    width: 48%;
+    height: auto;
 
     .view {
       @extend .z-depth-2;
@@ -75,7 +96,6 @@
         border-radius: 0 0 0.3rem 0.3rem;
       }
     }
-    // activator
     .activator {
       position: absolute;
       top: 0;
@@ -109,18 +129,89 @@
   }
 }
 
+#sidebar {
+  float: right;
+}
+
+.fixed {
+  position: fixed;
+  right: 50%;
+  margin-right: -50%;
+}
+
 /* Controls
 ---------------------------------------------------------------------- */
-.controls {
-  display: flex;
-  flex-direction: column;
+
+.check {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0,0,0);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(#223254,.03);
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+  svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #C8CCD4;
+    stroke-width: 1.5;
+    transform: translate3d(0,0,0);
+    transition: all .2s ease;
+
+    path {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 0;
+    }
+    polyline {
+      stroke-dasharray: 22;
+      stroke-dashoffset: 66;
+    }
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+    svg {
+      stroke: #4285F4;
+    }
+  }
+
 }
 
-.control {
-  border-radius: 1em;
-  transition: background 150ms;
+.check.mixitup-control-active {
+  svg {
+    stroke: #4285F4;
+
+    path {
+      stroke-dashoffset: 60;
+      transition: all .3s linear;
+    }
+
+    polyline {
+      stroke-dashoffset: 42;
+      transition: all .2s linear;
+      transition-delay: .15s;
+    }
+  }
 }
 
-body .mixitup-control-active {
-  @extend .btn-secondary;
+.check:focus {
+  outline: none;
 }

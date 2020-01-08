@@ -1,1 +1,8 @@
+.list-group-item-club {
+  margin: 1em;
+  border: none;
+  border-radius: 1em !important;
+  @extend .z-depth-1-half;
+}
+
 @import "show";

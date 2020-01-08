@@ -1,32 +1,45 @@
-<%= render "clubs/shared/banner" %>
+<div class="container-fluid spacer">
 
-<div class="club-content">
-    
-    <%= render "clubs/shared/links" %>
-    
-    <div class="club-feed">
-        <% if @club.events.nil? || @club.events == [] %>
-            <p>Pas d'événements disponibles.</p>
-        <% else %>
-            <% @club.events.each do |event| %>
-                <%= link_to "#" do %>
-                    <div class="card-event">
-                        <img src=<%= event.image %> >
-                        <div class="card-event-infos">
-                            <h2><%= event.name %></h2>
-                            <p class="card-event-text"><%= event.short_description %></p>
-                        <% if event.price.nil? || event.price == 0 %>
-                            <p>gratuit</p>
-                        <% else %>  
-                            <p><%= event.price %> €</p>
-                        <% end %>
-                        </div>
-                    </div>
-                <% end %>
-            <% end %>
-        <% end %>
+  <div class="row club-content">
+
+    <%= render "clubs/shared/banner" %>
+
+    <div class="col-3 club-identity d-flex flex-column align-items-center">
+
+      <%= render "clubs/shared/links" %>
+
     </div>
-   
+    <div class="col-6 club-feed">
+
+      <% if @club.events.nil? || @club.events == [] %>
+        <p>Pas d'événements disponibles.</p>
+      <% else %>
+        <% @club.events.each do |event| %>
+          <%= link_to "#" do %>
+          <div class="card-event">
+            <img src=<%= event.image %>>
+            <div class="card-event-infos">
+              <h2><%= event.name %></h2>
+              <p class="card-event-text"><%= event.short_description %></p>
+              <% if event.price.nil? || event.price == 0 %>
+                <p>gratuit</p>
+              <% else %>
+                <p><%= event.price %>
+                  €</p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div class="col-3">
+
     <%= render "clubs/shared/buttons" %>
+
+  </div>
+
+</div>
 
 </div>

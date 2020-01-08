@@ -1,10 +1,9 @@
 .footer {
 	margin-top: 10px;
-	background-color: #fff;
 	padding: 45px 0 20px;
 	font-size: 15px;
 	line-height: 24px;
-	color: #737373;
+	color: silver;
 
 	.text-row {
 		display: flex;
@@ -13,7 +12,7 @@
 	}
 
 	hr {
-		border-top-color: #bbb;
+		border-top-color: #fff;
 		opacity: 0.5;
 
 		&.small {
@@ -22,7 +21,7 @@
 	}
 
 	h6 {
-		color: #000;
+		color: #fff;
 		font-size: 16px;
 		text-transform: uppercase;
 		margin-top: 5px;
@@ -37,28 +36,8 @@
 			display: block;
 		}
 
-		a {
-			color: DarkGray;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: MediumBlue;
-				text-decoration: none;
-			}
-		}
-
 		&.inline li {
 			display: inline-block;
-		}
-	}
-
-	a {
-		color: DarkGray;
-
-		&:hover {
-			color: MediumBlue;
-			text-decoration: none;
 		}
 	}
 
@@ -74,8 +53,7 @@
 		}
 
 		a {
-			background-color: DarkGray;
-			color: Gainsboro;
+			background-color: #fff;
 			font-size: 16px;
 			display: inline-block;
 			line-height: 44px;
@@ -97,16 +75,25 @@
 		}
 
 		a {
+			&.instagram {
+				color: #c13584;
+			}
 			&.instagram:hover {
 				background-color: #c13584;
 				color: #fff;
 			}
 
+			&.twitter {
+				color: #00aced;
+			}
 			&.twitter:hover {
 				background-color: #00aced;
 				color: #fff;
 			}
 
+			&.linkedin {
+				color: #007bb6;
+			}
 			&.linkedin:hover {
 				background-color: #007bb6;
 				color: #fff;

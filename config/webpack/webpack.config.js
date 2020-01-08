@@ -1,8 +1,7 @@
 module.exports = {
   entry: '../javascript/packs/application.js',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(scss)$/,
         use: [{
           loader: 'style-loader', // inject CSS to page
@@ -22,17 +21,24 @@ module.exports = {
         }]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
+        test: /font-awesome\.config\.js/,
+        use: [{
+            loader: 'style-loader'
+          },
+          {
+            loader: 'font-awesome-loader'
+          }
+        ]
       },
       {
-          test: /\.js$/,
-          use: {
-              loader: 'babel-loader'
-          }
+        test: /\.js$/,
+        include: [
+          path.join(__dirname, 'node_modules', 'sticky-kit')
+        ],
+        use: [{
+          loader: 'imports-loader?jQuery=jquery,$=jquery,window=>global&window.jQuery=jquery,this=>window,define=>false'
+        }]
       }
-    ],
-  },
+    ]
+  }
 };
