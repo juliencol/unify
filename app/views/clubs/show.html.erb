@@ -15,7 +15,7 @@
         <p>Pas d'événements disponibles.</p>
       <% else %>
         <% @club.events.each do |event| %>
-          <%= link_to "#" do %>
+          <%= link_to "#!" do %>
           <div class="card-event">
             <img src=<%= event.image %>>
             <div class="card-event-infos">
