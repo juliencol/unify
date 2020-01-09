@@ -1,13 +1,6 @@
 .club-content {
-	display: flex;
 
 	.club-identity {
-		margin: 8px;
-		width: 20%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 
 		ul {
 			display: flex;
@@ -20,18 +13,9 @@
 	}
 
 	.club-feed {
-		margin: 8px;
-		width: 60%;
-		padding: 12px;
 	}
 
 	.club-buttons {
-		margin: 8px;
-		padding: 16px;
-		display: flex;
-		flex-direction: column;
-		margin: 8px;
-		width: 20%;
 
 		.subscribe-button {
 			width: 75%;

@@ -1,9 +1,9 @@
 <div class="container-fluid spacer cd-main-content">
 
-  <div class="row">
+  <div class="row no-gutters">
 
     <div class="col">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="width: 50vw; margin: 0 auto;">
+      <div id="carouselExampleControls" class="carousel slide overflow-hidden" data-ride="carousel" style="width: 100vw; height: 600px; margin: 0;">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80" alt="Premier slide">
@@ -12,6 +12,15 @@
             <img class="d-block w-100" src="https://visualhunt.com/photos/1/people-walking-towards-eiffel-tower-at-night.jpg?s=l" alt="Deuxième slide">
           </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-down" onclick="window.scrollTo({ top: 600, behavior: 'smooth' })">
+          <span class="fas fa-chevron-down" aria-hidden="true"></span>
+        </a>
       </div>
     </div>
 
@@ -19,18 +28,8 @@
 
   <div class="row">
 
-    <div class="col-3 text-center">
-      <div class="btn-group-vertical mt-5">
-        <h1 class="">Thèmes</h1>
-        <a class="btn btn-light mt-5 mb-4 border">Soirée</a>
-        <a class="btn btn-light mt-5 mb-4 border">Afterwork</a>
-        <a class="btn btn-light mt-5 mb-4 border">Conférence</a>
-      </div>
-    </div>
+    <div class="col-9 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start" data-sticky_parent>
 
-    <div class="col-6 mix-container">
-
-      <h1 class="mt-5">Events</h1>
       <% @events.each do |event| %>
 
         <div class="card card-cascade wider mt-4 mix <%= event.club.name.parameterize.underscore %>">
@@ -70,20 +69,67 @@
 
     </div>
 
-    <div class="col-3 controls">
-      <h1 class="mt-5">Abonnements</h1>
+    <div class="col-3 align-self-start text-center pb-4 bg-white" data-sticky_column>
+      <div class="btn-group-vertical mt-5 w-100">
+        <h3>Je cherche...</h3>
+        <div class="check-wrap w-100 d-flex mt-3 pl-4">
+          <button class="check">
+            <svg width="18px" height="18px" viewbox="0 0 18 18">
+              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </button>
+          <span class="ml-4">Soirée</span>
+        </div>
+        <div class="check-wrap w-100 d-flex mt-3 pl-4">
+          <button class="check">
+            <svg width="18px" height="18px" viewbox="0 0 18 18">
+              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </button>
+          <span class="ml-4">Afterwork</span>
+        </div>
+        <div class="check-wrap w-100 d-flex mt-3 pl-4">
+          <button class="check">
+            <svg width="18px" height="18px" viewbox="0 0 18 18">
+              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </button>
+          <span class="ml-4">Conférence</span>
+        </div>
+      </div>
 
-      <button type="button" data-mixitup-control class="control btn-primary mt-4" data-filter="all">Show all</button>
-      <% @clubs.each do |club| %>
-      <button type="button" data-mixitup-control class="control btn-primary mt-4" data-toggle=".<%=club.name.parameterize.underscore%>"><%=club.name%></button>
-      <% end %>
-
+      <div class="btn-group-vertical mt-5 controls w-100">
+        <h3>Proposé par...</h3>
+        <div class="check-wrap w-100 d-flex mt-3 pl-4">
+          <button type="button" data-mixitup-control="data-mixitup-control" class="check" data-filter="all">
+            <svg width="18px" height="18px" viewbox="0 0 18 18">
+              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </button>
+          <span class="ml-4">Toutes les assos</span>
+        </div>
+        <% @clubs.each do |club| %>
+          <div class="check-wrap w-100 d-flex mt-3 pl-4">
+            <button type="button" data-mixitup-control="data-mixitup-control" class="check" data-toggle=".<%=club.name.parameterize.underscore%>">
+              <svg width="18px" height="18px" viewbox="0 0 18 18">
+                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                <polyline points="1 9 7 14 15 4"></polyline>
+              </svg>
+            </button>
+            <span class="ml-4"><%=club.name%></span>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <!-- controls -->
 
   </div>
 
 </div>
 
 <%= javascript_pack_tag 'shared/search' %>
+<%= javascript_pack_tag 'shared/navbar' %>
 <%= javascript_pack_tag 'events/index' %>

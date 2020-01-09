@@ -10,10 +10,11 @@
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.4.1",
     "css-loader": "*",
-    "font-awesome": "^4.7.0",
+    "imports-loader": "^0.8.0",
     "jquery": "^3.4.1",
     "mixitup": "^3.3.1",
     "popper.js": "^1.16.0",
+    "sticky-kit": "^1.1.3",
     "style-loader": "*",
     "turbolinks": "^5.2.0"
   },

@@ -1,30 +1,32 @@
 <div class="container-fluid spacer">
-  <div class="d-flex flex-column text-center justify-content-center m-3 mb-3">
+  <div class="row text-center p-3 mb-3">
+    <div class="col">
       <h1 class="text-center mt-3">Associations</h1>
+    </div>
   </div>
-  <div class="row text-center d-flex flex-wrap justify-content-center">
+  <div class="row text-center">
+    <div class="col list-group flex-row flex-wrap justify-content-center">
       <% @clubs.each do |club| %>
-          <div>
-              <% if club == @bde %>
-                  <%= link_to club_bde_path(Club.where(name: "Genesis BDE")) do %>
-                      <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577281751/unify/512x512bb_rrfz2x.jpg", class:"club-logo" %>
-                  <% end %>
-                  <p class="text-center"><%= @bde.name %></p>
-              <% else %>
-                  <div>
-                      <% if club.logo.nil? || club.logo == "" %>
-                              <%= link_to club_path(club) do %>
-                                  <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
-                              <% end %>
-                      <% else %>
-                              <%= link_to club_path(club) do %>
-                                  <%= image_tag club.logo, class:"club-logo" %>
-                              <% end %>
-                      <% end %>
-                      <p class="text-center"><%= club.name %></p>
-                  </div>
+        <div class="list-group-item list-group-item-club">
+          <% if club == @bde %>
+            <%= link_to club_bde_path(Club.where(name: "Genesis BDE")) do %>
+              <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577281751/unify/512x512bb_rrfz2x.jpg", class:"club-logo" %>
+            <% end %>
+            <p class="text-center"><%= @bde.name %></p>
+          <% else %>
+            <% if club.logo.nil? || club.logo == "" %>
+              <%= link_to club_path(club) do %>
+                <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
               <% end %>
-          </div>
+            <% else %>
+              <%= link_to club_path(club) do %>
+                <%= image_tag club.logo, class:"club-logo" %>
+              <% end %>
+            <% end %>
+            <p class="text-center"><%= club.name %></p>
+          <% end %>
+        </div>
       <% end %>
+    </div>
   </div>
 </div>

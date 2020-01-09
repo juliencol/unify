@@ -91,7 +91,7 @@ $enable-hover-media-query:  false;
 //
 // Settings for the `<body>` element.
 
-$body-bg:       AliceBlue;
+$body-bg:       #FAFAFA;
 $body-color:    #212529;
 
 
@@ -154,5 +154,5 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
 }
 
 .spacer {
-  margin-top: 100px!important;
+  margin-top: 60px!important;
 }
