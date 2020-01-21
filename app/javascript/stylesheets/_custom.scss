@@ -123,6 +123,10 @@ $body-color:    #212529;
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
+.z-depth-inset {
+  box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5)!important;
+}
+
 a {
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;

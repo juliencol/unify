@@ -5,3 +5,15 @@ window.onscroll = () => {
     document.querySelector('.navbar').style.filter = 'drop-shadow(0 5px 20px rgba(0, 0, 0, 0))';
   }
 };
+
+document.querySelector("#search_name").onfocus = function () {
+  $("#search-form").css({
+    "width": "40vw",
+  });
+};
+
+document.querySelector("#search_name").onblur = function () {
+  $("#search-form").css({
+    "width": "25vw",
+  });
+};
