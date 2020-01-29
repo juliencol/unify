@@ -16,7 +16,8 @@
 	}
 
 	#search-form {
-		width: 30vw;
+		width: 25vw;
+		transition: width ease 0.5s;
 
 		@include media-breakpoint-between(xs,sm) {
 			width: 90vw;
@@ -27,14 +28,20 @@
 
 			#search_name {
 				width: 100%!important;
+				border-radius: .6em;
+				border: none;
+				background: rgb(226, 226, 226);
 
 				&::placeholder {
 				  font-size: 0.9rem;
-				  color: #aaa;
 
 					@include media-breakpoint-between(xs,sm) {
 						font-size: 0.8rem;
 					}
+				}
+
+				&:focus {
+					outline: none!important;
 				}
 			}
 		}
