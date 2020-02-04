@@ -1,7 +1,14 @@
 <%= image_tag @club.logo, class:"club-logo" %>
 <h3 class="text-center mb-3"><%= @club.name.upcase %></h3>
-<%= link_to "Evénements", club_path(@club) %>
-<%= link_to "Membres", club_members_path(@club) %>
-<%= link_to "Site web", @club.website_url, target:"_blank" unless @club.website_url.nil? %>
-<%= link_to "Instagram", @club.instagram_url, target:"_blank" unless @club.instagram_url.nil? %>
-<%= link_to "Linkedin", @club.linkedin_url, target:"_blank" unless @club.linkedin_url.nil? %>
+<%= link_to club_members_path(@club), class:"button members" do %>
+    <i class="fas fa-users">Membres</i>
+<% end %>
+<%= link_to @club.website_url, class:"button website", target:"_blank" do %>
+    <i class="fas fa-link"></i>
+<% end %>
+<%= link_to @club.instagram_url, class:"button instagram", target:"_blank" do %>
+    <i class="fab fa-instagram"></i>
+<% end %>
+<%= link_to @club.linkedin_url, class:"button linkedin", target:"_blank" do %>
+    <i class="fab fa-linkedin"></i>
+<% end %>

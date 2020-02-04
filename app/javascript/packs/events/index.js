@@ -11,9 +11,9 @@ var mixer = mixitup(containerEl, {
   }
 });
 
+require('sticky-kit/dist/sticky-kit');
 
-import 'sticky-kit/dist/sticky-kit';
-
+/*
 (function() {
 
     'use strict';
@@ -90,3 +90,4 @@ import 'sticky-kit/dist/sticky-kit';
     }, 250));
 
 })(window.jQuery);
+*/

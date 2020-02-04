@@ -3,13 +3,18 @@
   <div class="row no-gutters">
 
     <div class="col">
-      <div id="carouselExampleControls" class="carousel slide overflow-hidden" data-ride="carousel" style="width: 100vw; height: 600px; margin: 0;">
+      <div id="carouselExampleControls" class="carousel slide overflow-hidden" data-ride="carousel"
+        style="width: 100vw; height: 600px; margin: 0;">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80" alt="Premier slide">
+            <img class="d-block w-100"
+              src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"
+              alt="Premier slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="https://visualhunt.com/photos/1/people-walking-towards-eiffel-tower-at-night.jpg?s=l" alt="Deuxième slide">
+            <img class="d-block w-100"
+              src="https://visualhunt.com/photos/1/people-walking-towards-eiffel-tower-at-night.jpg?s=l"
+              alt="Deuxième slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -28,54 +33,15 @@
 
   <div class="row">
 
-    <div class="col-9 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start" data-sticky_parent>
-
-      <% @events.each do |event| %>
-
-        <div class="card card-cascade wider mt-4 mix <%= event.club.name.parameterize.underscore %>">
-
-          <!-- Card image -->
-          <div class="view view-cascade overlay">
-            <img src="<%= event.image%>" class="card-img-top" alt="...">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!-- Card content -->
-          <div class="card-body card-body-cascade text-center">
-
-            <!-- Title -->
-            <h4 class="card-title">
-              <strong><%= event.name %></strong>
-            </h4>
-            <!-- Subtitle -->
-            <h5 class="blue-text pb-2">
-              <strong>Proposé par
-                <%= event.club.name %></strong>
-            </h5>
-            <!-- Text -->
-            <p class="card-text"><%= event.short_description%></p>
-
-            <!-- Button -->
-            <a class="btn btn-secondary text-white">S'inscrire</a>
-
-          </div>
-
-          <!-- End Events Card -->
-        </div>
-
-      <% end %>
-
-    </div>
-
     <div class="col-3 align-self-start text-center pb-4 bg-white" data-sticky_column>
       <div class="btn-group-vertical mt-5 w-100">
-        <h3>Je cherche...</h3>
+        <h3>Thèmes</h3>
         <div class="check-wrap w-100 d-flex mt-3 pl-4">
           <button class="check">
             <svg width="18px" height="18px" viewbox="0 0 18 18">
-              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
               <polyline points="1 9 7 14 15 4"></polyline>
             </svg>
           </button>
@@ -84,7 +50,9 @@
         <div class="check-wrap w-100 d-flex mt-3 pl-4">
           <button class="check">
             <svg width="18px" height="18px" viewbox="0 0 18 18">
-              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
               <polyline points="1 9 7 14 15 4"></polyline>
             </svg>
           </button>
@@ -93,35 +61,94 @@
         <div class="check-wrap w-100 d-flex mt-3 pl-4">
           <button class="check">
             <svg width="18px" height="18px" viewbox="0 0 18 18">
-              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
               <polyline points="1 9 7 14 15 4"></polyline>
             </svg>
           </button>
           <span class="ml-4">Conférence</span>
         </div>
       </div>
+    </div>
+
+    <div class="col-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start"
+      data-sticky_parent>
+
+      <% @events.each do |event| %>
+
+      <div class="card card-cascade wider mt-5 mix <%= event.club.name.parameterize.underscore %>">
+
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img src="<%= event.image %>" class="card-img-top" alt="...">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+
+          <!-- Title -->
+          <h4 class="card-title">
+            <strong><%= event.name %></strong>
+          </h4>
+          <!-- Subtitle -->
+          <h5 class="blue-text pb-2">
+            <strong>Proposé par
+              <%= event.club.name %></strong>
+          </h5>
+          <!-- Text -->
+          <p class="card-text"><%= event.short_description %></p>
+
+          <!-- Button -->
+          <a href="#">
+            <button class="learn-more">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Voir plus</span>
+            </button>
+          </a>
+
+        </div>
+
+        <!-- End Events Card -->
+      </div>
+
+      <% end %>
+
+    </div>
+
+    <div class="col-3 align-self-start text-center pb-4 bg-white" data-sticky_column>
 
       <div class="btn-group-vertical mt-5 controls w-100">
-        <h3>Proposé par...</h3>
+        <h3>Associations</h3>
         <div class="check-wrap w-100 d-flex mt-3 pl-4">
-          <button type="button" data-mixitup-control="data-mixitup-control" class="check" data-filter="all">
+          <button type="button" data-mixitup-control class="check" data-filter="all">
             <svg width="18px" height="18px" viewbox="0 0 18 18">
-              <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
               <polyline points="1 9 7 14 15 4"></polyline>
             </svg>
           </button>
           <span class="ml-4">Toutes les assos</span>
         </div>
         <% @clubs.each do |club| %>
-          <div class="check-wrap w-100 d-flex mt-3 pl-4">
-            <button type="button" data-mixitup-control="data-mixitup-control" class="check" data-toggle=".<%=club.name.parameterize.underscore%>">
-              <svg width="18px" height="18px" viewbox="0 0 18 18">
-                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
-                <polyline points="1 9 7 14 15 4"></polyline>
-              </svg>
-            </button>
-            <span class="ml-4"><%=club.name%></span>
-          </div>
+        <div class="check-wrap w-100 d-flex mt-3 pl-4">
+          <button type="button" data-mixitup-control class="check"
+            data-toggle=".<%=club.name.parameterize.underscore%>">
+            <svg width="18px" height="18px" viewbox="0 0 18 18">
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </button>
+          <span class="ml-4"><%=club.name%></span>
+        </div>
         <% end %>
       </div>
     </div>
