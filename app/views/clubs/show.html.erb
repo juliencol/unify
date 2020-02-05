@@ -15,31 +15,51 @@
         <p>Pas d'événements disponibles.</p>
       <% else %>
         <% @club.events.each do |event| %>
-          <%= link_to "#!" do %>
-          <div class="card-event">
-            <img src=<%= event.image %>>
-            <div class="card-event-infos">
-              <h2><%= event.name %></h2>
-              <p class="card-event-text"><%= event.short_description %></p>
-              <% if event.price.nil? || event.price == 0 %>
-                <p>gratuit</p>
-              <% else %>
-                <p><%= event.price %>
-                  €</p>
-              <% end %>
+
+          <div class="card card-cascade wider mt-4">
+
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+              <img src="<%= event.image%>" class="card-img-top" alt="...">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
             </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+
+              <!-- Title -->
+              <h4 class="card-title">
+                <strong><%= event.name %></strong>
+              </h4>
+              <!-- Subtitle -->
+              <h5 class="blue-text pb-2">
+                <% if event.price.nil? || event.price == 0 %>
+                  <strong>Gratuit</strong>
+                <% else %>
+                  <strong><%= event.price %> €</strong>
+                <% end %>
+              </h5>
+              <!-- Text -->
+              <p class="card-text"><%= event.short_description%></p>
+
+
+            </div>
+
+            <!-- End Events Card -->
           </div>
+
         <% end %>
       <% end %>
-    <% end %>
+
+    </div>
+    <div class="col-3">
+
+      <%= render "clubs/shared/buttons" %>
+
+    </div>
 
   </div>
-  <div class="col-3">
-
-    <%= render "clubs/shared/buttons" %>
-
-  </div>
-
-</div>
 
 </div>

@@ -2,17 +2,105 @@
 
 	.club-identity {
 
-		ul {
-			display: flex;
-			flex-direction: column;
+		// Link icons
 
-			a {
-				color: black;
+		$btn-size: 90px;
+		$icon-size: 1.5em;
+		$sites: (
+			"members": $isep-bleu,
+			"website": $isep-jaune,
+			"instagram": #c13584,
+			"linkedin": #007bb6,
+		);
+
+		.animate {
+			transition: all .35s;
+			transition-timing-function: cubic-bezier(
+				0.310,
+				-0.105,
+				0.430,
+				1.590
+			)
+		}
+
+		.btn__inactive {
+		
+			&:before {
+				top: 90%;
+				left: -110%;
+			}
+			
+			svg {
+				transform: scale(.8);
+			}
+			
+			// variants
+			@each $name, $color in $sites {
+				
+				&.#{$name} {
+				
+					&:before {
+						background-color: $color;
+					}
+					
+					svg {
+						color: $color;
+					}
+				}
+			}
+		}
+
+		.btn__active {
+
+			&:before {
+				top: -10%;
+				left: -10%;
+			}
+
+			svg {
+				color: #fff;
+				transform: scale(1);
+			}
+		}
+
+		.button {
+			@extend .btn__inactive;
+			@extend .animate;
+			background-color: #fff;
+			width: $btn-size;
+			height: $btn-size;
+			line-height: $btn-size;
+			font-size: $icon-size;
+			margin: 10px 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			border-radius: 28%;
+			box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+			//overflow bug fix
+			opacity: .99;
+
+			&:before {
+				@extend .animate;
+				content: '';
+				width: 120%;
+				height: 120%;
+				position: absolute;
+				transform: rotate(45deg);
+			}
+
+			svg {
+				@extend .animate;
+				font-size: 38px;
+				vertical-align: middle;
+			}
+
+			&:focus,
+			&:hover {
+				@extend .btn__active;
 			}
 		}
 	}
-
-	.club-feed {}
 
 	.club-buttons {
 
