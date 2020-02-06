@@ -1,0 +1,13 @@
+.event-container {
+	display: flex;
+
+	.event-description {
+		width: 50%;
+		border: solid black 1px;
+	}
+
+	.event-map {
+		width: 50%;
+		border: solid black 1px;
+	}
+}
