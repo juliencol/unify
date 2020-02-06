@@ -8,4 +8,12 @@ class EventsController < ApplicationController
           @events = Event.where("name ILIKE ?", "%#{@name}%")
         end
     end
+
+    def show
+      @event = Event.find(params[:id])
+      @marker = {
+        lat: @event.latitude,
+        lng: @event.longitude
+      }
+    end
 end
