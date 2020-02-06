@@ -1,7 +1,0 @@
-<h1 class="text-center mt-3">Activités</h1>
-<% @activities.each do |activity| %>
-    <div class="activity text-center">
-        <%= link_to activity.trackable.club.name, activity.trackable.club %>
-        <%= render_activity activity %>
-    </div>
-<% end %>
