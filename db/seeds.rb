@@ -1,6 +1,5 @@
 puts "Cleaning database..."
 UserClub.destroy_all
-Subscriber.destroy_all
 User.destroy_all
 Club.destroy_all
 
@@ -16,9 +15,6 @@ julien_colombain = User.create!(
     classe: "G10B",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: julien_colombain.id
-)
 david_lamy = User.create!(
     first_name: "David",
     last_name: "Lamy",
@@ -29,9 +25,6 @@ david_lamy = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: david_lamy.id
 )
 dylan_hu = User.create!(
     first_name: "Dylan",
@@ -44,9 +37,6 @@ dylan_hu = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: dylan_hu.id
-)
 tom_sanitas = User.create!(
     first_name: "Tom",
     last_name: "Sanitas",
@@ -57,9 +47,6 @@ tom_sanitas = User.create!(
     section: "A2",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: tom_sanitas.id
 )
 maelle_jumel = User.create!(
     first_name: "Maëlle",
@@ -72,9 +59,6 @@ maelle_jumel = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: maelle_jumel.id
-)
 nathan_rolland = User.create!(
     first_name: "Nathan",
     last_name: "Rolland",
@@ -86,9 +70,6 @@ nathan_rolland = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: nathan_rolland.id
-)
 sarah_shobanbabu = User.create!(
     first_name: "Sarah",
     last_name: "Shobanbabu",
@@ -97,9 +78,6 @@ sarah_shobanbabu = User.create!(
     profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: sarah_shobanbabu.id
 )
 juliette_sebillotte = User.create!(
     first_name: "Juliette",
@@ -112,9 +90,6 @@ juliette_sebillotte = User.create!(
     classe: "P2B",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: juliette_sebillotte.id
-)
 clement_tisseau = User.create!(
     first_name: "Clément",
     last_name: "Tisseau",
@@ -125,9 +100,6 @@ clement_tisseau = User.create!(
     section: "P2",
     classe: "P2C",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: clement_tisseau.id
 )
 hugo_chemiller = User.create!(
     first_name: "Hugo",
@@ -140,9 +112,6 @@ hugo_chemiller = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: hugo_chemiller.id
-)
 constance_malgrain = User.create!(
     first_name: "Maëlle",
     last_name: "Jumel",
@@ -153,9 +122,6 @@ constance_malgrain = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: constance_malgrain.id
 )
 alaina_guiraud = User.create!(
     first_name: "Alaine",
@@ -168,9 +134,6 @@ alaina_guiraud = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: alaina_guiraud.id
-)
 billy_dosreis = User.create!(
     first_name: "Billy",
     last_name: "Dos Reis",
@@ -181,9 +144,6 @@ billy_dosreis = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: billy_dosreis.id
 )
 arthur_latourrette = User.create!(
     first_name: "Arthur",
@@ -196,9 +156,6 @@ arthur_latourrette = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: arthur_latourrette.id
-)
 ruben_groschtern = User.create!(
     first_name: "Ruben",
     last_name: "Groschtern",
@@ -209,9 +166,6 @@ ruben_groschtern = User.create!(
     section: "I2",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: ruben_groschtern.id
 )
 puts "Users were created successfully."
 
