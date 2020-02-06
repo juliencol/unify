@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pundit'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
