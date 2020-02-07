@@ -6,14 +6,16 @@ window.onscroll = () => {
   }
 };
 
-document.querySelector("#search_name").onfocus = function () {
-  $("#search-form").css({
-    "width": "40vw",
-  });
-};
+if (window.innerWidth > 900) {
+  document.querySelector("#search_name").onfocus = function () {
+    $("#search-form").css({
+      "width": "40vw",
+    });
+  };
 
-document.querySelector("#search_name").onblur = function () {
-  $("#search-form").css({
-    "width": "25vw",
-  });
+  document.querySelector("#search_name").onblur = function () {
+    $("#search-form").css({
+      "width": "25vw",
+    });
+  }
 };

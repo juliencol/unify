@@ -1,0 +1,326 @@
+/* Disable bootstrap style */
+.unset-button {
+    all: unset;
+}
+
+/* Effect 1: scale down, reveal */
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <a href="#">
+    <button class="learn-more">
+        <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">...</span>
+    </button>
+    </a>
+   ------------------------------- */
+
+.button-effect-1 {
+    .learn-more {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+        width: 12rem;
+        height: auto;
+
+        .circle {
+            @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: $isep-jaune;
+            border-radius: 1.625rem;
+
+            .icon {
+                @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #FFF;
+
+                &.arrow {
+                    @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: -0.25rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+
+        .button-text {
+            @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 1.85rem;
+            color: $black;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &:hover {
+        .circle {
+            width: 100%;
+
+            .icon {
+                &.arrow {
+                    background: $white;
+                    transform: translate(1rem, 0);
+                }
+            }
+        }
+
+        .button-text {
+            color: $white;
+        }
+    }
+
+    &:active {
+        transform: scale(.96);
+    }
+}
+
+/* Effect 2: color popping  */
+$color2: $isep-jaune;
+
+.button-effect-2 {
+    border: 2px solid $color2;
+    border-radius: 3rem;
+    color: $color2;
+    font-weight: 100;
+    overflow: hidden !important;
+    padding: .5rem 1rem;
+    position: relative;
+    text-decoration: none !important;
+    transition: .2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+
+    &::after {
+        background-color: $color2;
+        border-radius: 3rem;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-100%, 0) rotate(10deg);
+        transform-origin: top left;
+        transition: .2s transform ease-out;
+        will-change: transform;
+        z-index: -1;
+    }
+
+    &:hover::after {
+        transform: translate(0, 0);
+    }
+
+    &:hover {
+        border: 2px solid transparent;
+        color: #fff !important;
+        transform: scale(1.05);
+        will-change: transform;
+    }
+}
+
+/* Effect 3: social links */
+
+$btn-size: 5vw;
+$icon-size: 1.5em;
+$sites: ("members": $isep-bleu,
+    "website": $isep-jaune,
+    "instagram": #c13584,
+    "linkedin": #007bb6,
+);
+
+.animate {
+    transition: all .35s;
+    transition-timing-function: cubic-bezier(0.310,
+            -0.105,
+            0.430,
+            1.590)
+}
+
+.btn__inactive {
+
+    &:before {
+        top: 90%;
+        left: -110%;
+    }
+
+    svg {
+        transform: scale(.8);
+    }
+
+    // variants
+    @each $name,
+    $color in $sites {
+
+        &.#{$name} {
+
+            &:before {
+                background-color: $color;
+            }
+
+            svg {
+                color: $color;
+            }
+        }
+    }
+}
+
+.btn__active {
+
+    &:before {
+        top: -10%;
+        left: -10%;
+    }
+
+    svg {
+        color: #fff;
+        transform: scale(1);
+    }
+}
+
+.button-effect-3 {
+    @extend .btn__inactive;
+    @extend .animate;
+    background-color: #fff;
+    width: $btn-size;
+    height: $btn-size;
+    line-height: $btn-size;
+    font-size: $icon-size;
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden !important;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+    //overflow bug fix
+    opacity: .99;
+
+    &:before {
+        @extend .animate;
+        content: '';
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+
+    svg {
+        @extend .animate;
+        font-size: 1.4em;
+        vertical-align: middle;
+    }
+
+    &:focus,
+    &:hover {
+        @extend .btn__active;
+    }
+}
+
+/* Effect 4: Background expending on hover */
+/* ------------------------------------------
+   HTML Structure needed for this effect
+    <a class="button-effect-4">
+        <span>...</span>
+        <i class="fas ..."></i>
+    </a>
+   --------------------------------------- */
+$color4: $isep-jaune;
+
+.button-effect-4 {
+    all: unset;
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    text-decoration: none !important;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 28px;
+        background: rgba($color4, .5);
+        width: 56px;
+        height: 56px;
+        @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    }
+
+    span {
+        position: relative;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+
+    svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    }
+
+    &:hover {
+        color: white;
+
+        &:before {
+            width: 100%;
+            background: rgba($color4, 1);
+        }
+
+        svg {
+            transform: translateX(0);
+            color: white;
+        }
+    }
+
+    &:active {
+        transform: scale(.96);
+    }
+}

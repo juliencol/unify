@@ -1,15 +1,26 @@
 <div class="container-fluid spacer">
 
-  <div class="row club-content">
+  <div class="row">
 
     <%= render "clubs/shared/banner" %>
 
-    <div class="col-3 club-identity d-flex flex-column align-items-center">
+  </div>
+  <div class="row">
 
+    <div class="col-4 d-flex flex-row pt-3">
       <%= render "clubs/shared/links" %>
-
     </div>
-    <div class="col-6 club-feed">
+    <div class="col-4">
+      <%= render "clubs/shared/logo" %>
+    </div>
+    <div class="col-4 pt-3">
+      <%= render "clubs/shared/buttons" %>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col club-feed mt-5">
 
       <% if @club.events.nil? || @club.events == [] %>
         <p>Pas d'événements disponibles.</p>
@@ -20,7 +31,7 @@
 
             <!-- Card image -->
             <div class="view view-cascade overlay">
-              <img src="<%= event.image%>" class="card-img-top" alt="...">
+              <img src="<%= event.image %>" class="card-img-top" alt="...">
               <a href="#!">
                 <div class="mask rgba-white-slight"></div>
               </a>
@@ -42,7 +53,7 @@
                 <% end %>
               </h5>
               <!-- Text -->
-              <p class="card-text"><%= event.short_description%></p>
+              <p class="card-text"><%= event.short_description %></p>
 
 
             </div>
@@ -54,12 +65,9 @@
       <% end %>
 
     </div>
-    <div class="col-3">
-
-      <%= render "clubs/shared/buttons" %>
-
-    </div>
 
   </div>
 
 </div>
+
+<%= javascript_pack_tag 'shared/navbar' %>
