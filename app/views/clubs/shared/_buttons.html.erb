@@ -1,8 +1,13 @@
-<div class="club-buttons">
-    <%= link_to "S'abonner", "#", class:"btn btn-primary subscribe-button" %>
-    <% if @club.applications_open? %>
-        <%= link_to "Candidater", club_apply_path(@club), class:"btn btn-primary apply-button" %>
-    <% else %>
-        <p class="apply-button">Candidatures fermées pour l'instant</p>
-    <% end %>
-</div>
+<%= link_to "#", class:"subscribe-button button-effect-1" do %>
+    <button class="learn-more">
+        <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">S'abonner</span>
+    </button>
+<% end %>
+<% if @club.applications_open? %>
+    <%= link_to "Candidater", club_apply_path(@club), class:"apply-button button-effect-1", :"data-hover" => "Candidater" %>
+<% else %>
+    <p class="apply-button mt-2">Candidatures fermées pour l'instant</p>
+<% end %>

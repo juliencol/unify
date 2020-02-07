@@ -7,11 +7,11 @@
 	}
 
 	.navbar-toggler {
-  	border: none;
+		border: none;
 
 		&:focus {
 			outline: none;
-    	box-shadow: none;
+			box-shadow: none;
 		}
 	}
 
@@ -19,7 +19,7 @@
 		width: 25vw;
 		transition: width ease 0.5s;
 
-		@include media-breakpoint-between(xs,sm) {
+		@include media-breakpoint-between(xs, md) {
 			width: 90vw;
 		}
 
@@ -27,21 +27,21 @@
 			width: 100%;
 
 			#search_name {
-				width: 100%!important;
+				width: 100% !important;
 				border-radius: .6em;
 				border: none;
 				background: rgb(226, 226, 226);
 
 				&::placeholder {
-				  font-size: 0.9rem;
+					font-size: 0.9rem;
 
-					@include media-breakpoint-between(xs,sm) {
+					@include media-breakpoint-between(xs, md) {
 						font-size: 0.8rem;
 					}
 				}
 
 				&:focus {
-					outline: none!important;
+					outline: none !important;
 				}
 			}
 		}
