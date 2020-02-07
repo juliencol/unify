@@ -90,6 +90,7 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
+    geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-accept (1.7.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
+  geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)

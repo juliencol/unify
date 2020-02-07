@@ -1,6 +1,5 @@
 puts "Cleaning database..."
 UserClub.destroy_all
-Subscriber.destroy_all
 User.destroy_all
 Club.destroy_all
 
@@ -16,9 +15,6 @@ julien_colombain = User.create!(
     classe: "G10B",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: julien_colombain.id
-)
 david_lamy = User.create!(
     first_name: "David",
     last_name: "Lamy",
@@ -29,9 +25,6 @@ david_lamy = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: david_lamy.id
 )
 dylan_hu = User.create!(
     first_name: "Dylan",
@@ -44,9 +37,6 @@ dylan_hu = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: dylan_hu.id
-)
 tom_sanitas = User.create!(
     first_name: "Tom",
     last_name: "Sanitas",
@@ -57,9 +47,6 @@ tom_sanitas = User.create!(
     section: "A2",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: tom_sanitas.id
 )
 maelle_jumel = User.create!(
     first_name: "Maëlle",
@@ -72,9 +59,6 @@ maelle_jumel = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: maelle_jumel.id
-)
 nathan_rolland = User.create!(
     first_name: "Nathan",
     last_name: "Rolland",
@@ -86,9 +70,6 @@ nathan_rolland = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: nathan_rolland.id
-)
 sarah_shobanbabu = User.create!(
     first_name: "Sarah",
     last_name: "Shobanbabu",
@@ -97,9 +78,6 @@ sarah_shobanbabu = User.create!(
     profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: sarah_shobanbabu.id
 )
 juliette_sebillotte = User.create!(
     first_name: "Juliette",
@@ -112,9 +90,6 @@ juliette_sebillotte = User.create!(
     classe: "P2B",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: juliette_sebillotte.id
-)
 clement_tisseau = User.create!(
     first_name: "Clément",
     last_name: "Tisseau",
@@ -125,9 +100,6 @@ clement_tisseau = User.create!(
     section: "P2",
     classe: "P2C",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: clement_tisseau.id
 )
 hugo_chemiller = User.create!(
     first_name: "Hugo",
@@ -140,9 +112,6 @@ hugo_chemiller = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: hugo_chemiller.id
-)
 constance_malgrain = User.create!(
     first_name: "Maëlle",
     last_name: "Jumel",
@@ -153,9 +122,6 @@ constance_malgrain = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: constance_malgrain.id
 )
 alaina_guiraud = User.create!(
     first_name: "Alaine",
@@ -168,9 +134,6 @@ alaina_guiraud = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: alaina_guiraud.id
-)
 billy_dosreis = User.create!(
     first_name: "Billy",
     last_name: "Dos Reis",
@@ -181,9 +144,6 @@ billy_dosreis = User.create!(
     section: "A1",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: billy_dosreis.id
 )
 arthur_latourrette = User.create!(
     first_name: "Arthur",
@@ -196,9 +156,6 @@ arthur_latourrette = User.create!(
     classe: "",
     is_ndc: false
 )
-Subscriber.create!(
-    user_id: arthur_latourrette.id
-)
 ruben_groschtern = User.create!(
     first_name: "Ruben",
     last_name: "Groschtern",
@@ -209,9 +166,6 @@ ruben_groschtern = User.create!(
     section: "I2",
     classe: "",
     is_ndc: false
-)
-Subscriber.create!(
-    user_id: ruben_groschtern.id
 )
 puts "Users were created successfully."
 
@@ -530,72 +484,88 @@ Event.create!(
     club_id: genesis.id,
     name: "Soirée stylée",
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
+    long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
     image: "https://i.imgur.com/4xPcsx7.jpg",
     date: "",
     price: 20,
-    location: "chez Cyril Bennarosh"
+    location: "chez Cyril Bennarosh",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: genesis.id,
     name: "AW claqué au sol",
     short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://i.imgur.com/pauemHk.jpg",
     date: "",
     price: 20,
-    location: "dans un endroit claqué au sol"
+    location: "dans un endroit claqué au sol",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: hustle.id,
     name: "Startup Weekend de folie",
     short_description: "Cras porttitor enim id lorem accumsan, in interdum nibh feugiat. Sed consectetur, tortor quis facilisis dignissim, arcu nibh semper turpis, ac aliquet massa orci ac enim. Suspendisse vitae pulvinar orci, vel ornare odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur erat sem, consectetur sit amet sollicitudin sit amet, interdum id lorem. Ut sagittis dictum tempor. Sed ullamcorper, neque at dapibus tincidunt, urna odio bibendum justo, id rhoncus orci purus sed ipsum.",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "",
     price: 20,
-    location: "chez Cyril Bennarosh"
+    location: "chez Cyril Bennarosh",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: isep_alumni.id,
     name: "Conférence l'IA n'existe pas",
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://i.imgur.com/pauemHk.jpg",
     date: "",
     price: 20,
-    location: "N28"
+    location: "N28",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: junior_isep.id,
     name: "Workshop React",
     short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://i.imgur.com/4xPcsx7.jpg",
     date: "",
     price: 20,
-    location: "NDL"
+    location: "NDL",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: discover_isep.id,
     name: "Afterwork Shotgun ep. 2",
     short_description: "Quoi ? Tu pensais qu’on était déjà mort ?! Le seul truc mort chez Shotgun c’est les cadavres qu’on jette dans la Seine. Tu ne veux pas finir comme eux ? Alors viens à notre nouvel after jeudi 25 janvier chez Monsieur le zinc. Petit bar chill où l'on se sert comme dans une pompe à essence, rien de mieux pour déstresser et oublier le premier semestre. On vous attend nombreux et on compte sur vous pour enjailler le dancefloor. Monsieur le Zinc",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://iseplive.fr/api/storage/event/LJOfJHgkALfvBV0Jh92wbTys74XEfm.jpg",
     date: "25/01/2020",
     price: 20,
-    location: "13 rue monsieur le Prince 75006 PARIS"
+    location: "13 rue monsieur le Prince 75006 PARIS",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: hustle.id,
     name: "Cocktail Entrepreneurs",
     short_description: "Un cocktail c'est toujours sympa, ça l'est encore plus en compagnie d'entrepreneurs inspirants issus de l'ISEP. 🔥 Vous allez être ravi de l'ajouter à vos agendas: un évent mêlant entrepreneuriat et bon goût arrive à toute allure ⌛: Nous aurons l'immense plaisir d'accueillir Le Schoolab ainsi que quatre entrepreneurs passés par l'ISEP pour un événement inédit et hors-série: un cocktail entrepreneur. 🍸 Au menu: présentation de Schoolab et ses programmes (Starter, Le Bridge et autres pépites !), table ovale avec les quatre entrepreneurs alumnis qui partageront leurs expériences et parcours, et bien évidemment un buffet/cocktail pour clore le tout en beauté ! (sans alcool 🚫) En somme, du chaud brûlant en perspective 🔥",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://iseplive.fr/api/storage/event/SHA9OvO5AOIB0vaySR3LxbAHq8koVz.jpg",
     date: "20/02/2020",
     price: 20,
-    location: "NDC - N16"
+    location: "NDC - N16",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: move_your_as.id,
     name: "Afterwork AS",
     short_description: "Quoi de mieux qu'un afterwork à la rentrée ? L'AS vous invite à venir boire une (ou plusieurs 🍻) bières ou bien du ricard pour les amateurs ! Tout ça en regardant le match PSG-Réal ⚽🔥",
+    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://iseplive.fr/api/storage/event/UmBiEdnSSB8vzWhEJ0kMLHWiBG3pJr.jpg",
     date: "06/03/2020",
     price: 20,
-    location: "7 rue Gregoire des Tours 75006 PARIS"
+    location: "7 rue Gregoire des Tours 75006 PARIS",
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 puts "8 events were created successfully."

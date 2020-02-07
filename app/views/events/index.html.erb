@@ -103,15 +103,14 @@
           <p class="card-text"><%= event.short_description %></p>
 
           <!-- Button -->
-          <a href="#">
+          <%= link_to event_path(event.id) do %>
             <button class="learn-more">
               <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
               </span>
-              <span class="button-text">Voir plus</span>
+               <span class="button-text">Voir plus</span>
             </button>
-          </a>
-
+          <% end %>
         </div>
 
         <!-- End Events Card -->

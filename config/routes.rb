@@ -9,7 +9,7 @@ Rails.application.routes.draw do
                 }
   root to: 'events#index'
   resources :users, only: [:show]
-  resources :events, only: [:index]
+  resources :events, only: [:index, :show]
   resources :activities, only: [:index]
 
   resources :clubs, only: [:index, :show, :new, :create, :edit, :update] do
@@ -19,3 +19,4 @@ Rails.application.routes.draw do
   end
   get 'calendar', to: 'clubs#calendar', as: :calendar
 end
+

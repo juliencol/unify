@@ -25,188 +25,188 @@
 ---------------------------------------------------------------------- */
 
 .card {
-  &.card-image {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-  }
+	&.card-image {
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+	}
 
-  .card-data {
-    background-color: $isep-bleu;
-    color: #fff;
-    text-align: center;
-    height: auto;
-    padding: 10px;
+	.card-data {
+		background-color: $isep-bleu;
+		color: #fff;
+		text-align: center;
+		height: auto;
+		padding: 10px;
 
-    ul {
-      margin-bottom: 0;
-      font-size: 0.9rem;
+		ul {
+			margin-bottom: 0;
+			font-size: 0.9rem;
 
-      li {
-        display: inline;
+			li {
+				display: inline;
 
-        .fa-clock-o {
-          margin-left: 10px;
-        }
-      }
+				.fa-clock-o {
+					margin-left: 10px;
+				}
+			}
 
-      a {
-        color: #fff;
+			a {
+				color: #fff;
 
-        .fa {
-          margin-left: 5px;
-          margin-right: 3px;
-        }
-      }
-    }
-  }
-  &.card-cascade {
-    height: auto;
+				.fa {
+					margin-left: 5px;
+					margin-right: 3px;
+				}
+			}
+		}
+	}
+	&.card-cascade {
+		height: auto;
 
-    .view {
-      @extend .z-depth-2;
-      border-radius: 4px;
+		.view {
+			@extend .z-depth-2;
+			border-radius: 4px;
 
-      &.gradient-card-header {
-        padding: 1.6rem 1rem;
-        text-align: center;
-        @extend .text-white;
+			&.gradient-card-header {
+				padding: 1.6rem 1rem;
+				text-align: center;
+				@extend .text-white;
 
-        h2 {
-          font-weight: 400;
-        }
+				h2 {
+					font-weight: 400;
+				}
 
-        .btn-floating {
-          background-color: rgba(255, 255, 255, .2);
-        }
-      }
-    }
+				.btn-floating {
+					background-color: rgba(255, 255, 255, .2);
+				}
+			}
+		}
 
-    &.wider {
-      border: none;
-      background-color: transparent;
-      @extend .z-depth-0;
+		&.wider {
+			border: none;
+			background-color: transparent;
+			@extend .z-depth-0;
 
-      .view {
-        z-index: 2;
-      }
+			.view {
+				z-index: 2;
+			}
 
-      .card-body {
-        margin-left: 4%;
-        margin-right: 4%;
-        @extend .z-depth-1;
-        background: #fff;
-        z-index: 1;
-        border-radius: 0 0 0.3rem 0.3rem;
-      }
-    }
-    .activator {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 1rem;
-      margin-right: 10px;
-      font-size: 1.2rem;
-      @extend .text-dark;
-    }
+			.card-body {
+				margin-left: 4%;
+				margin-right: 4%;
+				@extend .z-depth-1;
+				background: #fff;
+				z-index: 1;
+				border-radius: 0 0 0.3rem 0.3rem;
+			}
+		}
+		.activator {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 1rem;
+			margin-right: 10px;
+			font-size: 1.2rem;
+			@extend .text-dark;
+		}
 
-    .btn-action {
-      margin: -23px 20px -23px auto;
-      background-color: $secondary;
-      height: 47px;
-      width: 47px;
-      line-height: 0;
+		.btn-action {
+			margin: -23px 20px -23px auto;
+			background-color: $secondary;
+			height: 47px;
+			width: 47px;
+			line-height: 0;
 
-      .fa {
-        font-size: 18px;
+			.fa {
+				font-size: 18px;
 
-        &.fa-chevron-right {
-          margin-top: 2px;
-          margin-left: 2px;
-        }
-      }
-    }
+				&.fa-chevron-right {
+					margin-top: 2px;
+					margin-left: 2px;
+				}
+			}
+		}
 
-    &.ovf-hidden {
-      overflow: hidden;
-    }
-  }
+		&.ovf-hidden {
+			overflow: hidden;
+		}
+	}
 }
-
 
 /* Controls
 ---------------------------------------------------------------------- */
 
 .check {
-  all: unset;
-  cursor: pointer;
-  position: relative;
-  width: 18px;
-  height: 18px;
-  -webkit-tap-highlight-color: transparent;
-  transform: translate3d(0,0,0);
+	all: unset;
+	cursor: pointer;
+	position: relative;
+	width: 18px;
+	height: 18px;
+	-webkit-tap-highlight-color: transparent;
+	transform: translate3d(0, 0, 0);
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -15px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(#223254,.03);
-    opacity: 0;
-    transition: opacity .2s ease;
-  }
-  svg {
-    position: relative;
-    z-index: 1;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #C8CCD4;
-    stroke-width: 1.5;
-    transform: translate3d(0,0,0);
-    transition: all .2s ease;
+	&:before {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: -15px;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: rgba(#223254, .03);
+		opacity: 0;
+		transition: opacity .2s ease;
+	}
+	svg {
+		position: relative;
+		z-index: 1;
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke: #c8ccd4;
+		stroke-width: 1.5;
+		transform: translate3d(0, 0, 0);
+		transition: all .2s ease;
 
-    path {
-      stroke-dasharray: 60;
-      stroke-dashoffset: 0;
-    }
-    polyline {
-      stroke-dasharray: 22;
-      stroke-dashoffset: 66;
-    }
-  }
+		path {
+			stroke-dasharray: 60;
+			stroke-dashoffset: 0;
+		}
+		polyline {
+			stroke-dasharray: 22;
+			stroke-dashoffset: 66;
+		}
+	}
 
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-    svg {
-      stroke: $isep-jaune;
-    }
-  }
-
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+		svg {
+			stroke: $isep-jaune;
+		}
+	}
 }
 
 .check.mixitup-control-active {
-  svg {
-    stroke: $isep-jaune;
+	svg {
+		stroke: $isep-jaune;
 
-    path {
-      stroke-dashoffset: 60;
-      transition: all .3s linear;
-    }
+		path {
+			stroke-dashoffset: 60;
+			transition: all .3s linear;
+		}
 
-    polyline {
-      stroke-dashoffset: 42;
-      transition: all .2s linear;
-      transition-delay: .15s;
-    }
-  }
+		polyline {
+			stroke-dashoffset: 42;
+			transition: all .2s linear;
+			transition-delay: .15s;
+		}
+	}
 }
 
 .check:focus {
-  outline: none;
+	outline: none;
 }
+
+@import "show";
