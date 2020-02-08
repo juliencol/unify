@@ -1,14 +1,20 @@
 import mixitup from "mixitup";
+import mixitupMultifilter from '../resources/mixitup-multifilter';
+
+mixitup.use(mixitupMultifilter);
 
 
 var containerEl = document.querySelector('.mix-container');
 var mixer = mixitup(containerEl, {
-  animation: {
-    duration: 300
-  },
-  selectors: {
-    control: '[data-mixitup-control]'
-  }
+    animation: {
+        duration: 300
+    },
+    selectors: {
+        control: '[data-mixitup-control]'
+    },
+    multifilter: {
+        enable: true
+    }
 });
 
 require('sticky-kit/dist/sticky-kit');
