@@ -98,8 +98,8 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.9.1)
-      activesupport (>= 4.2.0)
+    jbuilder (2.10.0)
+      activesupport (>= 5.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -142,7 +142,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
-    rack (2.1.2)
+    rack (2.2.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -258,6 +258,7 @@ DEPENDENCIES
   pundit
   rails (= 6.0.1)
   redis
+  responders
   sassc-rails
   simple_form
   spring

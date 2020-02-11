@@ -1,24 +1,24 @@
 /* Carousel
 ---------------------------------------------------------------------- */
 .carousel-control-down {
-  @extend .carousel-control-next;
-  top: auto;
-  flex-direction: column;
-  width: 100vw;
-  height: 20%;
-  cursor: pointer;
-  font-size: 25px;
+	@extend .carousel-control-next;
+	top: auto;
+	flex-direction: column;
+	width: 100vw;
+	height: 20%;
+	cursor: pointer;
+	font-size: 25px;
 
-  svg {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    color: white;
-  }
+	svg {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		color: white;
+	}
 }
 
 .force-full-width {
-  margin-left: -15px;
+	margin-left: -15px;
 }
 
 /* Events
@@ -60,6 +60,7 @@
 			}
 		}
 	}
+
 	&.card-cascade {
 		height: auto;
 
@@ -100,6 +101,7 @@
 				border-radius: 0 0 0.3rem 0.3rem;
 			}
 		}
+
 		.activator {
 			position: absolute;
 			top: 0;
@@ -157,6 +159,7 @@
 		opacity: 0;
 		transition: opacity .2s ease;
 	}
+
 	svg {
 		position: relative;
 		z-index: 1;
@@ -172,6 +175,7 @@
 			stroke-dasharray: 60;
 			stroke-dashoffset: 0;
 		}
+
 		polyline {
 			stroke-dasharray: 22;
 			stroke-dashoffset: 66;
@@ -182,6 +186,7 @@
 		&:before {
 			opacity: 1;
 		}
+
 		svg {
 			stroke: $isep-jaune;
 		}
@@ -207,6 +212,11 @@
 
 .check:focus {
 	outline: none;
+}
+
+.sticky-col-left,
+.sticky-col-right {
+	position: sticky;
 }
 
 @import "show";

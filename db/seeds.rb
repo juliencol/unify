@@ -475,6 +475,10 @@ UserClub.create!(
     user: maelle_jumel,
     club: hustle
 )
+UserClub.create!(
+    user: maelle_jumel,
+    club: move_your_as
+)
 puts "Clubs added to users successfully."
 
 

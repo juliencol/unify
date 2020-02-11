@@ -3,7 +3,7 @@
     all: unset;
 }
 
-/* Effect 1: scale down, reveal */
+/* Effect 1: arrow color reveal */
 /* -------------------------------
    HTML Structure needed for this effect:
 
@@ -163,6 +163,8 @@ $sites: ("members": $isep-bleu,
     "website": $isep-jaune,
     "instagram": #c13584,
     "linkedin": #007bb6,
+    "hustle": #C83738,
+    "move_your_as": #FFBECD,
 );
 
 .animate {
@@ -180,7 +182,8 @@ $sites: ("members": $isep-bleu,
         left: -110%;
     }
 
-    svg {
+    svg,
+    img {
         transform: scale(.8);
     }
 
@@ -210,6 +213,14 @@ $sites: ("members": $isep-bleu,
 
     svg {
         color: #fff;
+        transform: scale(1);
+    }
+
+    img {
+        filter: brightness(2) !important;
+        -webkit-filter: brightness(2) !important;
+        filter: grayscale(1) !important;
+        -webkit-filter: grayscale(1) !important;
         transform: scale(1);
     }
 }
@@ -244,6 +255,11 @@ $sites: ("members": $isep-bleu,
         @extend .animate;
         font-size: 1.4em;
         vertical-align: middle;
+    }
+
+    img {
+        @extend .animate;
+        width: 50px;
     }
 
     &:focus,
