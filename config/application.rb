@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Unify
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     config.generators do |generate|
           generate.assets false
           generate.helper false

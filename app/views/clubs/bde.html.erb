@@ -1,37 +1,101 @@
-<div class="banner" style="background-image: url(https://res.cloudinary.com/isep/image/upload/v1577378158/unify/default_background_gzzcap.jpg);">
-</div>
+<div class="container-fluid spacer">
 
-<div class="d-flex mt-3">
-    <div class="ml-5 pr-5 pl-5">
-        <%= image_tag @bde.logo, class:"club-logo" %>
-        <p class="text-center"><%= @bde.name.upcase %></p>
-        <ul>
-            <li>Projet Pédagogique</li>
-            <li>Evenements</li>
-            <li>Membres</li>
-            <li>Site web</li>
-            <li>Instagram</li>
-        </ul>
+  <div class="row">
+
+    <div class="banner" style="width: 100vw; background-image: url(https://hackernoon.com/hn-images/1*lEyU2zS2TBaOl_fbXqPChA.png); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;"></div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-lg-4 col-12">
+        <%= image_tag @bde.logo, class:"club-logo club-logo-page" %>
+        <h3 class="text-center mb-3 club-name"><%= @bde.name.upcase %></h3>
     </div>
-    
-    <div class="ml-5 mr-5 text-center pr-5 pl-5">
-        <% if @bde.events.nil? || @bde.events == [] %>
-            <p>Pas d'événements disponibles</p>
-        <% else %>
-            <% @bde.events.each do |event| %>
-                <div class="row d-flex justify-content-center mb-5">
-                    <div class="card mt-4" style="width: 50rem;">
-                        <img class ="mt-4 ml-4" src="<%=@bde.logo%>" style="width: 5rem;" alt="...">
-                        <div class="card-body">
-                            <img src="<%= event.image%>" class="card-img-top" style="width:30%; margin-top: -5rem" alt="...">
-                            <h5 class="card-title"><%= event.name %></h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Proposé par <%= @bde.name %></h6>
-                            <p class="card-text"><%= event.short_description%></p>
-                            <a href="#" class="btn btn-primary">S'inscrire</a>
-                        </div>
-                    </div>        
-                </div>
-            <% end %>
+    <div class="col-lg-4 col-6 d-flex flex-row pt-3 order-lg-first">
+        <%= link_to club_members_path(@bde) do %>
+            <div class="button-effect-3 members">
+                <i class="fas fa-users"></i>
+            </div>
+        <% end %>
+        <%= link_to @bde.website_url, target:"_blank" do %>
+            <div class="button-effect-3 website">
+                <i class="fas fa-link"></i>
+            </div>
+        <% end %>
+        <%= link_to @bde.instagram_url, target:"_blank" do %>
+            <div class="button-effect-3 instagram">
+                <i class="fab fa-instagram"></i>
+            </div>
+        <% end %>
+        <%= link_to @bde.linkedin_url, target:"_blank" do %>
+            <div class="button-effect-3 linkedin">
+                <i class="fab fa-linkedin"></i>
+            </div>
         <% end %>
     </div>
+    <div class="col-lg-4 col-6 pt-3">
+        <%= link_to "#", class:"subscribe-button button-effect-1" do %>
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">S'abonner</span>
+            </button>
+        <% end %>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col club-feed mt-5 d-flex flex-row justify-content-between">
+
+      <% if @bde.events.nil? || @bde.events == [] %>
+        <p>Pas d'événements disponibles.</p>
+      <% else %>
+        <% @bde.events.each do |event| %>
+
+          <div class="card card-cascade wider mt-4">
+
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+              <img src="<%= event.image %>" class="card-img-top" alt="...">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+
+              <!-- Title -->
+              <h4 class="card-title">
+                <strong><%= event.name %></strong>
+              </h4>
+              <!-- Subtitle -->
+              <h5 class="blue-text pb-2">
+                <% if event.price.nil? || event.price == 0 %>
+                  <strong>Gratuit</strong>
+                <% else %>
+                  <strong><%= event.price %> €</strong>
+                <% end %>
+              </h5>
+              <!-- Text -->
+              <p class="card-text"><%= event.short_description %></p>
+
+
+            </div>
+
+            <!-- End Events Card -->
+          </div>
+
+        <% end %>
+      <% end %>
+
+    </div>
+
+  </div>
+
 </div>
+
+<%= javascript_pack_tag 'shared/navbar' %>
+

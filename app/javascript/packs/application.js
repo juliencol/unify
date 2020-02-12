@@ -21,5 +21,7 @@ require('@fortawesome/fontawesome-free/js/all');
 require('../stylesheets/application');
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { initMapbox } from '../plugins/init_mapbox';
+import {
+    initMapbox
+} from '../plugins/init_mapbox';
 initMapbox();

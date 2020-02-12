@@ -1,33 +1,49 @@
-<div class="container center info-group mt-5 mb-5">
-  <div class="row align-items-center pt-5">
-    <div class="col-xl avatar-group">
-      <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
-        <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
-      <% else %>
-        <%= image_tag current_user.profile_picture, class: "avatar" %>
-      <% end %>
-    </div>
-    <div class="col-xl">
-      <h1><%= @user.first_name %> <%= @user.last_name %> </h1>
-      <p><%= @user.email %></p>
-      <p><%= @user.promotion %></p>
-      <p><%= @user.section %></p>
-    </div>
-    <div class="col-xl">
-      <% if @user.clubs.nil? || @user.clubs == [] %>
-        <p>Membre d'aucune association</p>
-      <% else %>
-        <h3>Associations</h3>
-        <% @user.clubs.each do |club| %>
-          <%= link_to club.name, club_path(club) %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <button type="button" class="btn btn-primary profile-btn" data-toggle="modal" data-target="#editProfile">Modifier mon profil</button>
+<%= render "users/shared/background" %>
+
+<div class="container-fluid spacer">
+  <div class="row user-row">
+    <div class="col col-lg-6 offset-lg-3 mt-5 bg-white z-depth-1-half user-group">
+        <div class="profile-picture d-flex justify-content-center">
+          <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+            <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
+          <% else %>
+            <%= image_tag current_user.profile_picture, class: "avatar-img" %>
+          <% end %>
+        </div>
+        <div class="infos text-center pb-3">
+          <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+          <ul>
+            <li><span>Mail ISEP : </span><%= @user.email %></li>
+            <li><span>Promo : </span><%= @user.promotion %></li>
+            <li><span>Section : </span><%= @user.section %></li>
+          </ul>
+        </div>
+        <% if @user.clubs.nil? || @user.clubs == [] %>
+          <p class="text-center">Membre d'aucune association</p>
+        <% else %>
+          <h3 class="text-center">Associations</h3>
+          <div class="assos d-flex justify-content-center pb-3">
+            <% @user.clubs.each do |club| %>
+                <%= link_to club_path(club), :title => club.name do %>
+                  <div class="button-effect-3 <%= club.name.parameterize.underscore %>">
+                      <%= image_tag club.logo, class:"club-logo" %>
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+          <% end %>
+        <div class="button-effect-1 text-center pb-3">
+          <button type="button" data-toggle="modal" data-target="#editProfile" class="learn-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Éditer</span>
+          </button>
+        </div>
+      </div>
   </div>
 </div>
+
 
 <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -39,11 +55,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="container center">
-          <div class="row">
+        <div>
+          <div class="">
             <h3>Modifier ma photo de profil<h3>
           </div>
-          <div class="row justify-content-center">
+          <div class="">
             <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
               <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
             <% else %>
@@ -51,10 +67,10 @@
             <% end %>
             <button type="button" class="btn modal-btn col-xl-6 offset-xl-2 download-picture">Télécharger une photo</button>
           </div>
-          <div class="row mt-5 justify-content-center">
+          <div class="mt-5">
             <button type="button" class="btn modal-btn"><%= link_to "Modifier mon mot de passe", "#" %></button>
           </div>
-          <div class="row mt-5 justify-content-center">
+          <div class="mt-5">
             <button type="button" class="btn profile-btn"><%= link_to "Enregistrer", "#" %></button>
           </div>
         </div>
@@ -62,3 +78,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'shared/navbar' %>

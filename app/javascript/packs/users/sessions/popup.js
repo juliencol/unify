@@ -1,10 +1,7 @@
-const target = document.querySelector('.forgot-password'),
-      input = document.querySelector('#resource_password');
+function forgotPopupIn() {
+  document.querySelector('.forgot-password').classList.add('focused');
+}
 
-input.onfocus = function () {
-  target.classList.add('focused');
-};
-
-input.onblur = function () {
-  target.classList.remove('focused');
-};
+function forgotPopupOut() {
+  document.querySelector('.forgot-password').classList.remove('focused');
+}

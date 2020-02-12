@@ -1,8 +1,23 @@
 .club-logo-page {
 	margin-top: -20px;
+
+	@include media-breakpoint-between(xs, lg) {
+		margin-top: 0;
+	}
+
 	filter: drop-shadow(0 -5px 1px rgba(0, 0, 0, 0.2));
 }
 
 .club-name {
 	font-weight: 900;
+}
+
+.club-feed {
+	.card {
+		width: 48vw;
+
+		@include media-breakpoint-between(xs, lg) {
+			width: 98vw;
+		}
+	}
 }

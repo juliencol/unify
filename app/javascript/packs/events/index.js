@@ -1,93 +1,62 @@
+/* Filtering events */
 import mixitup from "mixitup";
+import mixitupMultifilter from '../resources/mixitup-multifilter';
+
+mixitup.use(mixitupMultifilter);
 
 
 var containerEl = document.querySelector('.mix-container');
 var mixer = mixitup(containerEl, {
-  animation: {
-    duration: 300
-  },
-  selectors: {
-    control: '[data-mixitup-control]'
-  }
+    animation: {
+        duration: 300
+    },
+    selectors: {
+        control: '[data-mixitup-control]'
+    },
+    multifilter: {
+        enable: true
+    }
 });
 
-require('sticky-kit/dist/sticky-kit');
+/* Fixed sidebars */
+import ScrollMagic from 'scrollmagic';
+import 'gsap';
 
-/*
-(function() {
+const events = document.querySelector(".mix-container"),
+    leftSidebar = document.querySelector(".sticky-col-left"),
+    rightSidebar = document.querySelector(".sticky-col-right"),
+    offset = document.querySelector(".navbar").offsetHeight;
 
-    'use strict';
+const controller = new ScrollMagic.Controller();
+const scene_left = new ScrollMagic.Scene({
+    triggerElement: leftSidebar,
+    triggerHook: 0,
+    offset: -offset,
+    duration: getDuration(leftSidebar)
+}).setPin(leftSidebar).addTo(controller);
 
-    function activeStickyKit() {
-        $('[data-sticky_column]').stick_in_parent({
-            parent: '[data-sticky_parent]'
+const scene_right = new ScrollMagic.Scene({
+    triggerElement: rightSidebar,
+    triggerHook: 0,
+    offset: -offset,
+    duration: getDuration(rightSidebar)
+}).setPin(rightSidebar).addTo(controller);
+
+// in your projects, you might want to debounce resize event for better performance
+window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        scene_left.setPin(leftSidebar, {
+            pushFollowers: false
         });
-
-        // bootstrap col position
-        $('[data-sticky_column]')
-        .on('sticky_kit:bottom', function(e) {
-            $(this).parent().css('position', 'static');
-        })
-        .on('sticky_kit:unbottom', function(e) {
-            $(this).parent().css('position', 'relative');
+        scene_right.setPin(rightSidebar, {
+            pushFollowers: false
         });
-    };
-    activeStickyKit();
-
-    function detachStickyKit() {
-        $('[data-sticky_column]').trigger("sticky_kit:detach");
-    };
-
-    //  stop sticky kit
-    //  based on your window width
-
-    var screen = 768;
-
-    var windowHeight, windowWidth;
-    windowWidth = $(window).width();
-    if ((windowWidth < screen)) {
-        detachStickyKit();
     } else {
-        activeStickyKit();
+        scene_left.removePin(leftSidebar, true);
+        scene_right.removePin(rightSidebar, true);
     }
+});
 
-    // windowSize
-    // window resize
-    function windowSize() {
-        windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
-        windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-
-    }
-    windowSize();
-
-    // Returns a function, that, as long as it continues to be invoked, will not
-    // be triggered. The function will be called after it stops being called for
-    // N milliseconds. If `immediate` is passed, trigger the function on the
-    // leading edge, instead of the trailing.
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
-            var later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
-    $(window).resize(debounce(function(){
-        windowSize();
-        $(document.body).trigger("sticky_kit:recalc");
-        if (windowWidth < screen) {
-            detachStickyKit();
-        } else {
-            activeStickyKit();
-        }
-    }, 250));
-
-})(window.jQuery);
-*/
+function getDuration(target) {
+    return events.offsetHeight - target.offsetHeight;
+}

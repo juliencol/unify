@@ -3,7 +3,7 @@
     all: unset;
 }
 
-/* Effect 1: scale down, reveal */
+/* Effect 1: arrow color reveal */
 /* -------------------------------
    HTML Structure needed for this effect:
 
@@ -159,12 +159,12 @@ $color2: $isep-jaune;
 
 /* Effect 3: social links */
 
-$btn-size: 5vw;
-$icon-size: 1.5em;
 $sites: ("members": $isep-bleu,
     "website": $isep-jaune,
     "instagram": #c13584,
     "linkedin": #007bb6,
+    "hustle": #C83738,
+    "move_your_as": #FFBECD,
 );
 
 .animate {
@@ -182,7 +182,8 @@ $sites: ("members": $isep-bleu,
         left: -110%;
     }
 
-    svg {
+    svg,
+    img {
         transform: scale(.8);
     }
 
@@ -214,16 +215,24 @@ $sites: ("members": $isep-bleu,
         color: #fff;
         transform: scale(1);
     }
+
+    img {
+        filter: brightness(2) !important;
+        -webkit-filter: brightness(2) !important;
+        filter: grayscale(1) !important;
+        -webkit-filter: grayscale(1) !important;
+        transform: scale(1);
+    }
 }
 
 .button-effect-3 {
     @extend .btn__inactive;
     @extend .animate;
     background-color: #fff;
-    width: $btn-size;
-    height: $btn-size;
-    line-height: $btn-size;
-    font-size: $icon-size;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 30px;
     margin: 0 10px;
     text-align: center;
     position: relative;
@@ -248,9 +257,30 @@ $sites: ("members": $isep-bleu,
         vertical-align: middle;
     }
 
+    img {
+        @extend .animate;
+        width: 50px;
+    }
+
     &:focus,
     &:hover {
         @extend .btn__active;
+    }
+
+    @include media-breakpoint-between(xs, md) {
+        width: 54px;
+        height: 54px;
+        line-height: 54px;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+        width: 65px;
+        height: 65px;
+        line-height: 65px;
+        font-size: 25px;
+        margin: 0;
     }
 }
 

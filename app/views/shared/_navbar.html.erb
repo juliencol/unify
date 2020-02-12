@@ -7,21 +7,25 @@
   </button>
 
   <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
-    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline mr-auto my-2 my-lg-0', id: 'search-form' } do |f| %>
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline mr-auto my-2 my-lg-0 d-flex flex-row', id: 'search-form' } do |f| %>
+      <i class="fas fa-search"></i>
       <%= f.input :name,
                   label: false,
                   class: "form-control form-control-sm mr-sm-2",
                   input_html: {value: ""},
-                  placeholder: "Rechercher une association ou un événement" %>
+                  placeholder: "Rechercher un événement" %>
     <% end %>
     <ul class="navbar-nav align-items-lg-center">
-      <li class="nav-item">
+      <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+        <%= link_to "Events", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item <%= 'active' if current_page?(calendar_path) %>">
         <%= link_to "Calendrier", calendar_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= 'active' if current_page?(clubs_path) %>">
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= 'active' if current_page?(club_bde_path(Club.where(name: "Genesis BDE"))) %>">
         <%= link_to "BDE", club_bde_path(Club.where(name: "Genesis BDE")), class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
