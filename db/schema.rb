@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_194012) do
+ActiveRecord::Schema.define(version: 2020_02_13_173028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_194012) do
     t.string "banner"
     t.float "latitude"
     t.float "longitude"
-    t.string "address"
     t.boolean "is_free"
     t.index ["club_id"], name: "index_events_on_club_id"
   end

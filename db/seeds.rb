@@ -494,7 +494,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: genesis.id,
@@ -505,7 +504,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "dans un endroit claqué au sol",
-    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: hustle.id,
@@ -516,7 +514,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: isep_alumni.id,
@@ -527,7 +524,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "N28",
-    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: junior_isep.id,
@@ -538,7 +534,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "NDL",
-    address: "28 Rue Notre Dame des Champs, Paris",
 )
 Event.create!(
     club_id: discover_isep.id,
@@ -549,7 +544,6 @@ Event.create!(
     date: "25/01/2020",
     price: 20,
     location: "13 rue monsieur le Prince 75006 PARIS",
-    address: "28 Rue Notre Dame des Champs, Paris",
 )
 Event.create!(
     club_id: hustle.id,
@@ -560,7 +554,6 @@ Event.create!(
     date: "20/02/2020",
     price: 20,
     location: "NDC - N16",
-    address: "28 Rue Notre Dame des Champs, Paris",
 )
 Event.create!(
     club_id: move_your_as.id,
@@ -570,7 +563,6 @@ Event.create!(
     image: "https://iseplive.fr/api/storage/event/UmBiEdnSSB8vzWhEJ0kMLHWiBG3pJr.jpg",
     date: "06/03/2020",
     price: 20,
-    location: "7 rue Gregoire des Tours 75006 PARIS",
-    address: "28 Rue Notre Dame des Champs, Paris",
+    location: "7 rue Gregoire des Tours 75006 PARIS"
 )
 puts "8 events were created successfully."
