@@ -2,6 +2,7 @@ puts "Cleaning database..."
 UserClub.destroy_all
 User.destroy_all
 Club.destroy_all
+Event.destroy_all
 
 puts "Creating users..."
 julien_colombain = User.create!(
@@ -493,8 +494,7 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "soiree"
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: genesis.id,
@@ -505,8 +505,7 @@ Event.create!(
     date: "",
     price: 20,
     location: "dans un endroit claqué au sol",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: hustle.id,
@@ -517,8 +516,7 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: isep_alumni.id,
@@ -529,8 +527,7 @@ Event.create!(
     date: "",
     price: 20,
     location: "N28",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "conference"
+    address: "28 Rue Notre Dame des Champs, Paris"
 )
 Event.create!(
     club_id: junior_isep.id,
@@ -542,7 +539,6 @@ Event.create!(
     price: 20,
     location: "NDL",
     address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "workshop"
 )
 Event.create!(
     club_id: discover_isep.id,
@@ -554,7 +550,6 @@ Event.create!(
     price: 20,
     location: "13 rue monsieur le Prince 75006 PARIS",
     address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
 )
 Event.create!(
     club_id: hustle.id,
@@ -566,7 +561,6 @@ Event.create!(
     price: 20,
     location: "NDC - N16",
     address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "soiree"
 )
 Event.create!(
     club_id: move_your_as.id,
@@ -578,6 +572,5 @@ Event.create!(
     price: 20,
     location: "7 rue Gregoire des Tours 75006 PARIS",
     address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
 )
 puts "8 events were created successfully."
