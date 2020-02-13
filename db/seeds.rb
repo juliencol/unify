@@ -1,8 +1,16 @@
 puts "Cleaning database..."
 UserClub.destroy_all
+puts "UserClub instances were deleted successfully."
 User.destroy_all
-Club.destroy_all
+puts "User instances were deleted successfully."
+EventTheme.destroy_all
+puts "EventTheme instances were deleted successfully."
 Event.destroy_all
+puts "Event instances were deleted successfully."
+Theme.destroy_all
+puts "Themes instances were deleted successfully."
+Club.destroy_all
+puts "Club instances were deleted successfully."
 
 puts "Creating users..."
 julien_colombain = User.create!(
@@ -485,7 +493,7 @@ puts "Clubs added to users successfully."
 
 
 puts "Creating 8 events..."
-Event.create!(
+genesis_party = Event.create!(
     club_id: genesis.id,
     name: "Soirée stylée",
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
@@ -566,3 +574,27 @@ Event.create!(
     location: "7 rue Gregoire des Tours 75006 PARIS"
 )
 puts "8 events were created successfully."
+
+
+puts "Creating some themes..."
+conferences = Theme.create!(
+    title: "conférences"
+)
+parties = Theme.create!(
+    title: "soirées"
+)
+workshops = Theme.create!(
+    title: "workshops"
+)
+afterworks = Theme.create!(
+    title: "afterworks"
+)
+puts "Themes were created successfully."
+
+
+puts "Adding theme to events..."
+EventTheme.create!(
+    event: genesis_party,
+    theme: parties
+)
+puts "Themes were added to events sucessfully."

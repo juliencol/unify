@@ -1,0 +1,2 @@
+class EventsThemesController < ApplicationController
+end
