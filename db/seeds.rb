@@ -1,7 +1,16 @@
 puts "Cleaning database..."
 UserClub.destroy_all
+puts "UserClub instances were deleted successfully."
 User.destroy_all
+puts "User instances were deleted successfully."
+EventTheme.destroy_all
+puts "EventTheme instances were deleted successfully."
+Event.destroy_all
+puts "Event instances were deleted successfully."
+Theme.destroy_all
+puts "Themes instances were deleted successfully."
 Club.destroy_all
+puts "Club instances were deleted successfully."
 
 puts "Creating users..."
 julien_colombain = User.create!(
@@ -484,7 +493,7 @@ puts "Clubs added to users successfully."
 
 
 puts "Creating 8 events..."
-Event.create!(
+genesis_party = Event.create!(
     club_id: genesis.id,
     name: "Soirée stylée",
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
@@ -493,8 +502,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "soiree"
 )
 Event.create!(
     club_id: genesis.id,
@@ -505,8 +512,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "dans un endroit claqué au sol",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
 )
 Event.create!(
     club_id: hustle.id,
@@ -517,8 +522,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "chez Cyril Bennarosh",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
 )
 Event.create!(
     club_id: isep_alumni.id,
@@ -529,8 +532,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "N28",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "conference"
 )
 Event.create!(
     club_id: junior_isep.id,
@@ -541,8 +542,6 @@ Event.create!(
     date: "",
     price: 20,
     location: "NDL",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "workshop"
 )
 Event.create!(
     club_id: discover_isep.id,
@@ -553,8 +552,6 @@ Event.create!(
     date: "25/01/2020",
     price: 20,
     location: "13 rue monsieur le Prince 75006 PARIS",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
 )
 Event.create!(
     club_id: hustle.id,
@@ -565,8 +562,6 @@ Event.create!(
     date: "20/02/2020",
     price: 20,
     location: "NDC - N16",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "soiree"
 )
 Event.create!(
     club_id: move_your_as.id,
@@ -576,8 +571,30 @@ Event.create!(
     image: "https://iseplive.fr/api/storage/event/UmBiEdnSSB8vzWhEJ0kMLHWiBG3pJr.jpg",
     date: "06/03/2020",
     price: 20,
-    location: "7 rue Gregoire des Tours 75006 PARIS",
-    address: "28 Rue Notre Dame des Champs, Paris",
-    theme: "afterwork"
+    location: "7 rue Gregoire des Tours 75006 PARIS"
 )
 puts "8 events were created successfully."
+
+
+puts "Creating some themes..."
+conferences = Theme.create!(
+    title: "conférences"
+)
+parties = Theme.create!(
+    title: "soirées"
+)
+workshops = Theme.create!(
+    title: "workshops"
+)
+afterworks = Theme.create!(
+    title: "afterworks"
+)
+puts "Themes were created successfully."
+
+
+puts "Adding theme to events..."
+EventTheme.create!(
+    event: genesis_party,
+    theme: parties
+)
+puts "Themes were added to events sucessfully."
