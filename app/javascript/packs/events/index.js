@@ -42,16 +42,9 @@ const scene_right = new ScrollMagic.Scene({
     duration: getDuration(rightSidebar)
 }).setPin(rightSidebar).addTo(controller);
 
-// in your projects, you might want to debounce resize event for better performance
+// mobile support
 window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        scene_left.setPin(leftSidebar, {
-            pushFollowers: false
-        });
-        scene_right.setPin(rightSidebar, {
-            pushFollowers: false
-        });
-    } else {
+    if (window.matchMedia("(max-width: 768px)").matches) {
         scene_left.removePin(leftSidebar, true);
         scene_right.removePin(rightSidebar, true);
     }
@@ -59,4 +52,9 @@ window.addEventListener("resize", () => {
 
 function getDuration(target) {
     return events.offsetHeight - target.offsetHeight;
+}
+
+if (events.offsetHeight < leftSidebar.offsetHeight || events.offsetHeight < rightSidebar.offsetHeight) {
+    scene_left.removePin(leftSidebar, true);
+    scene_right.removePin(rightSidebar, true);
 }
