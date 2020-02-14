@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
     def index
         @events = Event.all
+        @themes = Theme.all
         @clubs = Club.all
         @search = params["search"]
         if @search.present?
