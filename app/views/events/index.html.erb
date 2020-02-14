@@ -34,21 +34,22 @@
   <div class="row">
 
     <div class="col-3 align-self-start text-center pb-4 bg-white">
-      <div class="sticky-col-left align-self-start">
-        <div class="btn-group-vertical mt-5 w-100" data-filter-group>
+      <div class="sticky-col-left">
+        <div class="btn-group-vertical mt-5 controls w-100" data-filter-group>
           <h3>Thèmes</h3>
           <% @themes.each do |theme| %>
-            <div class="check-wrap w-100 d-flex mt-3 pl-4">
-              <button class="check" data-mixitup-control data-toggle=".soiree">
-                <svg width="18px" height="18px" viewbox="0 0 18 18">
-                  <path
-                    d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
-                  </path>
-                  <polyline points="1 9 7 14 15 4"></polyline>
-                </svg>
-              </button>
-              <span class="ml-4"><%= theme.title.capitalize %></span>
-            </div>
+          <div class="check-wrap w-100 d-flex mt-3 pl-4">
+            <button type="button" data-mixitup-control class="check"
+              data-toggle=".<%= theme.title.parameterize.underscore %>">
+              <svg width="18px" height="18px" viewbox="0 0 18 18">
+                <path
+                  d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                </path>
+                <polyline points="1 9 7 14 15 4"></polyline>
+              </svg>
+            </button>
+            <span class="ml-4"><%= theme.title.capitalize %></span>
+          </div>
           <% end %>
         </div>
       </div>
@@ -57,41 +58,42 @@
     <div class="col-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
 
       <% @events.each do |event| %>
-      <div class="card card-cascade wider mt-5 mix <%= event.club.name.parameterize.underscore %> <%= event.themes %>">
 
-        <!-- Card image -->
-        <div class="view view-cascade overlay">
-          <img src="<%= event.image %>" class="card-img-top" alt="...">
+        <div class="card card-cascade wider mt-5 mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= event.theme %><% end %>">
+
+          <!-- Card image -->
+          <div class="view view-cascade overlay">
+            <img src="<%= event.image %>" class="card-img-top" alt="...">
+          </div>
+
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+
+            <!-- Title -->
+            <h4 class="card-title">
+              <strong><%= event.name %></strong>
+            </h4>
+            <!-- Subtitle -->
+            <h5 class="blue-text pb-2">
+              <strong>Proposé par
+                <%= event.club.name %></strong>
+            </h5>
+            <!-- Text -->
+            <p class="card-text"><%= event.short_description %></p>
+
+            <!-- Button -->
+            <%= link_to event_path(event.id), class:"button-effect-1" do %>
+              <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Voir plus</span>
+              </button>
+            <% end %>
+          </div>
+
+          <!-- End Events Card -->
         </div>
-
-        <!-- Card content -->
-        <div class="card-body card-body-cascade text-center">
-
-          <!-- Title -->
-          <h4 class="card-title">
-            <strong><%= event.name %></strong>
-          </h4>
-          <!-- Subtitle -->
-          <h5 class="blue-text pb-2">
-            <strong>Proposé par
-              <%= event.club.name %></strong>
-          </h5>
-          <!-- Text -->
-          <p class="card-text"><%= event.short_description %></p>
-
-          <!-- Button -->
-          <%= link_to event_path(event.id), class:"button-effect-1" do %>
-            <button class="learn-more">
-              <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-              </span>
-               <span class="button-text">Voir plus</span>
-            </button>
-          <% end %>
-        </div>
-
-        <!-- End Events Card -->
-      </div>
 
       <% end %>
 
