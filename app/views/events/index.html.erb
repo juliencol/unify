@@ -33,7 +33,7 @@
 
   <div class="row">
 
-    <div class="col-3 align-self-start text-center pb-4 bg-white">
+    <div class="col-2 align-self-start text-center pb-4 bg-white">
       <div class="sticky-col-left">
         <div class="btn-group-vertical mt-5 controls w-100" data-filter-group>
           <h3>Thèmes</h3>
@@ -55,51 +55,66 @@
       </div>
     </div>
 
-    <div class="col-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
+    <div class="col-8 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
 
       <% @events.each do |event| %>
 
-        <div class="card card-cascade wider mt-5 mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= event.theme %><% end %>">
-
-          <!-- Card image -->
-          <div class="view view-cascade overlay">
-            <img src="<%= event.image %>" class="card-img-top" alt="...">
+        <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %><% end %>">
+    
+          <div class="event-header">
+            <div class="event-cover" style="background: url(<%= event.image %>);">
+              <%= link_to club_path(event.club.id) do %>
+                <div class="event-author">
+                  <div class="event-author-logo"><%= image_tag event.club.logo %></div>
+                  <h3><%= event.club.name %></h3>
+                </div>
+              <% end %>
+            </div>
           </div>
 
-          <!-- Card content -->
-          <div class="card-body card-body-cascade text-center">
-
-            <!-- Title -->
-            <h4 class="card-title">
-              <strong><%= event.name %></strong>
-            </h4>
-            <!-- Subtitle -->
-            <h5 class="blue-text pb-2">
-              <strong>Proposé par
-                <%= event.club.name %></strong>
-            </h5>
-            <!-- Text -->
-            <p class="card-text"><%= event.short_description %></p>
-
-            <!-- Button -->
-            <%= link_to event_path(event.id), class:"button-effect-1" do %>
-              <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"></span>
+          <div class="event-body">
+            <div class="event-title">
+              <h1><%= link_to event.name, event_path(event.id) %></h1>
+            </div>
+            <div class="event-summary">
+              <p><%= event.short_description %></p>
+            </div>
+            <div class="event-tags">
+              <ul>
+                <% event.themes.each do |theme| %>
+                  <li><a href="#"><%= theme.title.capitalize %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="event-footer">
+            <ul>
+              <li class="event-date"><%= event.date %></li>
+              <li class="comments">
+                <i class="fas fa-euro-sign icon-euro"></i>
+                <span class="numero">
+                  <% if event.price.nil? || event.price == 0 %>
+                    <span>Gratuit</span>
+                  <% else %>
+                    <span><%= event.price %></span>
+                  <% end %>
                 </span>
-                <span class="button-text">Voir plus</span>
-              </button>
-            <% end %>
+              </li>
+              <li class="participants">
+                <i class="fas fa-user-check icon-user"></i>
+                <span class="numero">12</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- End Events Card -->
         </div>
 
       <% end %>
 
     </div>
 
-    <div class="col-3 align-self-start text-center pb-4 bg-white">
+    <div class="col-2 align-self-start text-center pb-4 bg-white">
       <div class="sticky-col-right">
         <div class="btn-group-vertical mt-5 controls w-100" data-filter-group>
           <h3>Associations</h3>
