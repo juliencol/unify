@@ -158,6 +158,15 @@ $color2: $isep-jaune;
 }
 
 /* Effect 3: social links */
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <%= link_to ... do %>
+        <div class="button-effect-3 ...">
+            <i class="fas fa-..."></i>
+        </div>
+    <% end %>
+   ------------------------------- */
 
 $sites: ("members": $isep-bleu,
     "website": $isep-jaune,

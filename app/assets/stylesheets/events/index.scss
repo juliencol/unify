@@ -27,11 +27,10 @@
 // event container
 //-------------------------
 .event-container {
+	@extend .z-depth-1;
 	flex-direction: column;
 	background: #fff;
 	border-radius: 5px;
-	box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
-	font-family: "adelle-sans", sans-serif;
 	font-weight: 100;
 	margin: 48px auto;
 	width: 20rem;
@@ -211,13 +210,76 @@
 
 }
 
+/* Sidebar
+---------------------------------------------------------------------- */
 
+#main-content {
+	.col-2 {
+		padding: 0 !important;
+		padding-right: 10px;
+	}
+}
+
+.sidebar {
+	will-change: min-height;
+}
+
+.sidebar__left,
+.sidebar__right {
+	width: 100%;
+	padding-top: 1rem;
+	transform: translate(0, 0);
+	/* For browsers don't support translate3d. */
+	transform: translate3d(0, 0, 0);
+	will-change: position, transform;
+}
 
 /* Controls
 ---------------------------------------------------------------------- */
 
+.check-wrap {
+	width: 90%;
+	background: white;
+	border-radius: 12px;
+	padding: .75rem .2rem;
+	position: relative;
+	overflow: hidden;
+	@extend .z-depth-1;
+	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+	&:after {
+		content: '';
+		height: 120%;
+		width: 0%;
+		top: -10%;
+		right: -10%;
+		border-radius: 28%;
+		background: $isep-bleu;
+		position: absolute;
+		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+	}
+
+	span {
+		z-index: 2;
+	}
+
+	&.checked {
+
+		span {
+			color: white !important;
+		}
+
+		&:after {
+			width: 120%;
+			border-radius: 0;
+
+		}
+	}
+}
+
 .check {
 	all: unset;
+	z-index: 2;
 	cursor: pointer;
 	position: relative;
 	width: 18px;
@@ -272,6 +334,7 @@
 }
 
 .check.mixitup-control-active {
+
 	svg {
 		stroke: $isep-jaune;
 
@@ -290,11 +353,6 @@
 
 .check:focus {
 	outline: none;
-}
-
-.sticky-col-left,
-.sticky-col-right {
-	position: sticky;
 }
 
 @import "show";

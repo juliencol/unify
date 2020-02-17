@@ -1,4 +1,6 @@
-/* Filtering events */
+/* Filtering events
+---------------------------------------------------------------------- */
+
 import mixitup from "mixitup";
 import mixitupMultifilter from '../resources/mixitup-multifilter';
 
@@ -15,46 +17,50 @@ var mixer = mixitup(containerEl, {
     },
     multifilter: {
         enable: true
+    },
+    callbacks: {
+        onMixEnd: function (state) {
+            sidebar_left.updateSticky();
+            sidebar_right.updateSticky();
+            if (mixitup.totalMatching < 2) {
+                sidebar_left.destroy();
+                sidebar_right.destroy();
+            }
+        }
     }
 });
 
-/* Fixed sidebars */
-import ScrollMagic from 'scrollmagic';
-import 'gsap';
+/* Fixed sidebars
+---------------------------------------------------------------------- */
 
-const events = document.querySelector(".mix-container"),
-    leftSidebar = document.querySelector(".sticky-col-left"),
-    rightSidebar = document.querySelector(".sticky-col-right"),
-    offset = document.querySelector(".navbar").offsetHeight;
+import 'sticky-sidebar';
 
-const controller = new ScrollMagic.Controller();
-const scene_left = new ScrollMagic.Scene({
-    triggerElement: leftSidebar,
-    triggerHook: 0,
-    offset: -offset,
-    duration: getDuration(leftSidebar)
-}).setPin(leftSidebar).addTo(controller);
+const offset = document.querySelector(".navbar").offsetHeight + 10,
+    events = document.querySelector(".mix-container"),
+    leftSidebar = document.querySelector("#sidebar__left"),
+    rightSidebar = document.querySelector("#sidebar__right");
 
-const scene_right = new ScrollMagic.Scene({
-    triggerElement: rightSidebar,
-    triggerHook: 0,
-    offset: -offset,
-    duration: getDuration(rightSidebar)
-}).setPin(rightSidebar).addTo(controller);
-
-// mobile support
-window.addEventListener("resize", () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        scene_left.removePin(leftSidebar, true);
-        scene_right.removePin(rightSidebar, true);
-    }
+var sidebar_right = new StickySidebar('#sidebar__right', {
+    containerSelector: '#main-content',
+    innerWrapperSelector: '.sidebar__right',
+    topSpacing: offset,
+    bottomSpacing: 50,
 });
 
-function getDuration(target) {
-    return events.offsetHeight - target.offsetHeight;
-}
+var sidebar_left = new StickySidebar('#sidebar__left', {
+    containerSelector: '#main-content',
+    innerWrapperSelector: '.sidebar__left',
+    topSpacing: offset,
+    bottomSpacing: 50
+});
 
-if (events.offsetHeight < leftSidebar.offsetHeight || events.offsetHeight < rightSidebar.offsetHeight) {
-    scene_left.removePin(leftSidebar, true);
-    scene_right.removePin(rightSidebar, true);
-}
+/* Controls
+---------------------------------------------------------------------- */
+
+$("[data-mixitup-control]").on('click', function () {
+    if ($(this).hasClass("mixitup-control-active")) {
+        $(this).parent().removeClass("checked");
+    } else {
+        $(this).parent().addClass("checked");
+    }
+});

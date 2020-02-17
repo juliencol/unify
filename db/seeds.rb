@@ -499,7 +499,7 @@ genesis_party = Event.create!(
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
     long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
     image: "https://i.imgur.com/4xPcsx7.jpg",
-    date: "15/11/2019",
+    date: "15/11/2019 22:00",
     price: 20,
     location: "chez Cyril Bennarosh",
 )
@@ -509,7 +509,7 @@ Event.create!(
     short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     image: "https://i.imgur.com/pauemHk.jpg",
-    date: "21/11/2019",
+    date: "21/11/2019 18:30",
     price: 20,
     location: "dans un endroit claqué au sol",
 )
