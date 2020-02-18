@@ -20,45 +20,56 @@
   </div>
   <div class="row">
 
-    <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center">
+    <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
 
       <% if @club.events.nil? || @club.events == [] %>
         <p>Pas d'événements disponibles.</p>
       <% else %>
         <% @club.events.each do |event| %>
 
-          <div class="card card-cascade wider mt-4">
-
-            <!-- Card image -->
-            <div class="view view-cascade overlay">
-              <img src="<%= event.image %>" class="card-img-top" alt="...">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
+          <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %><% end %>">
+      
+            <div class="event-header">
+              <div class="event-cover" style="background: url(<%= event.image %>);">
+              </div>
             </div>
 
-            <!-- Card content -->
-            <div class="card-body card-body-cascade text-center">
-
-              <!-- Title -->
-              <h4 class="card-title">
-                <strong><%= event.name %></strong>
-              </h4>
-              <!-- Subtitle -->
-              <h5 class="blue-text pb-2">
-                <% if event.price.nil? || event.price == 0 %>
-                  <strong>Gratuit</strong>
-                <% else %>
-                  <strong><%= event.price %> €</strong>
-                <% end %>
-              </h5>
-              <!-- Text -->
-              <p class="card-text"><%= event.short_description %></p>
-
-
+            <div class="event-body">
+              <div class="event-title">
+                <h2><%= link_to event.name, event_path(event.id) %></h2>
+              </div>
+              <div class="event-summary">
+                <p><%= event.short_description %></p>
+              </div>
+              <div class="event-tags">
+                <ul>
+                  <% event.themes.each do |theme| %>
+                    <li><a href="#"><%= theme.title.capitalize %></a></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="event-footer">
+              <ul>
+                <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
+                <li class="comments">
+                  <i class="fas fa-euro-sign icon-euro"></i>
+                  <span class="numero">
+                    <% if event.price.nil? || event.price == 0 %>
+                      <span>Gratuit</span>
+                    <% else %>
+                      <span><%= event.price %></span>
+                    <% end %>
+                  </span>
+                </li>
+                <li class="participants">
+                  <i class="fas fa-user-check icon-user"></i>
+                  <span class="numero">12</span>
+                </li>
+              </ul>
             </div>
 
-            <!-- End Events Card -->
           </div>
 
         <% end %>

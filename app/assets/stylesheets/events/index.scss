@@ -71,7 +71,7 @@
 
 .event-author {
 	margin: 0 auto;
-	padding-top: .5rem;
+	padding-top: .75rem;
 	width: 80%;
 	display: flex;
 
@@ -89,7 +89,7 @@
 
 	h3 {
 		color: #fff;
-		font-weight: 100;
+		font-weight: 300;
 	}
 }
 
@@ -100,11 +100,12 @@
 	width: 80%;
 
 	.event-title {
-		margin: .25rem 0;
+		margin: .5rem 0;
 
-		h1 a {
+		h2 a {
 			color: #333;
-			font-weight: 100;
+			font-weight: 600;
+			text-transform: uppercase;
 
 			&:hover {
 				color: $isep-jaune;
@@ -114,6 +115,7 @@
 
 	.event-summary p {
 		color: lighten(#333, 10%);
+		font-weight: 200 !important;
 	}
 
 	.event-tags {
@@ -259,13 +261,14 @@
 		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
 	}
 
-	span {
+	h6 {
 		z-index: 2;
+		font-weight: 400 !important;
 	}
 
 	&.checked {
 
-		span {
+		h6 {
 			color: white !important;
 		}
 

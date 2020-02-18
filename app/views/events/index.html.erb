@@ -49,7 +49,7 @@
                   <polyline points="1 9 7 14 15 4"></polyline>
                 </svg>
               </button>
-              <span class="ml-4"><%= theme.title.capitalize %></span>
+              <h6 class="ml-4"><%= theme.title.capitalize %></h6>
             </div>
             <% end %>
           </div>
@@ -76,7 +76,7 @@
 
           <div class="event-body">
             <div class="event-title">
-              <h1><%= link_to event.name, event_path(event.id) %></h1>
+              <h2><%= link_to event.name, event_path(event.id) %></h2>
             </div>
             <div class="event-summary">
               <p><%= event.short_description %></p>
@@ -132,7 +132,7 @@
                   <polyline points="1 9 7 14 15 4"></polyline>
                 </svg>
               </button>
-              <span class="ml-4"><%=club.name%></span>
+              <h6 class="ml-4"><%=club.name%></h6>
             </div>
             <% end %>
           </div>

@@ -18,9 +18,9 @@
 
 // Keyframes
 @mixin keyframes($animation-name) {
-@keyframes #{$animation-name} {
-  @content;
-}
+  @keyframes #{$animation-name} {
+    @content;
+  }
 }
 
 //animations
@@ -50,27 +50,28 @@ $isep-gris: rgba(226, 226, 226, 1);
 // Color system
 //
 
-$theme-colors: (
-  primary: $isep-bleu,
+$theme-colors: (primary: $isep-bleu,
   secondary: $isep-jaune,
 );
 
 
 // FONTS
-@import url("https://fonts.googleapis.com/css?family=Inria+Serif|Questrial|Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Istok+Web:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900&display=swap");
 
 // Define fonts for body and headers
-$body-font: 'Raleway', sans-serif;
-$headers-font: 'Questrial', sans-serif;
+$body-font: 'Listok Web',
+sans-serif;
+$headers-font: 'Montserrat',
+sans-serif;
 
 
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
+$font-family-sans-serif: $body-font;
+$headings-font-family: $headers-font;
 $font-size-base: 1rem;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
+$border-radius: 2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
@@ -82,17 +83,17 @@ $border-radius-sm: 2px;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-shadows:            true;
-$enable-gradients:          false;
-$enable-hover-media-query:  false;
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-hover-media-query: false;
 
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:       #FAFAFA;
-$body-color:    #212529;
+$body-bg: #FAFAFA;
+$body-color: #212529;
 
 
 .z-depth-0 {
@@ -124,7 +125,7 @@ $body-color:    #212529;
 }
 
 .z-depth-inset {
-  box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5)!important;
+  box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.5) !important;
 }
 
 a {
@@ -132,20 +133,22 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   color: inherit;
   text-decoration: none;
 }
 
 //Disabled cursor
 .disabled {
-  cursor: not-allowed!important;
+  cursor: not-allowed !important;
 }
 
 .flex-center {
   ul {
-    list-style-type:none;
-    padding:0;
+    list-style-type: none;
+    padding: 0;
   }
 }
 
@@ -158,5 +161,5 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
 }
 
 .spacer {
-  margin-top: 60px!important;
+  margin-top: 60px !important;
 }
