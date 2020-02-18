@@ -54,6 +54,17 @@ var sidebar_left = new StickySidebar('#sidebar__left', {
     bottomSpacing: 50
 });
 
+// mobile
+//-------------------------
+
+$(".toggle-filters").on('click', function () {
+    $(this).parent().toggleClass("filters-shown");
+
+    if ($(".mobile-filters").hasClass("filters-shown")) {
+        $("#main-content").css("overflow", "hidden")
+    }
+});
+
 /* Controls
 ---------------------------------------------------------------------- */
 

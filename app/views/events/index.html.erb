@@ -3,8 +3,7 @@
   <div class="row no-gutters force-full-width">
 
     <div class="col">
-      <div id="carouselExampleControls" class="carousel slide overflow-hidden" data-ride="carousel"
-        style="width: 100vw; height: 600px; margin: 0;">
+      <div id="carouselEvents" class="carousel slide overflow-hidden" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100"
@@ -33,7 +32,7 @@
 
   <div class="row" id="main-content">
 
-    <div class="col-2 align-self-start text-center">
+    <div class="col-lg-2 d-none d-lg-block align-self-start text-center">
       <div class="sidebar" id="sidebar__left">
         <div class="sidebar__left">
           <h3>Thèmes</h3>
@@ -57,7 +56,7 @@
       </div>
     </div>
 
-    <div class="col-8 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
+    <div class="col col-lg-8 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
 
       <% @events.each do |event| %>
 
@@ -116,7 +115,7 @@
 
     </div>
 
-    <div class="col-2 align-self-start text-center">
+    <div class="col-lg-2 d-none d-lg-block align-self-start text-center">
       <div class="sidebar" id="sidebar__right">
         <div class="sidebar__right">
           <h3>Associations</h3>
@@ -138,6 +137,54 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="col-10 col-md-6 d-lg-none mobile-filters bg-white">
+
+      <button class="toggle-filters">
+        <i class="far fa-check-square"></i>
+      </button>
+    
+      <div class="sidebar__left">
+        <h3>Thèmes</h3>
+        <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
+          <% @themes.each do |theme| %>
+          <div class="check-wrap d-flex mt-3 pl-4">
+            <button type="button" data-mixitup-control class="check"
+              data-toggle=".<%= theme.title.parameterize.underscore %>">
+              <svg width="18px" height="18px" viewbox="0 0 18 18">
+                <path
+                  d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                </path>
+                <polyline points="1 9 7 14 15 4"></polyline>
+              </svg>
+            </button>
+            <h6 class="ml-4"><%= theme.title.capitalize %></h6>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="sidebar__right">
+        <h3>Associations</h3>
+        <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
+          <% @clubs.each do |club| %>
+          <div class="check-wrap d-flex mt-3 pl-4">
+            <button type="button" data-mixitup-control class="check"
+              data-toggle=".<%=club.name.parameterize.underscore%>">
+              <svg width="18px" height="18px" viewbox="0 0 18 18">
+                <path
+                  d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                </path>
+                <polyline points="1 9 7 14 15 4"></polyline>
+              </svg>
+            </button>
+            <h6 class="ml-4"><%=club.name%></h6>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
 
   </div>
