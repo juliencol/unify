@@ -1,5 +1,19 @@
 /* Carousel
 ---------------------------------------------------------------------- */
+#carouselEvents {
+	width: 100vw;
+	height: 600px;
+	margin: 0;
+
+	@include media-breakpoint-between(xs, sm) {
+		height: 200px;
+	}
+
+	@include media-breakpoint-between(sm, md) {
+		height: 400px;
+	}
+}
+
 .carousel-control-down {
 	@extend .carousel-control-next;
 	top: auto;
@@ -67,11 +81,19 @@
 	border-radius: 5px 5px 0 0;
 	height: 350px;
 	box-shadow: inset hsla(0, 0, 0, .2) 0 64px 64px 16px;
+
+	@include media-breakpoint-between(xs, sm) {
+		height: 150px;
+	}
+
+	@include media-breakpoint-between(sm, md) {
+		height: 200px;
+	}
 }
 
 .event-author {
 	margin: 0 auto;
-	padding-top: .5rem;
+	padding-top: .75rem;
 	width: 80%;
 	display: flex;
 
@@ -89,7 +111,7 @@
 
 	h3 {
 		color: #fff;
-		font-weight: 100;
+		font-weight: 300;
 	}
 }
 
@@ -100,11 +122,12 @@
 	width: 80%;
 
 	.event-title {
-		margin: .25rem 0;
+		margin: .5rem 0;
 
-		h1 a {
+		h2 a {
 			color: #333;
-			font-weight: 100;
+			font-weight: 600;
+			text-transform: uppercase;
 
 			&:hover {
 				color: $isep-jaune;
@@ -114,6 +137,7 @@
 
 	.event-summary p {
 		color: lighten(#333, 10%);
+		font-weight: 200 !important;
 	}
 
 	.event-tags {
@@ -214,7 +238,7 @@
 ---------------------------------------------------------------------- */
 
 #main-content {
-	.col-2 {
+	.col-lg-2 {
 		padding: 0 !important;
 		padding-right: 10px;
 	}
@@ -233,6 +257,56 @@
 	transform: translate3d(0, 0, 0);
 	will-change: position, transform;
 }
+
+// mobile
+//-------------------------
+.mobile-filters {
+	z-index: 100;
+	position: fixed;
+	top: 50px;
+	left: 200%;
+	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+	.toggle-filters {
+		all: unset;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		width: 46px;
+		height: 46px;
+		line-height: 46px;
+		font-size: 18px;
+		text-align: center;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+		&:active {
+			color: $isep-jaune;
+			transform: translateY(2px);
+		}
+	}
+
+	&.filters-shown {
+		left: 20%;
+		max-height: 100%;
+		overflow-y: scroll;
+
+		.toggle-filters {
+			right: 82%;
+		}
+
+		@include media-breakpoint-between(md, lg) {
+			left: 50%;
+
+			.toggle-filters {
+				right: 52%;
+			}
+		}
+	}
+}
+
 
 /* Controls
 ---------------------------------------------------------------------- */
@@ -259,13 +333,14 @@
 		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
 	}
 
-	span {
+	h6 {
 		z-index: 2;
+		font-weight: 400 !important;
 	}
 
 	&.checked {
 
-		span {
+		h6 {
 			color: white !important;
 		}
 

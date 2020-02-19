@@ -9,11 +9,11 @@
 }
 
 .club-name {
-	font-weight: 900;
+	font-weight: 600;
 }
 
 .club-feed {
-	.card {
+	.event-container {
 		width: 48vw;
 
 		@include media-breakpoint-between(xs, lg) {
