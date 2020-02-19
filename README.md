@@ -1,7 +1,21 @@
 # Project description
 Unify is a web application for isep students. Its main goal is to manage school events.
 
-# Rails Setup
+# Setup
+<table>
+  <tr>
+    <td>
+      <a href="macOS.md">
+        <img src="images/apple.png" alt="macOS" />
+      </a>
+    </td>
+    <td>
+      <a href="UBUNTU.md">
+        <img src="images/linux.png" alt="Ubuntu" />
+      </a>
+    </td>
+  </tr>
+</table>
 ### Install Ruby (on MacOS)
 Make sure you have homebrew. If not install it [here](https://brew.sh/). </br>
 Now let's get rbenv and ruby-build packages from Homebrew, they'll be useful.
