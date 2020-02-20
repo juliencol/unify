@@ -52,26 +52,39 @@ git pull origin master
 git checkout -b sexy-feature
 ```
 
-4. Make sure all your gems, packages and the database are up to date. </br>
+4. Make sure all your packages are up to date. </br>
 ```bash
-bundle install
 yarn install
-rails db:create db:migrate
 ```
 
-5. Take the time to code your feature. Then push your branch to github. Don't hesitate to commit many times.
+5. Make sure all your gems are up to date. </br>
+```bash
+bundle install
+```
+
+6. Make sure the database is up to date. </br>
+```bash
+rails db:seed
+rails db:schema:load
+```
+If it's the first time you're working on the project you'll have to create the database by runnin 
+```bash
+rails db:create
+```
+
+7. Take the time to code your feature. Then push your branch to github. Don't hesitate to commit many times.
 ```bash
 git add .
 git commit -m "sexy feature added"
 git push origin sexy-feature
 ```
 
-6. Open a pull request on github. Don't forget to add a description message to explain your changes. </br>
+9. Open a pull request on github. Don't forget to add a description message to explain your changes. </br>
 
-7. Wait for someone on the team to review and merge your code. Then, delete the branch. 
+9. Wait for someone on the team to review and merge your code. Then, delete the branch. 
 ```bash
 git checkout master
 git pull origin master
 git sweep
 ```
-8. Take a break and be proud of yourself. You're the best! 
+10. Take a break and be proud of yourself. You're the best! 
