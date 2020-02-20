@@ -20,18 +20,18 @@ You can skip this step if you're working in a environment with already Rails set
 
 # Project setup
 
-### Clone the repository
+Clone the repository
 ```bash
 git clone git@github.com:juliencol/unify.git
 ```
 
-### Create the .env file to store api keys (do this once)
+Create the .env file to store api keys (do this once)
 ```bash 
 touch .env
 echo  '.env*' >> .gitignore
 ``` 
 
-### Host a local server
+Host a local server
 ```bash 
 rails s
 ```
@@ -67,7 +67,7 @@ bundle install
 rails db:seed
 rails db:schema:load
 ```
-If it's the first time you're working on the project you'll have to create the database by runnin 
+If it's the first time you're working on the project you'll have to create the database by running 
 ```bash
 rails db:create
 ```
