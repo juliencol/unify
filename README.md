@@ -79,7 +79,7 @@ git commit -m "sexy feature added"
 git push origin sexy-feature
 ```
 
-9. Open a pull request on github. Don't forget to add a description message to explain your changes. </br>
+8. Open a pull request on github. Don't forget to add a description message to explain your changes. </br>
 
 9. Wait for someone on the team to review and merge your code. Then, delete the branch. 
 ```bash
