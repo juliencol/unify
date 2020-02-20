@@ -85,6 +85,30 @@ git push origin sexy-feature
 ```bash
 git checkout master
 git pull origin master
-git sweep
+git branch -d sexy-feature
 ```
 10. Take a break and be proud of yourself. You're the best! 
+
+# Code review
+Everytime someone codes a new feature (i.e. push a new branch), his code needs to be reviewed before merging it to the master branch. To review someone's code, make sure your git status is clean, then switch to his branch: 
+```bash
+git fetch
+git checkout sexy-feature
+```
+Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github and notice the team. If no, explain why in comments of the PR. 
+
+# Deploy to production 
+Our app is host on [heroku](https://heroku.com) under the domain name unifyisep.com. </br>
+To make sure we don't crash the app in production, we created a staging environment to test if everything works fine before deploying the code. </br>
+We try to follow a continous deployment workflow by deploying every new feature. That means we push the code in production evrytime a PR is merged to the master branch. </br>
+To deploy in staging environment:
+```bash
+git push heroku master --app unifyisep-staging
+```
+To deploy in production (!!!ONLY IF EVRYTHING WORKS IN STAGING!!!): 
+```bash
+git push heroku master --app unifyisep-production
+```
+Most of the time, you'll get a lot of errors when deploying to staging. To find those errors, run ```bash heroku logs --tail ``` and read the documentation [here](https://devcenter.heroku.com/articles/logging#types-of-logs).
+
+
