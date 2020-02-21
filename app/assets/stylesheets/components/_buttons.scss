@@ -172,6 +172,8 @@ $sites: ("members": $isep-bleu,
     "website": $isep-jaune,
     "instagram": #c13584,
     "linkedin": #007bb6,
+    "twitter": #1BA1F1,
+    "snapchat": #fffc00,
     "hustle": #C83738,
     "move_your_as": #FFBECD,
 );
@@ -307,7 +309,6 @@ $color4: $isep-jaune;
     all: unset;
     cursor: pointer;
     position: relative;
-    margin: auto;
     padding: 19px 22px;
     @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
     text-decoration: none !important;
@@ -328,7 +329,6 @@ $color4: $isep-jaune;
     span {
         position: relative;
         font-size: 16px;
-        line-height: 18px;
         font-weight: 900;
         text-transform: uppercase;
         vertical-align: middle;
@@ -341,8 +341,6 @@ $color4: $isep-jaune;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 2;
-        transform: translateX(-5px);
-        @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
     }
 
     &:hover {
@@ -354,8 +352,8 @@ $color4: $isep-jaune;
         }
 
         svg {
-            transform: translateX(0);
             color: white;
+            @include transition(all .45s ease);
         }
     }
 
