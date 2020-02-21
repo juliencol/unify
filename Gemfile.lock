@@ -97,12 +97,6 @@ GEM
     geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    haml (5.1.2)
-      temple (>= 0.8.0)
-      tilt
-    hassle (0.0.1)
-      haml
-      rack
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -250,7 +244,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -293,7 +286,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   geocoder
-  hassle (~> 0.0.1)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
