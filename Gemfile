@@ -20,7 +20,6 @@ gem 'carrierwave', '~> 1.2'
 gem 'pundit'
 gem 'geocoder' 
 gem 'solargraph'
-gem 'hassle', '~> 0.0.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
