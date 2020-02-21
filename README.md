@@ -9,9 +9,11 @@ We are using [Ruby on Rails](https://rubyonrails.org/), an MVC framework very ea
 # Our workflow
 * We don't write test (the app must be delivered in less than a month from now).
 * We manage our development tasks on [trello](https://trello.com/b/KvPE3ned/unify).
-* We make [code reviews](#Code-review). 
-* We develop in a mobile first approach.
+* We make [code reviews](#Code-review) for every new feature. 
+* We develop in a mobile first approach. Every page must be responsive and suits desktops, tablets and mobile devices.
 * We deploy every new feature. 
+* We develop one feature at a time. 1 branch == 1 feature. We delete the branch when the feature is done. The number of current branches must be equals to the number of developers working on the project + the master branch (e.g. if we're 4 there must be 5 branches : one for each developer + the master branch).
+* We focus on security. Every developer must be aware of the potential attacks.
 
 # Our style guide
 We only commit performing readable code. </br>

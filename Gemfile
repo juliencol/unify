@@ -18,7 +18,7 @@ gem 'uglifier'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pundit'
-gem 'geocoder'
+gem 'geocoder' 
 gem 'solargraph'
 
 group :development do
