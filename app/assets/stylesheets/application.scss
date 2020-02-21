@@ -6,11 +6,18 @@ body {
 	height: 100vh;
 }
 
-// External libraries
-@import "custom";
-@import "bootstrap/scss/bootstrap";
+// Our SCSS variables 
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+@import "config/custom";
 
-// Your CSS partials
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Our CSS partials
 @import "components/index";
 @import "users/index";
 @import "clubs/index";
