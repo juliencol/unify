@@ -37,15 +37,24 @@
           border-radius: 5px;
 
           span {
-            display: inline;
             margin: 0;
             text-transform: uppercase !important;
-            float: left !important;
-            font-size: 15px;
-            font-weight: 400;
+            float: left;
+            font-weight: 500;
             color: #333;
           }
         }
+      }
+    }
+
+    .biography {
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        color: #333;
+        font-size: .9rem;
       }
     }
   }
@@ -77,8 +86,9 @@
       @extend .z-depth-1;
 
       h3 {
+        padding: .25rem .125rem;
         font-size: 1.2rem;
-        color: #666;
+        color: #999;
         font-weight: 300;
       }
     }

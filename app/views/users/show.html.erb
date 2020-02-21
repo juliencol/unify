@@ -16,6 +16,10 @@
           <li><span>Section : </span><%= @user.section %></li>
         </ul>
       </div>
+      <div class="biography px-3">
+        <h2>Bio</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat, tortor sed vestibulum lacinia, libero nibh imperdiet lectus, nec maximus elit arcu vel nisi. Aenean quis accumsan odio. Quisque porta sodales ligula at sagittis. Quisque consectetur pellentesque condimentum. Vestibulum imperdiet molestie pellentesque.</p>
+      </div>
     </div>
     <div class="col col-lg-9 right-group">
       <div class="row justify-content-center p-2">
@@ -26,7 +30,7 @@
         </div>
       </div>
       <div class="row p-2">
-        <div class="col-9">
+        <div class="col-8">
           <div class="white-wrapper mb-4">
             <% if @user.clubs.nil? || @user.clubs == [] %>
               <h3 class="text-center">Membre d'aucune association</h3>
@@ -59,9 +63,29 @@
             <% end %>
           </div>
         </div>
-        <div class="col-3">
-          <h2>Biographie</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat, tortor sed vestibulum lacinia, libero nibh imperdiet lectus, nec maximus elit arcu vel nisi. Aenean quis accumsan odio. Quisque porta sodales ligula at sagittis. Quisque consectetur pellentesque condimentum. Vestibulum imperdiet molestie pellentesque. Praesent eget augue ac turpis fringilla elementum.</p>
+        <div class="col-4">
+          <div class="d-flex flex-wrap align-items-start">
+            <%= link_to "#", class:"mb-4" do %>
+                <div class="button-effect-3 snapchat">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </div>
+            <% end %>
+            <%= link_to "#", target:"_blank", class:"mb-4" do %>
+                <div class="button-effect-3 twitter">
+                    <i class="fab fa-twitter"></i>
+                </div>
+            <% end %>
+            <%= link_to "#", target:"_blank", class:"mb-4" do %>
+                <div class="button-effect-3 instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            <% end %>
+            <%= link_to "#", target:"_blank", class:"mb-4" do %>
+                <div class="button-effect-3 linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
