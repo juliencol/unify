@@ -11,7 +11,7 @@ body {
 @import "bootstrap/scss/bootstrap";
 
 // Your CSS partials
-@import "../../assets/stylesheets/components/index";
-@import "../../assets/stylesheets/users/index";
-@import "../../assets/stylesheets/clubs/index";
-@import "../../assets/stylesheets/events/index";
+@import "components/index";
+@import "users/index";
+@import "clubs/index";
+@import "events/index";
