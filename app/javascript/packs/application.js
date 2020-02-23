@@ -17,7 +17,7 @@ require('channels');
 
 require('jquery');
 require('bootstrap');
-require('../node_modules/@fortawesome/fontawesome-free/js/all');
+require('@fortawesome/fontawesome-free/js/all');
 require('../stylesheets/application');
 
 import 'mapbox-gl/dist/mapbox-gl.css';
