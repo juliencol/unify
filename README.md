@@ -1,4 +1,4 @@
-#  <span style="color: red"> Everyone contributing to the project must read this</span>
+<span style="color: red"> Everyone contributing to the project must read this</span>
 
 # Project description
 Unify is a progressive web application to manage school events at ISEP. Our goal is to allow every student club to create and update events and every student to register to any event.
@@ -7,7 +7,15 @@ Unify is a progressive web application to manage school events at ISEP. Our goal
 We are using [Ruby on Rails](https://rubyonrails.org/), a ruby framework following the [Model-View-Controller pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) very easy to learn that handles both the frontend and the backend. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. For the database we use PostgreSQL and the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html) to handle SQL requests. 
 
 # Our infrastructure
-Our app is hosted on [heroku](https://heroku.com) under the domain name [unifyisep.com](https://www.unifyisep.com/). To have the possibility to test our app before pushing to production, we created a staging environment to test if everything works fine before deploying the code. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our [heroku pipeline](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). If you only live in your terminal, to deploy in staging:
+Our app is hosted on [heroku](https://heroku.com) under the domain name [unifyisep.com](https://www.unifyisep.com/). To have the possibility to test our app before pushing to production, we created a staging environment to test if everything works fine before deploying the code. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our [heroku pipeline](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). If you only live in your terminal, to access staging environment:
+```bash
+heroku open --app unifyisep-staging
+```
+to access production environment:
+```bash
+heroku open --app unifyisep-production
+```
+to deploy in staging:
  ```bash 
  git push staging master
  ``` 
@@ -22,17 +30,16 @@ heroku logs --tail
 Refer the documentation [here](https://devcenter.heroku.com/articles/logging#types-of-logs).
 
 # File structure
-In the MVC pattern, each model has an associated controller with a specific number of actions. Each action is associated to a view which is an html file displaying the content of a page. </br>
+In the MVC pattern, each model has an associated controller with a specific number of actions (== functions). Each action is associated to a view which is an html file displaying the content of a page. </br>
 * Models are accessible in 'app/models'. </br>
 * Controllers are accessible in 'app/controllers'. </br>
 * Views are defined in 'app/views'. </br>
 * Build your CSS components in 'app/javascript/stylesheets/components'. </br>
 * Build your CSS pages in 'app/javascript/stylesheets/controller_name/view_name.scss'. </br>
 * Same for JavaScript. </br>
-* Schema of the database is accessible in 'db/schema.rb'. </br>
 
 # Database model
-
+The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c251a06188009) or directly in 'db/schema.rb'.
 
 # Our workflow
 * We don't write test (the app must be delivered in less than a month from now).
@@ -43,7 +50,7 @@ In the MVC pattern, each model has an associated controller with a specific numb
 * We focus on security. Every developer must be aware of the potential attacks. Whenever you use an implicit SQl request, use the '?' symbol to protect from SQL injections. 
 
 # Our style guide
-We only push performing readable code. </>
+We only push performing readable code. </br>
 * On the frontend, we make use of [Sass features](https://www.youtube.com/watch?v=Zz6eOVaaelI) (nested css, css variables), we allow the use of Bootstrap to code faster, we build CSS components in app/assets/stylesheets/components and we write ES6 JavaScript following [Airbnb style guide](https://github.com/airbnb/javascript).
 * On the backend, we respect the the Model-View-Controller pattern and we follow [Ruby on Rails doctrine](https://rubyonrails.org/doctrine/).
 
