@@ -148,7 +148,7 @@ Every time someone codes a new feature (i.e. push a new branch), his code needs 
 git fetch
 git checkout sexy-feature
 ```
-Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github and notice the team. If no, explain why in comments of the PR. 
+Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
 
 
 
