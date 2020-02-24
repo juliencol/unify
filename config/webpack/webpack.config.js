@@ -30,15 +30,6 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.js$/,
-        include: [
-          path.join(__dirname, 'node_modules', 'sticky-kit')
-        ],
-        use: [{
-          loader: 'imports-loader?jQuery=jquery,$=jquery,window=>global&window.jQuery=jquery,this=>window,define=>false'
-        }]
-      }
     ]
   },
 };
