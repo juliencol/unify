@@ -48,6 +48,9 @@ The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c25
 * We develop in a mobile first approach. Every page must be responsive and suits desktops, tablets and mobile devices. If you're not familiar with mobile first, I highly recommend watching this [series of videos](https://www.youtube.com/watch?v=PM3XW_1RAIs).
 * We develop one feature at a time. 1 branch == 1 feature. We delete the branch when the feature is done. The number of current branches must be equals to the number of developers working on the project + the master branch (e.g. if we're 4 there must be 5 branches : one for each developer + the master branch).
 * We focus on security. Every developer must be aware of the potential attacks. Whenever you use an implicit SQl request, use the '?' symbol to protect from SQL injections. 
+* We code in english. Every variable and functions must be named in english. Every output must be in french.
+* Only write comment when needed. Most of the time, explicit names are better than writing comments. 
+* Never commit blocks of code commented. 
 
 # Our style guide
 We only push performing readable code. </br>
