@@ -68,6 +68,10 @@
       position: relative;
       border-radius: 12px;
 
+      @include media-breakpoint-between(xs, sm) {
+        width: 100%;
+      }
+
       img {
         position: absolute;
         min-width: 1000%;
