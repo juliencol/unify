@@ -1,0 +1,28 @@
+<%= form_with(model: [ @event], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>  
+
+   <p>
+    <%= form.label :long_description %><br>
+    <%= form.text_area :long_description %>
+  </p>
+  
+  <p>
+    <%= form.label :long_description %><br>
+    <%= form.text_area :long_description %>
+  </p>
+
+  <p>
+    <%= form.label :short_description %><br>
+    <%= form.text_area :short_description %>
+  </p>
+
+  <p>
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </p>
+    <%= form.submit %>
+  </p>
+<% end %>
