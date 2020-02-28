@@ -1,0 +1,40 @@
+.event-tags {
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li+li {
+        margin-left: .5rem;
+    }
+
+    a {
+        background: lighten($isep-jaune, 50%);
+        border-radius: 3px;
+        color: $isep-jaune;
+        font-size: .75rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        letter-spacing: 1px;
+        padding: .25rem .75rem;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        width: 5rem;
+    }
+
+    &.event-tags-big {
+        a {
+            font-size: .95rem;
+            height: 1.7rem;
+            line-height: 1.7rem;
+            letter-spacing: 1px;
+            padding: .45rem .95rem;
+        }
+    }
+}
