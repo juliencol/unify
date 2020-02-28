@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-
+    puts events_params
     if @event.update(events_params)
       redirect_to @event
     else
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   private
 
   def events_params
-    parms.require(:event).permit(:name, :short_description, :long_description,
-                                 :date, :image, :banner, :is_free, :latitude, :longitude)
+    params.require(:event).permit(:name, :short_description, :long_description,
+                                  :date, :image, :banner, :is_free, :latitude, :longitude)
   end
 end

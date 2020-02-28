@@ -8,32 +8,58 @@
             <div class="mask rgba-white-slight"></div>
             </a>
         </div>
+        <div class="card-body card-body-cascade text-center">
+            <div class="event-container">
+                <div class="event-name">
+                    <p>Nom d'évent</p>
+                    <p><%= @event.name %></p>
+                </div>
         
-        <div class="event-container">
-            <div class="event-description">
-                <div class="card-body card-body-cascade text-center">
-                    <p class="card-text"><%= @event.long_description %></p>
+                <div class="event-short-description">
+                    <p>Description Courte</p>
+                    <p><%= @event.short_description %></p>
                 </div>
-                
-                <div class="text-center">
-                    <%= link_to "#" do %>
-                        <button class="learn-more">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">M'inscrire</span>
-                        </button>
-                    <% end %>
+                <div class="event-description">
+                    <p>Description Longue</p>
+                    <p><%= @event.long_description %></p>
+                    
+                    <div class="text-center">
+                        <%= link_to "#" do %>
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">M'inscrire</span>
+                            </button>
+                        <% end %>
+                    </div>                
                 </div>
-                
+
+                <div class="event-description">
+                    <div class="text-center">
+                        <%= link_to edit_event_path(@event) do %>
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Editer l'event</span>
+                            </button>
+                        <% end %>
+                    </div>
+                </div>
+
+                <div class="event-date">
+                    <p>Date de l'évent</p>
+                    <p><%= @event.date.strftime("%d/%m/%y") %></p>
+                </div>
+
             </div>
 
+
             <div id="map" class="event-map" style="width: 100%; height: 600px;" data-markers="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        
+                
           </div>
         </div>
-
-        
 
     </div>
 </div>
