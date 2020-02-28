@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="row p-2">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
           <div class="white-wrapper mb-4">
             <% if @user.clubs.nil? || @user.clubs == [] %>
               <h3 class="text-center">Membre d'aucune association</h3>
@@ -58,8 +58,8 @@
             <% end %>
           </div>
         </div>
-        <div class="col-4">
-          <div class="d-flex flex-wrap align-items-start">
+        <div class="col-12 col-md-4">
+          <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
             <%= link_to "#", class:"mb-4" do %>
                 <div class="button-effect-3 snapchat">
                     <i class="fab fa-snapchat-ghost"></i>

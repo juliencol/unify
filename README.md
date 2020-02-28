@@ -7,7 +7,7 @@ Unify is a progressive web application to manage school events at ISEP. Our goal
 We are using [Ruby on Rails](https://rubyonrails.org/), a ruby framework following the [Model-View-Controller pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) very easy to learn that handles both the frontend and the backend. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. For the database we use PostgreSQL and the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html) to handle SQL requests. 
 
 # Our infrastructure
-Our app is hosted on [heroku](https://heroku.com) under the domain name [unifyisep.com](https://www.unifyisep.com/). To have the possibility to test our app before pushing to production, we created a staging environment to test if everything works fine before deploying the code. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our [heroku pipeline](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). If you only live in your terminal, to access staging environment:
+Our app is hosted on [heroku](https://heroku.com) under the domain name [unifyisep.com](https://www.unifyisep.com/). We created a staging environment and a production environment. The staging environment allow us to simulate a production environment to test eveyrthing is fine before pushing code to production. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our heroku pipeline [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). If you only live in your terminal, to access staging environment:
 ```bash
 heroku open --app unifyisep-staging
 ```
@@ -48,6 +48,9 @@ The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c25
 * We develop in a mobile first approach. Every page must be responsive and suits desktops, tablets and mobile devices. If you're not familiar with mobile first, I highly recommend watching this [series of videos](https://www.youtube.com/watch?v=PM3XW_1RAIs).
 * We develop one feature at a time. 1 branch == 1 feature. We delete the branch when the feature is done. The number of current branches must be equals to the number of developers working on the project + the master branch (e.g. if we're 4 there must be 5 branches : one for each developer + the master branch).
 * We focus on security. Every developer must be aware of the potential attacks. Whenever you use an implicit SQl request, use the '?' symbol to protect from SQL injections. 
+* We code in english. Every variable and functions must be named in english. Every output must be in french.
+* Only write comment when needed. Most of the time, explicit names are better than writing comments. 
+* Never commit blocks of code commented. 
 
 # Our style guide
 We only push performing readable code. </br>
@@ -83,6 +86,7 @@ Create the .env file to store api keys (do this once)
 touch .env
 echo  '.env*' >> .gitignore
 ``` 
+You'll need to add the api keys in that file so ask me fore the credentials on slack.
 
 Host a local server
 ```bash 
@@ -148,8 +152,9 @@ Every time someone codes a new feature (i.e. push a new branch), his code needs 
 git fetch
 git checkout sexy-feature
 ```
-Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github and notice the team. If no, explain why in comments of the PR. 
+Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
 
-
+# Image hosting
+To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
 
 

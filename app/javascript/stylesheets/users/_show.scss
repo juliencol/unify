@@ -68,6 +68,10 @@
       position: relative;
       border-radius: 12px;
 
+      @include media-breakpoint-between(xs, sm) {
+        width: 100%;
+      }
+
       img {
         position: absolute;
         min-width: 1000%;
@@ -76,20 +80,6 @@
         top: 50%;
         transform: translateX(-50%) translateY(-50%) scale(0.1);
         z-index: -1;
-      }
-    }
-
-    .white-wrapper {
-      background: white;
-      padding: .75rem;
-      border-radius: 12px;
-      @extend .z-depth-1;
-
-      h3 {
-        padding: .25rem .125rem;
-        font-size: 1.2rem;
-        color: #999;
-        font-weight: 300;
       }
     }
   }
