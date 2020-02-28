@@ -8,7 +8,7 @@
   <div class="row">
 
     <div class="col-lg-4 col-12">
-        <%= image_tag @bde.logo, class:"club-logo club-logo-page" %>
+        <%= image_tag @bde.logo, class:"club-logo club-logo-page" unless @bde.logo.nil? %>
         <h3 class="text-center mb-3 club-name"><%= @bde.name.upcase %></h3>
     </div>
     <div class="col-lg-4 col-6 d-flex flex-row pt-3 order-lg-first">
