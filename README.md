@@ -86,6 +86,7 @@ Create the .env file to store api keys (do this once)
 touch .env
 echo  '.env*' >> .gitignore
 ``` 
+You'll need to add the api keys in that file so ask me fore the credentials on slack.
 
 Host a local server
 ```bash 
@@ -153,6 +154,7 @@ git checkout sexy-feature
 ```
 Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
 
-
+# Image hosting
+To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
 
 

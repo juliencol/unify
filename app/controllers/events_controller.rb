@@ -9,14 +9,40 @@ class EventsController < ApplicationController
           @events = Event.where("name ILIKE ?", "%#{@name}%") #be careful while using ILIKE, should testing an SQL injection on the URL as SELECT "events".* FROM "events".WHERE events =""
         end
     end
+  end
 
-    def show
-      @event = Event.find(params[:id])
-      @marker = {
-        lat: @event.latitude,
-        lng: @event.longitude
-      }
+  def show
+    @event = Event.find(params[:id])
+    @marker = {
+      lat: @event.latitude,
+      lng: @event.longitude,
+    }
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(events_params)
+      redirect_to @event
+    else
+      render "edit"
     end
+  end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
 
+    redirect_to events_path
+  end
+
+  private
+
+  def events_params
+    params.require(:event).permit(:name, :short_description, :long_description,
+                                  :date, :image, :banner, :is_free, :latitude, :longitude)
+  end
 end
