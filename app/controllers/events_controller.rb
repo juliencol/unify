@@ -9,7 +9,6 @@ class EventsController < ApplicationController
           @events = Event.where("name ILIKE ?", "%#{@name}%") #be careful while using ILIKE, should testing an SQL injection on the URL as SELECT "events".* FROM "events".WHERE events =""
         end
     end
-  end
 
   def show
     @event = Event.find(params[:id])
