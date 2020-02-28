@@ -2,10 +2,10 @@
   <div class="row user-row">
     <div class="col col-lg-3 mt-5 left-group">
       <div class="profile-picture d-flex justify-content-center mb-4">
-        <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
+        <% if @user.profile_picture.nil? || @user.profile_picture == "" %>
           <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
         <% else %>
-          <%= image_tag current_user.profile_picture, class: "avatar-img" %>
+           <img class="avatar-img" alt="Pas de photo de profil" src=<%= @user.profile_picture %> >
         <% end %>
       </div>
       <div class="infos text-center pb-3">
@@ -48,18 +48,13 @@
             <% end %>
           </div>
           <div class="white-wrapper d-flex flex-column align-items-start mb-4">
-            <h3>Modification du profil</h3>
-            <%= link_to "#", class:"button-effect-4" do %>
-              <span>Modifier ma photo</span>
+            <%= link_to edit_user_path(@user), class:"button-effect-4" do %>
+              <span>Modifier mon profil</span>
               <i class="fas fa-image"></i>
             <% end %>
-            <%= link_to "#", class:"button-effect-4" do %>
+            <%= link_to new_user_password_path(@user), class:"button-effect-4" do %>
               <span>Modifier mon mot de passe</span>
               <i class="fas fa-key"></i>
-            <% end %>
-            <%= link_to "#", class:"button-effect-4" do %>
-              <span>Enregistrer</span>
-              <i class="far fa-save"></i>
             <% end %>
           </div>
         </div>

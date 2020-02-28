@@ -8,7 +8,7 @@ Rails.application.routes.draw do
                   edit: 'users/edit'
                 }
   root to: 'events#index'
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :events, only: [:index, :show]
   resources :activities, only: [:index]
 
