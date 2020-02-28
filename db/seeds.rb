@@ -88,6 +88,15 @@ sarah_shobanbabu = User.create!(
     classe: "",
     is_ndc: false
 )
+andrew_pouret = User.create!(
+    first_name: "Andrew",
+    last_name: "Pouret",
+    email: "andrew.pouret@isep.fr",
+    password: "password",
+    profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+    classe: "",
+    is_ndc: false
+)
 juliette_sebillotte = User.create!(
     first_name: "Juliette",
     last_name: "Sebillotte",
