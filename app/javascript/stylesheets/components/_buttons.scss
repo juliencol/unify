@@ -205,7 +205,7 @@ $sites: ("members": $isep-bleu,
     }
 
     svg {
-        color: #fff;
+        color: #fff !important;
         transform: scale(1);
     }
 
@@ -393,7 +393,7 @@ $color4: $isep-jaune;
     }
 
     &:hover {
-        color: white;
+        color: white !important;
 
         &:before {
             width: 100%;
