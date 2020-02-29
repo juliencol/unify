@@ -1,9 +1,9 @@
 <div class="container-fluid spacer">
 
-  <div class="row">
-
-    <%= render "clubs/shared/banner" %>
-
+  <div class="row no-gutters">
+      <div class="col-12">
+          <%= render "clubs/shared/banner" %>
+      </div>
   </div>
   <div class="row">
 
@@ -27,7 +27,7 @@
       <% else %>
         <% @club.events.each do |event| %>
 
-          <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %><% end %>">
+          <div class="event-container">
       
             <div class="event-header">
               <div class="event-cover" style="background: url(<%= event.image %>);">

@@ -41,6 +41,7 @@
                     <%= link_to club_path(club), :title => club.name do %>
                       <div class="button-effect-3 <%= club.name.parameterize.underscore %>">
                           <%= image_tag club.logo, class:"club-logo" %>
+                          <span><%= club.name %></span>
                       </div>
                     <% end %>
                 <% end %>

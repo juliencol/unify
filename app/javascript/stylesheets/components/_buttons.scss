@@ -176,7 +176,17 @@ $sites: ("members": $isep-bleu,
     "snapchat": #fffc00,
     "hustle": #C83738,
     "move_your_as": #FFBECD,
-);
+    "air": #FB940A,
+    "discover_isep": #039588,
+    "dyonisos": #6D061A,
+    "isep_live": #3B15C0,
+    "junior_isep": #8871B3,
+    "ludisep": #D0090A,
+    "isep_gaming_club": #000102,
+    "garage": #04A9F4,
+    "genesis_bde": #CC0067,
+    "isepa": #F1C333,
+    "numeris": #1C3B8F);
 
 .animate {
     transition: all .35s;
@@ -184,6 +194,30 @@ $sites: ("members": $isep-bleu,
             -0.105,
             0.430,
             1.590)
+}
+
+.btn__active {
+
+    &:before {
+        top: -10%;
+        left: -10%;
+        background-color: black;
+    }
+
+    svg {
+        color: #fff !important;
+        transform: scale(1);
+    }
+
+    img {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    span {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .btn__inactive {
@@ -212,27 +246,6 @@ $sites: ("members": $isep-bleu,
                 color: $color;
             }
         }
-    }
-}
-
-.btn__active {
-
-    &:before {
-        top: -10%;
-        left: -10%;
-    }
-
-    svg {
-        color: #fff;
-        transform: scale(1);
-    }
-
-    img {
-        filter: brightness(2) !important;
-        -webkit-filter: brightness(2) !important;
-        filter: grayscale(1) !important;
-        -webkit-filter: grayscale(1) !important;
-        transform: scale(1);
     }
 }
 
@@ -271,11 +284,39 @@ $sites: ("members": $isep-bleu,
     img {
         @extend .animate;
         width: 50px;
+        opacity: 1;
+    }
+
+    span {
+        @extend .animate;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white !important;
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     &:focus,
-    &:hover {
+    &:hover,
+    &:active {
         @extend .btn__active;
+    }
+
+    /* Clubs index
+    ------------------------ */
+    &.button-effect-3-big {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        margin: 0 .5rem .5rem 0;
+
+        img {
+            width: 65px;
+        }
     }
 
     @include media-breakpoint-between(xs, md) {
@@ -352,7 +393,7 @@ $color4: $isep-jaune;
     }
 
     &:hover {
-        color: white;
+        color: white !important;
 
         &:before {
             width: 100%;
