@@ -75,6 +75,14 @@
     h3 {
         color: #fff;
         font-weight: 300;
+        margin: 0;
+        line-height: 32px;
+    }
+
+    @include media-breakpoint-between(xs, sm) {
+        h3 {
+            font-size: .9rem;
+        }
     }
 }
 

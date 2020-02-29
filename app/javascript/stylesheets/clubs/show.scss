@@ -1,11 +1,29 @@
+.club-banner {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		position: absolute;
+		min-width: 1000%;
+		min-height: 1000%;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%) scale(0.1);
+		z-index: -1;
+	}
+}
+
 .club-logo-page {
-	margin-top: -20px;
+	margin-top: -30px;
+	padding: 1rem;
+	border-radius: 28%;
+	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+	background: white;
 
 	@include media-breakpoint-between(xs, lg) {
 		margin-top: 0;
 	}
-
-	filter: drop-shadow(0 -5px 1px rgba(0, 0, 0, 0.2));
 }
 
 .club-name {
@@ -13,11 +31,17 @@
 }
 
 .club-feed {
+	padding: 0;
+
 	.event-container {
 		width: 48vw;
 
-		@include media-breakpoint-between(xs, lg) {
-			width: 98vw;
+		@include media-breakpoint-between(xs, md) {
+			width: 97vw;
+		}
+
+		@include media-breakpoint-between(md, lg) {
+			width: 95vw;
 		}
 	}
 }
