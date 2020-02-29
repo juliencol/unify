@@ -7,16 +7,16 @@
   <div class="row text-center">
     <div class="col list-group flex-row flex-wrap justify-content-center">
       <% @clubs.each do |club| %>
-      <div class="view overlay zoom d-flex align-items-center z-depth-1-half mr-3 mb-3">
-        <% if club.logo.nil? || club.logo == "" %>
-        <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
-        <% else %>
-        <%= image_tag club.logo, class:"club-logo" %>
+        <%= link_to club_path(club), :title => club.name do %>
+          <div class="button-effect-3 button-effect-3-big <%= club.name.parameterize.underscore %>">
+            <% if club.logo.nil? || club.logo == "" %>
+              <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
+            <% else %>
+              <%= image_tag club.logo, class:"club-logo" %>
+            <% end %>
+            <span><%= club.name %></span>
+          </div>
         <% end %>
-        <%= link_to club_path(club), class: "mask waves-effect waves-light d-flex align-items-center justify-content-center text-decoration-none" do %>
-          <p class="white-text"><%= club.name %></p>
-        <% end %>
-      </div>
       <% end %>
     </div>
   </div>
