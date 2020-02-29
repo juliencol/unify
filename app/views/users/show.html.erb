@@ -5,7 +5,7 @@
         <% if @user.profile_picture.nil? || @user.profile_picture == "" %>
           <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
         <% else %>
-           <img class="avatar-img" alt="Pas de photo de profil" src=<%= @user.profile_picture %> >
+           <img class="avatar-img" src=<%= @user.profile_picture %> >
         <% end %>
       </div>
       <div class="infos text-center pb-3">

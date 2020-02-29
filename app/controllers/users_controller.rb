@@ -18,5 +18,4 @@ class UsersController < ApplicationController
   def set_params
     params.require(:user).permit(:email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :is_ndc)
   end
-
 end
