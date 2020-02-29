@@ -34,7 +34,7 @@
             <% if current_user.profile_picture.nil? || current_user.profile_picture == "" %>
               <%=image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
             <% else %>
-               <img class="avatar" alt="Pas de photo de profil" src=<%= current_user.profile_picture %> >
+               <img class="avatar" src=<%= current_user.profile_picture %> >
             <% end %>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
