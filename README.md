@@ -147,12 +147,11 @@ git branch -d sexy-feature
 10. Take a break and be proud of yourself. You're the best! 
 
 # Code review
-Every time someone codes a new feature (i.e. push a new branch), his code needs to be reviewed before merging it to the master branch. To review someone's code, make sure your git status is clean, then switch to his branch: 
+Every time someone codes a new feature (i.e. open a new PR), his code needs to be reviewed before merging it to the master branch. To review someone's code, switch to his branch: 
 ```bash
-git fetch
 git checkout sexy-feature
 ```
-Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
+Then run a local server to check the changes, make sure there is no bug and you're OK with everything. Check the code to make sure it's clean. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
 
 # Image hosting
 To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
