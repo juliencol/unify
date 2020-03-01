@@ -4,8 +4,67 @@
 .list-group {
   padding: .5rem 5rem;
 
-  @include media-breakpoint-between(xs, md) {
-    padding: .5rem 1rem;
+  .club-container {
+    width: 400px;
+
+    .club-left {
+      img {
+        width: 70px;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .2));
+      }
+    }
+
+    .club-right {
+      width: 100%;
+      min-height: 70px;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+      .club-desc {
+        text-align: left;
+
+        h4 {
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        span {
+          font-size: .85rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+
+        button {
+          all: unset;
+          background: #F2F2F7;
+          color: #007AFF;
+          padding: .2rem .75rem;
+          border-radius: .9rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .list-group {
+    padding: .1rem .5rem;
+
+    .club-container {
+      width: 350px;
+
+      .club-left {
+        img {
+          width: 60px;
+        }
+      }
+
+      .club-right {
+        min-height: 60px;
+      }
+    }
   }
 }
 

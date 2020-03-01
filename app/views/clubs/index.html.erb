@@ -4,19 +4,27 @@
       <h1 class="text-center mt-3">Associations</h1>
     </div>
   </div>
-  <div class="row text-center">
+  <div class="row">
     <div class="col list-group flex-row flex-wrap justify-content-center">
       <% @clubs.each do |club| %>
-        <%= link_to club_path(club), :title => club.name do %>
-          <div class="button-effect-3 button-effect-3-big <%= club.name.parameterize.underscore %>">
+        <div class="club-container d-flex flex-row justify-content-start align-items-center">
+          <div class="club-left px-3 px-lg-4">
             <% if club.logo.nil? || club.logo == "" %>
               <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
             <% else %>
               <%= image_tag club.logo, class:"club-logo" %>
             <% end %>
-            <span><%= club.name %></span>
           </div>
-        <% end %>
+          <div class="club-right d-flex flex-row justify-content-between align-items-center">
+            <div class="club-desc">
+              <h4><%= club.name %></h4>
+              <span>Lorem ipsum dolor sit amet</span>
+            </div>
+            <%= link_to club_path(club) do %>
+              <button>Voir</button>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
