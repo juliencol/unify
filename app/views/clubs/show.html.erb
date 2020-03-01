@@ -10,8 +10,11 @@
     <div class="col-lg-4 col-12 pt-3 pt-lg-0">
       <%= render "clubs/shared/logo" %>
     </div>
-    <div class="col-lg-4 col-6 pt-3 order-lg-first d-flex flex-row flex-wrap justify-content-around align-content-md-center">
+    <div class="col-lg-4 col-6 pt-3 order-lg-first d-flex flex-row flex-nowrap justify-content-around align-content-md-center">
       <%= render "clubs/shared/links" %>
+    </div>
+    <div class="col-lg-4 col-6 pt-3 d-flex flex-column align-items-end justify-content-center align-content-center">
+      <%= render "clubs/shared/buttons" %>
     </div>
 
     <div class="white-wrapper d-flex flex-column align-items-start mb-4 mt-4">
@@ -28,14 +31,12 @@
 
 
   <div class="row">
-
-    <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
-
-      <% if @club.events.nil? || @club.events == [] %>
-        <div class="text-center">
-          <p>Pas d'événements disponibles.</p>
-        </div>
-      <% else %>
+    <% if @club.events.nil? || @club.events == [] %>
+      <div class="col club-feed mt-5 text-center">
+        <p>Pas d'événements disponibles.</p>
+      </div>
+    <% else %>
+      <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
         <% @club.events.each do |event| %>
 
           <div class="event-container">
@@ -84,9 +85,9 @@
           </div>
 
         <% end %>
-      <% end %>
 
-    </div>
+      </div>
+    <% end %>
 
 
   </div>
