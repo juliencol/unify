@@ -511,7 +511,7 @@ exodus_party = Event.create!(
     image: "https://i.imgur.com/4xPcsx7.jpg",
     date: "15/11/2019 22:00",
     price: 20,
-    location: "chez Cyril Bennarosh",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: exodus.id,
@@ -521,7 +521,7 @@ Event.create!(
     image: "https://i.imgur.com/pauemHk.jpg",
     date: "21/11/2019 18:30",
     price: 20,
-    location: "dans un endroit claqué au sol",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: hustle.id,
@@ -531,7 +531,7 @@ Event.create!(
     image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
     date: "25/11/2019",
     price: 20,
-    location: "chez Cyril Bennarosh",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: isep_alumni.id,
@@ -541,7 +541,7 @@ Event.create!(
     image: "https://i.imgur.com/pauemHk.jpg",
     date: "20/12/2019",
     price: 20,
-    location: "N28",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: junior_isep.id,
@@ -551,7 +551,7 @@ Event.create!(
     image: "https://i.imgur.com/4xPcsx7.jpg",
     date: "19/01/2020",
     price: 20,
-    location: "NDL",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: discover_isep.id,
@@ -571,7 +571,7 @@ Event.create!(
     image: "https://iseplive.fr/api/storage/event/SHA9OvO5AOIB0vaySR3LxbAHq8koVz.jpg",
     date: "20/02/2020",
     price: 20,
-    location: "NDC - N16",
+    location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 Event.create!(
     club_id: move_your_as.id,
