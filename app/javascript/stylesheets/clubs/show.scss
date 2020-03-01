@@ -2,62 +2,49 @@
 ---------------------------*/
 
 .pill-tabs {
-	background-color: #fff;
+	background-color: white;
 	@extend .z-depth-1;
 	border-radius: 2rem;
 	padding: .5rem .25rem;
 
 	.tab {
 		text-decoration: none;
-		background-color: #ffffff;
+		background-color: white;
 		border-radius: 2rem;
 		cursor: pointer;
 		padding: .25rem .5rem;
-		transition: background 0.4s linear;
 	}
 
 	.tab span {
+		color: black;
 		font-weight: bold;
 		padding: 2rem;
 	}
 
 	.tab.active {
-		background-color: $isep-jaune;
-		color: #fff;
-	}
-}
+		background: #F2F2F7;
 
-.club-banner {
-	width: 90%;
-	height: 400px;
-	overflow: hidden;
-	position: relative;
-	border-radius: 1rem;
-
-	img {
-		position: absolute;
-		min-width: 1000%;
-		min-height: 1000%;
-		left: 50%;
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%) scale(0.1);
-		z-index: -1;
+		span {
+			color: #007AFF;
+		}
 	}
 }
 
 .club-content {
 	padding: .2rem 4rem;
 
-	.club-logo-page {
-		margin: 0;
-		padding: 1rem;
-		border-radius: 28%;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-		background: white;
-	}
+	.club-logo-wrapper {
+		padding-bottom: 1rem;
+		border-bottom: 1px solid rgba(0, 0, 0, .2);
 
-	.club-name {
-		font-weight: 600;
+		.club-logo-page {
+			width: 70px;
+			filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .2));
+		}
+
+		.club-name {
+			font-weight: 600;
+		}
 	}
 
 }
@@ -68,12 +55,30 @@
 	.event-container {
 		width: 90%;
 
-		@include media-breakpoint-between(xs, md) {
-			width: 97vw;
+		@include media-breakpoint-between(xs, lg) {
+			width: 95%;
+		}
+	}
+}
+
+@include media-breakpoint-between(xs, lg) {
+	.pill-tabs {
+		position: fixed;
+		bottom: 20px;
+		z-index: 10;
+	}
+
+	.club-content {
+		padding: .12rem .75rem;
+
+		.club-logo-wrapper {
+			min-width: 200px;
+			border-bottom: none;
 		}
 
-		@include media-breakpoint-between(md, lg) {
-			width: 95vw;
+		p {
+			max-width: 400px;
+			text-align: right;
 		}
 	}
 }

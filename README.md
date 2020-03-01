@@ -157,4 +157,20 @@ Then run a local server to check the changes, make sure there is no bug and you'
 # Image hosting
 To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
 
+# HTML Structure
+It is necessary and vital to respect a certain structure when writing HTML code since we are using [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/). The outermost div must have a class `container-fluid spacer`. Inside the container, there must ONLY be divs with the class `row`. Inside the rows, there must ONLY be divs with the class `col`. Inside the cols is where you put whatever content you want. To sum up, you must respect this structure at all times:
+```
+<div class="container-fluid spacer">
 
+    <div class="row">
+
+        <div class="col">
+        
+            your content goes here...
+        
+        </div>
+
+    </div>
+
+</div>
+```

@@ -112,48 +112,24 @@
     }
 }
 
-/* Effect 2: color popping  */
-$color2: $isep-jaune;
+/* Effect 2: blue pill */
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <%= link_to ..., class:"button-effect-2" do %>
+        <button>...</button>
+    <% end %>
+   ------------------------------- */
 
 .button-effect-2 {
-    border: 2px solid $color2;
-    border-radius: 3rem;
-    color: $color2;
-    font-weight: 100;
-    overflow: hidden !important;
-    padding: .5rem 1rem;
-    position: relative;
     text-decoration: none !important;
-    transition: .2s transform ease-in-out;
-    will-change: transform;
-    z-index: 0;
 
-    &::after {
-        background-color: $color2;
-        border-radius: 3rem;
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translate(-100%, 0) rotate(10deg);
-        transform-origin: top left;
-        transition: .2s transform ease-out;
-        will-change: transform;
-        z-index: -1;
-    }
-
-    &:hover::after {
-        transform: translate(0, 0);
-    }
-
-    &:hover {
-        border: 2px solid transparent;
-        color: #fff !important;
-        transform: scale(1.05);
-        will-change: transform;
+    button {
+        all: unset;
+        background: #F2F2F7;
+        color: #007AFF;
+        padding: .2rem .75rem;
+        border-radius: .9rem;
     }
 }
 
@@ -209,8 +185,13 @@ $sites: ("members": $isep-bleu,
         transform: scale(1);
     }
 
+    img {
+        opacity: 0;
+        transform: scale(1);
+    }
+
     span {
-        color: #fff !important;
+        opacity: 1;
         transform: scale(1);
     }
 }
@@ -222,7 +203,8 @@ $sites: ("members": $isep-bleu,
         left: -110%;
     }
 
-    svg {
+    svg,
+    img {
         transform: scale(.8);
     }
 
@@ -255,7 +237,7 @@ $sites: ("members": $isep-bleu,
     text-align: center;
     position: relative;
     overflow: hidden !important;
-    border-radius: 1.2rem;
+    border-radius: 28%;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
     //overflow bug fix
     opacity: .99;
@@ -275,38 +257,23 @@ $sites: ("members": $isep-bleu,
         vertical-align: middle;
     }
 
-    span {
+    img {
         @extend .animate;
-        color: lighten(black, 40%);
-        font-size: 1rem;
-        font-weight: 500;
-        text-decoration: none !important;
+        width: 50px;
+        opacity: 1;
     }
 
-    /* Clubs index
-    ------------------------ */
-    &.button-effect-3-extended {
+    span {
+        @extend .animate;
+        opacity: 0;
         width: 100%;
-        min-width: 200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding: 0 .75rem;
-
-        &:before {
-            left: -10%;
-            top: -120%;
-            transform: rotate(0deg);
-        }
-
-        &:focus,
-        &:hover,
-        &:active {
-            &:before {
-                top: -10%;
-            }
-        }
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white !important;
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     &:focus,
@@ -315,12 +282,29 @@ $sites: ("members": $isep-bleu,
         @extend .btn__active;
     }
 
+    /* Clubs index
+    ------------------------ */
+    &.button-effect-3-big {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        margin: 0 .5rem .5rem 0;
+
+        img {
+            width: 65px;
+        }
+    }
+
     @include media-breakpoint-between(xs, md) {
         width: 54px;
         height: 54px;
         line-height: 54px;
         font-size: 20px;
         margin: 0;
+
+        img {
+            width: 25px;
+        }
     }
 
     @include media-breakpoint-between(md, lg) {
@@ -329,6 +313,10 @@ $sites: ("members": $isep-bleu,
         line-height: 65px;
         font-size: 25px;
         margin: 0;
+
+        img {
+            width: 35px;
+        }
     }
 }
 
