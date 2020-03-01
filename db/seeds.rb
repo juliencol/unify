@@ -190,10 +190,11 @@ puts "Users were created successfully."
 
 
 puts "Creating Clubs..."
-genesis = Club.create!(
-    name: "Genesis BDE",
-    logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/genesis580_x5yw1t.png",
+exodus = Club.create!(
+    name: "EXODUS BDE",
+    logo: "https://res.cloudinary.com/isep/image/upload/v1583065755/unify/logos-clubs/exodus_logo_n0evw9.png",
     description: "BDE de l'isep",
+    banner_image: "https://res.cloudinary.com/isep/image/upload/v1583064260/unify/banner5_v2n6lt.png",
     creation_date: "",
     website_url: "",
     linkedin_url: "",
@@ -502,8 +503,8 @@ puts "Clubs added to users successfully."
 
 
 puts "Creating 8 events..."
-genesis_party = Event.create!(
-    club_id: genesis.id,
+exodus_party = Event.create!(
+    club_id: exodus.id,
     name: "Soirée stylée",
     short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
     long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
@@ -513,7 +514,7 @@ genesis_party = Event.create!(
     location: "chez Cyril Bennarosh",
 )
 Event.create!(
-    club_id: genesis.id,
+    club_id: exodus.id,
     name: "AW claqué au sol",
     short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
     long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
@@ -603,7 +604,7 @@ puts "Themes were created successfully."
 
 puts "Adding theme to events..."
 EventTheme.create!(
-    event: genesis_party,
+    event: exodus_party,
     theme: parties
 )
 puts "Themes were added to events sucessfully."

@@ -13,17 +13,28 @@
     <div class="col-lg-4 col-6 pt-3 order-lg-first d-flex flex-row flex-wrap justify-content-around align-content-md-center">
       <%= render "clubs/shared/links" %>
     </div>
-    <div class="col-lg-4 col-6 pt-3 d-flex flex-column align-items-end justify-content-center">
-      <%= render "clubs/shared/buttons" %>
-    </div>
 
+    <div class="white-wrapper d-flex flex-column align-items-start mb-4 mt-4">
+      <%= link_to new_club_event_path(@club), class:"button-effect-4" do %>
+        <span>Ajouter un nouvel événement</span>
+        <i class="fas fa-calendar-week"></i>
+      <% end %>
+      <%= link_to edit_club_path, class:"button-effect-4" do %>
+        <span>Modifier la page de l'association</span>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </div>
   </div>
+
+
   <div class="row">
 
     <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
 
       <% if @club.events.nil? || @club.events == [] %>
-        <p>Pas d'événements disponibles.</p>
+        <div class="text-center">
+          <p>Pas d'événements disponibles.</p>
+        </div>
       <% else %>
         <% @club.events.each do |event| %>
 
@@ -77,7 +88,9 @@
 
     </div>
 
+
   </div>
+
 
 </div>
 
