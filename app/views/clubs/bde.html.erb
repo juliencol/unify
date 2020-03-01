@@ -35,9 +35,17 @@
             </div>
         <% end %>
     </div>
-    <div class="col-lg-4 col-6 pt-3 d-flex flex-column align-items-end justify-content-center">
-        <p>Vous ne pouvez pas postuler pour le BDE.</p>
+    <div class="white-wrapper d-flex flex-column align-items-start">
+      <%= link_to new_club_event_path(@bde), class:"button-effect-4" do %>
+        <span>Ajouter un nouvel événement</span>
+        <i class="fas fa-calendar-week"></i>
+      <% end %>
+      <%= link_to edit_club_path(@bde), class:"button-effect-4" do %>
+        <span>Modifier la page de l'association</span>
+        <i class="fas fa-edit"></i>
+      <% end %>
     </div>
+  </div>
 
   </div>
   <div class="row">

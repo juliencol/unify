@@ -7,12 +7,12 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100"
-              src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"
+              src="https://res.cloudinary.com/isep/image/upload/v1583065054/unify/banner6_la7sl4.png"
               alt="Premier slide">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100"
-              src="https://visualhunt.com/photos/1/people-walking-towards-eiffel-tower-at-night.jpg?s=l"
+              src="https://res.cloudinary.com/isep/image/upload/v1583064254/unify/Image_from_iOS_btrxtc.png"
               alt="Deuxième slide">
           </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="event-cover" style="background: url(<%= event.image %>);">
               <%= link_to club_path(event.club.id) do %>
                 <div class="event-author">
-                  <div class="event-author-logo"><%= image_tag event.club.logo %></div>
+                  <div class="event-author-logo"><%= image_tag event.club.logo unless event.club.logo.nil? %></div>
                   <h3><%= event.club.name %></h3>
                 </div>
               <% end %>

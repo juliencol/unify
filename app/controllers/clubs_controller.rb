@@ -1,12 +1,12 @@
 class ClubsController < ApplicationController
     def index
         @clubs = Club.all
-        @bde = Club.where(name: "Genesis BDE").take
+        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
     end
     
     def show
         @club = Club.find(params[:id])
-        @bde = Club.where(name: "Genesis BDE").take
+        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
     end
 
     def edit
@@ -20,20 +20,13 @@ class ClubsController < ApplicationController
     end
 
     def bde
-        @bde = Club.where(name: "Genesis BDE").take
+        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
     end
 
     def calendar
     end 
 
     def members
-        @club = Club.find(params[:club_id])
-    end
-
-    def subscribe
-    end
-  
-    def apply
         @club = Club.find(params[:club_id])
     end
 

@@ -1,5 +1,0 @@
-<% if @club.applications_open? %>
-    <%= link_to "Candidater", club_apply_path(@club), class:"apply-button button-effect-1", :"data-hover" => "Candidater" %>
-<% else %>
-    <p class="apply-button mt-2">Candidatures fermées pour l'instant</p>
-<% end %>
