@@ -1,7 +1,38 @@
+/* Pills
+---------------------------*/
+
+.pill-tabs {
+	background-color: #fff;
+	@extend .z-depth-1;
+	border-radius: 2rem;
+	padding: .5rem .25rem;
+
+	.tab {
+		text-decoration: none;
+		background-color: #ffffff;
+		border-radius: 2rem;
+		cursor: pointer;
+		padding: .25rem .5rem;
+		transition: background 0.4s linear;
+	}
+
+	.tab span {
+		font-weight: bold;
+		padding: 2rem;
+	}
+
+	.tab.active {
+		background-color: $isep-jaune;
+		color: #fff;
+	}
+}
+
 .club-banner {
-	width: 100%;
+	width: 90%;
+	height: 400px;
 	overflow: hidden;
 	position: relative;
+	border-radius: 1rem;
 
 	img {
 		position: absolute;
@@ -14,27 +45,28 @@
 	}
 }
 
-.club-logo-page {
-	margin-top: -30px;
-	padding: 1rem;
-	border-radius: 28%;
-	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-	background: white;
+.club-content {
+	padding: .2rem 4rem;
 
-	@include media-breakpoint-between(xs, lg) {
-		margin-top: 0;
+	.club-logo-page {
+		margin: 0;
+		padding: 1rem;
+		border-radius: 28%;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+		background: white;
 	}
-}
 
-.club-name {
-	font-weight: 600;
+	.club-name {
+		font-weight: 600;
+	}
+
 }
 
 .club-feed {
 	padding: 0;
 
 	.event-container {
-		width: 48vw;
+		width: 90%;
 
 		@include media-breakpoint-between(xs, md) {
 			width: 97vw;

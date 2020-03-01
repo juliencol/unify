@@ -36,9 +36,7 @@ var mixer = mixitup(containerEl, {
 import 'sticky-sidebar';
 
 const offset = document.querySelector(".navbar").offsetHeight + 10,
-    events = document.querySelector(".mix-container"),
-    leftSidebar = document.querySelector("#sidebar__left"),
-    rightSidebar = document.querySelector("#sidebar__right");
+    events = document.querySelector(".mix-container");
 
 var sidebar_right = new StickySidebar('#sidebar__right', {
     containerSelector: '#main-content',
