@@ -20,11 +20,12 @@
   </div>
   <div class="row">
 
-    <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
-
-      <% if @club.events.nil? || @club.events == [] %>
+    <% if @club.events.nil? || @club.events == [] %>
+      <div class="col club-feed mt-5 text-center">
         <p>Pas d'événements disponibles.</p>
-      <% else %>
+      </div>
+    <% else %>
+      <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
         <% @club.events.each do |event| %>
 
           <div class="event-container">
@@ -73,9 +74,9 @@
           </div>
 
         <% end %>
-      <% end %>
 
-    </div>
+      </div>
+    <% end %>
 
   </div>
 
