@@ -76,14 +76,14 @@
 			width: 100%;
 			height: 2px;
 			content: '';
-			background-color: $isep-jaune;
+			background-color: $accent-purple;
 			opacity: 0;
 			transition: all 200ms linear;
 		}
 
 		&:hover {
 			.nav-link {
-				color: $isep-jaune !important;
+				color: $accent-purple !important;
 			}
 
 			&:after {
@@ -99,7 +99,7 @@
 		@include media-breakpoint-between(xs, lg) {
 			&:active {
 				.nav-link {
-					color: $isep-jaune !important;
+					color: $accent-purple !important;
 				}
 			}
 		}
@@ -140,7 +140,7 @@
 				&:hover,
 				&:focus {
 					color: #fff;
-					background-color: $isep-jaune;
+					background-color: $accent-purple;
 				}
 			}
 		}

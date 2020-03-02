@@ -40,7 +40,7 @@
             margin: 0;
             width: 3rem;
             height: 3rem;
-            background: $isep-jaune;
+            background: $accent-yellow;
             border-radius: 1.625rem;
 
             .icon {
@@ -112,48 +112,24 @@
     }
 }
 
-/* Effect 2: color popping  */
-$color2: $isep-jaune;
+/* Effect 2: blue pill */
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <%= link_to ..., class:"button-effect-2" do %>
+        <button>...</button>
+    <% end %>
+   ------------------------------- */
 
 .button-effect-2 {
-    border: 2px solid $color2;
-    border-radius: 3rem;
-    color: $color2;
-    font-weight: 100;
-    overflow: hidden !important;
-    padding: .5rem 1rem;
-    position: relative;
     text-decoration: none !important;
-    transition: .2s transform ease-in-out;
-    will-change: transform;
-    z-index: 0;
+    color: #007AFF !important;
 
-    &::after {
-        background-color: $color2;
-        border-radius: 3rem;
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translate(-100%, 0) rotate(10deg);
-        transform-origin: top left;
-        transition: .2s transform ease-out;
-        will-change: transform;
-        z-index: -1;
-    }
-
-    &:hover::after {
-        transform: translate(0, 0);
-    }
-
-    &:hover {
-        border: 2px solid transparent;
-        color: #fff !important;
-        transform: scale(1.05);
-        will-change: transform;
+    button {
+        all: unset;
+        background: $accent-background;
+        padding: .2rem .75rem;
+        border-radius: .9rem;
     }
 }
 
@@ -168,8 +144,7 @@ $color2: $isep-jaune;
     <% end %>
    ------------------------------- */
 
-$sites: ("members": $isep-bleu,
-    "website": $isep-jaune,
+$sites: ("website": $accent-yellow,
     "instagram": #c13584,
     "linkedin": #007bb6,
     "twitter": #1BA1F1,
@@ -352,7 +327,7 @@ $sites: ("members": $isep-bleu,
         <i class="fas ..."></i>
     </a>
    --------------------------------------- */
-$color4: $isep-jaune;
+$color4: $accent-blue;
 
 .button-effect-4 {
     all: unset;

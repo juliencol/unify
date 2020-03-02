@@ -36,9 +36,7 @@ var mixer = mixitup(containerEl, {
 import 'sticky-sidebar';
 
 const offset = document.querySelector(".navbar").offsetHeight + 10,
-    events = document.querySelector(".mix-container"),
-    leftSidebar = document.querySelector("#sidebar__left"),
-    rightSidebar = document.querySelector("#sidebar__right");
+    events = document.querySelector(".mix-container");
 
 var sidebar_right = new StickySidebar('#sidebar__right', {
     containerSelector: '#main-content',
@@ -59,9 +57,18 @@ var sidebar_left = new StickySidebar('#sidebar__left', {
 
 $(".toggle-filters").on('click', function () {
     $(this).parent().toggleClass("filters-shown");
+});
 
+$("body").on('click', function (event) {
+    var clickover = event.target.id == "mobile-filters" || $(event.target).parents("#mobile-filters").length;
+    if (!clickover && $(".mobile-filters").hasClass("filters-shown")) {
+        $(".toggle-filters").click();
+    }
+});
+
+$(document).on('swiperight', function () {
     if ($(".mobile-filters").hasClass("filters-shown")) {
-        $("#main-content").css("overflow", "hidden")
+        $(".toggle-filters").click();
     }
 });
 

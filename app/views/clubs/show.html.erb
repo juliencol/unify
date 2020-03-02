@@ -1,91 +1,99 @@
 <div class="container-fluid spacer">
 
-  <div class="row no-gutters">
-      <div class="col-12">
-          <%= render "clubs/shared/banner" %>
+  <div class="row club-content">
+    <div class="col-lg-3 col-12 pt-3 d-flex flex-row flex-lg-column flex-wrap justify-content-center justify-content-md-around justify-content-lg-start align-content-md-center">
+      <div class="d-flex flex-row align-items-center justify-content-between mb-3 club-logo-wrapper">
+        <%= render "clubs/shared/logo" %>
       </div>
-  </div>
-  <div class="row">
-
-    <div class="col-lg-4 col-12 pt-3 pt-lg-0">
-      <%= render "clubs/shared/logo" %>
-    </div>
-    <div class="col-lg-4 col-6 pt-3 order-lg-first d-flex flex-row flex-nowrap justify-content-around align-content-md-center">
-      <%= render "clubs/shared/links" %>
-    </div>
-
-    <div class="white-wrapper d-flex flex-column align-items-start mb-4 mt-4">
-      <%= link_to new_club_event_path(@club), class:"button-effect-4" do %>
-        <span>Ajouter un nouvel événement</span>
-        <i class="fas fa-calendar-week"></i>
-      <% end %>
-      <%= link_to edit_club_path, class:"button-effect-4" do %>
-        <span>Modifier la page de l'association</span>
-        <i class="fas fa-edit"></i>
-      <% end %>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <% if @club.events.nil? || @club.events == [] %>
-      <div class="col club-feed mt-5 text-center">
-        <p>Pas d'événements disponibles.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
+      <div class="d-flex flex-row align-items-center justify-content-around">
+        <%= render "clubs/shared/links" %>
       </div>
-    <% else %>
-      <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
-        <% @club.events.each do |event| %>
+      <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+        <%= link_to new_club_event_path(@club), class:"button-effect-2 mb-3" do %>
+          <button>Ajouter un événement</button>
+        <% end %>
+        <%= link_to edit_club_path, class:"button-effect-2" do %>
+          <button>Modifier la page</button>
+        <% end %>
+      </div>
+    </div>
 
-          <div class="event-container">
-      
-            <div class="event-header">
-              <div class="event-cover" style="background: url(<%= event.image %>);">
-              </div>
-            </div>
+    <div class="col-lg-9 pt-3">
+      <div class="row">
+        <div class="col-12 pt-3 d-flex align-items-center justify-content-center">
+          <div class="pill-tabs">
+              <%= link_to club_path(@club), class:"tab active" do %>
+                  <span>Événements</span>
+              <% end %>
+              <%= link_to club_members_path(@club), class:"tab" do %>
+                  <span>Membres</span>
+              <% end %>
+          </div>
+        </div>
+      </div>
 
-            <div class="event-body">
-              <div class="event-title">
-                <h2><%= link_to event.name, event_path(event.id) %></h2>
+      <div class="row">
+        <% if @club.events.nil? || @club.events == [] %>
+          <div class="col club-feed text-center">
+            <p>Pas d'événements disponibles.</p>
+          </div>
+        <% else %>
+          <div class="col club-feed d-flex flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
+            <% @club.events.each do |event| %>
+
+              <div class="event-container">
+          
+                <div class="event-header">
+                  <div class="event-cover" style="background: url(<%= event.image %>);">
+                  </div>
+                </div>
+
+                <div class="event-body">
+                  <div class="event-title">
+                    <h2><%= link_to event.name, event_path(event.id) %></h2>
+                  </div>
+                  <div class="event-summary">
+                    <p><%= event.short_description %></p>
+                  </div>
+                  <div class="event-tags">
+                    <ul>
+                      <% event.themes.each do |theme| %>
+                        <li><a href="#"><%= theme.title.capitalize %></a></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="event-footer">
+                  <ul>
+                    <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
+                    <li class="comments">
+                      <i class="fas fa-euro-sign icon-euro"></i>
+                      <span class="numero">
+                        <% if event.price.nil? || event.price == 0 %>
+                          <span>Gratuit</span>
+                        <% else %>
+                          <span><%= event.price %></span>
+                        <% end %>
+                      </span>
+                    </li>
+                    <li class="participants">
+                      <i class="fas fa-user-check icon-user"></i>
+                      <span class="numero">12</span>
+                    </li>
+                  </ul>
+                </div>
+
               </div>
-              <div class="event-summary">
-                <p><%= event.short_description %></p>
-              </div>
-              <div class="event-tags">
-                <ul>
-                  <% event.themes.each do |theme| %>
-                    <li><a href="#"><%= theme.title.capitalize %></a></li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="event-footer">
-              <ul>
-                <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
-                <li class="comments">
-                  <i class="fas fa-euro-sign icon-euro"></i>
-                  <span class="numero">
-                    <% if event.price.nil? || event.price == 0 %>
-                      <span>Gratuit</span>
-                    <% else %>
-                      <span><%= event.price %></span>
-                    <% end %>
-                  </span>
-                </li>
-                <li class="participants">
-                  <i class="fas fa-user-check icon-user"></i>
-                  <span class="numero">12</span>
-                </li>
-              </ul>
-            </div>
+
+            <% end %>
 
           </div>
-
         <% end %>
 
       </div>
-    <% end %>
-
+    </div>
 
   </div>
 
