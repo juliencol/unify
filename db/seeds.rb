@@ -503,108 +503,119 @@ puts "Clubs added to users successfully."
 
 
 puts "Creating 8 events..."
-exodus_party = Event.create!(
-    club_id: exodus.id,
-    name: "Soirée stylée",
-    short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
-    long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
-    image: "https://i.imgur.com/4xPcsx7.jpg",
-    date: "15/11/2019 22:00",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: exodus.id,
-    name: "AW claqué au sol",
-    short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://i.imgur.com/pauemHk.jpg",
-    date: "21/11/2019 18:30",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: hustle.id,
-    name: "Startup Weekend de folie",
-    short_description: "Cras porttitor enim id lorem accumsan, in interdum nibh feugiat. Sed consectetur, tortor quis facilisis dignissim, arcu nibh semper turpis, ac aliquet massa orci ac enim. Suspendisse vitae pulvinar orci, vel ornare odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur erat sem, consectetur sit amet sollicitudin sit amet, interdum id lorem. Ut sagittis dictum tempor. Sed ullamcorper, neque at dapibus tincidunt, urna odio bibendum justo, id rhoncus orci purus sed ipsum.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
-    date: "25/11/2019",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: isep_alumni.id,
-    name: "Conférence l'IA n'existe pas",
-    short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://i.imgur.com/pauemHk.jpg",
-    date: "20/12/2019",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: junior_isep.id,
-    name: "Workshop React",
-    short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://i.imgur.com/4xPcsx7.jpg",
-    date: "19/01/2020",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: discover_isep.id,
-    name: "Afterwork Shotgun ep. 2",
-    short_description: "Quoi ? Tu pensais qu’on était déjà mort ?! Le seul truc mort chez Shotgun c’est les cadavres qu’on jette dans la Seine. Tu ne veux pas finir comme eux ? Alors viens à notre nouvel after jeudi 25 janvier chez Monsieur le zinc. Petit bar chill où l'on se sert comme dans une pompe à essence, rien de mieux pour déstresser et oublier le premier semestre. On vous attend nombreux et on compte sur vous pour enjailler le dancefloor. Monsieur le Zinc",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://iseplive.fr/api/storage/event/LJOfJHgkALfvBV0Jh92wbTys74XEfm.jpg",
-    date: "25/01/2020",
-    price: 20,
-    location: "13 rue monsieur le Prince 75006 PARIS",
-)
-Event.create!(
-    club_id: hustle.id,
-    name: "Cocktail Entrepreneurs",
-    short_description: "Un cocktail c'est toujours sympa, ça l'est encore plus en compagnie d'entrepreneurs inspirants issus de l'ISEP. 🔥 Vous allez être ravi de l'ajouter à vos agendas: un évent mêlant entrepreneuriat et bon goût arrive à toute allure ⌛: Nous aurons l'immense plaisir d'accueillir Le Schoolab ainsi que quatre entrepreneurs passés par l'ISEP pour un événement inédit et hors-série: un cocktail entrepreneur. 🍸 Au menu: présentation de Schoolab et ses programmes (Starter, Le Bridge et autres pépites !), table ovale avec les quatre entrepreneurs alumnis qui partageront leurs expériences et parcours, et bien évidemment un buffet/cocktail pour clore le tout en beauté ! (sans alcool 🚫) En somme, du chaud brûlant en perspective 🔥",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://iseplive.fr/api/storage/event/SHA9OvO5AOIB0vaySR3LxbAHq8koVz.jpg",
-    date: "20/02/2020",
-    price: 20,
-    location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-Event.create!(
-    club_id: move_your_as.id,
-    name: "Afterwork AS",
-    short_description: "Quoi de mieux qu'un afterwork à la rentrée ? L'AS vous invite à venir boire une (ou plusieurs 🍻) bières ou bien du ricard pour les amateurs ! Tout ça en regardant le match PSG-Réal ⚽🔥",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
-    image: "https://iseplive.fr/api/storage/event/UmBiEdnSSB8vzWhEJ0kMLHWiBG3pJr.jpg",
-    date: "06/03/2020",
-    price: 20,
-    location: "7 rue Gregoire des Tours 75006 PARIS"
-)
+events = [
+    { 
+        club_id: exodus.id,
+        name: "Soirée stylée",
+        short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
+        long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
+        image: "https://i.imgur.com/4xPcsx7.jpg",
+        date: "15/11/2019 22:00",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux",
+    },
+
+    {
+        club_id: exodus.id,
+        name: "AW claqué au sol",
+        short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://i.imgur.com/pauemHk.jpg",
+        date: "21/11/2019 18:30",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux",
+    },
+
+    {
+        club_id: hustle.id,
+        name: "Startup Weekend de folie",
+        short_description: "Cras porttitor enim id lorem accumsan, in interdum nibh feugiat. Sed consectetur, tortor quis facilisis dignissim, arcu nibh semper turpis, ac aliquet massa orci ac enim. Suspendisse vitae pulvinar orci, vel ornare odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur erat sem, consectetur sit amet sollicitudin sit amet, interdum id lorem. Ut sagittis dictum tempor. Sed ullamcorper, neque at dapibus tincidunt, urna odio bibendum justo, id rhoncus orci purus sed ipsum.",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://res.cloudinary.com/isep/image/upload/v1577126113/unify/image_2_fwcchf.png",
+        date: "25/11/2019",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux",
+    },
+
+    {
+        club_id: isep_alumni.id,
+        name: "Conférence l'IA n'existe pas",
+        short_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://i.imgur.com/pauemHk.jpg",
+        date: "20/12/2019",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux",
+    },
+
+    {
+        club_id: junior_isep.id,
+        name: "Workshop React",
+        short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://i.imgur.com/4xPcsx7.jpg",
+        date: "19/01/2020",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux"
+    },
+
+    {
+        club_id: discover_isep.id,
+        name: "Afterwork Shotgun ep. 2",
+        short_description: "Quoi ? Tu pensais qu’on était déjà mort ?! Le seul truc mort chez Shotgun c’est les cadavres qu’on jette dans la Seine. Tu ne veux pas finir comme eux ? Alors viens à notre nouvel after jeudi 25 janvier chez Monsieur le zinc. Petit bar chill où l'on se sert comme dans une pompe à essence, rien de mieux pour déstresser et oublier le premier semestre. On vous attend nombreux et on compte sur vous pour enjailler le dancefloor. Monsieur le Zinc",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://iseplive.fr/api/storage/event/LJOfJHgkALfvBV0Jh92wbTys74XEfm.jpg",
+        date: "25/01/2020",
+        price: 20,
+        location: "13 rue monsieur le Prince 75006 PARIS",
+    },
+
+    {
+        club_id: hustle.id,
+        name: "Cocktail Entrepreneurs",
+        short_description: "Un cocktail c'est toujours sympa, ça l'est encore plus en compagnie d'entrepreneurs inspirants issus de l'ISEP. 🔥 Vous allez être ravi de l'ajouter à vos agendas: un évent mêlant entrepreneuriat et bon goût arrive à toute allure ⌛: Nous aurons l'immense plaisir d'accueillir Le Schoolab ainsi que quatre entrepreneurs passés par l'ISEP pour un événement inédit et hors-série: un cocktail entrepreneur. 🍸 Au menu: présentation de Schoolab et ses programmes (Starter, Le Bridge et autres pépites !), table ovale avec les quatre entrepreneurs alumnis qui partageront leurs expériences et parcours, et bien évidemment un buffet/cocktail pour clore le tout en beauté ! (sans alcool 🚫) En somme, du chaud brûlant en perspective 🔥",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://iseplive.fr/api/storage/event/SHA9OvO5AOIB0vaySR3LxbAHq8koVz.jpg",
+        date: "20/02/2020",
+        price: 20,
+        location: "10 rue de Vanves, Issy Les Moulineaux"
+    },
+
+    {
+        club_id: move_your_as.id,
+        name: "Afterwork AS",
+        short_description: "Quoi de mieux qu'un afterwork à la rentrée ? L'AS vous invite à venir boire une (ou plusieurs 🍻) bières ou bien du ricard pour les amateurs ! Tout ça en regardant le match PSG-Réal ⚽🔥",
+        long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum ultricies diam at efficitur. Vivamus dignissim gravida dapibus. Integer sagittis a magna vitae dictum. Nullam pellentesque porttitor ligula, sit amet interdum erat cursus vitae. Fusce nec augue tempor, aliquet mi vel, iaculis nunc. Nulla sed velit id dolor gravida tincidunt eget fringilla eros. Maecenas et consequat nisi. Praesent ut vehicula odio, a convallis nunc.",
+        image: "https://iseplive.fr/api/storage/event/UmBiEdnSSB8vzWhEJ0kMLHWiBG3pJr.jpg",
+        date: "06/03/2020",
+        price: 20,
+        location: "7 rue Gregoire des Tours 75006 PARIS"
+    }
+]
+events = Event.create(events)
 puts "8 events were created successfully."
 
 
 puts "Creating some themes..."
-conferences = Theme.create!(
-    title: "conférences"
-)
-parties = Theme.create!(
-    title: "soirées"
-)
-workshops = Theme.create!(
-    title: "workshops"
-)
-afterworks = Theme.create!(
-    title: "afterworks"
-)
+themes = [
+    { title: "Conférence" },
+    { title: "Workshop" },
+    { title: "Afterwork" },
+    { title: "Soirée" },
+    { title: "Entrepreneuriat" },
+    { title: "Blockchain" },
+    { title: "Hackaton" },
+    { title: "Intelligence Artificielle" },
+    { title: "Dégustation" },
+    { title: "Maraude" },
+    { title: "Voyage" },
+]
+themes = Theme.create(themes)
 puts "Themes were created successfully."
 
 
-puts "Adding theme to events..."
-EventTheme.create!(
-    event: exodus_party,
-    theme: parties
-)
-puts "Themes were added to events sucessfully."
+puts "Giving all themes to all events..."
+events.each do |event|
+    event.themes = themes
+end
+puts "Themes were sucessfully given to events."
