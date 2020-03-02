@@ -4,13 +4,19 @@
 // event container
 //-------------------------
 .event-container {
-    @extend .z-depth-2;
+    box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
     flex-direction: column;
     background: #fff;
     border-radius: 5px;
     font-weight: 100;
     margin: 48px auto;
     width: 20rem;
+    background:
+        /* gradient can be an image */
+        linear-gradient(to left,
+            #6a11cb 0%,
+            #2575fc 100%) left bottom #ffffff no-repeat;
+    background-size: 100% 6px;
 
     @media screen and (min-width: 480px) {
         width: 28rem;
@@ -41,7 +47,7 @@
 .event-cover {
     background-size: contain !important;
     background-position: center !important;
-    border-radius: 5px 5px 0 0;
+    border-radius: 1rem;
     height: 350px;
 
     @include media-breakpoint-between(xs, sm) {
@@ -60,7 +66,7 @@
     width: 80%;
 
     .event-title {
-        margin: .5rem 0;
+        margin: .75rem 0;
 
         h2 a {
             color: #333;
@@ -68,7 +74,7 @@
             text-transform: uppercase;
 
             &:hover {
-                color: $isep-jaune;
+                color: $accent-blue;
             }
         }
     }
@@ -83,7 +89,7 @@
                 background-size: cover;
                 height: 32px;
                 width: 32px;
-                margin-right: .5rem;
+                margin-right: 1rem;
                 position: relative;
                 filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
             }
@@ -110,8 +116,16 @@
 .event-footer {
     border-top: 1px solid lighten(#333, 70%);
     margin: 0 auto;
-    padding: .5rem 0;
-    width: 80%;
+    padding: .75rem 5rem;
+    width: 100%;
+
+    @include media-breakpoint-between(xs, sm) {
+        padding: .75rem 2rem;
+    }
+
+    @include media-breakpoint-between(sm, md) {
+        padding: .75rem 3rem;
+    }
 
 
     ul {
@@ -132,7 +146,6 @@
         li {
             color: lighten(#333, 40%);
             font-size: 1rem;
-            letter-spacing: 1px;
             text-align: center;
             text-transform: uppercase;
             position: relative;
@@ -143,17 +156,18 @@
     .price,
     .participants {
         margin-right: 1rem;
-        background: $accent-background;
-        color: $accent-purple;
-        border-radius: .5rem;
-        padding: .25rem .75rem;
     }
 
     .event-date {
         background: $accent-background;
-        color: $accent-yellow;
+        color: lighten(black, 40%);
         border-radius: .5rem;
         padding: .25rem .75rem;
+
+        span {
+            font-weight: 600;
+            color: black;
+        }
     }
 
     // Icons
