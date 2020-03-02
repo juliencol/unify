@@ -60,11 +60,13 @@
 
       <% @events.each do |event| %>
 
-        <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %><% end %>">
+        <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %> <% end %>">
     
           <div class="event-header">
-            <div class="event-cover" style="background: url(<%= event.image %>);">
-            </div>
+            <%= link_to event_path(event.id) do %>
+              <div class="event-cover" style="background: url(<%= event.image %>);">
+              </div>
+            <% end %>
           </div>
 
           <div class="event-body">
@@ -91,7 +93,7 @@
           
           <div class="event-footer">
             <ul>
-              <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
+              <li class="event-date"><%= event.date.strftime("%b") %> <span><%= event.date.strftime("%d") %></span></li>
               <li class="price">
                 <i class="fas fa-euro-sign icon-euro"></i>
                 <span class="numero">

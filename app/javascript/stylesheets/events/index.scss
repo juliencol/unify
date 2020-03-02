@@ -54,7 +54,7 @@
 	width: 100%;
 	padding-top: 1rem;
 	transform: translate(0, 0);
-	/* For browsers don't support translate3d. */
+	/* For browsers that don't support translate3d. */
 	transform: translate3d(0, 0, 0);
 	will-change: position, transform;
 }
@@ -113,26 +113,10 @@
 ---------------------------------------------------------------------- */
 
 .check-wrap {
-	width: 90%;
-	background: white;
-	border-radius: 12px;
+	width: 100%;
 	padding: .75rem .2rem;
 	position: relative;
 	overflow: hidden;
-	@extend .z-depth-1;
-	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
-
-	&:after {
-		content: '';
-		height: 120%;
-		width: 0%;
-		top: -10%;
-		right: -10%;
-		border-radius: 28%;
-		background: $isep-bleu;
-		position: absolute;
-		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
-	}
 
 	h6 {
 		z-index: 2;
@@ -141,15 +125,13 @@
 
 	&.checked {
 
-		h6 {
-			color: white !important;
-		}
-
-		&:after {
-			width: 120%;
-			border-radius: 0;
-
-		}
+		background:
+			/* gradient can be an image */
+			linear-gradient(to left,
+				#fa709a 0%,
+				#fee140 100%) left bottom #ffffff no-repeat;
+		background-size: 100% 4px;
+		box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
 	}
 }
 
