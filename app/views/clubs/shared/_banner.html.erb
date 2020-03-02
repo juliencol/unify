@@ -1,5 +1,7 @@
-<% if @club.banner_image.nil? || @club.banner_image == "" %>
-   <%= image_tag "https://hackernoon.com/hn-images/1*lEyU2zS2TBaOl_fbXqPChA.png", class:"club-banner" %>
-<% else %>
-    <%= image_tag @club.banner_image, class:"club-banner" %>
-<% end %>
+<div class="club-banner mx-auto">
+    <% if @club.banner_image.nil? || @club.banner_image == "" %>
+    <%= image_tag "https://hackernoon.com/hn-images/1*lEyU2zS2TBaOl_fbXqPChA.png" %>
+    <% else %>
+        <%= image_tag @club.banner_image %>
+    <% end %>
+</div>

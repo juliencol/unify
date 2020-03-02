@@ -1,12 +1,46 @@
 <div class="container-fluid spacer">
-  <%= render "clubs/shared/banner" %>
-  <h1 class="text-center">Membres</h1>
 
-  <% @club.users.each do |user| %>
-      <img class="avatar" src=<%= user.profile_picture %> >
-      <p><%= user.first_name %> <%= user.last_name %></p>
-  <% end %>
+  <div class="row club-content">
+    <div class="col-lg-3 col-12 pt-3 d-flex flex-column justify-content-start align-content-md-center">
+      <div class="d-flex flex-row align-items-center justify-content-between mb-3 club-logo-wrapper">
+        <%= render "clubs/shared/logo" %>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
+      <div class="d-flex flex-row align-items-center justify-content-around">
+        <%= render "clubs/shared/links" %>
+      </div>
+    </div>
+
+    <div class="col-lg-9 pt-3">
+      <div class="row">
+        <div class="col-12 pt-3 d-flex align-items-center justify-content-center">
+          <div class="pill-tabs">
+              <%= link_to club_path(@club), class:"tab" do %>
+                  <span>Événements</span>
+              <% end %>
+              <%= link_to club_members_path(@club), class:"tab active" do %>
+                  <span>Membres</span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <% @club.users.each do |user| %>
+            <img class="avatar" src=<%= user.profile_picture %> />
+            <p><%= user.first_name %> <%= user.last_name %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
+
+<%= javascript_pack_tag 'shared/navbar' %>
 
 
 
