@@ -179,7 +179,7 @@ $sites: ("website": $accent-yellow,
         background-color: black;
     }
 
-    svg {
+    i {
         color: #fff !important;
         transform: scale(1);
     }
@@ -202,7 +202,7 @@ $sites: ("website": $accent-yellow,
         left: -110%;
     }
 
-    svg,
+    i,
     img {
         transform: scale(.8);
     }
@@ -217,7 +217,7 @@ $sites: ("website": $accent-yellow,
                 background-color: $color;
             }
 
-            svg {
+            i {
                 color: $color;
             }
         }
@@ -250,7 +250,7 @@ $sites: ("website": $accent-yellow,
         transform: rotate(45deg);
     }
 
-    svg {
+    i {
         @extend .animate;
         font-size: 1.4em;
         vertical-align: middle;
@@ -358,7 +358,7 @@ $color4: $accent-blue;
         vertical-align: middle;
     }
 
-    svg {
+    i {
         position: relative;
         top: 0;
         margin-left: 10px;
@@ -375,7 +375,7 @@ $color4: $accent-blue;
             background: rgba($color4, 1);
         }
 
-        svg {
+        i {
             color: white;
             @include transition(all .45s ease);
         }

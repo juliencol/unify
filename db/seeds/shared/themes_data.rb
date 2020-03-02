@@ -6,7 +6,7 @@ THEMES_DATA = [
     { title: "Entrepreneuriat" },
     { title: "Blockchain" },
     { title: "Hackaton" },
-    { title: "Intelligence Artificielle" },
+    { title: "IA" },
     { title: "Dégustation" },
     { title: "Maraude" },
     { title: "Voyage" },
