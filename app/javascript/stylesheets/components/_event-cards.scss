@@ -43,7 +43,6 @@
     background-position: center !important;
     border-radius: 5px 5px 0 0;
     height: 350px;
-    box-shadow: inset hsla(0, 0, 0, .2) 0 64px 64px 16px;
 
     @include media-breakpoint-between(xs, sm) {
         height: 150px;
@@ -51,38 +50,6 @@
 
     @include media-breakpoint-between(sm, md) {
         height: 200px;
-    }
-}
-
-.event-author {
-    margin: 0 auto;
-    padding-top: .75rem;
-    width: 80%;
-    display: flex;
-
-    .event-author-logo {
-
-        img {
-            background-size: cover;
-            border-radius: 50%;
-            height: 32px;
-            margin-right: .5rem;
-            position: relative;
-            width: 32px;
-        }
-    }
-
-    h3 {
-        color: #fff;
-        font-weight: 300;
-        margin: 0;
-        line-height: 32px;
-    }
-
-    @include media-breakpoint-between(xs, sm) {
-        h3 {
-            font-size: .9rem;
-        }
     }
 }
 
@@ -106,8 +73,33 @@
         }
     }
 
+    .event-author {
+        padding: .75rem 0;
+        display: flex;
+
+        .event-author-logo {
+
+            img {
+                background-size: cover;
+                height: 32px;
+                width: 32px;
+                margin-right: .5rem;
+                position: relative;
+                filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
+            }
+        }
+
+        h3 {
+            color: $accent-blue;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin: 0;
+            line-height: 32px;
+        }
+    }
+
     .event-summary p {
-        color: lighten(#333, 10%);
+        color: lighten(black, 60%);
         font-weight: 200 !important;
     }
 
@@ -140,9 +132,7 @@
         li {
             color: lighten(#333, 40%);
             font-size: 1rem;
-            height: 1.5rem;
             letter-spacing: 1px;
-            line-height: 1.5rem;
             text-align: center;
             text-transform: uppercase;
             position: relative;
@@ -150,29 +140,29 @@
         }
     }
 
-    .comments {
+    .price,
+    .participants {
         margin-right: 1rem;
+        background: $accent-background;
+        color: $accent-purple;
+        border-radius: .5rem;
+        padding: .25rem .75rem;
     }
 
     .event-date {
-        border: 1px solid lighten(#333, 40%);
-        border-radius: 3px;
-        padding: 0 .5rem;
-    }
-
-    .numero {
-        position: relative;
-        top: -0.1rem;
+        background: $accent-background;
+        color: $accent-yellow;
+        border-radius: .5rem;
+        padding: .25rem .75rem;
     }
 
     // Icons
     //-------------------------
     .icon-euro,
     .icon-user {
-        color: $isep-jaune;
         height: 18px;
-        margin-right: .5rem;
         width: 18px;
+        margin-right: .5rem;
     }
 
 }

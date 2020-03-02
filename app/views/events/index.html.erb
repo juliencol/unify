@@ -64,12 +64,6 @@
     
           <div class="event-header">
             <div class="event-cover" style="background: url(<%= event.image %>);">
-              <%= link_to club_path(event.club.id) do %>
-                <div class="event-author">
-                  <div class="event-author-logo"><%= image_tag event.club.logo unless event.club.logo.nil? %></div>
-                  <h3><%= event.club.name %></h3>
-                </div>
-              <% end %>
             </div>
           </div>
 
@@ -77,6 +71,12 @@
             <div class="event-title">
               <h2><%= link_to event.name, event_path(event.id) %></h2>
             </div>
+            <%= link_to club_path(event.club.id) do %>
+              <div class="event-author">
+                <div class="event-author-logo"><%= image_tag event.club.logo unless event.club.logo.nil? %></div>
+                <h3><%= event.club.name %></h3>
+              </div>
+            <% end %>
             <div class="event-summary d-none d-md-block">
               <p><%= event.short_description %></p>
             </div>
@@ -92,7 +92,7 @@
           <div class="event-footer">
             <ul>
               <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
-              <li class="comments">
+              <li class="price">
                 <i class="fas fa-euro-sign icon-euro"></i>
                 <span class="numero">
                   <% if event.price.nil? || event.price == 0 %>
@@ -139,7 +139,7 @@
       </div>
     </div>
 
-    <div class="col-10 col-md-6 d-lg-none mobile-filters bg-white">
+    <div class="col-10 col-md-6 d-lg-none mobile-filters bg-white" id="mobile-filters">
 
       <button class="toggle-filters">
         <i class="far fa-check-square"></i>

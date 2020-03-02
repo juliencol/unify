@@ -59,6 +59,19 @@ $(".toggle-filters").on('click', function () {
     $(this).parent().toggleClass("filters-shown");
 });
 
+$("body").on('click', function (event) {
+    var clickover = event.target.id == "mobile-filters" || $(event.target).parents("#mobile-filters").length;
+    if (!clickover && $(".mobile-filters").hasClass("filters-shown")) {
+        $(".toggle-filters").click();
+    }
+});
+
+$(document).on('swiperight', function () {
+    if ($(".mobile-filters").hasClass("filters-shown")) {
+        $(".toggle-filters").click();
+    }
+});
+
 /* Controls
 ---------------------------------------------------------------------- */
 

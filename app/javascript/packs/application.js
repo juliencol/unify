@@ -16,8 +16,9 @@ require('channels');
 // const imagePath = (name) => images(name, true)
 
 require('jquery');
+require('jquery-mobile');
 require('bootstrap');
-require("@fortawesome/fontawesome-free/js/all")
+require("@fortawesome/fontawesome-free/js/all");
 require('../stylesheets/application');
 
 import 'mapbox-gl/dist/mapbox-gl.css';
