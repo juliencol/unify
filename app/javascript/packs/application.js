@@ -16,14 +16,17 @@ require('channels');
 // const imagePath = (name) => images(name, true)
 
 require('jquery');
-require('jquery-mobile');
 require('bootstrap');
-require("@fortawesome/fontawesome-free/js/all");
+require("@fortawesome/fontawesome-free/css/all");
 require('../stylesheets/application');
 
 // Mapbox 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
-import { initMapbox } from '../plugins/init_mapbox';
+import {
+    initMapbox
+} from '../plugins/init_mapbox';
 
 initMapbox();
+
+require('jquery-mobile');
