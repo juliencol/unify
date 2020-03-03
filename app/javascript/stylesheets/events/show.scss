@@ -1,81 +1,77 @@
 .hero {
-	width: 100%;
-	height: 460px;
-	background-attachment: fixed;
-	background-size: contain;
+    width: 100%;
+    height: 460px;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .event-left {
-	.club-desc {
-		text-decoration: none;
-		color: inherit;
-
-		img {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-		}
-	}
-
-	.event-tags-big {
-
-		.line-tags {
-			width: 50px;
-			height: 1px;
-			background: lighten(black, 70%);
-			float: left;
-			transform: translateY(10px);
-		}
-	}
-
-	p {
-		padding-right: 5em;
-		text-align: justify;
-	}
+    .club-desc {
+        text-decoration: none;
+        color: inherit;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+    .event-tags-big {
+        .line-tags {
+            width: 50px;
+            height: 1px;
+            background: lighten(black, 70%);
+            float: left;
+            transform: translateY(10px);
+        }
+    }
+    p {
+        padding-right: 5em;
+        text-align: justify;
+    }
 }
 
 .event-right {
-	.subscribe-button {
-		all: unset;
-		border-radius: 5px;
-		margin-right: 20px;
-		border: none;
-		cursor: pointer;
-		background: $isep-jaune;
-		color: #fff !important;
-		padding: .25rem .5rem;
-		font-size: 1.5em;
-
-		&:focus {
-			outline: none;
-		}
-
-		&.subscribed:hover span {
-			display: none;
-		}
-
-		&.subscribed:hover:before {
-			content: "Se désinscrire";
-		}
-	}
+    .subscribe-button {
+        all: unset;
+        border-radius: 5px;
+        margin-right: 20px;
+        border: none;
+        cursor: pointer;
+        background: $isep-jaune;
+        color: #fff !important;
+        padding: .25rem .5rem;
+        font-size: 1.5em;
+        &:focus {
+            outline: none;
+        }
+        &.subscribed:hover span {
+            display: none;
+        }
+        &.subscribed:hover:before {
+            content: "Se désinscrire";
+        }
+    }
 }
 
 @include media-breakpoint-between(xs, md) {
-	.hero {
-		height: 180px;
-		background-position: center;
-	}
-
-	.event-left {
-
-		p {
-			padding-right: 0;
-		}
-	}
+    .hero {
+        height: 180px;
+        background-position: center;
+    }
+    .event-left {
+        p {
+            padding-right: 0;
+        }
+    }
 }
 
 @include media-breakpoint-between(md, lg) {
-	.hero {
-		height: 320px;
-	}
+    .hero {
+        height: 320px;
+    }
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 500px;
 }

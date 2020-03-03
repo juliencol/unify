@@ -511,6 +511,8 @@ exodus_party = Event.create!(
     image: "https://i.imgur.com/4xPcsx7.jpg",
     date: "15/11/2019 22:00",
     price: 20,
+    latitude: 48.863200,
+    longitude: 2.315100,
     location: "chez Cyril Bennarosh",
 )
 Event.create!(

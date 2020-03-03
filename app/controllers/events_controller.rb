@@ -12,10 +12,15 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @marker = {
-      lat: @event.latitude,
-      lng: @event.longitude,
-    }
+    
+    if !@event.latitude.nil? &&  !@event.longitude.nil?
+      @marker = {
+        lat: @event.latitude,
+        lng: @event.longitude,
+      }
+    else
+      @marker = nil 
+    end
   end
   
   def new
