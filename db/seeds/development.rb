@@ -30,6 +30,8 @@ puts "Creating 50 events..."
     date: "15/11/2019 22:00",
     price: 15,
     location: "10 rue de Vanves, Issy Les Moulineaux",
+    latitude: 48.863200,
+    longitude: 2.315100,
   )
 end
 puts "50 events were created successfully."
