@@ -1,8 +1,8 @@
-const button = $(".subscribe-button"),
+const button = $("#subscribe-button"),
     span = $(".subscribe-button .button-text");
 
-$(function () {
-    button.on('click', function () {
+$(function() {
+    button.on('click', function() {
         button.toggleClass('subscribed');
         if (button.hasClass('subscribed')) {
             span.text("Inscrit");

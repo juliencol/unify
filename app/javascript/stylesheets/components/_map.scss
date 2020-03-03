@@ -1,0 +1,23 @@
+.marker {
+    background-image: url('https://res.cloudinary.com/isep/image/upload/v1577087960/unify/unify-logo_qvbcvn.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
