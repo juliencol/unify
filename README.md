@@ -147,14 +147,29 @@ git branch -d sexy-feature
 10. Take a break and be proud of yourself. You're the best! 
 
 # Code review
-Every time someone codes a new feature (i.e. push a new branch), his code needs to be reviewed before merging it to the master branch. To review someone's code, make sure your git status is clean, then switch to his branch: 
+Every time someone codes a new feature (i.e. open a new PR), his code needs to be reviewed before merging it to the master branch. To review someone's code, switch to his branch: 
 ```bash
-git fetch
 git checkout sexy-feature
 ```
-Then run a local server to check the changes, make sure there is no bug and you're OK with everything. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
+Then run a local server to check the changes, make sure there is no bug and you're OK with everything. Check the code to make sure it's clean. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
 
 # Image hosting
 To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
 
+# HTML Structure
+It is necessary and vital to respect a certain structure when writing HTML code since we are using [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/). The outermost div must have a class `container-fluid spacer`. Inside the container, there must ONLY be divs with the class `row`. Inside the rows, there must ONLY be divs with the class `col`. Inside the cols is where you put whatever content you want. To sum up, you must respect this structure at all times:
+```
+<div class="container-fluid spacer">
 
+    <div class="row">
+
+        <div class="col">
+        
+            your content goes here...
+        
+        </div>
+
+    </div>
+
+</div>
+```

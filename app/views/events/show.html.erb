@@ -14,7 +14,7 @@
                 <%= image_tag @event.club.logo %>
                 <h4 class="ml-2 mb-0"><%= @event.club.name %></h4>
             <% end %>
-            <div class="event-tags event-tags-big py-2">
+            <div class="event-tags py-2">
                 <div class="line-tags mr-2"></div>
                 <ul>
                     <% @event.themes.each do |theme| %>
@@ -63,6 +63,11 @@
                 <h3>Adresse</h3>
                 <h4><%= @event.location %></h4>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="map" class="event-map" " data-markers="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
     </div>
 </div>

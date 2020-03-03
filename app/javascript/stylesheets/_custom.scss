@@ -46,12 +46,17 @@ $isep-jaune: rgba(245, 163, 0, 1);
 $isep-bleu: rgba(9, 95, 160, 1);
 $isep-gris: rgba(226, 226, 226, 1);
 
+$accent-yellow: rgb(250, 176, 27);
+$accent-blue: rgb(8, 14, 167);
+$accent-purple: rgb(192, 4, 211);
+$accent-background: rgb(242, 242, 247);
+
 //
 // Color system
 //
 
 $theme-colors: (primary: $isep-bleu,
-  secondary: $isep-jaune,
+  secondary: $accent-yellow,
 );
 
 
@@ -92,7 +97,7 @@ $enable-hover-media-query: false;
 //
 // Settings for the `<body>` element.
 
-$body-bg: #FAFAFA;
+$body-bg: #fafafa;
 $body-color: #212529;
 
 
@@ -173,5 +178,5 @@ a:not([href]):not([tabindex]):hover {
 }
 
 .spacer {
-  margin-top: 60px !important;
+  margin-top: 75px !important;
 }
