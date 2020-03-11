@@ -7,6 +7,8 @@ class Event < ApplicationRecord
   has_many :event_themes
   has_many :themes, through: :event_themes
 
+  validates :location, :presence => true
+
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 end
