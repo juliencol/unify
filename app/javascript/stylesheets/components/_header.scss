@@ -1,0 +1,80 @@
+.club-content {
+    padding: .12rem .75rem;
+
+    #club-header {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        z-index: 4;
+        background:
+            /* gradient can be an image */
+            linear-gradient(to left,
+                #6a11cb 0%,
+                #2575fc 100%) left top $body-bg no-repeat;
+        background-size: 100% 50%;
+
+        .background-wrapper {
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            padding: 1rem .6rem;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: .5rem;
+            @extend .z-depth-2;
+
+            .club-logo-wrapper {
+                border: none;
+
+                .club-logo-page {
+                    width: 70px;
+                    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .2));
+                }
+
+                .club-name {
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+            }
+
+            .club-desc {
+                margin: 0;
+                margin-top: 2rem;
+                font-size: .8rem;
+                opacity: 1;
+                padding: 0 2rem;
+            }
+
+            .club-controls {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    #trigger {
+        margin-top: 60vh;
+    }
+
+}
+
+@include media-breakpoint-between(lg, xl) {
+    .club-content {
+        padding: .2rem 4rem;
+
+        #club-header {
+            background: none;
+            width: 400px;
+
+            .background-wrapper {
+                padding: 1rem 1rem;
+
+                .club-desc {
+                    padding: .5rem;
+                }
+            }
+        }
+
+        #trigger {
+            margin-top: 20px;
+        }
+    }
+}
