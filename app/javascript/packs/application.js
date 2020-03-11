@@ -28,5 +28,3 @@ import {
 } from '../plugins/init_mapbox';
 
 initMapbox();
-
-require('jquery-mobile');
