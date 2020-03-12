@@ -10,7 +10,7 @@ module.exports = {
                 }, {
                     loader: 'postcss-loader', // Run postcss actions
                     options: {
-                        plugins: function() { // postcss plugins, can be exported to postcss.config.js
+                        plugins: function () { // postcss plugins, can be exported to postcss.config.js
                             return [
                                 require('autoprefixer')
                             ];
@@ -29,7 +29,9 @@ module.exports = {
                     configFile: false,
                     compact: false,
                     presets: [
-                        [require.resolve('babel-preset-react-app/dependencies'), { helpers: true }]
+                        [require.resolve('babel-preset-react-app/dependencies'), {
+                            helpers: true
+                        }]
                     ],
                     cacheDirectory: true,
                     // Don't waste time on Gzipping the cache
@@ -43,15 +45,15 @@ module.exports = {
                 }
             },
             {
-                test: /font-awesome\.config\.js/,
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'font-awesome-loader'
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
                     }
-                ]
-            },
+                }]
+            }
         ]
     },
 };
