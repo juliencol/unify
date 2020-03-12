@@ -36,7 +36,7 @@
               <h3 class="text-center">Membre d'aucune association</h3>
             <% else %>
               <h3>Associations</h3>
-              <div class="assos d-flex justify-content-start pb-3">
+              <div class="assos d-flex flex-wrap justify-content-start pb-3">
                 <% @user.clubs.each do |club| %>
                     <%= link_to club_path(club), :title => club.name do %>
                       <div class="button-effect-3 <%= club.name.parameterize.underscore %>">
@@ -49,13 +49,11 @@
             <% end %>
           </div>
           <div class="white-wrapper d-flex flex-column align-items-start mb-4">
-            <%= link_to edit_user_path(@user), class:"button-effect-4" do %>
-              <span>Modifier mon profil</span>
-              <i class="fas fa-image"></i>
+            <%= link_to edit_user_path(@user), class:"button-effect-2 mb-3" do %>
+              <button>Modifier mon profil</button>
             <% end %>
-            <%= link_to new_user_password_path(@user), class:"button-effect-4" do %>
-              <span>Modifier mon mot de passe</span>
-              <i class="fas fa-key"></i>
+            <%= link_to new_user_password_path(@user), class:"button-effect-2" do %>
+              <button>Modifier mon mot de passe</button>
             <% end %>
           </div>
         </div>

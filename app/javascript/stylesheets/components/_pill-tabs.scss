@@ -1,0 +1,36 @@
+.pill-tabs {
+    background-color: white;
+    @extend .z-depth-1;
+    border-radius: 2rem;
+    padding: .5rem .25rem;
+
+    .tab {
+        text-decoration: none;
+        background-color: white;
+        border-radius: 2rem;
+        cursor: pointer;
+        padding: .25rem .5rem;
+    }
+
+    .tab span {
+        color: black;
+        font-weight: bold;
+        padding: 2rem;
+    }
+
+    .tab.active {
+        background: #F2F2F7;
+
+        span {
+            color: #007AFF;
+        }
+    }
+}
+
+@include media-breakpoint-between(xs, lg) {
+    .pill-tabs {
+        position: fixed;
+        bottom: 20px;
+        z-index: 10;
+    }
+}
