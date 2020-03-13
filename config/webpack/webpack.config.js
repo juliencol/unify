@@ -45,10 +45,14 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+                test: /font-awesome\.config\.js/,
                 use: [{
-                    loader: require.resolve("file-loader") + "?name=../[path][name].[ext]"
-                }]
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'font-awesome-loader'
+                    }
+                ]
             },
         ]
     },

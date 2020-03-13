@@ -167,12 +167,12 @@
 		@include media-breakpoint-between(xs, md) {
 			width: 90vw;
 
-			i {
+			svg {
 				font-size: 11px;
 			}
 		}
 
-		i {
+		svg {
 			font-size: 18px;
 			padding-left: 10px;
 		}
