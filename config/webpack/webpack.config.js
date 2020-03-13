@@ -47,7 +47,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
                 use: [{
-                    loader: 'file-loader'
+                    loader: require.resolve("file-loader") + "?name=../[path][name].[ext]"
                 }]
             },
         ]
