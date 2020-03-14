@@ -1,12 +1,12 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white text-dark">
+<nav class="navbar navbar-inverse navbar-expand-lg navbar-light bg-white text-dark">
   <%= link_to root_path, class: "navbar-brand navbar-logo-unify" do %>
     <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1583080472/unify/unify-logo-test_extqor.png", size: "38" %>
   <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button data-toggle="collapse-side" data-target="#navbarSupportedContent" data-target-2=".spacer" type="button" class="navbar-toggle pull-left">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+  <div class="navbar-inverse side-collapse in align-items-center" id="navbarSupportedContent">
     <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline mr-auto my-2 my-lg-0 d-flex flex-row', id: 'search-form' } do |f| %>
       <i class="fas fa-search"></i>
       <%= f.input :name,

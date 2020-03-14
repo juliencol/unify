@@ -1,5 +1,10 @@
 .navbar {
 	transition: filter ease 0.5s;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
 
 	.navbar-brand img {
 		margin-right: 10px;
@@ -164,8 +169,8 @@
 		background: rgb(238, 238, 238);
 		border-radius: 1em;
 
-		@include media-breakpoint-between(xs, md) {
-			width: 90vw;
+		@include media-breakpoint-between(xs, lg) {
+			width: 220px;
 
 			svg {
 				font-size: 11px;
@@ -173,7 +178,7 @@
 		}
 
 		svg {
-			font-size: 18px;
+			font-size: 22px;
 			padding-left: 10px;
 		}
 
@@ -202,5 +207,50 @@
 				}
 			}
 		}
+	}
+}
+
+@include media-breakpoint-between(xs, lg) {
+	.spacer {
+		transition: filter .4s;
+	}
+
+	.spacer.out {
+		overflow: hidden;
+		filter: blur(.5rem);
+	}
+
+	.side-collapse {
+		position: fixed;
+		top: 60px;
+		bottom: 0;
+		right: 0;
+		width: 250px;
+		overflow: hidden;
+		background: white;
+		padding: .5rem 0 0 1rem;
+		transition: right .4s;
+		font-size: 13px;
+		letter-spacing: 1px;
+		color: #212121;
+		background-color: #fcfaff;
+		border: none;
+
+		.nav-item {
+			padding: 3px 15px;
+			color: #212121;
+			border-radius: 2px;
+			transition: all 200ms linear;
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				background-color: $accent-blue;
+			}
+		}
+	}
+
+	.side-collapse.in {
+		right: -250px;
 	}
 }
