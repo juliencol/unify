@@ -39,6 +39,7 @@ $(document).ready(function () {
   var sel = sideslider.attr('data-target');
   var sel2 = sideslider.attr('data-target-2');
   sideslider.click(function (event) {
+    $(sideslider).toggleClass('expanded');
     $(sel).toggleClass('in');
     $(sel2).toggleClass('out');
   });

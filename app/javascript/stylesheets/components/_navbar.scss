@@ -49,15 +49,15 @@
 			}
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon:after {
+		&.expanded .navbar-toggler-icon:after {
 			transform: rotate(45deg);
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon:before {
+		&.expanded .navbar-toggler-icon:before {
 			transform: translateY(8px) rotate(-45deg);
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon {
+		&.expanded .navbar-toggler-icon {
 			border-color: transparent;
 		}
 	}
@@ -97,14 +97,6 @@
 
 				@include media-breakpoint-between(xs, lg) {
 					opacity: 0;
-				}
-			}
-		}
-
-		@include media-breakpoint-between(xs, lg) {
-			&:active {
-				.nav-link {
-					color: $accent-blue !important;
 				}
 			}
 		}
@@ -169,14 +161,6 @@
 		background: rgb(238, 238, 238);
 		border-radius: 1em;
 
-		@include media-breakpoint-between(xs, lg) {
-			width: 220px;
-
-			svg {
-				font-size: 11px;
-			}
-		}
-
 		svg {
 			font-size: 22px;
 			padding-left: 10px;
@@ -194,10 +178,6 @@
 
 				&::placeholder {
 					font-size: 0.9rem;
-
-					@include media-breakpoint-between(xs, md) {
-						font-size: 0.8rem;
-					}
 				}
 
 				&:focus {
@@ -216,19 +196,20 @@
 	}
 
 	.spacer.out {
-		overflow: hidden;
 		filter: blur(.5rem);
+
+		.mobile-filters {
+			display: none;
+		}
 	}
 
 	.side-collapse {
 		position: fixed;
 		top: 60px;
-		bottom: 0;
-		right: 0;
+		height: 100vh;
+		right: -250px;
 		width: 250px;
-		overflow: hidden;
 		background: white;
-		padding: .5rem 0 0 1rem;
 		transition: right .4s;
 		font-size: 13px;
 		letter-spacing: 1px;
@@ -237,20 +218,44 @@
 		border: none;
 
 		.nav-item {
-			padding: 3px 15px;
+			padding: .5rem 2rem;
 			color: #212121;
 			border-radius: 2px;
 			transition: all 200ms linear;
 
 			&:hover,
 			&:focus {
-				color: #fff;
-				background-color: $accent-blue;
+				color: $accent-blue;
+			}
+
+			.dropdown-menu {
+				box-shadow: none;
+				padding: none;
+			}
+		}
+
+		#search-form {
+			width: 220px;
+			margin: 0 auto;
+
+			svg {
+				font-size: 11px;
+			}
+
+			.search_name {
+
+				#search_name {
+
+					&::placeholder {
+						font-size: 0.8rem;
+
+					}
+				}
 			}
 		}
 	}
 
 	.side-collapse.in {
-		right: -250px;
+		right: 0;
 	}
 }
