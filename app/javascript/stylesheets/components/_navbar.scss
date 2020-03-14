@@ -1,5 +1,10 @@
 .navbar {
 	transition: filter ease 0.5s;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
 
 	.navbar-brand img {
 		margin-right: 10px;
@@ -44,15 +49,15 @@
 			}
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon:after {
+		&.expanded .navbar-toggler-icon:after {
 			transform: rotate(45deg);
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon:before {
+		&.expanded .navbar-toggler-icon:before {
 			transform: translateY(8px) rotate(-45deg);
 		}
 
-		&[aria-expanded="true"] .navbar-toggler-icon {
+		&.expanded .navbar-toggler-icon {
 			border-color: transparent;
 		}
 	}
@@ -92,14 +97,6 @@
 
 				@include media-breakpoint-between(xs, lg) {
 					opacity: 0;
-				}
-			}
-		}
-
-		@include media-breakpoint-between(xs, lg) {
-			&:active {
-				.nav-link {
-					color: $accent-blue !important;
 				}
 			}
 		}
@@ -164,16 +161,8 @@
 		background: rgb(238, 238, 238);
 		border-radius: 1em;
 
-		@include media-breakpoint-between(xs, md) {
-			width: 90vw;
-
-			svg {
-				font-size: 11px;
-			}
-		}
-
 		svg {
-			font-size: 18px;
+			font-size: 22px;
 			padding-left: 10px;
 		}
 
@@ -189,10 +178,6 @@
 
 				&::placeholder {
 					font-size: 0.9rem;
-
-					@include media-breakpoint-between(xs, md) {
-						font-size: 0.8rem;
-					}
 				}
 
 				&:focus {
@@ -202,5 +187,75 @@
 				}
 			}
 		}
+	}
+}
+
+@include media-breakpoint-between(xs, lg) {
+	.spacer {
+		transition: filter .4s;
+	}
+
+	.spacer.out {
+		filter: blur(.5rem);
+
+		.mobile-filters {
+			display: none;
+		}
+	}
+
+	.side-collapse {
+		position: fixed;
+		top: 60px;
+		height: 100vh;
+		right: -250px;
+		width: 250px;
+		background: white;
+		transition: right .4s;
+		font-size: 13px;
+		letter-spacing: 1px;
+		color: #212121;
+		background-color: #fcfaff;
+		border: none;
+
+		.nav-item {
+			padding: .5rem 2rem;
+			color: #212121;
+			border-radius: 2px;
+			transition: all 200ms linear;
+
+			&:hover,
+			&:focus {
+				color: $accent-blue;
+			}
+
+			.dropdown-menu {
+				box-shadow: none;
+				padding: none;
+			}
+		}
+
+		#search-form {
+			width: 220px;
+			margin: 0 auto;
+
+			svg {
+				font-size: 11px;
+			}
+
+			.search_name {
+
+				#search_name {
+
+					&::placeholder {
+						font-size: 0.8rem;
+
+					}
+				}
+			}
+		}
+	}
+
+	.side-collapse.in {
+		right: 0;
 	}
 }
