@@ -77,11 +77,13 @@
             <div id="map" class="event-map" " data-markers="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
     </div>
-    <div class="row justify-content-center m-5">
-        <button class="subscribe-button z-depth-1">
-            <%= link_to "Supprimer l'événement", event_path(@event), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette événement ?' } %>
-        </button>
-    </div>
+    <% if policy(@event).destroy? %>
+        <div class="row justify-content-center m-5">
+            <button class="subscribe-button z-depth-1">
+                <%= link_to "Supprimer l'événement", event_path(@event), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette événement ?' } %>
+            </button>
+        </div>
+    <% end %>
 </div>
 
 
