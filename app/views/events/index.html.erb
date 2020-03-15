@@ -37,7 +37,7 @@
         <h3>Thèmes</h3>
         <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
           <% @themes.each do |theme| %>
-          <div class="check-wrap d-flex mt-3 pl-4">
+          <div class="check-wrap d-flex mt-1 pl-4">
             <button type="button" data-mixitup-control class="check"
               data-toggle=".<%= theme.title.parameterize.underscore %>">
               <svg width="18px" height="18px" viewbox="0 0 18 18">
@@ -120,7 +120,7 @@
         <h3>Associations</h3>
         <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
           <% @clubs.each do |club| %>
-          <div class="check-wrap d-flex mt-3 pl-4">
+          <div class="check-wrap d-flex mt-1 pl-4">
             <button type="button" data-mixitup-control class="check"
               data-toggle=".<%=club.name.parameterize.underscore%>">
               <svg width="18px" height="18px" viewbox="0 0 18 18">
