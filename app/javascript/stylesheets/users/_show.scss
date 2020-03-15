@@ -35,8 +35,8 @@
           background:
             /* gradient can be an image */
             linear-gradient(to left,
-              #fa709a 0%,
-              #fee140 100%) left bottom #ffffff no-repeat;
+              $accent-purple 0%,
+              $accent-yellow 100%) left bottom #ffffff no-repeat;
           background-size: 100% 4px;
           border-radius: .5rem;
           box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);

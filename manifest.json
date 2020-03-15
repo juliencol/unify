@@ -1,0 +1,12 @@
+{
+    "short_name": "Unify",
+    "name": "Unify ISEP",
+    "icons": [{
+        "src": "/images/logo-app.png",
+        "sizes": "650x650",
+        "type": "image/png"
+    }],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "portrait"
+}

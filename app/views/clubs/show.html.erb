@@ -3,19 +3,17 @@
   <div class="row club-content">
     <div class="col-lg-3 col-12 pt-3">
       <div id="club-header">
-        <div class="background-wrapper">
-          <div class="d-flex flex-column align-items-center club-logo-wrapper">
-            <%= render "clubs/shared/logo" %>
-          </div>
-          <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
-          <div class="d-flex flex-row align-items-center justify-content-around mt-3">
-            <%= render "clubs/shared/links" %>
-          </div>
-          <div class="club-controls d-flex flex-column align-items-center justify-content-center">
-            <% if policy(@club).edit? and policy(@club.events).create? %>
-              <%= render "clubs/shared/club_admin_buttons" %>
-            <% end %>
-          </div>
+        <div class="d-flex flex-column align-items-center club-logo-wrapper">
+          <%= render "clubs/shared/logo" %>
+        </div>
+        <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
+        <div class="d-flex flex-row align-items-center justify-content-around mt-3">
+          <%= render "clubs/shared/links" %>
+        </div>
+        <div class="club-controls d-flex flex-column align-items-center justify-content-center">
+          <% if policy(@club).edit? and policy(@club.events).create? %>
+            <%= render "clubs/shared/club_admin_buttons" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -34,7 +32,7 @@
         </div>
       </div>
 
-      <div class="row" id="trigger">
+      <div class="row mt-3">
         <% if @club.events.nil? || @club.events == [] %>
           <div class="col club-feed text-center">
             <p>Pas d'événements disponibles.</p>

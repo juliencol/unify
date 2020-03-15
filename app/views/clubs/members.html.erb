@@ -3,14 +3,12 @@
   <div class="row club-content">
     <div class="col-lg-3 col-12 pt-3">
       <div id="club-header">
-        <div class="background-wrapper">
-          <div class="d-flex flex-column align-items-center club-logo-wrapper">
-            <%= render "clubs/shared/logo" %>
-          </div>
-          <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
-          <div class="d-flex flex-row align-items-center justify-content-around mt-3">
-            <%= render "clubs/shared/links" %>
-          </div>
+        <div class="d-flex flex-column align-items-center club-logo-wrapper">
+          <%= render "clubs/shared/logo" %>
+        </div>
+        <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
+        <div class="d-flex flex-row align-items-center justify-content-around mt-3">
+          <%= render "clubs/shared/links" %>
         </div>
       </div>
     </div>
@@ -29,7 +27,7 @@
         </div>
       </div>
 
-      <div class="row" id="trigger">
+      <div class="row mt-3">
         <div class="col members-feed">
           <% @club.users.each do |user| %>
             <%= link_to user do %>

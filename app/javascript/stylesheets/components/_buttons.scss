@@ -123,11 +123,20 @@
 
 .button-effect-2 {
     text-decoration: none !important;
-    color: #007AFF !important;
+    color: white !important;
+    box-shadow:
+        0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07),
+        0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
+        0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055),
+        0 75px 100px -10px rgba(0, 0, 0, 0.039);
 
     button {
         all: unset;
-        background: $accent-background;
+        background:
+            /* gradient can be an image */
+            linear-gradient(to bottom right,
+                $accent-purple 0%,
+                $accent-blue 100%);
         padding: .2rem .75rem;
         border-radius: .9rem;
     }

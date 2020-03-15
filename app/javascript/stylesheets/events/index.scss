@@ -46,17 +46,17 @@
 }
 
 .sidebar {
-	will-change: min-height;
+	position: sticky;
+	top: 65px;
+	height: 100vh;
+	overflow-y: scroll;
+	background: $accent-background;
 }
 
 .sidebar__left,
 .sidebar__right {
 	width: 100%;
 	padding-top: 1rem;
-	transform: translate(0, 0);
-	/* For browsers that don't support translate3d. */
-	transform: translate3d(0, 0, 0);
-	will-change: position, transform;
 }
 
 // mobile
@@ -127,11 +127,15 @@
 
 		background:
 			/* gradient can be an image */
-			linear-gradient(to left,
-				#fa709a 0%,
-				#fee140 100%) left bottom #ffffff no-repeat;
-		background-size: 100% 4px;
-		box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
+			linear-gradient(to bottom,
+				$accent-purple 0%,
+				$accent-yellow 100%) left bottom rgba(white, .5) no-repeat;
+		background-size: 4px 100%;
+		box-shadow:
+			0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07),
+			0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
+			0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055),
+			0 75px 100px -10px rgba(0, 0, 0, 0.039);
 	}
 }
 
