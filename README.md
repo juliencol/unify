@@ -4,30 +4,11 @@
 Unify is a progressive web application to manage school events at ISEP. Our goal is to allow every student club to create and update events and every student to register to any event.
 
 # Our stack
-We are using [Ruby on Rails](https://rubyonrails.org/), a ruby framework following the [Model-View-Controller pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) very easy to learn that handles both the frontend and the backend. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. For the database we use PostgreSQL and the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html) to handle SQL requests. 
+We are using the [Model-View-Controller pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework [Ruby on Rails](https://rubyonrails.org/), very easy to learn that handles both the frontend and the backend. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. For the database we use PostgreSQL and the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html) to handle SQL requests. 
+Images are hosted on [cloudinary](https://cloudinary.com/). 
 
 # Our infrastructure
-Our app is hosted on [heroku](https://heroku.com) under the domain name [unifyisep.com](https://www.unifyisep.com/). We created a staging environment and a production environment. The staging environment allow us to simulate a production environment to test eveyrthing is fine before pushing code to production. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our heroku pipeline [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). If you only live in your terminal, to access staging environment:
-```bash
-heroku open --app unifyisep-staging
-```
-to access production environment:
-```bash
-heroku open --app unifyisep-production
-```
-to deploy in staging:
- ```bash 
- git push staging master
- ``` 
- to deploy in production (!!! ONLY IF EVERYTHING WORKS IN STAGING !!!):
-```bash
- git push production master 
-``` 
-Most of the time, you'll get a lot of errors when deploying to staging. To identify those errors, run
-```bash 
-heroku logs --tail 
-```  
-Refer the documentation [here](https://devcenter.heroku.com/articles/logging#types-of-logs).
+Our app is hosted on heroku under the domain name [unifyisep.com](https://www.unifyisep.com/).The staging environment allow us to simulate a production environment to test eveyrthing is fine before pushing code to production. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our heroku pipeline [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257)
 
 # File structure
 In the MVC pattern, each model has an associated controller with a specific number of actions (== functions). Each action is associated to a view which is an html file displaying the content of a page. </br>
@@ -41,7 +22,7 @@ In the MVC pattern, each model has an associated controller with a specific numb
 # Database model
 The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c251a06188009) or directly in 'db/schema.rb'.
 
-# Our workflow
+# Workflow
 * We don't write test (the app must be delivered in less than a month from now).
 * We manage our development tasks on our [trello board](https://trello.com/b/KvPE3ned/unify).
 * We make [code reviews](#Code-review) for every new feature. 
@@ -52,7 +33,7 @@ The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c25
 * Only write comment when needed. Most of the time, explicit names are better than writing comments. 
 * Never commit blocks of code commented. 
 
-# Our style guide
+# Style guide
 We only push performing readable code. </br>
 * On the frontend, we make use of [Sass features](https://www.youtube.com/watch?v=Zz6eOVaaelI) (nested css, css variables), we allow the use of Bootstrap to code faster, we build CSS components in app/assets/stylesheets/components and we write ES6 JavaScript following [Airbnb style guide](https://github.com/airbnb/javascript).
 * On the backend, we respect the the Model-View-Controller pattern and we follow [Ruby on Rails doctrine](https://rubyonrails.org/doctrine/).
@@ -152,9 +133,7 @@ Every time someone codes a new feature (i.e. open a new PR), his code needs to b
 git checkout sexy-feature
 ```
 Then run a local server to check the changes, make sure there is no bug and you're OK with everything. Check the code to make sure it's clean. If yes, merge the pull request on github. If not, explain why in comments of the PR. Whenever a branch is merged, follow the build on the heroku pipeline, check if it succeded and notice the team.
-
-# Image hosting
-To host images on the cloud we use [cloudinary](https://cloudinary.com/). Every image is associated to an url (string). To display an image don't save it locally, host it in cloudinary and use its url in the code. 
+You can also simulate a production environment directly on the heroku pipeline when a PR is open. 
 
 # HTML Structure
 It is necessary and vital to respect a certain structure when writing HTML code since we are using [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/). The outermost div must have a class `container-fluid spacer`. Inside the container, there must ONLY be divs with the class `row`. Inside the rows, there must ONLY be divs with the class `col`. Inside the cols is where you put whatever content you want. To sum up, you must respect this structure at all times:

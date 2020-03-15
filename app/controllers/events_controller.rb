@@ -1,17 +1,18 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
     @themes = Theme.all
     @clubs = Club.all
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
-      @events = Event.where("name ILIKE ?", "%#{@name}%") # escape SQL injections with '?'
+      @events = Event.where("name ILIKE ?", "%#{@name}%") 
     end
   end
 
   def show
     @event = Event.find(params[:id])
+    authorize @event
     @marker = {
       lat: @event.latitude,
       lng: @event.longitude,
@@ -21,12 +22,12 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @themes = Theme.all
+    authorize @event
   end
 
   def create
-    @club = Club.find(params[:id])
-    @event = Event.new(set_params)
-    @event.club = @club
+    @event = Club.find(params[:id]).build(set_params)
+    authorize @event
     if @event.save
       redirect_to club_path(@club)
     else
@@ -36,10 +37,12 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    authorize @event
   end
 
   def update
     @event = Event.find(params[:id])
+    authorize @event
     if @event.update(events_params)
       redirect_to @event
     else
@@ -49,8 +52,9 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
+    authorize @event
     @event.destroy
-    redirect_to events_path
+    redirect_to root_path
   end
 
   private

@@ -8,4 +8,34 @@ class ClubPolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def show?
+    true
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    user_in_club?
+  end
+
+  def members?
+    true
+  end
+
+  def bde?
+    true
+  end
+
+  def calendar?
+    true
+  end
+  
+  private
+
+  def user_in_club?
+    record.users.include? user
+  end
 end
