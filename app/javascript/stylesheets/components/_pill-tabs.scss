@@ -19,10 +19,10 @@
     }
 
     .tab.active {
-        background: #F2F2F7;
+        background: $accent-background;
 
         span {
-            color: #007AFF;
+            color: $accent-blue;
         }
     }
 }

@@ -1,24 +1,9 @@
 // Add shadow on scroll
 window.onscroll = () => {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector('.navbar').style.filter = 'drop-shadow(0 5px 20px rgba(0, 0, 0, .2))';
+    document.querySelector('.navbar').classList.add('scrolled');
   } else {
-    document.querySelector('.navbar').style.filter = 'drop-shadow(0 5px 20px rgba(0, 0, 0, 0))';
-  }
-};
-
-// Make search bar bigger (if desktop)
-if (window.innerWidth > 900) {
-  document.querySelector("#search_name").onfocus = function () {
-    $("#search-form").css({
-      "width": "40vw",
-    });
-  };
-
-  document.querySelector("#search_name").onblur = function () {
-    $("#search-form").css({
-      "width": "25vw",
-    });
+    document.querySelector('.navbar').classList.remove('scrolled');
   }
 };
 
@@ -33,7 +18,7 @@ $('body').on('mouseenter mouseleave', '.nav-item', function (e) {
   }
 });
 
-// Test
+// Sidebar nav on mobile
 $(document).ready(function () {
   var sideslider = $('[data-toggle=collapse-side]');
   var sel = sideslider.attr('data-target');
@@ -43,4 +28,11 @@ $(document).ready(function () {
     $(sel).toggleClass('in');
     $(sel2).toggleClass('out');
   });
+});
+
+$("body").on('click', function (event) {
+  var clickover = $(event.target).attr('class') == "navbar" || $(event.target).parents(".navbar").length;
+  if (!clickover && $(".side-collapse").hasClass("in")) {
+    $('[data-toggle=collapse-side]').click();
+  }
 });

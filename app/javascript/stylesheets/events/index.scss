@@ -46,7 +46,10 @@
 }
 
 .sidebar {
-	will-change: min-height;
+	position: sticky;
+	top: 60px;
+	height: 100vh;
+	overflow-y: scroll;
 }
 
 .sidebar__left,
@@ -128,8 +131,8 @@
 		background:
 			/* gradient can be an image */
 			linear-gradient(to left,
-				#fa709a 0%,
-				#fee140 100%) left bottom #ffffff no-repeat;
+				$accent-purple 0%,
+				$accent-yellow 100%) left bottom #ffffff no-repeat;
 		background-size: 100% 4px;
 		box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
 	}

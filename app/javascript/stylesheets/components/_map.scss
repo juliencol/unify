@@ -16,8 +16,15 @@
 }
 
 #map {
+    border: 2px solid;
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%;
+    width: 90%;
+}
+
+.map-wrapper {
+    width: 90% !important;
+    min-height: 200px;
+    margin: 0 auto;
 }

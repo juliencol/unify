@@ -1,20 +1,74 @@
-.hero {
-    width: 100%;
-    height: 460px;
-    background-attachment: fixed;
-    background-size: contain;
+.event-show-header {
+    padding: .8rem 0;
+    margin: 0 5rem;
+
+    .event-banner {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px;
+
+        img {
+            position: absolute;
+            min-width: 1000%;
+            min-height: 1000%;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) scale(0.1);
+            z-index: -1;
+        }
+    }
+
+    .event-title {
+        border-bottom: 1px solid lighten(black, 80%);
+
+        h1 {
+            font-size: 1.4rem;
+        }
+    }
 }
 
-.event-left {
+.event-show-info {
+    padding: .5rem 0;
+
+    h3 {
+        color: lighten(black, 50%);
+        font-size: .8rem;
+        font-weight: 300;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+.event-show-body {
+    padding: .5rem 0;
+    margin: 0 5rem;
+
     .club-desc {
         text-decoration: none;
         color: inherit;
+
         img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            background-size: cover;
+            height: 32px;
+            width: 32px;
+            margin-right: 1rem;
+            position: relative;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
+        }
+
+        h3 {
+            color: $accent-blue;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin: 0;
+            line-height: 32px;
         }
     }
+
     .event-tags-big {
         .line-tags {
             width: 50px;
@@ -24,54 +78,33 @@
             transform: translateY(10px);
         }
     }
+
     p {
-        padding-right: 5em;
         text-align: justify;
     }
 }
 
-.event-right {
-    .subscribe-button {
-        all: unset;
-        border-radius: 5px;
-        margin-right: 20px;
-        border: none;
-        cursor: pointer;
-        background: $isep-jaune;
-        color: #fff !important;
-        padding: .25rem .5rem;
-        font-size: 1.5em;
-        &:focus {
-            outline: none;
-        }
-        &.subscribed:hover span {
-            display: none;
-        }
-        &.subscribed:hover:before {
-            content: "Se désinscrire";
-        }
-    }
-}
+@include media-breakpoint-between(xs, lg) {
+    .event-show-header {
+        margin: 0 .2rem;
+        border-bottom: 1px solid lighten(black, 80%);
 
-@include media-breakpoint-between(xs, md) {
-    .hero {
-        height: 180px;
-        background-position: center;
-    }
-    .event-left {
-        p {
-            padding-right: 0;
+        .event-banner {
+            width: 100px;
+            height: 100px;
+        }
+
+        .event-title {
+            border-bottom: none;
         }
     }
-}
 
-@include media-breakpoint-between(md, lg) {
-    .hero {
-        height: 320px;
+    .event-show-info {
+        margin: 0 .2rem;
+        border-bottom: 1px solid lighten(black, 80%);
     }
-}
 
-.map-wrapper {
-    width: 100%;
-    height: 500px;
+    .event-show-body {
+        margin: 0 .2rem;
+    }
 }

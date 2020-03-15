@@ -1,10 +1,18 @@
 .navbar {
-	transition: filter ease 0.5s;
+	transition: box-shadow ease 0.5s;
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	z-index: 1030;
+
+	&.scrolled {
+		box-shadow:
+			0 1.3px 1.6px -5px rgba(0, 0, 0, 0.04),
+			0 6.2px 4px -5px rgba(0, 0, 0, 0.038),
+			0 21.1px 12.2px -5px rgba(0, 0, 0, 0.032),
+			0 100px 45px -5px rgba(0, 0, 0, 0.024);
+	}
 
 	.navbar-brand img {
 		margin-right: 10px;
@@ -196,7 +204,7 @@
 	}
 
 	.spacer.out {
-		filter: blur(.5rem);
+		filter: blur(.2rem);
 
 		.mobile-filters {
 			display: none;
