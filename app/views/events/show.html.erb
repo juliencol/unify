@@ -41,9 +41,16 @@
             <% end %>
         </div>
         <div class="col-12 col-md-3 col-lg-2 event-right">
+            <div class="d-flex">
             <button class="subscribe-button z-depth-1">
                 <span class="button-text">S'inscrire</span>
             </button>
+            <% if policy(@event).edit? %>
+                <button class="subscribe-button z-depth-1">
+                    <%= link_to "Modifier", edit_event_path(@event), class:"button-text" %>
+                </button>
+            <% end %>
+            </div>
             <div class="white-wrapper mt-3">
                 <h3>Date</h3>
                 <h4><%= @event.date %></h4>
@@ -70,7 +77,14 @@
             <div id="map" class="event-map" " data-markers="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
     </div>
+    <div class="row justify-content-center m-5">
+        <button class="subscribe-button z-depth-1">
+            <%= link_to "Supprimer l'événement", event_path(@event), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette événement ?' } %>
+        </button>
+    </div>
 </div>
+
+
 
 <%= javascript_pack_tag 'shared/navbar' %>
 <%= javascript_pack_tag 'events/show' %>

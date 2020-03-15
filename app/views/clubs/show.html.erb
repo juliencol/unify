@@ -12,11 +12,8 @@
             <%= render "clubs/shared/links" %>
           </div>
           <div class="club-controls d-flex flex-column align-items-center justify-content-center">
-            <%= link_to new_club_event_path(@club), class:"button-effect-2 mb-3" do %>
-              <button>Ajouter un événement</button>
-            <% end %>
-            <%= link_to edit_club_path, class:"button-effect-2" do %>
-              <button>Modifier la page</button>
+            <% if policy(@club).edit? and policy(@club.events).create? %>
+              <%= render "clubs/shared/club_admin_buttons" %>
             <% end %>
           </div>
         </div>
