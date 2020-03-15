@@ -3,22 +3,20 @@
   <div class="row club-content">
     <div class="col-lg-3 col-12 pt-3">
       <div id="club-header">
-        <div class="background-wrapper">
-          <div class="d-flex flex-column align-items-center club-logo-wrapper">
-            <%= render "clubs/shared/logo" %>
-          </div>
-          <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
-          <div class="d-flex flex-row align-items-center justify-content-around mt-3">
-            <%= render "clubs/shared/links" %>
-          </div>
-          <div class="club-controls d-flex flex-column align-items-center justify-content-center">
-            <%= link_to new_club_event_path(@club), class:"button-effect-2 mb-3" do %>
-              <button>Ajouter un événement</button>
-            <% end %>
-            <%= link_to edit_club_path, class:"button-effect-2" do %>
-              <button>Modifier la page</button>
-            <% end %>
-          </div>
+        <div class="d-flex flex-column align-items-center club-logo-wrapper">
+          <%= render "clubs/shared/logo" %>
+        </div>
+        <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
+        <div class="d-flex flex-row align-items-center justify-content-around mt-3">
+          <%= render "clubs/shared/links" %>
+        </div>
+        <div class="club-controls d-flex flex-column align-items-center justify-content-center">
+          <%= link_to new_club_event_path(@club), class:"button-effect-2 mb-3" do %>
+            <button>Ajouter un événement</button>
+          <% end %>
+          <%= link_to edit_club_path, class:"button-effect-2" do %>
+            <button>Modifier la page</button>
+          <% end %>
         </div>
       </div>
     </div>

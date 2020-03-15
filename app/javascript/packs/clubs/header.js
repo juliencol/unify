@@ -58,3 +58,12 @@ $(document).ready(function () {
     window.onresize = resizeForm;
     resizeForm();
 });
+
+// Display name of club on top after scroll
+window.onscroll = () => {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.querySelector('.navbar').classList.add('scrolled');
+    } else {
+        document.querySelector('.navbar').classList.remove('scrolled');
+    }
+};

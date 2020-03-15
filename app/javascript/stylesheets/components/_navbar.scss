@@ -130,7 +130,7 @@
 			font-size: 13px;
 			letter-spacing: 1px;
 			color: #212121;
-			background-color: #fcfaff;
+			background-color: $accent-background;
 			border: none;
 			border-radius: 3px;
 			box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
@@ -166,7 +166,8 @@
 	#search-form {
 		width: 25vw;
 		transition: width ease 0.5s;
-		background: rgb(238, 238, 238);
+		background: $accent-background;
+		color: #9E94AF;
 		border-radius: 1em;
 
 		svg {
@@ -213,7 +214,7 @@
 
 	.side-collapse {
 		position: fixed;
-		top: 60px;
+		top: 64px;
 		height: 100vh;
 		right: -250px;
 		width: 250px;
@@ -222,7 +223,7 @@
 		font-size: 13px;
 		letter-spacing: 1px;
 		color: #212121;
-		background-color: #fcfaff;
+		background-color: $accent-background;
 		border: none;
 
 		.nav-item {
@@ -243,6 +244,7 @@
 		}
 
 		#search-form {
+			background: white;
 			width: 220px;
 			margin: 0 auto;
 
