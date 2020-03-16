@@ -1,35 +1,4 @@
 <div class="container-fluid spacer cd-main-content">
-<!--
-  <div class="row no-gutters force-full-width d-none d-sm-block">
-
-    <div class="col">
-      <div id="carouselEvents" class="carousel slide overflow-hidden" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100"
-              src="https://res.cloudinary.com/isep/image/upload/v1583065054/unify/banner6_la7sl4.png"
-              alt="Premier slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100"
-              src="https://res.cloudinary.com/isep/image/upload/v1583064254/unify/Image_from_iOS_btrxtc.png"
-              alt="Deuxième slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselEvents" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#carouselEvents" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-down" onclick="window.scrollTo({ top: 600, behavior: 'smooth' })">
-          <span class="fas fa-chevron-down" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
-
-  </div>
--->
   <div class="row" id="main-content">
 
     <div class="col-3 d-none d-lg-block text-center sidebar">
@@ -83,7 +52,7 @@
             <div class="event-tags">
               <ul>
                 <% event.themes.each do |theme| %>
-                  <li><a href="#"><%= theme.title.capitalize %></a></li>
+                  <li><%= theme.title.capitalize %></li>
                 <% end %>
               </ul>
             </div>
