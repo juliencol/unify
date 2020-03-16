@@ -1,5 +1,5 @@
 <div class="container-fluid spacer cd-main-content">
-
+<!--
   <div class="row no-gutters force-full-width d-none d-sm-block">
 
     <div class="col">
@@ -29,10 +29,10 @@
     </div>
 
   </div>
-
+-->
   <div class="row" id="main-content">
 
-    <div class="col-lg-2 d-none d-lg-block align-self-start text-center sidebar">
+    <div class="col-3 d-none d-lg-block text-center sidebar">
       <div class="sidebar__left">
         <h3>Thèmes</h3>
         <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="col col-lg-8 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
+    <div class="col col-lg-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
 
       <% @events.each do |event| %>
 
@@ -115,7 +115,7 @@
 
     </div>
 
-    <div class="col-lg-2 d-none d-lg-block align-self-start text-center sidebar">
+    <div class="col-3 d-none d-lg-block text-center sidebar">
       <div class="sidebar__right">
         <h3>Associations</h3>
         <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
@@ -137,7 +137,7 @@
       </div>
     </div>
 
-    <div class="col-10 col-md-6 d-lg-none mobile-filters bg-white" id="mobile-filters">
+    <div class="col-10 col-md-6 d-lg-none mobile-filters" id="mobile-filters">
 
       <button class="toggle-filters">
         <i class="far fa-check-square"></i>
