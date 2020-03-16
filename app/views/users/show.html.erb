@@ -48,14 +48,16 @@
               </div>
             <% end %>
           </div>
-          <div class="white-wrapper d-flex flex-column align-items-start mb-4">
-            <%= link_to edit_user_path(@user), class:"button-effect-2 mb-3" do %>
-              <button>Modifier mon profil</button>
-            <% end %>
-            <%= link_to new_user_password_path(@user), class:"button-effect-2" do %>
-              <button>Modifier mon mot de passe</button>
-            <% end %>
-          </div>
+          <% if current_user == @user %>
+            <div class="white-wrapper d-flex flex-column align-items-start mb-4">
+              <%= link_to edit_user_path(current_user), class:"button-effect-2 mb-3" do %>
+                <button>Modifier mon profil</button>
+              <% end %>
+              <%= link_to new_user_password_path(current_user), class:"button-effect-2" do %>
+                <button>Modifier mon mot de passe</button>
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="col-12 col-md-4">
           <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">

@@ -227,3 +227,11 @@
 		font-size: 1em;
 	}
 }
+
+@include media-breakpoint-between(xs, lg) {
+	.login-container {
+		.pill-tabs {
+			position: static;
+		}
+	}
+}

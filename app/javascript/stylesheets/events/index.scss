@@ -1,109 +1,35 @@
-/* Carousel
----------------------------------------------------------------------- */
-#carouselEvents {
-	width: 100vw;
-	height: 600px;
-	margin: 0;
-
-	@include media-breakpoint-between(xs, sm) {
-		height: 200px;
-	}
-
-	@include media-breakpoint-between(sm, md) {
-		height: 400px;
-	}
-}
-
-.carousel-control-down {
-	@extend .carousel-control-next;
-	top: auto;
-	flex-direction: column;
-	width: 100vw;
-	height: 20%;
-	cursor: pointer;
-	font-size: 25px;
-
-	svg {
-		display: inline-block;
-		width: 40px;
-		height: 40px;
-		color: white;
-	}
-}
-
-.force-full-width {
-	margin-left: -15px;
-}
-
 /* Sidebar
 ---------------------------------------------------------------------- */
 
-#main-content {
-	.col-lg-2 {
-		padding: 0 !important;
-		padding-right: 10px;
-	}
-}
-
 .sidebar {
-	position: sticky;
-	top: 65px;
-	height: 100vh;
-	overflow-y: scroll;
-	background: $accent-background;
-}
+	flex-grow: 1;
 
-.sidebar__left,
-.sidebar__right {
-	width: 100%;
-	padding-top: 1rem;
-}
-
-// mobile
-//-------------------------
-.mobile-filters {
-	z-index: 100;
-	position: fixed;
-	top: 50px;
-	left: 200%;
-	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
-
-	.toggle-filters {
-		all: unset;
-		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		width: 46px;
-		height: 46px;
-		line-height: 46px;
-		font-size: 18px;
-		text-align: center;
+	.sidebar__left,
+	.sidebar__right {
+		position: sticky;
+		top: 120px;
+		width: 80%;
+		height: 80vh;
+		overflow: hidden;
+		padding-top: 2rem;
+		margin: 0 auto;
 		background: white;
-		border-radius: 50%;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+		border: 1px solid $accent-background;
+		border-radius: .5rem;
+		box-shadow:
+			0 2.7px 6.5px rgba(0, 0, 0, 0.05),
+			0 7.5px 11.4px rgba(0, 0, 0, 0.018),
+			0 18.1px 21.2px rgba(0, 0, 0, 0.008),
+			0 60px 52px rgba(0, 0, 0, 0.003);
 
-		&:active {
-			color: $isep-jaune;
-			transform: translateY(2px);
-		}
-	}
-
-	&.filters-shown {
-		left: 20%;
-		max-height: 100%;
-		overflow-y: scroll;
-
-		.toggle-filters {
-			right: 82%;
+		h3 {
+			font-size: 1.2rem;
 		}
 
-		@include media-breakpoint-between(md, lg) {
-			left: 50%;
-
-			.toggle-filters {
-				right: 52%;
-			}
+		.controls {
+			height: 100%;
+			overflow-y: scroll;
+			padding-bottom: 2rem;
 		}
 	}
 }
@@ -114,13 +40,14 @@
 
 .check-wrap {
 	width: 100%;
-	padding: .75rem .2rem;
+	padding: 1.1rem .2rem;
 	position: relative;
-	overflow: hidden;
+	border-bottom: 1px solid $accent-background;
 
 	h6 {
 		z-index: 2;
 		font-weight: 400 !important;
+		margin: 0;
 	}
 
 	&.checked {
@@ -129,13 +56,8 @@
 			/* gradient can be an image */
 			linear-gradient(to bottom,
 				$accent-purple 0%,
-				$accent-yellow 100%) left bottom rgba(white, .5) no-repeat;
+				$accent-yellow 100%) left bottom rgba($accent-yellow, .05) no-repeat;
 		background-size: 4px 100%;
-		box-shadow:
-			0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07),
-			0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
-			0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055),
-			0 75px 100px -10px rgba(0, 0, 0, 0.039);
 	}
 }
 
@@ -152,12 +74,12 @@
 	&:before {
 		content: "";
 		position: absolute;
-		top: -10px;
-		left: -15px;
-		width: 48px;
-		height: 48px;
+		top: -8px;
+		left: -12px;
+		width: 42px;
+		height: 42px;
 		border-radius: 50%;
-		background: rgba(#223254, .03);
+		background: rgba($accent-background, .3);
 		opacity: 0;
 		transition: opacity .2s ease;
 	}
@@ -215,6 +137,57 @@
 
 .check:focus {
 	outline: none;
+}
+
+
+// mobile
+//-------------------------
+.mobile-filters {
+	z-index: 100;
+	position: fixed;
+	top: 64px;
+	left: 200%;
+	background: white;
+	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+	.toggle-filters {
+		all: unset;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		width: 46px;
+		height: 46px;
+		line-height: 46px;
+		font-size: 18px;
+		text-align: center;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+		&:active {
+			color: $isep-jaune;
+			transform: translateY(2px);
+		}
+	}
+
+	&.filters-shown {
+		left: 20%;
+		max-height: 100%;
+		overflow-y: scroll;
+
+		.toggle-filters {
+			right: 82%;
+		}
+
+		@include media-breakpoint-between(md, lg) {
+			left: 50%;
+
+			.toggle-filters {
+				right: 52%;
+			}
+		}
+	}
 }
 
 @import "show";

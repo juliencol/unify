@@ -1,43 +1,12 @@
 <div class="container-fluid spacer cd-main-content">
-
-  <div class="row no-gutters force-full-width d-none d-sm-block">
-
-    <div class="col">
-      <div id="carouselEvents" class="carousel slide overflow-hidden" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100"
-              src="https://res.cloudinary.com/isep/image/upload/v1583065054/unify/banner6_la7sl4.png"
-              alt="Premier slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100"
-              src="https://res.cloudinary.com/isep/image/upload/v1583064254/unify/Image_from_iOS_btrxtc.png"
-              alt="Deuxième slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselEvents" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#carouselEvents" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-down" onclick="window.scrollTo({ top: 600, behavior: 'smooth' })">
-          <span class="fas fa-chevron-down" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-
   <div class="row" id="main-content">
 
-    <div class="col-lg-2 d-none d-lg-block align-self-start text-center sidebar">
+    <div class="col-3 d-none d-lg-block text-center sidebar">
       <div class="sidebar__left">
         <h3>Thèmes</h3>
-        <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
+        <div class="mt-2 controls w-100" data-filter-group>
           <% @themes.each do |theme| %>
-          <div class="check-wrap d-flex mt-1 pl-4">
+          <div class="check-wrap d-flex pl-4">
             <button type="button" data-mixitup-control class="check"
               data-toggle=".<%= theme.title.parameterize.underscore %>">
               <svg width="18px" height="18px" viewbox="0 0 18 18">
@@ -54,7 +23,7 @@
       </div>
     </div>
 
-    <div class="col col-lg-8 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
+    <div class="col col-lg-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
 
       <% @events.each do |event| %>
 
@@ -83,7 +52,7 @@
             <div class="event-tags">
               <ul>
                 <% event.themes.each do |theme| %>
-                  <li><a href="#"><%= theme.title.capitalize %></a></li>
+                  <li><%= theme.title.capitalize %></li>
                 <% end %>
               </ul>
             </div>
@@ -115,12 +84,12 @@
 
     </div>
 
-    <div class="col-lg-2 d-none d-lg-block align-self-start text-center sidebar">
+    <div class="col-3 d-none d-lg-block text-center sidebar">
       <div class="sidebar__right">
         <h3>Associations</h3>
-        <div class="btn-group-vertical mt-2 controls w-100 align-items-center" data-filter-group>
+        <div class="mt-2 controls w-100" data-filter-group>
           <% @clubs.each do |club| %>
-          <div class="check-wrap d-flex mt-1 pl-4">
+          <div class="check-wrap d-flex pl-4">
             <button type="button" data-mixitup-control class="check"
               data-toggle=".<%=club.name.parameterize.underscore%>">
               <svg width="18px" height="18px" viewbox="0 0 18 18">
@@ -137,7 +106,7 @@
       </div>
     </div>
 
-    <div class="col-10 col-md-6 d-lg-none mobile-filters bg-white" id="mobile-filters">
+    <div class="col-10 col-md-6 d-lg-none mobile-filters" id="mobile-filters">
 
       <button class="toggle-filters">
         <i class="far fa-check-square"></i>
