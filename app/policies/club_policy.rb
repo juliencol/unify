@@ -29,10 +29,6 @@ class ClubPolicy < ApplicationPolicy
     true
   end
 
-  def calendar?
-    true
-  end
-  
   private
 
   def user_in_club?

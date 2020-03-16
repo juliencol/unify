@@ -7,7 +7,7 @@ Rails.application.routes.draw do
                   profile: 'users/profile',
                   edit: 'users/edit'
                 }            
-  root to: 'events#index' # home page
+  root to: 'events#index'
   
   resources :users, only: [:show, :edit, :update]
 
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     get "bde", to: "clubs#bde", as: :bde
     get "members", to: "clubs#members", as: :members
   end
-  get "calendar", to: "clubs#calendar", as: :calendar
 end
 
 

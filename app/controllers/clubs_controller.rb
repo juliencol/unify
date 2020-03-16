@@ -27,9 +27,6 @@ class ClubsController < ApplicationController
         authorize @bde
     end
 
-    def calendar
-    end 
-
     def members
         @club = Club.find(params[:club_id])
         authorize @club
