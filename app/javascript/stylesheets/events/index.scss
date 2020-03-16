@@ -45,9 +45,9 @@
 	.sidebar__right {
 		position: sticky;
 		top: 120px;
-		overflow-y: scroll;
 		width: 80%;
 		height: 80vh;
+		overflow: hidden;
 		padding-top: 2rem;
 		margin: 0 auto;
 		background: white;
@@ -62,55 +62,11 @@
 		h3 {
 			font-size: 1.2rem;
 		}
-	}
-}
 
-// mobile
-//-------------------------
-.mobile-filters {
-	z-index: 100;
-	position: fixed;
-	top: 64px;
-	left: 200%;
-	background: $accent-background;
-	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
-
-	.toggle-filters {
-		all: unset;
-		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		width: 46px;
-		height: 46px;
-		line-height: 46px;
-		font-size: 18px;
-		text-align: center;
-		background: $accent-background;
-		border-radius: 50%;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
-
-		&:active {
-			color: $isep-jaune;
-			transform: translateY(2px);
-		}
-	}
-
-	&.filters-shown {
-		left: 20%;
-		max-height: 100%;
-		overflow-y: scroll;
-
-		.toggle-filters {
-			right: 82%;
-		}
-
-		@include media-breakpoint-between(md, lg) {
-			left: 50%;
-
-			.toggle-filters {
-				right: 52%;
-			}
+		.controls {
+			height: 100%;
+			overflow-y: scroll;
+			padding-bottom: 2rem;
 		}
 	}
 }
@@ -123,7 +79,6 @@
 	width: 100%;
 	padding: 1.1rem .2rem;
 	position: relative;
-	overflow: hidden;
 	border-bottom: 1px solid $accent-background;
 
 	h6 {
@@ -219,6 +174,57 @@
 
 .check:focus {
 	outline: none;
+}
+
+
+// mobile
+//-------------------------
+.mobile-filters {
+	z-index: 100;
+	position: fixed;
+	top: 64px;
+	left: 200%;
+	background: white;
+	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+	.toggle-filters {
+		all: unset;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		width: 46px;
+		height: 46px;
+		line-height: 46px;
+		font-size: 18px;
+		text-align: center;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+
+		&:active {
+			color: $isep-jaune;
+			transform: translateY(2px);
+		}
+	}
+
+	&.filters-shown {
+		left: 20%;
+		max-height: 100%;
+		overflow-y: scroll;
+
+		.toggle-filters {
+			right: 82%;
+		}
+
+		@include media-breakpoint-between(md, lg) {
+			left: 50%;
+
+			.toggle-filters {
+				right: 52%;
+			}
+		}
+	}
 }
 
 @import "show";

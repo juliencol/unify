@@ -7,7 +7,7 @@
     box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
     flex-direction: column;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 1rem 1rem 5px 5px;
     font-weight: 100;
     margin: 48px auto;
     width: 20rem;
@@ -44,6 +44,8 @@
 
 // event header
 //-------------------------
+
+
 .event-cover {
     background-size: contain !important;
     background-position: center !important;
