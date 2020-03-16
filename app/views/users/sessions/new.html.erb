@@ -4,9 +4,9 @@
   <div class="col-auto shrink login-container">
 
     <h2 class="unify-title">Unify</h2>
-    <div class="selected-section">
-      <span style="background: #095FA0; color: #fff;">Se connecter</span>
-      <span><%= render "users/shared/links" %></span>
+    <div class="pill-tabs">
+      <span class="tab active">Se connecter</span>
+      <span class="tab"><%= render "users/shared/links" %></span>
     </div>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -18,7 +18,7 @@
                     label: false %>
         <%= f.input :password,
                     required: false,
-                    input_html: { autocomplete: "current-password", onFocus: "forgotPopupIn();", onBlur: "setTimeout(forgotPopupOut, 1000);" },
+                    input_html: { autocomplete: "current-password", class: "pw-input" },
                     placeholder: "Mot de passe",
                     label: false %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>

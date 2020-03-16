@@ -1,15 +1,13 @@
-body {
-	display: initial;
-}
-
 #cercle-bleu {
 	position: fixed;
 	fill: $isep-bleu;
 }
+
 #cercle-jaune {
 	position: fixed;
 	fill: $isep-jaune;
 }
+
 #cercle-gris {
 	position: fixed;
 	fill: $isep-gris;
@@ -24,28 +22,29 @@ body {
 	border-radius: 1em;
 	padding: 2em;
 	background-color: #fff;
-	box-shadow: 0 5px .5em rgba(0, 0, 0, .2);
+	@extend .z-depth-2;
 
 	.unify-title {
 		font-weight: 700;
 	}
 
-	.selected-section {
+	.pill-tabs {
 		cursor: pointer;
-		background: rgb(235, 235, 235);
-		padding: .4em;
-		border-radius: 2em;
+		background: $accent-background;
 		margin-bottom: 20px;
 
-		span {
-			background: rgb(235, 235, 235);
-			border-radius: 2em;
+		.tab {
+			background: $accent-background;
 			color: rgb(180, 180, 180);
-			padding: .5em;
 
 			a {
 				text-decoration: none;
 				color: inherit;
+			}
+
+			&.active {
+				background: white;
+				color: black;
 			}
 		}
 
@@ -55,10 +54,10 @@ body {
 			position: absolute;
 			bottom: 90px;
 			right: -200px;
-			background: $isep-bleu;
-			color: #fff;
-			padding: .5em;
-			border-radius: 1em;
+			background: white;
+			padding: .75rem;
+			border-radius: .2rem;
+			@extend .z-depth-3;
 
 			&:after {
 				content: '';
@@ -68,7 +67,7 @@ body {
 				width: 0;
 				height: 0;
 				border: 8px solid transparent;
-				border-right-color: $isep-bleu;
+				border-right-color: white;
 				border-left: 0;
 				margin-top: -8px;
 				margin-left: -8px;
@@ -90,10 +89,13 @@ body {
 	.form-actions {
 		position: absolute;
 		bottom: -20px;
-		left: 25%;
 		padding: 0 1em;
 		border-radius: 1em;
-		background: $isep-jaune;
+		background:
+			/* gradient can be an image */
+			linear-gradient(to bottom right,
+				$accent-purple 0%,
+				$accent-blue 100%);
 
 		.btn {
 			color: #fff !important;
@@ -114,12 +116,13 @@ body {
 
 // Responsive
 
-@include media-breakpoint-between(xs,sm) {
+@include media-breakpoint-between(xs, sm) {
 	#cercle-bleu {
 		width: 80%;
 		bottom: -2%;
 		left: -25%;
 	}
+
 	#cercle-jaune {
 		width: 70%;
 		top: -10%;
@@ -141,17 +144,19 @@ body {
 	}
 }
 
-@include media-breakpoint-between(sm,md) {
+@include media-breakpoint-between(sm, md) {
 	#cercle-bleu {
 		width: 80%;
 		bottom: -10%;
 		left: -20%;
 	}
+
 	#cercle-jaune {
 		width: 65%;
 		top: -10%;
 		right: -10%;
 	}
+
 	#cercle-gris {
 		width: 20%;
 		top: 25%;
@@ -167,17 +172,19 @@ body {
 	}
 }
 
-@include media-breakpoint-between(md,lg) {
+@include media-breakpoint-between(md, lg) {
 	#cercle-bleu {
 		width: 70%;
 		bottom: -10%;
 		left: -10%;
 	}
+
 	#cercle-jaune {
 		width: 60%;
 		top: -10%;
 		right: -15%;
 	}
+
 	#cercle-gris {
 		width: 25%;
 		top: 15%;
@@ -193,17 +200,19 @@ body {
 	}
 }
 
-@include media-breakpoint-between(lg,xl) {
+@include media-breakpoint-between(lg, xl) {
 	#cercle-bleu {
 		width: 65%;
 		bottom: -70%;
 		left: -20%;
 	}
+
 	#cercle-jaune {
 		width: 50%;
 		top: -40%;
 		right: -15%;
 	}
+
 	#cercle-gris {
 		width: 18%;
 		top: 15%;

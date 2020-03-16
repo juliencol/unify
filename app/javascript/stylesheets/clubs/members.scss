@@ -3,6 +3,7 @@
 
     .member-wrapper {
         display: flex;
+        align-items: center;
         width: 95%;
         padding: 2rem 1rem;
         border-radius: .5rem;
@@ -15,6 +16,8 @@
 
         p {
             margin: 0;
+            margin-left: 1rem;
+            color: black;
         }
     }
 }

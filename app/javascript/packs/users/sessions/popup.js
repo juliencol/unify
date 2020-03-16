@@ -1,7 +1,7 @@
-function forgotPopupIn() {
+$(".pw-input").on("focus", function () {
   document.querySelector('.forgot-password').classList.add('focused');
-}
+});
 
-function forgotPopupOut() {
-  document.querySelector('.forgot-password').classList.remove('focused');
-}
+/* $(".pw-input").on("blur", function () {
+  setTimeout(document.querySelector('.forgot-password').classList.remove('focused'), 1000);
+}); */
