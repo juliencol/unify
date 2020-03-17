@@ -8,49 +8,63 @@
       <span class="tab active">Créer un compte</span>
     </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" },
-                    placeholder: "prenom.nom@isep.fr",
-                    label: false %>
-          <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" },
-                    placeholder: "Mot de passe",
-                    label: false %>
-          <%= f.input :first_name,
-                    required: true,
-                    placeholder: "Prénom",
-                    label: false %>
-          <%= f.input :last_name,
-                    required: true,
-                    placeholder: "Nom",
-                    label: false %>
-          <%= f.input :profile_picture,
-                    as: :file,
-                    label: "Photo de profil",
-                    input_html: { class: "input-pic" } %>
-          <%= f.input :profile_picture_cache,
-                    as: :hidden %>
-          <%= f.input :promotion,
-                    required: true,
-                    placeholder: "Promotion",
-                    label: false %>
-          <%= f.input :section,
-                    required: true,
-                    placeholder: "Section",
-                    label: false %>
+        <div class="form-inputs d-flex flex-column">
+          <div class="d-flex align-items-center justify-content-between">
+              <p class="mr-3">Prénom</p>            
+              <%= f.input :first_name,
+                required: true,
+                placeholder: "Dieudioné",
+                label: false,
+                :input_html => {:style => 'width: 200px'} %>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+              <p class="mr-3">Nom</p>
+              <%= f.input :last_name,
+                required: true,
+                placeholder: "Aboud",
+                label: false,
+                :input_html => {:style => 'width: 200px'} %>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="mr-3">Email</p>
+            <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" },
+                  placeholder: "dieudione.aboud@isep.fr",
+                  label: false,
+                  :input_html => {:style => 'width: 220px'} %>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+              <p class="mr-3">Mot de passe</p>
+              <%= f.input :password,
+                  required: true,
+                  input_html: { autocomplete: "new-password" },
+                  placeholder: "1234",
+                  label: false,
+                  :input_html => {:style => 'width: 150px'} %>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="mr-3">Promotion</p>
+            <%= f.input :promotion,
+              required: true,
+              label: false,
+              required: false,
+              :collection => %w[2020 2021 2022 2023 2024],
+              :input_html => {:style => 'width: 130px'} %>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+              <p class="mr-3">Section</p>
+              <%= f.input :section,
+                required: true,
+                label: false,
+                required: false,
+                :collection => %w[P1 P2 I1 I2 A1 A2 A3],
+                :input_html => {:style => 'width: 130px'} %>
+          </div>
         </div>
-        <p class="warning">
-          Il est nécessaire de vous inscrire avec<br/>votre <span style="color:#F5A300">adresse ISEP</span>
-        </p>
-        <div class="form-actions">
-          <%= f.button :submit, "S'inscrire" %>
-        </div>
+        <p class="warning">Il est nécessaire de vous inscrire avec<br/>votre <span style="color:#F5A300">adresse ISEP</span></p>
+        <div class="form-actions"><%= f.button :submit, "S'inscrire" %></div>
       <% end %>
   </div>
 </div>
