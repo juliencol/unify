@@ -1,0 +1,16 @@
+<div class="col-lg-3 col-12 pt-3">
+  <div id="club-header">
+    <div class="d-flex flex-column align-items-center club-logo-wrapper">
+      <%= render "clubs/shared/logo" %>
+    </div>
+    <p class="club-desc"><%= @club.description %></p>
+    <div class="d-flex flex-row align-items-center justify-content-around mt-3">
+      <%= render "clubs/shared/links" %>
+    </div>
+    <div class="club-controls d-flex flex-column align-items-center justify-content-center">
+      <% if policy(@club).edit? and policy(@club.events.first).create? %>
+        <%= render "clubs/shared/club_admin_buttons" %>
+      <% end %>
+    </div>
+  </div>
+</div>

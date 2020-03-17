@@ -1,0 +1,44 @@
+<div class="row mt-3">
+  <% if @club.events.nil? || @club.events == [] %>
+    <div class="col club-feed text-center"><p>Pas d'événements disponibles.</p></div>
+  <% else %>
+    <div class="col club-feed d-flex flex-column justify-content-center align-content-center align-items-center">
+      <% @club.events.each do |event| %>
+        <div class="event-container">
+          <div class="event-header">
+            <%= link_to event_path(event.id) do %>
+              <div class="event-cover" style="background: url(<%= event.image %>);"></div>
+            <% end %>
+          </div>
+          <div class="event-body">
+            <div class="event-title"><h2><%= link_to event.name, event_path(event.id) %></h2></div>
+            <div class="event-summary"><p><%= event.short_description %></p></div>
+            <div class="event-tags">
+              <ul>
+                <% event.themes.each do |theme| %>
+                  <li><%= theme.title.capitalize %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>   
+          <div class="event-footer">
+            <ul>
+              <li class="event-date"><%= event.date.strftime("%b") %> <span><%= event.date.strftime("%d") %></li>
+              <li class="comments">
+                <i class="fas fa-euro-sign icon-euro"></i>
+                <span class="numero">
+                <% if event.price.nil? || event.price == 0 %>
+                  <span>Gratuit</span>
+                <% else %>
+                  <span><%= event.price %></span>
+                <% end %>
+                </span>
+              </li>
+              <li class="participants"><i class="fas fa-check icon-user"></i><span class="numero">12</span></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
