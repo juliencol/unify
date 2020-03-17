@@ -1,5 +1,0 @@
-<% if @event.banner.nil? || @event.banner == "" %>
-   <div class="banner" style="width: 100vw; background-image: url(https://res.cloudinary.com/isep/image/upload/v1577378158/unify/default_background_gzzcap.jpg);"></div>
-<% else %>
-    <div class="banner" style="background-image: url(<%= @event.banner %>);"></div>
-<% end %>
