@@ -10,10 +10,10 @@
     <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline mr-auto my-2 my-lg-0 d-flex flex-row', id: 'search-form' } do |f| %>
       <i class="fas fa-search"></i>
       <%= f.input :name,
-                  label: false,
-                  class: "form-control form-control-sm mr-sm-2",
-                  input_html: {value: ""},
-                  placeholder: "Rechercher un événement" %>
+        label: false,
+        class: "form-control form-control-sm mr-sm-2",
+        input_html: {value: ""},
+        placeholder: "Rechercher un événement" %>
     <% end %>
     <ul class="navbar-nav align-items-lg-center">
       <li class="nav-item <%= 'active' if current_page?(root_path) %>">
@@ -22,8 +22,8 @@
       <li class="nav-item <%= 'active' if current_page?(clubs_path) %>">
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(club_bde_path(Club.where(name: "Genesis BDE"))) %>">
-        <%= link_to "BDE EXODUS", club_bde_path(Club.where("name ILIKE ?", "Genesis BDE")), class: "nav-link" %>
+      <li class="nav-item <%= 'active' if current_page?(club_bde_path(Club.where("name ILIKE ?", "EXODUS BDE"))) %>">
+        <%= link_to "BDE EXODUS", club_bde_path(Club.where("name ILIKE ?", "EXODUS BDE")), class: "nav-link" %>
       </li>
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ISEP</a>
