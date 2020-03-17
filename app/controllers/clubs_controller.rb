@@ -18,13 +18,17 @@ class ClubsController < ApplicationController
     def update
         @club = Club.find(params[:id])
         authorize @club
-        @club.update(set_params)
-        redirect_to clubs_path
+        if @club.update(set_params)
+            flash[:notice] = "#{@club.name} a été modifié avec succès"
+            redirect_to club_path(@club)
+        else
+            render "edit"
+        end
     end
 
     def bde
-        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
-        authorize @bde
+        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        authorize @club
     end
 
     def members

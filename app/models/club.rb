@@ -7,6 +7,5 @@ class Club < ApplicationRecord
     has_many :user_clubs
     has_many :users, through: :user_clubs
 
-    # mount_uploader :logo, PhotoUploader
-    # mount_uploader :banner_image, PhotoUploader
+    mount_uploader :logo, PhotoUploader
 end
