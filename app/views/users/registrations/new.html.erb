@@ -22,6 +22,28 @@
                     input_html: { autocomplete: "new-password" },
                     placeholder: "Mot de passe",
                     label: false %>
+          <%= f.input :first_name,
+                    required: true,
+                    placeholder: "Prénom",
+                    label: false %>
+          <%= f.input :last_name,
+                    required: true,
+                    placeholder: "Nom",
+                    label: false %>
+          <%= f.input :profile_picture,
+                    as: :file,
+                    label: "Photo de profil",
+                    input_html: { class: "input-pic" } %>
+          <%= f.input :profile_picture_cache,
+                    as: :hidden %>
+          <%= f.input :promotion,
+                    required: true,
+                    placeholder: "Promotion",
+                    label: false %>
+          <%= f.input :section,
+                    required: true,
+                    placeholder: "Section",
+                    label: false %>
         </div>
         <p class="warning">
           Il est nécessaire de vous inscrire avec<br/>votre <span style="color:#F5A300">adresse ISEP</span>

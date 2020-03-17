@@ -6,8 +6,6 @@ $(document).ready(function () {
       modalSize = document.querySelector(".login-container").offsetWidth,
       buttonLeft = modalSize / 2 - buttonSize / 2;
     button.style.left = buttonLeft + "px";
-    console.log("cont:", modalSize, "but:", buttonSize);
-    console.log("Button was styled.");
   }
 
   window.onresize = resizeForm;

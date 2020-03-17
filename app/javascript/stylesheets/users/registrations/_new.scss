@@ -1,0 +1,11 @@
+.user_profile_picture {
+    label {
+        color: lighten(black, 40%);
+    }
+
+    input {
+        border-radius: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+}
