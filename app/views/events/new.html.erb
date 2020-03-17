@@ -1,35 +1,62 @@
-  <div class="container mt-5">
+<div class="container-fluid spacer">
     <div class="row">
-      <div class="col-6 m-auto">
-        <div class="-form ">
-          <div class="mt-3 ">
-            <%= simple_form_for [@club, @event] do |f| %>
-              <h1>Ajouter un nouvel événement</h1>
-              <div class="form-group">
-                <%= f.label :name, label: "Nom de l'événement:" %>
-                <%= f.text_field :name, class: 'form-control' %>
+        <div class="col">
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-6 m-auto">
+                <div class="-form ">
+                  <div class="mt-3 ">
+                    <%= simple_form_for [@club, @event] do |f| %>
+                      <h2 class="text-center">Ajout d'un événement pour <%= @club.name %></h2>
+                      <div class="form-group">
+                      <%= f.input :name,
+                          label: "Titre", 
+                          placeholder: "Soirée isépienne" %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :short_description, label: "Description en 3 mots" %>
+                        <%= f.text_field :short_description, 
+                          placeholder: "on va boire", 
+                          class: 'form-control' %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.input :long_description, :as => :text, 
+                          label: "Description complète", 
+                          placeholder: "On va boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire,boire, boire, boire, boire et boire.",
+                          :input_html => {:style => 'height: 200px'} %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.input :image, as: :file, label: "Petite image (dim)" %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.input :banner, as: :file, label: "Grande image (dim)" %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.input :date, label:"Date et heure" %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.input :location, 
+                          label: "Adresse (isep par défaut)",
+                          :input_html => { :value => '10 rue de Vanves'} %>
+                      </div>        
+                      <div class="form-group">
+                        <%= f.input :price, 
+                          input_html: { type: 'number', :value => 0 }, 
+                          label: "Prix si payant (gratuit par défaut)" %>
+                      </div> 
+                      <div class="form-group">
+                        AJouter les thèmes en dropdown
+                      </div>             
+                      <div class="mt-3">
+                        <%= f.submit "Valider", class: 'btn btn-primary' %>
+                        <%= link_to 'Annuler', root_path, class: 'btn btn-dark ml-2' %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
               </div>
-               <div class="form-group">
-                <%= f.label :short_description, label: "Description courte:" %>
-                <%= f.text_field :short_description, class: 'form-control' %>
-              </div>
-               <div class="form-group">
-                <%= f.label :long_description, label: "Description longue:" %>
-                <%= f.text_field :long_description, class: 'form-control' %>
-              </div>
-
-              <div class="form-group">
-                <%= f.input :themes,:collection => @themes, :label_method => :title,:value_method => :id,:label => "Themes" ,:include_blank => true %>
-              </div>
-
-              <div class="mt-3">
-                <%= f.submit "Valider", class: 'btn btn-primary' %>
-                <%= link_to 'Annuler', root_path, class: 'btn btn-dark ml-2' %>
-              </div>
-            <% end %>
+            </div>
           </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

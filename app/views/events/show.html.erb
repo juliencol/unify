@@ -5,7 +5,7 @@
     <div class="row event-show-header">
         <div class="col-4 col-lg-2">
             <div class="event-banner">
-                <%= image_tag @event.image %>
+                <img src=<%= @event.image %> >
             </div>
         </div>
         <div class="col-8 col-lg-10">
@@ -87,8 +87,10 @@
             <div class="event-tags py-2">
                 <div class="line-tags mr-2"></div>
                 <ul>
-                    <% @event.themes.each do |theme| %>
-                    <li><a href="#"><%= theme.title.capitalize %></a></li>
+                    <% unless @event.themes.nil? or @event.themes.empty? %>
+                        <% @event.themes.each do |theme| %>
+                        <li><%= theme.title.capitalize %></li>
+                        <% end %>
                     <% end %>
                 </ul>
             </div>
@@ -98,13 +100,7 @@
     <% if !@marker.nil? %>
         <div class="row mt-3">
             <div class="col">
-                <div id="map-container" class="map-wrapper"
-                        data-markers="<%= @marker.to_json %>"
-                        event-location="<%= @event.location %>"
-                        event-name="<%= @event.name %>"
-                        marker-img="<%= @event.club.logo %>" 
-                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
-                            <div id="map"></div>
+                <div id="map-container" class="map-wrapper" data-markers="<%= @marker.to_json %>" event-location="<%= @event.location %>" event-name="<%= @event.name %>" marker-img="<%= @event.club.logo %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"><div id="map"></div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    function resizeForm() {
+    const resizeForm = () => {
         const w = window.innerWidth ||
             document.documentElement.clientWidth ||
             document.body.clientWidth,

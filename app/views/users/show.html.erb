@@ -3,7 +3,7 @@
     <div class="col col-lg-3 mt-5 left-group">
       <div class="profile-picture d-flex justify-content-center mb-4">
         <% if @user.profile_picture.nil? || @user.profile_picture == "" %>
-          <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png", class: "avatar" %>
+          <img src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="avatar" >
         <% else %>
            <img class="avatar-img" src=<%= @user.profile_picture %> >
         <% end %>
@@ -40,7 +40,7 @@
                 <% @user.clubs.each do |club| %>
                     <%= link_to club_path(club), :title => club.name do %>
                       <div class="button-effect-3 <%= club.name.parameterize.underscore %>">
-                          <%= image_tag club.logo, class:"club-logo" %>
+                          <img src=<%= club.logo %> class="club-logo" >
                           <span><%= club.name %></span>
                       </div>
                     <% end %>

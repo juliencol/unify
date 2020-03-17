@@ -14,11 +14,11 @@ class EventPolicy < ApplicationPolicy
   end
   
   def new?
-    true
+    create?
   end
 
   def create?
-    user_in_club_events?
+    user_in_club_event?
   end
 
   def edit?
@@ -35,12 +35,7 @@ class EventPolicy < ApplicationPolicy
 
   private
 
-  def user_in_club_events?
-    record.first.club.users.include? user
-  end
-
   def user_in_club_event?
     record.club.users.include? user
   end
-
 end

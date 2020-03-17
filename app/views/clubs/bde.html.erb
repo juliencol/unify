@@ -1,114 +1,13 @@
 <div class="container-fluid spacer">
-
-  <div class="row no-gutters">
-
-    <div class="col-12">
-      <%= image_tag "https://hackernoon.com/hn-images/1*lEyU2zS2TBaOl_fbXqPChA.png", class:"club-banner" %>
-    </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col-lg-4 col-12 pt-3 pt-lg-0">
-        <%= image_tag @bde.logo, class:"club-logo club-logo-page" unless @bde.logo.nil? %>
-        <h3 class="text-center mb-3 club-name"><%= @bde.name.upcase %></h3>
-    </div>
-    <div class="col-lg-4 col-6 pt-3 order-lg-first d-flex flex-row flex-nowrap justify-content-around align-content-md-center">
-        <%= link_to club_members_path(@bde) do %>
-            <div class="button-effect-3 members">
-                <i class="fas fa-users"></i>
-            </div>
-        <% end %>
-        <%= link_to @bde.website_url, target:"_blank" do %>
-            <div class="button-effect-3 website">
-                <i class="fas fa-link"></i>
-            </div>
-        <% end %>
-        <%= link_to @bde.instagram_url, target:"_blank" do %>
-            <div class="button-effect-3 instagram">
-                <i class="fab fa-instagram"></i>
-            </div>
-        <% end %>
-        <%= link_to @bde.linkedin_url, target:"_blank" do %>
-            <div class="button-effect-3 linkedin">
-                <i class="fab fa-linkedin"></i>
-            </div>
-        <% end %>
-    </div>
-    <div class="white-wrapper d-flex flex-column align-items-start">
-      <%= link_to new_club_event_path(@bde), class:"button-effect-4" do %>
-        <span>Ajouter un nouvel événement</span>
-        <i class="fas fa-calendar-week"></i>
-      <% end %>
-      <%= link_to edit_club_path(@bde), class:"button-effect-4" do %>
-        <span>Modifier la page de l'association</span>
-        <i class="fas fa-edit"></i>
-      <% end %>
+  <div class="row club-content">
+    <%= render "clubs/shared/club_identity" %>
+    <div class="col-lg-9 pt-3">
+      <div class="col">
+          <h2 class="text-center m-5">En cours de développement</h2>
+          <p class="text-center">Maelle fait nous du sale</p>
+        </div>
     </div>
   </div>
-
-  </div>
-  <div class="row">
-
-    <div class="col club-feed mt-5 d-flex flex-lg-row flex-column justify-content-between align-content-lg-start align-content-center align-items-start">
-
-      <% if @bde.events.nil? || @bde.events == [] %>
-        <p>Pas d'événements disponibles.</p>
-      <% else %>
-        <% @bde.events.each do |event| %>
-
-          <div class="event-container">
-      
-            <div class="event-header">
-              <div class="event-cover" style="background: url(<%= event.image %>);">
-              </div>
-            </div>
-
-            <div class="event-body">
-              <div class="event-title">
-                <h2><%= link_to event.name, event_path(event.id) %></h2>
-              </div>
-              <div class="event-summary">
-                <p><%= event.short_description %></p>
-              </div>
-              <div class="event-tags">
-                <ul>
-                  <% event.themes.each do |theme| %>
-                    <li><a href="#"><%= theme.title.capitalize %></a></li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="event-footer">
-              <ul>
-                <li class="event-date"><%= event.date.strftime("%d/%m/%y") %></li>
-                <li class="comments">
-                  <i class="fas fa-euro-sign icon-euro"></i>
-                  <span class="numero">
-                    <% if event.price.nil? || event.price == 0 %>
-                      <span>Gratuit</span>
-                    <% else %>
-                      <span><%= event.price %></span>
-                    <% end %>
-                  </span>
-                </li>
-                <li class="participants">
-                  <i class="fas fa-user-check icon-user"></i>
-                  <span class="numero">12</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-        <% end %>
-      <% end %>
-
-    </div>
-
-  </div>
-
 </div>
 
 <%= javascript_pack_tag 'shared/navbar' %>

@@ -10,9 +10,9 @@
         <div class="club-container d-flex flex-row justify-content-start align-items-center">
           <div class="club-left px-3 px-lg-4">
             <% if club.logo.nil? || club.logo == "" %>
-              <%= image_tag "https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png", class:"club-logo" %>
+              <img src="https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png" class="club-logo" >
             <% else %>
-              <%= image_tag club.logo, class:"club-logo" %>
+              <img src=<%= club.logo %> class="club-logo" >
             <% end %>
           </div>
           <div class="club-right d-flex flex-row justify-content-between align-items-center">
@@ -20,8 +20,14 @@
               <h4><%= club.name %></h4>
               <span>Lorem ipsum dolor sit amet</span>
             </div>
-            <%= link_to club_path(club), class:"button-effect-2" do %>
-              <button>Voir</button>
+            <% if club.name == "EXODUS BDE" %>
+              <%= link_to club_bde_path(@bde), class:"button-effect-2" do %>
+                <button>Voir</button>
+              <% end %>
+            <% else %>
+              <%= link_to club_path(club), class:"button-effect-2" do %>
+                <button>Voir</button>
+              <% end %>
             <% end %>
           </div>
         </div>

@@ -1,104 +1,11 @@
 <div class="container-fluid spacer">
-
   <div class="row club-content">
-    <div class="col-lg-3 col-12 pt-3">
-      <div id="club-header">
-        <div class="d-flex flex-column align-items-center club-logo-wrapper">
-          <%= render "clubs/shared/logo" %>
-        </div>
-        <p class="club-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat sapien eu justo elementum, sed rhoncus arcu dictum. Nullam egestas est sem, id semper dolor blandit ac. Proin leo purus, accumsan quis condimentum condimentum, tristique eu velit. Suspendisse dapibus eros a elit dictum lobortis.</p>
-        <div class="d-flex flex-row align-items-center justify-content-around mt-3">
-          <%= render "clubs/shared/links" %>
-        </div>
-        <div class="club-controls d-flex flex-column align-items-center justify-content-center">
-          <% if policy(@club).edit? and policy(@club.events).create? %>
-            <%= render "clubs/shared/club_admin_buttons" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
+    <%= render "clubs/shared/club_identity" %>
     <div class="col-lg-9 pt-3">
-      <div class="row">
-        <div class="col-12 pt-3 d-flex align-items-center justify-content-center">
-          <div class="pill-tabs">
-              <%= link_to club_path(@club), class:"tab active" do %>
-                  <span>Événements</span>
-              <% end %>
-              <%= link_to club_members_path(@club), class:"tab" do %>
-                  <span>Membres</span>
-              <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <% if @club.events.nil? || @club.events == [] %>
-          <div class="col club-feed text-center">
-            <p>Pas d'événements disponibles.</p>
-          </div>
-        <% else %>
-          <div class="col club-feed d-flex flex-column justify-content-center align-content-center align-items-center">
-            <% @club.events.each do |event| %>
-
-              <div class="event-container">
-          
-                <div class="event-header">
-                  <%= link_to event_path(event.id) do %>
-                    <div class="event-cover" style="background: url(<%= event.image %>);">
-                    </div>
-                  <% end %>
-                </div>
-
-                <div class="event-body">
-                  <div class="event-title">
-                    <h2><%= link_to event.name, event_path(event.id) %></h2>
-                  </div>
-                  <div class="event-summary">
-                    <p><%= event.short_description %></p>
-                  </div>
-                  <div class="event-tags">
-                    <ul>
-                      <% event.themes.each do |theme| %>
-                        <li><a href="#"><%= theme.title.capitalize %></a></li>
-                      <% end %>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="event-footer">
-                  <ul>
-                    <li class="event-date"><%= event.date.strftime("%b") %> <span><%= event.date.strftime("%d") %></li>
-                    <li class="comments">
-                      <i class="fas fa-euro-sign icon-euro"></i>
-                      <span class="numero">
-                        <% if event.price.nil? || event.price == 0 %>
-                          <span>Gratuit</span>
-                        <% else %>
-                          <span><%= event.price %></span>
-                        <% end %>
-                      </span>
-                    </li>
-                    <li class="participants">
-                      <i class="fas fa-check icon-user"></i>
-                      <span class="numero">12</span>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-
-            <% end %>
-
-          </div>
-        <% end %>
-
-      </div>
+      <%= render "clubs/shared/club_show_tabs" %>
+      <%= render "clubs/shared/club_events_feed" %>
     </div>
-
   </div>
-
-
 </div>
 
 <%= javascript_pack_tag 'shared/navbar' %>
