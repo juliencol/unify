@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-12 pt-3 d-flex align-items-center justify-content-center">
     <div class="pill-tabs club-show-tab">
-      <%= link_to club_path(@club), class:"tab active" do %>
+      <%= link_to club_path(@club), class:"tab #{'active' if current_page?(club_path(@club))}" do %>
         <span>Événements</span>
       <% end %>
-      <%= link_to club_members_path(@club), class:"tab" do %>
+      <%= link_to club_members_path(@club), class:"tab #{'active' if current_page?(club_members_path(@club))}" do %>
         <span>Membres</span>
       <% end %>
     </div>

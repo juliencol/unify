@@ -16,10 +16,10 @@
         placeholder: "Rechercher un événement" %>
     <% end %>
     <ul class="navbar-nav align-items-lg-center">
-      <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+      <li class="nav-item <%= 'active' if params[:controller] == 'events' %>">
         <%= link_to "Evénements", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(clubs_path) %>">
+      <li class="nav-item <%= 'active' if params[:controller] == 'clubs' %>">
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
       <li class="nav-item <%= 'active' if current_page?(club_bde_path(Club.where("name ILIKE ?", "EXODUS BDE"))) %>">
