@@ -81,7 +81,7 @@
     <div class="row pt-3 event-show-body">
         <div class="col-12">
             <%= link_to @event.club, class:"club-desc d-flex flex-row align-items-center py-2" do %>
-                <%= image_tag @event.club.logo %>
+                <img src=<%= @event.club.logo %> class="" >
                 <h3><%= @event.club.name %></h3>
             <% end %>
             <div class="event-tags py-2">
