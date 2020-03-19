@@ -2,7 +2,7 @@ CLUBS_DATA = [
         {
             name: "EXODUS BDE",
             logo: "https://res.cloudinary.com/isep/image/upload/v1583065755/unify/logos-clubs/exodus_logo_n0evw9.png",
-            description: "BDE de l'isep",
+            description: "BDE de l'ISEP",
             banner_image: "https://res.cloudinary.com/isep/image/upload/v1583064260/unify/banner5_v2n6lt.png",
             creation_date: "",
             website_url: "",
@@ -13,7 +13,7 @@ CLUBS_DATA = [
         {
             name: "Hustle",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/hustle580_q3le3p.png",
-            description: "association entrepreneuriale de l'école",
+            description: "Association entrepreneuriale de l'école",
             creation_date: "",
             website_url: "https://hustleisep.fr/",
             linkedin_url: "https://www.linkedin.com/company/10666026/",
@@ -23,7 +23,7 @@ CLUBS_DATA = [
         {
             name: "Garage",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/garage580_ur1qj6.png",
-            description: "association de l'innovation de l'isep",
+            description: "Association de l'innovation de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "https://www.linkedin.com/company/garageisep/",
@@ -33,7 +33,7 @@ CLUBS_DATA = [
         {
             name: "Junior ISEP",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/juniorisep580_n0okcb.png",
-            description: "junior entreprise de l'isep",
+            description: "Junior Entreprise de l'ISEP",
             creation_date: "",
             website_url: "https://juniorisep.com/",
             linkedin_url: "https://www.linkedin.com/company/junior-isep/",
@@ -43,7 +43,7 @@ CLUBS_DATA = [
         {
             name: "Move your AS",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/as580_wn6mk2.png",
-            description: "association sportive de l'isep",
+            description: "Association sportive de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -53,7 +53,7 @@ CLUBS_DATA = [
         {
             name: "Dyonisos",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/dyonisos580_cxenw0.png",
-            description: "association d'oenologie de l'isep",
+            description: "Association d'oenologie de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -63,7 +63,7 @@ CLUBS_DATA = [
         {
             name: "LudISEP",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/ludisep580_ceinef.png",
-            description: "association de jeu de société de l'isep",
+            description: "Association de jeu de société de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -73,7 +73,7 @@ CLUBS_DATA = [
         {
             name: "Travel",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/travel580_glnqfx.png",
-            description: "association de voyages de l'isep",
+            description: "Association de voyages de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -83,7 +83,7 @@ CLUBS_DATA = [
         {
             name: "Board to ride",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/boardtoride580_xcx4m4.png",
-            description: "associaiton des riders",
+            description: "Associaiton des riders",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -93,7 +93,7 @@ CLUBS_DATA = [
         {
             name: "ISEP Live",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/iseplive580_lek6zx.png",
-            description: "association de photographie de l'isep",
+            description: "Association de photographie de l'ISEP",
             creation_date: "",
             website_url: "https://iseplive.fr/",
             linkedin_url: "",
@@ -103,7 +103,7 @@ CLUBS_DATA = [
         {
             name: "ISEP Bands",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/isepbands580_svjlwl.png",
-            description: "association de musique de l'isep",
+            description: "Association de musique de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -113,7 +113,7 @@ CLUBS_DATA = [
         {
             name: "ISEP Voiles",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/isepvoile580_wjh5b5.png",
-            description: "association des bateaux",
+            description: "Association des bateaux",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -123,7 +123,7 @@ CLUBS_DATA = [
         {
             name: "jardISEP",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/jardisep580_gnkdsb.png",
-            description: "association de jardinage de l'isep",
+            description: "Association de jardinage de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -133,7 +133,7 @@ CLUBS_DATA = [
         {
             name: "mixep",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/mixsep580_whqyup.png",
-            description: "association des djs de l'ise",
+            description: "Association des djs de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -143,7 +143,7 @@ CLUBS_DATA = [
         {
             name: "Air",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/AIR580_tplwmw.png",
-            description: "association de robotique de l'isep",
+            description: "Association de robotique de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -153,7 +153,7 @@ CLUBS_DATA = [
         {
             name: "Aumonerie",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/aumonerie580_tekjgd.png",
-            description: "aumonorie de l'isep",
+            description: "Aumonorie de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -163,7 +163,7 @@ CLUBS_DATA = [
         {
             name: "Démosthène",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/demosthene580_lqnzhi.png",
-            description: "association d'éloquence de l'isep",
+            description: "Association d'éloquence de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -173,7 +173,7 @@ CLUBS_DATA = [
         {
             name: "Discover ISEP",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/discover580_s8owqn.png",
-            description: "association des bons plans",
+            description: "Association des bons plans",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -183,7 +183,7 @@ CLUBS_DATA = [
         {
             name: "Get down",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/GetDown580_zj1vfv.png",
-            description: "association de danse",
+            description: "Association de danse",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -193,7 +193,7 @@ CLUBS_DATA = [
         {
             name: "ISEP Gaming Club",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/igc580_yxtfda.png",
-            description: "associations des gameurs de l'isep",
+            description: "Associations des gameurs de l'ISEP",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -203,7 +203,7 @@ CLUBS_DATA = [
         {
             name: "isepa",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952901/unify/logos-clubs/isepa580_soxtom.png",
-            description: "association pour aider les étudiants étrangers",
+            description: "Association pour aider les étudiants étrangers",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -213,7 +213,7 @@ CLUBS_DATA = [
         {
             name: "isHelp",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/ishelp580_sel2ov.png",
-            description: "association pour aider des gens",
+            description: "Association pour aider des gens",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -223,7 +223,7 @@ CLUBS_DATA = [
         {
             name: "Numeris",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/Numeris580_peglrd.png",
-            description: "association pour faire du bif",
+            description: "Association pour faire du bif",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -233,7 +233,7 @@ CLUBS_DATA = [
         {
             name: "Transaharienne",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/Trans580_yb0oog.png",
-            description: "association humanitaire",
+            description: "Association humanitaire",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -243,7 +243,7 @@ CLUBS_DATA = [
         {
             name: "Winter",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/winter580_fq4z3r.png",
-            description: "association de ski",
+            description: "Association de ski",
             creation_date: "",
             website_url: "",
             linkedin_url: "",
@@ -253,7 +253,7 @@ CLUBS_DATA = [
         {
             name: "ISEP Alumni",
             logo: "https://res.cloudinary.com/isep/image/upload/v1577437434/unify/logos-clubs/isepAlumni580_lxlg4h.png",
-            description: "association des diplomés de l'isep",
+            description: "Association des diplomés de l'ISEP",
             creation_date: "",
             website_url: "https://isepalumni.fr/",
             linkedin_url: "",

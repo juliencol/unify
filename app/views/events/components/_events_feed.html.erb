@@ -12,9 +12,7 @@
             </div>
             <%= link_to club_path(event.club.id) do %>
               <div class="event-author">
-                <div class="event-author-logo">
-                  <img src=<%= event.club.logo unless event.club.logo.nil? %>>
-                </div>
+                <img src=<%= event.club.logo unless event.club.logo.nil? %> class="club-logo small mr-2">
                 <h3><%= event.club.name %></h3>
               </div>
             <% end %>

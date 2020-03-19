@@ -61,12 +61,12 @@ $theme-colors: (primary: $isep-bleu,
 
 
 // FONTS
-@import url("https://fonts.googleapis.com/css?family=Istok+Web:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900|Fira+Sans:100,200,300,400,500,600,700,800,900&display=swap");
 
 // Define fonts for body and headers
-$body-font: 'Istok Web',
+$body-font: 'Open Sans',
 sans-serif;
-$headers-font: 'Montserrat',
+$headers-font: 'Fira Sans',
 sans-serif;
 
 

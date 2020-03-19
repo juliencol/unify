@@ -1,5 +1,29 @@
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <div class="banner">
+		<img src="<%= @event.image %>"/>
+	</div>
+   ------------------------------- */
+
 .banner {
-	background-size: cover;
-	background-position: center;
-	padding: 200px 0px;
+	width: 95%;
+	height: 250px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 12px;
+
+	@include media-breakpoint-between(xs, sm) {
+		width: 100%;
+	}
+
+	img {
+		position: absolute;
+		min-width: 1000%;
+		min-height: 1000%;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%) scale(0.1);
+		z-index: -1;
+	}
 }

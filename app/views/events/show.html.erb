@@ -2,101 +2,72 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
 
 <div class="container-fluid spacer">
-    <div class="row event-show-header">
-        <div class="col-4 col-lg-2">
-            <div class="event-banner">
-                <img src=<%= @event.image %> >
+  <div class="row">
+    <div class="col-12 col-lg-3 mt-5">
+        <div class="sticky-left-group text-center">
+            <div class="d-flex justify-content-center mb-4">
+                <% if @event.club.logo.nil? || @event.club.logo == "" %>
+                <img src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="club-logo big" >
+                <% else %>
+                <img class="club-logo big" src=<%= @event.club.logo %> >
+                <% end %>
             </div>
-        </div>
-        <div class="col-8 col-lg-10">
-            <div class="row">
-                <div class="col-12 pb-3 event-title d-flex flex-column justify-content-between align-items-end">
-                    <h1><%= @event.name %></h1>
-                    <%= link_to "#", class:"button-effect-2" do %>
-                        <button>
-                            <span class="button-text">S'inscrire</span>
-                        </button>
-                    <% end %>
-                    <% if policy(@event).edit? %>
-                        <button class="subscribe-button z-depth-1">
-                            <%= link_to "Modifier", edit_event_path(@event), class:"button-text" %>
-                        </button>
-                    <% end %>
-                </div>
-            </div>
-            <div class="row pt-3 event-show-info d-none d-lg-block">
-                <div class="col-12 d-flex flex-wrap justify-content-end text-right flex-lg-row-reverse justify-content-lg-start">
-                    <div class="mt-3 mr-3 ml-lg-3">
-                        <h3>Date</h3>
-                        <h4><%= @event.date %></h4>
-                    </div>
-                    <div class="mt-3 mr-3 ml-lg-3">
-                        <h3>Prix</h3>
-                        <h4>
-                            <% if @event.price.nil? || @event.price == 0 %>
-                                <span>Gratuit</span>
-                            <% else %>
-                                <span><%= @event.price %> €</span>
-                            <% end %>
-                        </h4>
-                    </div>
-                    <div class="mt-3 mr-3 ml-lg-3">
-                        <h3>Participants</h3>
-                        <h4>12</h4>
-                    </div>
-                    <div class="mt-3 ml-lg-3">
-                        <h3>Adresse</h3>
-                        <h4><%= @event.location %></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row pt-3 event-show-info d-lg-none">
-        <div class="col-12 d-flex flex-wrap">
-            <div class="mt-3 mr-3">
-                <h3>Date</h3>
-                <h4><%= @event.date %></h4>
-            </div>
-            <div class="mt-3 mr-3">
-                <h3>Prix</h3>
-                <h4>
-                    <% if @event.price.nil? || @event.price == 0 %>
-                        <span>Gratuit</span>
-                    <% else %>
-                        <span><%= @event.price %> €</span>
-                    <% end %>
-                </h4>
-            </div>
-            <div class="mt-3 mr-3">
-                <h3>Participants</h3>
-                <h4>12</h4>
-            </div>
-            <div class="mt-3">
-                <h3>Adresse</h3>
-                <h4><%= @event.location %></h4>
-            </div>
-        </div>
-    </div>
-    <div class="row pt-3 event-show-body">
-        <div class="col-12">
-            <%= link_to @event.club, class:"club-desc d-flex flex-row align-items-center py-2" do %>
-                <%= image_tag @event.club.logo %>
-                <h3><%= @event.club.name %></h3>
-            <% end %>
-            <div class="event-tags py-2">
-                <div class="line-tags mr-2"></div>
-                <ul>
-                    <% unless @event.themes.nil? or @event.themes.empty? %>
-                        <% @event.themes.each do |theme| %>
-                        <li><%= theme.title.capitalize %></li>
-                        <% end %>
-                    <% end %>
+            <div class="text-center pb-3">
+                <p>Événement proposé par</p>
+                <h4><%= @event.club.name %></h4>
+                <ul class="table-style mt-3">
+                <li><span>Date : </span><%= @event.date %></li>
+                <li><span>Adresse : </span><%= @event.location %></li>
+                <li><span>Prix : </span><% if @event.price.nil? || @event.price == 0 %>Gratuit<% else %><%= @event.price %> €<% end %></li>
+                <li><span>Participants : </span>12</li>
                 </ul>
             </div>
-            <p><%= @event.long_description %></p>
+            <% if policy(@event).edit? %>
+                <%= link_to edit_event_path(@event), class:"button-effect-2" do %>
+                    <button>Modifier</button>
+                <% end %>
+            <% end %>
         </div>
     </div>
+    <div class="col col-lg-9 right-group">
+        <div class="row justify-content-center p-2">
+            <div class="col">
+                <div class="banner">
+                    <img src="<%= @event.image %>"/>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12 col-md-10">
+                <h1><%= @event.name %></h1>
+            </div>
+            <div class="col-12 col-md-2">
+                <%= link_to "#", class:"button-effect-2" do %>
+                    <button>
+                        <span class="button-text">S'inscrire</span>
+                    </button>
+                <% end %>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12">
+                <div class="event-tags tags-white py-2">
+                    <div class="line-tags mr-2"></div>
+                    <ul>
+                        <% unless @event.themes.nil? or @event.themes.empty? %>
+                            <% @event.themes.each do |theme| %>
+                            <li><%= theme.title.capitalize %></li>
+                            <% end %>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12">
+                <%= @event.long_description %>
+            </div>
+        </div>
     <% if !@marker.nil? %>
         <div class="row mt-3">
             <div class="col">
@@ -109,16 +80,16 @@
       <div class="row mt-3">
         <div class="col">
           <div class="row justify-content-center m-5">
-              <button class="subscribe-button z-depth-1">
-                  <%= link_to "Supprimer l'événement", event_path(@event), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette événement ?' } %>
-              </button>
+                <%= link_to event_path(@event), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette événement ?' }, class:"button-effect-2" do %>
+                    <button>Supprimer l'événement</button>
+                <% end %>
           </div>
         </div>
       </div>
-     <% end %>
+    <% end %>
+    </div>
+  </div>
 </div>
-
-
 
 <%= javascript_pack_tag 'shared/navbar' %>
 <%= javascript_pack_tag 'events/show' %>

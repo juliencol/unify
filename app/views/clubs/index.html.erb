@@ -7,18 +7,18 @@
   <div class="row">
     <div class="col list-group flex-row flex-wrap justify-content-center">
       <% @clubs.each do |club| %>
-        <div class="club-container d-flex flex-row justify-content-start align-items-center">
+        <div class="club-container d-flex flex-row justify-content-start align-items-center mb-4">
           <div class="club-left px-3 px-lg-4">
             <% if club.logo.nil? || club.logo == "" %>
-              <img src="https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png" class="club-logo" >
+              <img src="https://www.logolynx.com/images/logolynx/cb/cb293ba8b9c20c84b4f279f6a3a76464.png" class="club-logo big" >
             <% else %>
-              <img src=<%= club.logo %> class="club-logo" >
+              <img src=<%= club.logo %> class="club-logo big" >
             <% end %>
           </div>
           <div class="club-right d-flex flex-row justify-content-between align-items-center">
             <div class="club-desc">
               <h4><%= club.name %></h4>
-              <span>Lorem ipsum dolor sit amet</span>
+              <span><%= club.description %></span>
             </div>
             <% if club.name == "EXODUS BDE" %>
               <%= link_to club_bde_path(@bde), class:"button-effect-2" do %>
