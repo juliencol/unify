@@ -82,7 +82,7 @@ CLUBS_DATA = [
   
         {
             name: "ISEP Live",
-            logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/iseplive580_lek6zx.png",
+            logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/iseplive580_lek6zx.png"
             description: "association de photographie de l'isep",
             website_url: "https://iseplive.fr/",
             linkedin_url: "",

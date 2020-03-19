@@ -3,54 +3,6 @@
 
   .left-group {
     min-height: 60vh;
-    border-radius: 2%;
-
-    .profile-picture {
-
-      img {
-        @extend .z-depth-3;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        position: relative;
-        z-index: 4;
-      }
-    }
-
-    .infos {
-
-      h1 {
-        color: $isep-bleu;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          padding: .8rem 1rem;
-          margin: 10px 0 10px;
-          text-align: right;
-          background:
-            /* gradient can be an image */
-            linear-gradient(to left,
-              $accent-purple 0%,
-              $accent-yellow 100%) left bottom #ffffff no-repeat;
-          background-size: 100% 4px;
-          border-radius: .5rem;
-          box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
-
-          span {
-            margin: 0;
-            text-transform: uppercase !important;
-            float: left;
-            font-weight: 500;
-            color: lighten(black, 70%);
-          }
-        }
-      }
-    }
 
     .biography {
       h2 {
@@ -60,31 +12,6 @@
       p {
         color: #333;
         font-size: .9rem;
-      }
-    }
-  }
-
-  .right-group {
-
-    .family-banner {
-      width: 95%;
-      height: 250px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 12px;
-
-      @include media-breakpoint-between(xs, sm) {
-        width: 100%;
-      }
-
-      img {
-        position: absolute;
-        min-width: 1000%;
-        min-height: 1000%;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%) scale(0.1);
-        z-index: -1;
       }
     }
   }

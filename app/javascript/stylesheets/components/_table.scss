@@ -1,0 +1,26 @@
+ul.table-style {
+    list-style: none;
+    padding: 0;
+
+    li {
+        padding: .8rem 1rem;
+        margin: 10px 0 10px;
+        text-align: right;
+        background:
+            /* gradient can be an image */
+            linear-gradient(to left,
+                $accent-purple 0%,
+                $accent-yellow 100%) left bottom #ffffff no-repeat;
+        background-size: 100% 4px;
+        border-radius: .5rem;
+        box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
+
+        span {
+            margin: 0;
+            text-transform: uppercase !important;
+            float: left;
+            font-weight: 500;
+            color: lighten(black, 70%);
+        }
+    }
+}
