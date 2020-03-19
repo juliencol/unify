@@ -19,6 +19,7 @@ gem 'cloudinary'
 gem 'pundit'
 gem 'geocoder' 
 gem 'solargraph'
+gem 'google_drive' 
 
 group :development do
   gem 'web-console', '>= 3.3.0'
