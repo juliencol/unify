@@ -40,8 +40,5 @@ yarn-debug.log*
 # Application configuration
 /config/application.yml
 
-# Google Drive API settings
-.client_secret.json
-
 # Node modules
 node_modules
