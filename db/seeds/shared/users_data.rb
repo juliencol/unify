@@ -53,6 +53,8 @@ USERS_DATA = [
         email: "sarah.shobanbabu@isep.fr",
         password: "password",
         profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
+        promotion: 2022,
+        section: "A1",
         classe: "",
         is_ndc: false
     },
@@ -63,6 +65,8 @@ USERS_DATA = [
         email: "andrew.pouret@isep.fr",
         password: "password",
         profile_picture: "https://i.pinimg.com/280x280_RS/77/c3/03/77c303339fb7c870d4523e8977e493dd.jpg",
+        promotion: 2022,
+        section: "A1",
         classe: "",
         is_ndc: false
     },

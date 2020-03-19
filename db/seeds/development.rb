@@ -2,25 +2,26 @@ require_relative "shared/users_data"
 require_relative "shared/clubs_data"
 require_relative "shared/themes_data"
 
-puts "Destroying development database..."
+# There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
+
+puts "Cleaning development database..."
 UserClub.destroy_all
 User.destroy_all
 EventTheme.destroy_all
 Event.destroy_all
 Theme.destroy_all
 Club.destroy_all
-puts "Development database destroyed successfully."
+
+puts "Populating development database..."
 
 puts "Creating users..."
 User.create!(USERS_DATA)
-puts "Users were created successfully."
 
 puts "Creating every isep club..."
 Club.create!(CLUBS_DATA)
-puts "All isep clubs were created successfully."
 
-puts "Creating 50 events..."
-50.times do 
+puts "Creating 10 events..."
+10.times do 
   Event.create!(
     club_id:  Club.where(name: "EXODUS BDE").ids[0],
     name: "Evenement stylé",
@@ -32,20 +33,18 @@ puts "Creating 50 events..."
     location: "10 rue de Vanves, Issy Les Moulineaux",
   )
 end
-puts "50 events were created successfully."
 
 puts "Creating some themes..."
 Theme.create!(THEMES_DATA)
-puts "Themes were created successfully."
 
 puts "Adding 5 clubs to every user..."
 User.all.each do  |user|
     user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3])
 end
-puts "Clubs added to users successfully."
 
-puts "Giving all themes to all events..."
+puts "Giving 4 themes to all events..."
 Event.all.each do |event|
     event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3])
 end
-puts "Themes were sucessfully given to events."
+
+puts "Development database was populated successfully."
