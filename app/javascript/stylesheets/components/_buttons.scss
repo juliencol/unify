@@ -7,7 +7,7 @@
 /* -------------------------------
    HTML Structure needed for this effect:
 
-    <a href="#">
+    <a href="#" class="button-effect-1">
     <button class="learn-more">
         <span class="circle" aria-hidden="true">
         <span class="icon arrow"></span>
@@ -239,8 +239,7 @@ $sites: ("website": $accent-yellow,
     background-color: #fff;
     width: 75px;
     height: 75px;
-    line-height: 75px;
-    font-size: 28px;
+    line-height: 80px;
     margin: 0 10px;
     text-align: center;
     position: relative;
@@ -261,8 +260,8 @@ $sites: ("website": $accent-yellow,
 
     svg {
         @extend .animate;
-        font-size: 1.4em;
-        vertical-align: middle;
+        font-size: 1.8rem;
+        font-weight: 100;
     }
 
     img {
@@ -288,19 +287,6 @@ $sites: ("website": $accent-yellow,
     &:hover,
     &:active {
         @extend .btn__active;
-    }
-
-    /* Clubs index
-    ------------------------ */
-    &.button-effect-3-big {
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        margin: 0 .5rem .5rem 0;
-
-        img {
-            width: 65px;
-        }
     }
 
     @include media-breakpoint-between(xs, md) {

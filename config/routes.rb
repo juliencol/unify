@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :clubs, only: [:index, :show, :edit, :update] do
     resources :events, only: [:new, :create] 
     get "bde", to: "clubs#bde", as: :bde
+    get "partners", to: "clubs#partners", as: :partners
+    get "project", to: "clubs#project", as: :project
     get "members", to: "clubs#members", as: :members
   end
 end

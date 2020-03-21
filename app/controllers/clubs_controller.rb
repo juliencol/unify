@@ -36,6 +36,16 @@ class ClubsController < ApplicationController
         authorize @club
     end
 
+    def partners 
+        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        authorize @club
+    end
+
+    def project 
+        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        authorize @club
+    end
+
     private
 
     def set_params
