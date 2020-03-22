@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+
+
   def show
     @user = User.find(params[:id])
     authorize @user
@@ -19,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def set_params
-    params.require(:user).permit(:email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :is_ndc)
+    params.require(:user).permit(:id, :email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :is_ndc, :admin)
   end
 end
