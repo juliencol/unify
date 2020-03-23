@@ -8,7 +8,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "G10B",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -20,7 +20,7 @@ USERS_DATA = [
         promotion: 2023,
         section: "I2",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -32,7 +32,7 @@ USERS_DATA = [
         promotion: 2021,
         section: "A2",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -44,7 +44,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -56,7 +56,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -68,7 +68,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -80,7 +80,7 @@ USERS_DATA = [
         promotion: 2023,
         section: "P2",
         classe: "P2B",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -92,7 +92,7 @@ USERS_DATA = [
         promotion: 2023,
         section: "P2",
         classe: "P2C",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -104,7 +104,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -116,7 +116,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -128,7 +128,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -140,7 +140,7 @@ USERS_DATA = [
         promotion: 2022,
         section: "A1",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -152,7 +152,7 @@ USERS_DATA = [
         promotion: 2023,
         section: "P2",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     },
 
     {
@@ -164,6 +164,6 @@ USERS_DATA = [
         promotion: 2023,
         section: "I2",
         classe: "",
-        is_ndc: false
+        family_id: Family.first.id
     }
 ]

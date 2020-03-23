@@ -47,7 +47,6 @@
           <div class="d-flex align-items-center justify-content-between">
             <p class="mr-3">Promotion</p>
             <%= f.input :promotion,
-              required: true,
               label: false,
               required: false,
               :collection => %w[2020 2021 2022 2023 2024],
@@ -56,10 +55,15 @@
           <div class="d-flex align-items-center justify-content-between">
               <p class="mr-3">Section</p>
               <%= f.input :section,
-                required: true,
                 label: false,
                 required: false,
                 :collection => %w[P1 P2 I1 I2 A1 A2 A3],
+                :input_html => {:style => 'width: 130px'} %>
+          </div>
+           <div class="d-flex align-items-center justify-content-between">
+              <p class="mr-3">Famille étudiante</p>
+              <%= f.association :family,
+                label: false,
                 :input_html => {:style => 'width: 130px'} %>
           </div>
         </div>
