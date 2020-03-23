@@ -3,9 +3,16 @@
     <%= render "clubs/shared/club_identity" %>
     <div class="col-12 col-lg-9 pt-3">
       <%= render "clubs/shared/club_show_tabs" %>
-      <%= render "clubs/shared/club_events_feed" %>
+
+      <div class="row mt-3">
+        <div class="col members-feed">
+            Partenaires à venir.
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
+<%= javascript_pack_tag 'clubs/header' %>
 <%= javascript_pack_tag 'shared/navbar' %>

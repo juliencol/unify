@@ -201,11 +201,12 @@
 
 @include media-breakpoint-between(xs, lg) {
 	.spacer {
-		transition: filter .4s;
+		@include transition(filter, transform .4s ease);
 	}
 
 	.spacer.out {
-		filter: blur(.2rem);
+		filter: blur(.1rem);
+		@include transform(translateX(-250px));
 
 		.mobile-filters {
 			display: none;
@@ -218,13 +219,12 @@
 		height: 100vh;
 		right: -250px;
 		width: 250px;
-		background: white;
-		transition: right .4s;
+		background-color: white;
 		font-size: 13px;
 		letter-spacing: 1px;
 		color: #212121;
-		background-color: $accent-background;
 		border: none;
+		@include transition(right .4s ease);
 
 		.nav-item {
 			padding: .5rem 2rem;
@@ -232,19 +232,28 @@
 			border-radius: 2px;
 			transition: all 200ms linear;
 
-			&:hover,
-			&:focus {
-				color: $accent-blue;
+			&.show,
+			&.active {
+				background:
+					/* gradient can be an image */
+					linear-gradient(to bottom,
+						$accent-purple 0%,
+						$accent-yellow 100%) left bottom rgba($accent-yellow, .05) no-repeat;
+				background-size: 4px 100%;
+
+				.nav-link {
+					color: black !important;
+				}
 			}
 
 			.dropdown-menu {
 				box-shadow: none;
-				padding: none;
+				background: none;
+				padding: 0 !important;
 			}
 		}
 
 		#search-form {
-			background: white;
 			width: 220px;
 			margin: 0 auto;
 

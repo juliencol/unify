@@ -29,6 +29,14 @@ class ClubPolicy < ApplicationPolicy
     true
   end
 
+  def project?
+    true
+  end
+
+  def partners?
+    true
+  end
+
   private
 
   def user_in_club?
