@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'geocoder' 
 gem 'solargraph'
 gem 'google_drive' 
+gem 'actionview', '~> 6.0.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
