@@ -1,0 +1,17 @@
+.project-feed {
+    svg {
+        width: 5rem;
+        height: 5rem;
+        border-radius: .5rem;
+        padding: .5rem;
+        fill: url(#py-gradient) $accent-purple;
+    }
+
+    .gradient__stop-secondary {
+        stop-color: $accent-yellow;
+    }
+
+    .gradient__stop {
+        stop-color: $accent-purple;
+    }
+}
