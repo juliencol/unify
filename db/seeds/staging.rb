@@ -1,11 +1,10 @@
-#require_relative "shared/users_data"
 require_relative "shared/clubs_data"
 require_relative "shared/themes_data"
 require_relative "shared/families_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
-puts "Cleaning development database..."
+puts "Cleaning staging database..."
 UserClub.destroy_all
 User.destroy_all
 Family.destroy_all
@@ -14,7 +13,7 @@ Event.destroy_all
 Theme.destroy_all
 Club.destroy_all
 
-puts "Populating development database..."
+puts "Populating staging database..."
 puts "Creating families..."
 Family.create!(FAMILIES_DATA)
 puts "Creating clubs..."
@@ -67,4 +66,4 @@ puts "Adding 5 clubs to every user..."
 User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
-puts "Development database was populated successfully."
+puts "Staging database was populated successfully."

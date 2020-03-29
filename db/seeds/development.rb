@@ -1,4 +1,3 @@
-#require_relative "shared/users_data"
 require_relative "shared/clubs_data"
 require_relative "shared/themes_data"
 require_relative "shared/families_data"
