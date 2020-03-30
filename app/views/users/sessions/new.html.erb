@@ -1,37 +1,41 @@
-<%= render "users/shared/background" %>
+<div class="container-fluid h-100">
 
-<div class="row align-items-center justify-content-center h-100">
-  <div class="col-auto shrink login-container">
+  <%= render "users/shared/background" %>
 
-    <h2 class="unify-title">Unify</h2>
-    <div class="pill-tabs">
-      <span class="tab active">Se connecter</span>
-      <span class="tab"><%= render "users/shared/links" %></span>
+  <div class="row align-content-stretch justify-content-center align-items-center h-100 overflow-hidden">
+    <div class="col-12">
+      <div class="login-container">
+        <h2 class="unify-title">Unify</h2>
+        <div class="pill-tabs">
+          <span class="tab active">Se connecter</span>
+          <span class="tab"><%= render "users/shared/links" %></span>
+        </div>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" },
+                        placeholder: "prenom.nom@isep.fr",
+                        label: false %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password", class: "pw-input" },
+                        placeholder: "Mot de passe",
+                        label: false %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Se connecter" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" },
-                    placeholder: "prenom.nom@isep.fr",
-                    label: false %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password", class: "pw-input" },
-                    placeholder: "Mot de passe",
-                    label: false %>
-        <%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Se connecter" %>
-      </div>
-    <% end %>
   </div>
-</div>
 
-<%= render "users/shared/logos" %>
+  <%= render "users/shared/logos" %>
+
+</div>
 
 <%= javascript_pack_tag 'users/users' %>
 <%= javascript_pack_tag 'users/sessions/popup' %>

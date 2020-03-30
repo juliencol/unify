@@ -1,30 +1,36 @@
-<%= render "users/shared/background" %>
+<div class="container-fluid h-100">
 
-<div class="row align-items-center justify-content-center h-100">
-  <div class="col-auto shrink login-container">
-    <h2 class="unify-title">Unify</h2>
-    <h5 class="mt-5 mb-3 text-center">Mot de passe oublié ?</h5>
+  <%= render "users/shared/background" %>
 
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" },
-                      placeholder: "Email",
-                      label: false %>
+  <div class="row align-content-stretch justify-content-center align-items-center h-100 overflow-hidden">
+    <div class="col-12">
+      <div class="login-container">
+        <h2 class="unify-title">Unify</h2>
+        <h5 class="mt-5 mb-3 text-center">Mot de passe oublié ?</h5>
+
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" },
+                          placeholder: "Email",
+                          label: false %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Envoyer les instructions" %>
+            </div>
+        <% end %>
+        <div class="text-center mt-3 d-flex flex-column">
+          <%= render "users/shared/links" %>
         </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Envoyer les instructions" %>
-        </div>
-    <% end %>
-    <div class="text-center mt-3 d-flex flex-column">
-      <%= render "users/shared/links" %>
+      </div>
     </div>
   </div>
-</div>
 
-<%= render "users/shared/logos" %>
+  <%= render "users/shared/logos" %>
+
+</div>
 
 <%= javascript_pack_tag 'users/users' %>

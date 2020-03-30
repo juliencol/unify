@@ -1,29 +1,38 @@
-<%= render "users/shared/background" %>
+<div class="container-fluid h-100">
 
-<h2 class="unify-title">Unify</h2>
-<h2 class="mt-5 mb-3 text-center">Renvoyer l'email de confirmation</h2>
+  <%= render "users/shared/background" %>
 
-<div class="login-container">
-  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-    <%= f.error_notification %>
-    <%= f.full_error :confirmation_token %>
+  <div class="row align-content-stretch justify-content-center align-items-center h-100 overflow-hidden">
+    <div class="col-12">
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                  input_html: { autocomplete: "email" } %>
+      <div class="login-container">
+        <h2 class="unify-title">Unify</h2>
+        <h3 class="mt-5 mb-3 text-center">Renvoyer l'email de confirmation</h3>
+        <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
+          <%= f.full_error :confirmation_token %>
+
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                        input_html: { autocomplete: "email" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Renvoyer l'email de confirmation" %>
+          </div>
+        <% end %>
+
+        <div class="text-center mt-5">
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Renvoyer l'email de confirmation" %>
-    </div>
-  <% end %>
-</div>
+  </div>
 
-<div class="text-center mt-5">
-  <%= render "users/shared/links" %>
-</div>
+  <%= render "users/shared/logos" %>
 
-<%= render "users/shared/logos" %>
+</div>
