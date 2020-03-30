@@ -63,7 +63,7 @@ User.create!(
   first_name: "Amazing",
   last_name: "Recruiter",
   email: "amazing.recruiter@isep.fr",
-  password: "ishoulddefinitlyhiremaelle",
+  password: "ishoulddefinitelyhiremaelle",
   profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
   promotion: 2023,
   section: "I2",
