@@ -23,7 +23,7 @@ Theme.create!(THEMES_DATA)
 
 puts "Creating users..."
 User.create!(
-   first_name: "Julien",
+  first_name: "Julien",
   last_name: "Colombain",
   email: "julien.colombain@isep.fr",
   password: "password",
@@ -36,7 +36,7 @@ User.create!(
   family_id: Family.first.id
 )
 User.create!(
-   first_name: "Maëlle",
+  first_name: "Maëlle",
   last_name: "Jumel",
   email: "maelle.jumel@isep.fr",
   password: "password",
@@ -45,6 +45,30 @@ User.create!(
   section: "I2",
   is_ndc: false,
   admin: true,
+  family_id: Family.first.id
+)
+User.create!(
+  first_name: "Awesome",
+  last_name: "Recruiter",
+  email: "awesome.recruiter@isep.fr",
+  password: "ishoulddefinitlyhirejulien",
+  profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
+  promotion: 2023,
+  section: "I2",
+  is_ndc: false,
+  admin: false,
+  family_id: Family.first.id
+)
+User.create!(
+  first_name: "Amazing",
+  last_name: "Recruiter",
+  email: "amazing.recruiter@isep.fr",
+  password: "ishoulddefinitlyhiremaelle",
+  profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
+  promotion: 2023,
+  section: "I2",
+  is_ndc: false,
+  admin: false,
   family_id: Family.first.id
 )
 

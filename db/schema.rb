@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_190059) do
+ActiveRecord::Schema.define(version: 2020_03_30_084533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_190059) do
     t.text "description"
     t.boolean "applications_open"
     t.string "banner_image"
+    t.string "short_description", limit: 60
   end
 
   create_table "event_themes", force: :cascade do |t|
@@ -138,6 +139,10 @@ ActiveRecord::Schema.define(version: 2020_03_19_190059) do
     t.bigint "family_id", null: false
     t.boolean "admin", default: false
     t.text "bio"
+    t.string "snapchat_url"
+    t.string "instagram_url"
+    t.string "twitter_url"
+    t.string "linkedin_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["family_id"], name: "index_users_on_family_id"
