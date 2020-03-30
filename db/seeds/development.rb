@@ -23,7 +23,7 @@ Theme.create!(THEMES_DATA)
 
 puts "Creating users..."
 User.create!(
-   first_name: "Julien",
+  first_name: "Julien",
   last_name: "Colombain",
   email: "julien.colombain@isep.fr",
   password: "password",
@@ -33,10 +33,15 @@ User.create!(
   classe: "G10B",
   is_ndc: false,
   admin: true,
-  family_id: Family.first.id
+  family_id: Family.first.id,
+  bio: "Bonjour",
+  instagram_url: "https://www.instagram.com/juliencolombain/",
+  snapchat_url: "",
+  linkedin_url: "https://www.linkedin.com/in/julien-colombain/",
+  twitter_url: "https://twitter.com/JulienColombain"
 )
 User.create!(
-   first_name: "Maëlle",
+  first_name: "Maëlle",
   last_name: "Jumel",
   email: "maelle.jumel@isep.fr",
   password: "password",
@@ -45,13 +50,18 @@ User.create!(
   section: "I2",
   is_ndc: false,
   admin: true,
-  family_id: Family.first.id
+  family_id: Family.first.id,
+  bio: "Bonjour je m'appelle Maëlle et j'aime bien le dev",
+  instagram_url: "",
+  snapchat_url: "",
+  linkedin_url: "",
+  twitter_url: ""
 )
 
 puts "Creating events..."
 10.times do 
   Event.create!(
-    club_id:  Club.where(name: "EXODUS BDE").ids[0],
+    club_id:  Club.where("name ILIKE ?", "EXODUS BDE").ids[0],
     name: "Evenement stylé",
     short_description: "Ceci est une description courte. Elle décrit l'événement brièvement.",
     long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",
@@ -61,6 +71,17 @@ puts "Creating events..."
     location: "10 rue de Vanves, Issy Les Moulineaux",
   )
 end
+
+Event.create!(
+  club_id:  Club.where("name ILIKE ?", "Junior ISEP").ids[0],
+  name: "Regretter de ne pas avoir recruté Julien",
+  short_description: "Réunion interne pour regretter tous ensemble.",
+  long_description: "Après avoir admiré unifyisep.com, les membres de Junior ISEP ont décidé de se réunir pour regretter tous ensemble d'avoir refusé la candidature de Julien.",
+  image: "https://res.cloudinary.com/isep/image/upload/v1585554035/unify/unnamed_wc0zbd.jpg",
+  date: "15/11/2019 22:00",
+  price: 0,
+  location: "10 rue de Vanves, Issy Les Moulineaux",
+)
 
 puts "Adding 5 clubs to every user..."
 User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 

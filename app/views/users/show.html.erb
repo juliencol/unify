@@ -18,7 +18,7 @@
       </div>
       <div class="biography px-3">
         <h2>Bio</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat, tortor sed vestibulum lacinia, libero nibh imperdiet lectus, nec maximus elit arcu vel nisi. Aenean quis accumsan odio. Quisque porta sodales ligula at sagittis. Quisque consectetur pellentesque condimentum. Vestibulum imperdiet molestie pellentesque.</p>
+        <p><%= @user.bio %></p>
       </div>
     </div>
     <div class="col col-lg-9 right-group">
@@ -61,25 +61,33 @@
         </div>
         <div class="col-12 col-md-4">
           <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
-            <%= link_to "#", class:"mb-4" do %>
-                <div class="button-effect-3 snapchat">
-                    <i class="fab fa-snapchat-ghost"></i>
-                </div>
+            <% if !@user.snapchat_url.nil? and @user.snapchat_url != "" %>
+              <%= link_to @user.snapchat_url, class:"mb-4" do %>
+                  <div class="button-effect-3 snapchat">
+                      <i class="fab fa-snapchat-ghost"></i>
+                  </div>
+              <% end %>
             <% end %>
-            <%= link_to "#", target:"_blank", class:"mb-4" do %>
+            <% if !@user.twitter_url.nil? and @user.twitter_url != "" %>
+               <%= link_to @user.twitter_url , target:"_blank", class:"mb-4" do %>
                 <div class="button-effect-3 twitter">
                     <i class="fab fa-twitter"></i>
                 </div>
+              <% end %>
             <% end %>
-            <%= link_to "#", target:"_blank", class:"mb-4" do %>
-                <div class="button-effect-3 instagram">
-                    <i class="fab fa-instagram"></i>
-                </div>
+            <% if !@user.instagram_url.nil? and @user.instagram_url != "" %>
+              <%= link_to @user.instagram_url, target:"_blank", class:"mb-4" do %>
+                  <div class="button-effect-3 instagram">
+                      <i class="fab fa-instagram"></i>
+                  </div>
+              <% end %>
             <% end %>
-            <%= link_to "#", target:"_blank", class:"mb-4" do %>
-                <div class="button-effect-3 linkedin">
-                    <i class="fab fa-linkedin"></i>
-                </div>
+            <% if !@user.linkedin_url.nil? and @user.linkedin_url != "" %>
+              <%= link_to @user.linkedin_url, target:"_blank", class:"mb-4" do %>
+                  <div class="button-effect-3 linkedin">
+                      <i class="fab fa-linkedin"></i>
+                  </div>
+              <% end %>
             <% end %>
           </div>
         </div>
