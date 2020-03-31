@@ -22,12 +22,11 @@ The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c25
 # Philosophy and values
 * Value user stories.
 * Make code reviews. 
-* Develop one feature at a time. The number of current branches must be equals to the number of developers working on the project + the master branch. 
-* Focus on security. Every developer must be aware of the potential attacks. Whenever you use an implicit SQl request, use the '?' symbol to protect from SQL injections and define columns in controller params method to prevent from xss attacks.
-* Code is in english. User ouputs are in french.
+* Seek for the highest performance.
+* Focus on security and be aware of the potential attacks.
+* Code in english, write user ouputs in french.
 * Don't commit blocks of commented code. 
 * Care about the end user.
-* Seek for the highest performance.
 
 # Style guide
 Only push performing readable code. </br>
