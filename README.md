@@ -65,7 +65,7 @@ Create the .env file to store api keys (do this once)
 touch .env
 echo  '.env*' >> .gitignore
 ``` 
-You'll need to add the api keys in that file so ask me fore the credentials on slack.
+You'll need to add the api keys in that file, ask me privately for the credentials.
 
 Host a local server
 ```bash 
