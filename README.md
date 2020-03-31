@@ -10,11 +10,11 @@ Images are hosted on [cloudinary](https://cloudinary.com/).
 # Infrastructure
 Our app is hosted on heroku under the domain name [unifyisep.com](https://www.unifyisep.com/).The staging environment allow us to simulate a production environment to test eveyrthing is fine before pushing code to production. We follow a continuous deployment workflow: every time a branch is merged to master or a commit is pushed to master, heroku automatically deploy the master branch to our staging environment. That means the master branch always have to be clean. Everyone in the team can access our heroku pipeline [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257)
 
-# Files structure
-In the MVC pattern, each model has an associated controller with a specific number of actions (== functions). Each action is associated to a view which is an html file displaying the content of a page. </br>
+# App structure
+In the MVC pattern, each model has an associated controller with a specific number of actions (i.e. functions / methods). Each action is associated to a view which is an html file displaying the content of a page. </br>
 * Models are accessible in 'app/models'. </br>
 * Controllers are accessible in 'app/controllers'. </br>
-* Views are defined in 'app/views'. </br>
+* Views are accessible in 'app/views'. </br>
 * Build your CSS components in 'app/javascript/stylesheets/components'. </br>
 * Build your CSS pages in 'app/javascript/stylesheets/controller_name/view_name.scss'. </br>
 * Same for JavaScript. </br>
@@ -54,8 +54,6 @@ If you don't have rails installed on your computer, click on your OS and follow 
     </td>
   </tr>
 </table>
-
-# Project setup
 
 Clone the repository
 ```bash
