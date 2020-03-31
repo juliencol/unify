@@ -6,6 +6,7 @@ require_relative "shared/families_data"
 
 puts "Cleaning development database..."
 UserClub.destroy_all
+UserEvent.destroy_all
 User.destroy_all
 Family.destroy_all
 EventTheme.destroy_all
@@ -27,7 +28,7 @@ User.create!(
   last_name: "Colombain",
   email: "julien.colombain@isep.fr",
   password: "password",
-  profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
+  profile_picture: "",
   promotion: 2022,
   section: "A1",
   classe: "G10B",

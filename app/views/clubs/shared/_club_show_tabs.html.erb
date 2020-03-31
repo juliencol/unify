@@ -1,5 +1,4 @@
 <% if @club.name == "EXODUS BDE" %>
-
   <div class="pill-tabs club-show-tab">
     <%= link_to club_bde_path(@club), class:"tab #{'active' if current_page?(club_bde_path(@club))}" do %>
       <span>Événements</span>
@@ -14,9 +13,7 @@
       <span>Partenaires</span>
     <% end %>
   </div>
-
 <% else %>
-
   <div class="pill-tabs club-show-tab">
     <%= link_to club_path(@club), class:"tab #{'active' if current_page?(club_path(@club))}" do %>
       <span>Événements</span>
@@ -25,5 +22,4 @@
       <span>Membres</span>
     <% end %>
   </div>
-
 <% end %>

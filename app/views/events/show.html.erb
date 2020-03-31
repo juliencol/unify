@@ -19,7 +19,7 @@
                 <li><span>Date : </span><%= @event.date %></li>
                 <li><span>Adresse : </span><%= @event.location %></li>
                 <li><span>Prix : </span><% if @event.price.nil? || @event.price == 0 %>Gratuit<% else %><%= @event.price %> €<% end %></li>
-                <li><span>Participants : </span>12</li>
+                <li><span>Participants : </span><%= @event.users.size %></li>
                 </ul>
             </div>
             <% if policy(@event).edit? %>

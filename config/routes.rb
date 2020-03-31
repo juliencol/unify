@@ -9,7 +9,9 @@ Rails.application.routes.draw do
                 }            
   root to: 'events#index'
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do 
+    get "events", to: "users#events"
+  end
 
   resources :events, only: [:index, :show, :edit, :update, :destroy] do
      post "register_to_event", to: 'users#register_to_event'

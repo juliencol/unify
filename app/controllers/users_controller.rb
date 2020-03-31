@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def events
+    @user = User.find(params[:user_id])
+    authorize @user
+  end
+
   def edit
     @user = current_user
     authorize @user
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
     authorize @user
     redirect_to user_path(@user)
   end
-
+  
   def register_to_event
     @event = Event.find(params[:event_id])
     authorize @event

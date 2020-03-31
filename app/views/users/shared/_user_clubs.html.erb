@@ -1,0 +1,20 @@
+<div class="row d-flex justify-content-center  p-2 m-3">
+  <div class="col-12 col-md-8 m-3">
+    <div class="white-wrapper mb-4 m-3">
+      <% if current_user.clubs.nil? || current_user.clubs == [] %>
+        <h3 class="text-center">Membre d'aucune association</h3>
+      <% else %>
+        <div class="assos d-flex flex-wrap justify-content-around pb-3 m-3">
+          <% current_user.clubs.each do |club| %>
+            <%= link_to club_path(club), :title => club.name do %>
+              <div class="d-flex flex-column align-items-centerm-3">
+                <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
+                <h4><%= club.name %></h4>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

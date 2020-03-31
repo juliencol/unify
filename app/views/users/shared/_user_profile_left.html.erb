@@ -1,0 +1,50 @@
+<div class="col col-lg-3 left-group">
+  <div class="profile-picture d-flex justify-content-center mb-4">
+    <% if @user.profile_picture.nil? || @user.profile_picture == "" %>
+      <img src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="user-logo" >
+    <% else %>
+        <img class="user-logo" src=<%= @user.profile_picture %> >
+    <% end %>
+  </div>
+  <div class="infos text-center pb-3">
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <ul class="table-style mt-3">
+      <li><span>Email : </span><%= @user.email %></li>
+      <li><span>Promo : </span><%= @user.promotion %></li>
+      <li><span>Section : </span><%= @user.section %></li>
+    </ul>
+  </div>
+  <div class="biography px-3"><p><%= @user.bio %></p></div>
+  <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
+        <% if !@user.twitter_url.nil? and @user.twitter_url != "" %>
+          <%= link_to @user.twitter_url , target:"_blank", class:"mb-4" do %>
+            <div class="button-effect-3 twitter"><i class="fab fa-twitter"></i></div>
+          <% end %>
+        <% end %>
+        <% if !@user.linkedin_url.nil? and @user.linkedin_url != "" %>
+          <%= link_to @user.linkedin_url, target:"_blank", class:"mb-4" do %>
+            <div class="button-effect-3 linkedin"><i class="fab fa-linkedin"></i></div>
+          <% end %>
+        <% end %>
+        <% if !@user.instagram_url.nil? and @user.instagram_url != "" %>
+          <%= link_to @user.instagram_url, target:"_blank", class:"mb-4" do %>
+              <div class="button-effect-3 instagram"><i class="fab fa-instagram"></i></div>
+          <% end %>
+        <% end %>
+        <% if !@user.snapchat_url.nil? and @user.snapchat_url != "" %>
+          <%= link_to @user.snapchat_url, class:"mb-4" do %>
+            <div class="button-effect-3 snapchat"><i class="fab fa-snapchat-ghost"></i></div>
+          <% end %>
+        <% end %>
+  </div>
+  <% if current_user == @user %>
+        <div class="d-flex flex-column align-items-center align-items-start mb-4">
+          <%= link_to edit_user_path(current_user), class:"button-effect-2 mb-3" do %>
+            <button>Modifier mon profil</button>
+          <% end %>
+          <%= link_to new_user_password_path(current_user), class:"button-effect-2" do %>
+            <button>Modifier mon mot de passe</button>
+          <% end %>
+        </div>
+  <% end %>
+</div>
