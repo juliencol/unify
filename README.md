@@ -66,7 +66,7 @@ Host a local server
 ```bash 
 rails s
 ```
-then open your browser and go to the url http://localhost:3000/
+Then open your browser and go to http://localhost:3000/
 
 # Workflow
 Steps to follow when you code a feature.
