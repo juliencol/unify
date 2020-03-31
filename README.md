@@ -4,10 +4,10 @@ The following lines were written for future contributors to be able to pick up t
 Unify is an open source progressive web application to manage school events at ISEP. Among a lot of other amazing features, it allow every student club to create and update events and every student to register to events.
 
 # Stack
-Everything is handle with the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework [Ruby on Rails](https://rubyonrails.org/), very easy to pick up. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. The database is PostgreSQL and requests are handled with the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html). Images are hosted on [cloudinary](https://cloudinary.com/). 
+Everything is handled with the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework [Ruby on Rails](https://rubyonrails.org/), very easy to pick up. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. The database is PostgreSQL and requests are handled with the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html). Images are hosted on [cloudinary](https://cloudinary.com/). 
 
 # Infrastructure
-The app is hosted on heroku under the domain name [unifyisep.com](https://www.unifyisep.com/).The staging environment simulates a production environment to test eveyrthing before pushing code to production. We follow a continuous deployment workflow automated with the master branch. The heroku pipeline can be accessed [here] (https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257).
+The app is hosted on heroku under the domain name [unifyisep.com](https://www.unifyisep.com/). The staging environment simulates a production environment to test eveyrthing before pushing code to production. We follow a continuous deployment workflow automated with the master branch. The heroku pipeline can be accessed [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257).
 
 # App structure
 In the MVC pattern, each model has an associated controller with a specific number of actions (i.e. functions / methods). Each action is associated to a view which is an html file displaying the content of a page. </br>
