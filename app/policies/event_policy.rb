@@ -33,9 +33,17 @@ class EventPolicy < ApplicationPolicy
     user_in_club_event?
   end
 
+  def register_to_event?
+    is_user_profile?
+  end
+
   private
 
   def user_in_club_event?
     record.club.users.include? user
+  end
+
+  def is_user_profile?
+    user == @user
   end
 end

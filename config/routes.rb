@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
-  resources :events, only: [:index, :show, :edit, :update, :destroy] 
+  resources :events, only: [:index, :show, :edit, :update, :destroy] do
+     post "register_to_event", to: 'users#register_to_event'
+  end
 
   resources :clubs, only: [:index, :show, :edit, :update] do
     resources :events, only: [:new, :create] 

@@ -42,11 +42,13 @@
                 <h1><%= @event.name %></h1>
             </div>
             <div class="col-12 col-md-2">
-                <%= link_to "#", class:"button-effect-2" do %>
-                    <button>
-                        <span class="button-text">S'inscrire</span>
-                    </button>
-                <% end %>
+                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, class:"button-effect-2" do %>
+                    <% if current_user.events.include? @event %>
+                        <button id="register-event-btn"><span class="button-text">Se désinscrire</span></button>
+                    <% else %>
+                        <button id="register-event-btn"><span class="button-text">S'inscrire</span></button>
+                    <% end %>
+                <% end %>       
             </div>
         </div>
         <div class="row p-2">
