@@ -56,7 +56,7 @@ Clone the repository
 git clone git@github.com:juliencol/unify.git
 ```
 
-Create the .env file to store api keys (do this once)
+Create the .env file to store api keys and make git ignore it
 ```bash 
 touch .env
 echo  '.env*' >> .gitignore
