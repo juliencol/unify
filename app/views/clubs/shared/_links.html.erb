@@ -1,15 +1,23 @@
-<%= link_to @club.website_url, target:"_blank" do %>
-    <div class="button-effect-3 website">
-        <i class="fas fa-link"></i>
-    </div>
+<% if !@club.website_url.nil? and @club.website_url != "" %>
+    <%= link_to @club.website_url, target:"_blank" do %>
+        <div class="button-effect-3 website">
+            <i class="fas fa-link"></i>
+        </div>
+    <% end %>
 <% end %>
-<%= link_to @club.instagram_url, target:"_blank" do %>
-    <div class="button-effect-3 instagram">
-        <i class="fab fa-instagram"></i>
-    </div>
+<% if !@club.instagram_url.nil? and @club.instagram_url != "" %>
+    <%= link_to @club.instagram_url, target:"_blank" do %>
+        <div class="button-effect-3 instagram">
+            <i class="fab fa-instagram"></i>
+        </div>
+    <% end %>
 <% end %>
-<%= link_to @club.linkedin_url, target:"_blank" do %>
-    <div class="button-effect-3 linkedin">
-        <i class="fab fa-linkedin"></i>
-    </div>
+<% if !@club.linkedin_url.nil? and @club.linkedin_url != "" %>
+    <%= link_to @club.linkedin_url, target:"_blank" do %>
+        <div class="button-effect-3 linkedin">
+            <i class="fab fa-linkedin"></i>
+        </div>
+    <% end %>
 <% end %>
+
+

@@ -23,7 +23,7 @@ puts "Creating themes..."
 Theme.create!(THEMES_DATA)
 
 puts "Creating users..."
-User.create!(
+julien = User.create!(
   first_name: "Julien",
   last_name: "Colombain",
   email: "julien.colombain@isep.fr",
@@ -41,7 +41,11 @@ User.create!(
   linkedin_url: "https://www.linkedin.com/in/julien-colombain/",
   twitter_url: "https://twitter.com/JulienColombain"
 )
-User.create!(
+julien.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
+julien.clubs.push(Club.where("name ILIKE ?", "Garage"))
+julien.clubs.push(Club.where("name ILIKE ?", "ISEP Alumni"))
+
+maelle = User.create!(
   first_name: "Maëlle",
   last_name: "Jumel",
   email: "maelle.jumel@isep.fr",
@@ -58,6 +62,7 @@ User.create!(
   linkedin_url: "",
   twitter_url: ""
 )
+maelle.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
 
 puts "Creating events..."
 10.times do 
@@ -84,8 +89,7 @@ Event.create!(
   location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 
-puts "Adding 5 clubs to every user..."
-User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 
+
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
 puts "Development database was populated successfully."

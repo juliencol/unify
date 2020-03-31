@@ -42,7 +42,7 @@
                 <h1><%= @event.name %></h1>
             </div>
             <div class="col-12 col-md-2">
-                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, class:"button-effect-2" do %>
+                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, :action => "register_to_event", class:"button-effect-2" do %>
                     <% if current_user.events.include? @event %>
                         <button id="register-event-btn"><span class="button-text">Se désinscrire</span></button>
                     <% else %>

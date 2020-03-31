@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :club
   
   has_many :user_events
-  has_many :users, through: :user_events
+  has_many :users, through: :user_events, dependent: :destroy
   
   has_many :event_themes
   has_many :themes, through: :event_themes, dependent: :destroy
@@ -15,6 +15,7 @@ class Event < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
+  # Uncomment these lines be able to upload  photos
   # mount_uploader :image, PhotoUploader
   # mount_uploader :banner, PhotoUploader
 end

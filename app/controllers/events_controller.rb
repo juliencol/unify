@@ -66,16 +66,6 @@ class EventsController < ApplicationController
     redirect_to club_path(@event.club)
   end
 
-  # def register
-  #   @event = Event.find(params[:id])
-  #   @event.users << current_user
-  #   if @event.users.include? current_user
-  #     flash[:notice] = "Vous êtes inscrit #{@event.name}"
-  #   else
-  #     flash[:notice] = "Oups, votre inscription à #{@event.name} n'a pas pu aboutir " 
-  #   end
-  # end
-
   private
 
   def event_params

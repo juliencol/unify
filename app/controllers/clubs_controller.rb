@@ -1,13 +1,12 @@
 class ClubsController < ApplicationController
     def index
-        @clubs = policy_scope(Club)
-        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
+        @clubs = policy_scope(Club).sort_by{|club| club[:name]}
+        @bde = Club.where("name ILIKE ?", "EXODUS BDE")
     end
     
     def show
         @club = Club.find(params[:id])
         authorize @club
-        @bde = Club.where("name ILIKE ?", "EXODUS BDE").take
     end
 
     def edit
