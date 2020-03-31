@@ -104,7 +104,7 @@ If it's the first time you're working on the project you'll have to create the d
 rails db:create
 ```
 
-7. Take the time to code your feature then push your branch and write a pull request. Don't hesitate make several commits for the same feature. 
+7. Take the time to code your feature then push your branch and write a pull request. Don't hesitate to make several commits for the same feature. 
 ```bash
 git add .
 git commit -m "sexy feature added"
