@@ -19,13 +19,15 @@ In the MVC pattern, each model has an associated controller with a specific numb
 # Database
 The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c251a06188009) or directly in 'db/schema.rb'.
 
-# Philosophy 
-* Value user stories written in [trello](https://trello.com/b/KvPE3ned/unify).
-* Make [code reviews](#Code-review) for every new feature. 
+# Philosophy and values
+* Value user stories.
+* Make code reviews. 
 * Develop one feature at a time. The number of current branches must be equals to the number of developers working on the project + the master branch. 
 * Focus on security. Every developer must be aware of the potential attacks. Whenever you use an implicit SQl request, use the '?' symbol to protect from SQL injections and define columns in controller params method to prevent from xss attacks.
-* Variables and functions are named in english. User ouputs are in french.
-* Never commit blocks of code commented. 
+* Code is in english. User ouputs are in french.
+* Don't commit blocks of commented code. 
+* Care about the end user.
+* Seek for the highest performance.
 
 # Style guide
 Only push performing readable code. </br>
@@ -34,7 +36,7 @@ Only push performing readable code. </br>
 * Keep up dry code and always refactor. 
 
 # Setup
-If you don't have rails installed on your computer, click on your OS and follow the steps. If you're on Windows I recommand either install ubuntu in dual boot, run ubuntu in a VM or follow the ubuntu configuration using [cmder](https://cmder.net/).  
+If you don't have rails installed on your computer, click on your Operating System and follow the steps. If you're on Windows I recommand either install ubuntu in dual boot, run ubuntu in a VM or buy a [MacBook Pro](https://www.apple.com/fr/macbook-pro/?afid=p238%7Cs19SgiikC-dc_mtid_187079nc38483_pcrid_410429749888_pgrid_41257055459_&cid=aos-fr-kwgo-mac--slid---product-).
 <table>
   <tr>
     <td>
