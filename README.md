@@ -1,7 +1,7 @@
-<span style="color: red"> Everyone contributing to the project should read the following lines</span>
+The following lines were written for future contributors to be able to pick up the project really fast but any interested engineer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone on the team.
 
 # Description
-Unify is a progressive web application to manage school events at ISEP. Our goal is to allow every student club to create and update events and every student to register to any event.
+Unify is an open source progressive web application to manage school events at ISEP. Among a lot of other amazing features, it allow every student club to create and update events and every student to register to events.
 
 # Stack
 Everything is handle with the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework [Ruby on Rails](https://rubyonrails.org/), very easy to pick up. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. The database is PostgreSQL and requests are handled with the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html). Images are hosted on [cloudinary](https://cloudinary.com/). 
