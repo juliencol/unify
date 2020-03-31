@@ -1,4 +1,4 @@
-<span style="color: red"> Everyone contributing to the project must read this</span>
+<span style="color: red"> Everyone contributing to the project should read the following lines</span>
 
 # Description
 Unify is a progressive web application to manage school events at ISEP. Our goal is to allow every student club to create and update events and every student to register to any event.
