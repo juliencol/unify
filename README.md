@@ -131,7 +131,7 @@ git checkout sexy-feature
 Then run a local server to observe the changes, make sure everything works like expected. Check the code to make sure it's clean and then merge the pull request on github. If the feature is incomplete or the code is not clean, explain why in comments of the PR. Please be nice and offer help.
 
 # HTML Structure
-It is necessary and vital to respect the following structure when writing HTML code since we are using a lot of [Bootstrap]. Exceptions can be made for partials and components.
+When it comes to writing HTML it is important to respect the following structure since we are using a lot of [Bootstrap](https://getbootstrap.com/). Exceptions can be made for partials and components.
 ```
 <div class="container-fluid spacer">
 
