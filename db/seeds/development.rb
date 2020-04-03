@@ -35,7 +35,7 @@ julien = User.create!(
   is_ndc: false,
   admin: true,
   family_id: Family.first.id,
-  bio: "Bonjour",
+  bio: "Bonjour je m'appelle Julien, je suis célibataire et j'aime bien le dev et là j'écris pleins de bails pour voir comment ça va rendre ouais ouais on est là allez allez lourd ça c'est le S",
   instagram_url: "https://www.instagram.com/juliencolombain/",
   snapchat_url: "",
   linkedin_url: "https://www.linkedin.com/in/julien-colombain/",

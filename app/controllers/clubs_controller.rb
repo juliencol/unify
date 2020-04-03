@@ -1,6 +1,6 @@
 class ClubsController < ApplicationController
     def index
-        @clubs = policy_scope(Club).sort_by{|club| club[:name]}
+        @clubs = policy_scope(Club).sort_by{ |club| club[:name] }
         @bde = Club.where("name ILIKE ?", "EXODUS BDE")
     end
     
