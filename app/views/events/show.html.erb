@@ -19,7 +19,7 @@
                 <li><span>Date : </span><%= @event.date %></li>
                 <li><span>Adresse : </span><%= @event.location %></li>
                 <li><span>Prix : </span><% if @event.price.nil? || @event.price == 0 %>Gratuit<% else %><%= @event.price %> €<% end %></li>
-                <li><span>Participants : </span>12</li>
+                <li><span>Participants : </span><%= @event.users.size %></li>
                 </ul>
             </div>
             <% if policy(@event).edit? %>
@@ -42,11 +42,13 @@
                 <h1><%= @event.name %></h1>
             </div>
             <div class="col-12 col-md-2">
-                <%= link_to "#", class:"button-effect-2" do %>
-                    <button>
-                        <span class="button-text">S'inscrire</span>
-                    </button>
-                <% end %>
+                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, :action => "register_to_event", class:"button-effect-2" do %>
+                    <% if current_user.events.include? @event %>
+                        <button id="register-event-btn"><span class="button-text">Se désinscrire</span></button>
+                    <% else %>
+                        <button id="register-event-btn"><span class="button-text">S'inscrire</span></button>
+                    <% end %>
+                <% end %>       
             </div>
         </div>
         <div class="row p-2">

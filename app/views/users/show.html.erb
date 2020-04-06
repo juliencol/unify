@@ -1,95 +1,14 @@
 <div class="container-fluid spacer">
   <div class="row user-row">
-    <div class="col col-lg-3 mt-5 left-group">
-      <div class="profile-picture d-flex justify-content-center mb-4">
-        <% if @user.profile_picture.nil? || @user.profile_picture == "" %>
-          <img src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="user-logo" >
-        <% else %>
-           <img class="user-logo" src=<%= @user.profile_picture %> >
-        <% end %>
-      </div>
-      <div class="infos text-center pb-3">
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-        <ul class="table-style mt-3">
-          <li><span>Mail ISEP : </span><%= @user.email %></li>
-          <li><span>Promo : </span><%= @user.promotion %></li>
-          <li><span>Section : </span><%= @user.section %></li>
-        </ul>
-      </div>
-      <div class="biography px-3">
-        <h2>Bio</h2>
-        <p><%= @user.bio %></p>
-      </div>
-    </div>
-    <div class="col col-lg-9 right-group">
+    <%= render "users/shared/user_profile_left" %>
+    <div class="col-12 col-lg-9 right-group">
       <div class="row justify-content-center p-2">
-        <div class="col">
-          <div class="banner">
-            <img src=<%= @user.family.banner %> />
-          </div>
-        </div>
+        <div class="col"><div class="banner"><img src=<%= @user.family.banner %> /></div></div>
       </div>
-      <div class="row p-2">
-        <div class="col-12 col-md-8">
-          <div class="white-wrapper mb-4">
-            <% if @user.clubs.nil? || @user.clubs == [] %>
-              <h3 class="text-center">Membre d'aucune association</h3>
-            <% else %>
-              <h3>Associations</h3>
-              <div class="assos d-flex flex-wrap justify-content-around pb-3">
-                <% @user.clubs.each do |club| %>
-                    <%= link_to club_path(club), :title => club.name do %>
-                      <div class="d-flex flex-column align-items-center">
-                        <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
-                        <h4><%= club.name %></h4>
-                      </div>
-                    <% end %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <% if current_user == @user %>
-            <div class="white-wrapper d-flex flex-column align-items-start mb-4">
-              <%= link_to edit_user_path(current_user), class:"button-effect-2 mb-3" do %>
-                <button>Modifier mon profil</button>
-              <% end %>
-              <%= link_to new_user_password_path(current_user), class:"button-effect-2" do %>
-                <button>Modifier mon mot de passe</button>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
-            <% if !@user.snapchat_url.nil? and @user.snapchat_url != "" %>
-              <%= link_to @user.snapchat_url, class:"mb-4" do %>
-                  <div class="button-effect-3 snapchat">
-                      <i class="fab fa-snapchat-ghost"></i>
-                  </div>
-              <% end %>
-            <% end %>
-            <% if !@user.twitter_url.nil? and @user.twitter_url != "" %>
-               <%= link_to @user.twitter_url , target:"_blank", class:"mb-4" do %>
-                <div class="button-effect-3 twitter">
-                    <i class="fab fa-twitter"></i>
-                </div>
-              <% end %>
-            <% end %>
-            <% if !@user.instagram_url.nil? and @user.instagram_url != "" %>
-              <%= link_to @user.instagram_url, target:"_blank", class:"mb-4" do %>
-                  <div class="button-effect-3 instagram">
-                      <i class="fab fa-instagram"></i>
-                  </div>
-              <% end %>
-            <% end %>
-            <% if !@user.linkedin_url.nil? and @user.linkedin_url != "" %>
-              <%= link_to @user.linkedin_url, target:"_blank", class:"mb-4" do %>
-                  <div class="button-effect-3 linkedin">
-                      <i class="fab fa-linkedin"></i>
-                  </div>
-              <% end %>
-            <% end %>
-          </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 pt-3">
+          <%= render "users/shared/user_show_tabs" %>
+          <%= render "users/shared/user_clubs" %>
         </div>
       </div>
     </div>

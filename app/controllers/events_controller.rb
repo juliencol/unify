@@ -3,8 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
-    @themes = Theme.all
-    @clubs = Club.all
+    @themes = Theme.all.sort_by { |theme| theme[:title] }
+    @clubs = Club.all.sort_by { |club| club[:name] }
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
@@ -15,15 +15,12 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     authorize @event
-    @marker = {
-      lat: @event.latitude,
-      lng: @event.longitude,
-    }
+    @marker = { lat: @event.latitude, lng: @event.longitude }
   end
   
   def new
     @event = @club.events.build
-    @themes = Theme.all
+    @themes = Theme.all.sort_by{ |theme| theme[:title] }
     authorize @event
   end
 
@@ -54,6 +51,7 @@ class EventsController < ApplicationController
       flash[:notice] = "Votre événement a été modifié avec succès"
       redirect_to @event
     else
+      flash[:notice] = "Oups, un problème est survenu lors de la modification de l'événement"
       render "edit"
     end
   end
@@ -62,19 +60,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.destroy
-    flash[:notice] = "Votre événement a été supprimé"
+    flash[:notice] = "Votre événement a été supprimé avec succès"
     redirect_to club_path(@event.club)
   end
-
-  # def register
-  #   @event = Event.find(params[:id])
-  #   @event.users << current_user
-  #   if @event.users.include? current_user
-  #     flash[:notice] = "Vous êtes inscrit #{@event.name}"
-  #   else
-  #     flash[:notice] = "Oups, votre inscription à #{@event.name} n'a pas pu aboutir " 
-  #   end
-  # end
 
   private
 

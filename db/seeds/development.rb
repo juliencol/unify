@@ -6,6 +6,7 @@ require_relative "shared/families_data"
 
 puts "Cleaning development database..."
 UserClub.destroy_all
+UserEvent.destroy_all
 User.destroy_all
 Family.destroy_all
 EventTheme.destroy_all
@@ -22,25 +23,29 @@ puts "Creating themes..."
 Theme.create!(THEMES_DATA)
 
 puts "Creating users..."
-User.create!(
+julien = User.create!(
   first_name: "Julien",
   last_name: "Colombain",
   email: "julien.colombain@isep.fr",
   password: "password",
-  profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
+  profile_picture: "",
   promotion: 2022,
   section: "A1",
   classe: "G10B",
   is_ndc: false,
   admin: true,
   family_id: Family.first.id,
-  bio: "Bonjour",
+  bio: "Bonjour je m'appelle Julien, je suis célibataire et j'aime bien le dev et là j'écris pleins de bails pour voir comment ça va rendre ouais ouais on est là allez allez lourd ça c'est le S",
   instagram_url: "https://www.instagram.com/juliencolombain/",
   snapchat_url: "",
   linkedin_url: "https://www.linkedin.com/in/julien-colombain/",
   twitter_url: "https://twitter.com/JulienColombain"
 )
-User.create!(
+julien.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
+julien.clubs.push(Club.where("name ILIKE ?", "Garage"))
+julien.clubs.push(Club.where("name ILIKE ?", "ISEP Alumni"))
+
+maelle = User.create!(
   first_name: "Maëlle",
   last_name: "Jumel",
   email: "maelle.jumel@isep.fr",
@@ -57,6 +62,7 @@ User.create!(
   linkedin_url: "",
   twitter_url: ""
 )
+maelle.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
 
 puts "Creating events..."
 10.times do 
@@ -83,8 +89,7 @@ Event.create!(
   location: "10 rue de Vanves, Issy Les Moulineaux",
 )
 
-puts "Adding 5 clubs to every user..."
-User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 
+
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
 puts "Development database was populated successfully."

@@ -22,7 +22,7 @@
             <div class="event-tags">
               <ul>
                 <% event.themes.each do |theme| %>
-                  <li><%= theme.title.capitalize %></li>
+                  <li><%= theme.title.titleize %></li>
                 <% end %>
               </ul>
             </div>

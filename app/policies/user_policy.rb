@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def events?
+    true
+  end
+
   def edit?
     is_user_profile
   end

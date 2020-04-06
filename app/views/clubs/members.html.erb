@@ -7,10 +7,17 @@
         <div class="col members-feed">
           <% @club.users.each do |user| %>
             <%= link_to user_path(user) do %>
-              <div class="member-wrapper mb-3 mx-auto">
-                <img class="avatar" src=<%= user.profile_picture %> />
-                <p><%= user.first_name %> <%= user.last_name %></p>
-              </div>
+              <% if user.profile_picture.nil? || user.profile_picture == "" %>
+                <div class="member-wrapper mb-3 mx-auto">
+                   <img class="avatar" src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="user-logo" >
+                  <p><%= user.first_name %> <%= user.last_name %></p>
+                </div>
+              <% else %>
+                <div class="member-wrapper mb-3 mx-auto">
+                  <img class="avatar" src=<%= user.profile_picture %> >
+                  <p><%= user.first_name %> <%= user.last_name %></p>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         </div>

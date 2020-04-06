@@ -1,0 +1,16 @@
+<div class="white-wrapper mt-4">
+  <% if current_user.clubs.nil? || current_user.clubs == [] %>
+    <h3 class="text-center">Membre d'aucune association</h3>
+  <% else %>
+    <div class="assos d-flex flex-wrap justify-content-around pb-3">
+      <% current_user.clubs.each do |club| %>
+        <%= link_to club_path(club), :title => club.name do %>
+          <div class="d-flex flex-column align-items-centerm-3">
+            <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
+            <h4><%= club.name %></h4>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-
-
-
   def show
     @user = User.find(params[:id])
+    authorize @user
+  end
+
+  def events
+    @user = User.find(params[:user_id])
     authorize @user
   end
 
@@ -18,10 +20,24 @@ class UsersController < ApplicationController
     authorize @user
     redirect_to user_path(@user)
   end
-
+  
+  def register_to_event
+    @event = Event.find(params[:event_id])
+    authorize @event
+    if current_user.events.include? @event
+      current_user.events.delete(@event)
+      flash[:notice] = "Inscription annulée"
+      redirect_to event_path(@event)
+    else
+      current_user.events << @event
+      flash[:notice] = "Inscription réussie"
+      redirect_to event_path(@event)
+    end
+  end
+  
   private
 
   def set_params
-    params.require(:user).permit(:id, :email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :is_ndc, :admin, :bio, :snapchat_url, :instagram_url, :linkedin_url, :twitter_url)
+    params.require(:user).permit(:id, :email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :is_ndc, :bio, :snapchat_url, :instagram_url, :linkedin_url, :twitter_url)
   end
 end

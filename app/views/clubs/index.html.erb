@@ -4,7 +4,7 @@
       <h1 class="text-center mt-3">Associations</h1>
     </div>
   </div>
-  <div class="row">
+  <div class="row ">
     <div class="col list-group flex-row flex-wrap justify-content-center">
       <% @clubs.each do |club| %>
         <div class="club-container d-flex flex-row justify-content-start align-items-center mb-4 px-3 px-lg-4">
@@ -17,7 +17,7 @@
           </div>
           <div class="club-right d-flex flex-row justify-content-between align-items-center">
             <div class="club-desc">
-              <h4><%= club.name %></h4>
+              <h4><%= club.name.titleize %></h4>
               <span><%= club.short_description %></span>
             </div>
             <% if club.name == "EXODUS BDE" %>

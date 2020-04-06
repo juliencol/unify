@@ -20,6 +20,6 @@ class User < ApplicationRecord
   validates :section, :presence => { message: "Vous devez sélectionner votre section" }
   validates :family, :presence => { message: "Vous devez sélectionner votre famille étudiante" }
 
-  # Upload attributes
+  # Uncomment these lines be able to upload  photos
   # mount_uploader :profile_picture, PhotoUploader
 end
