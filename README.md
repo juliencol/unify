@@ -1,4 +1,4 @@
-The following lines were written for future contributors to be able to pick up the project really fast but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
+The following lines were written for future contributors to be able to pick up the project but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
 
 # Description
 Unify is an open source progressive web application to manage school events at ISEP. Among a lot of amazing features, it allows every student club to create and update events and every student to register to events. 
@@ -7,7 +7,7 @@ Unify is an open source progressive web application to manage school events at I
 Backend: [Ruby on Rails](https://rubyonrails.org/) </br>
 Frontend: HTML, [Sass](https://sass-lang.com/), [Bootstrap](https://getbootstrap.com/) and ES6 JavaScript compiled with [Webpack](https://webpack.js.org/)</br>
 Database: Postgres with [Active Record ORM](https://guides.rubyonrails.org/active_record_basics.html) </br>
-Management: Trello and Slack </br>
+Management: [Trello](https://trello.com/b/KvPE3ned/unify) and [Slack](https://app.slack.com/client/TKF4P6WH4/CKEPWD9AB) </br>
 
 If you want to contribute, the stack is very easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
