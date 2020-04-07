@@ -1,3 +1,4 @@
+# Foreword
 The following lines were written for future contributors to be able to pick up the project but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
 
 # Description
