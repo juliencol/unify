@@ -60,7 +60,7 @@ To review someone's code, fetch the latest changes and checkout to the feature's
 git fetch
 git checkout sexy-feature
 ```
-Then make sure everything works like expected and the code is clean. Comment the PR to discuss improvements and merge if the build succeeds. Don't forget to delete the branch afterwards.
+Then make sure everything works like expected and the code is clean. Comment the PR to discuss improvements and merge if it passes all the tests. Don't forget to delete the branch afterwards.
 
 # HTML Structure
 ```
