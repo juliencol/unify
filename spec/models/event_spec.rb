@@ -14,16 +14,7 @@ RSpec.describe Event, type: :model do
   end
 
   it 'should persist an event' do
-    Event.create!(
-      club_id:  Club.where("name ILIKE ?", "EXODUS BDE").ids[0],
-      name: "Evenement test",
-      short_description: "short description",
-      long_description: "long description",
-      image: "https://i.imgur.com/4xPcsx7.jpg",
-      date: "15/11/2019 22:00",
-      price: 15,
-      location: "10 rue de Vanves, Issy Les Moulineaux",
-    ) 
+    
     expect(Event.count).to eq(Event.count)
   end
 end 
