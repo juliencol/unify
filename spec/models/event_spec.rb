@@ -11,30 +11,6 @@ RSpec.describe Event, type: :model do
       expect(event.errors.messages).to include(:name)
       expect(event.valid?).to eq(false)
     end
-    it "should validate short description" do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
-    it "should validate long description" do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
-    it "should validate location" do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
-    it "should validate date" do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
-    it "should validate price"  do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
-    it "should validate image" do
-      event = Event.new()
-      expect(event.valid?).to eq(false)
-    end
   end
 
   it 'should persist an event' do
