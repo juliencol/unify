@@ -1,38 +1,32 @@
-The following lines were written for future contributors to be able to pick up the project really fast but any interested engineer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
+The following lines were written for future contributors to be able to pick up the project really fast but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
 
 # Description
-Unify is an open source progressive web application to manage school events at ISEP. Among a lot of amazing features, it allows every student club to create and update events and every student to register to events.
+Unify is an open source progressive web application to manage school events at ISEP. Among a lot of amazing features, it allows every student club to create and update events and every student to register to events. 
 
 # Stack
-Everything is handled with the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework [Ruby on Rails](https://rubyonrails.org/), very easy to pick up. The frontend is built in classic HTML, Sass, Bootstrap and Vanilla JavaScript. The database is Postgres and requests are handled with the ORM [Active Record](https://guides.rubyonrails.org/active_record_basics.html). Images are hosted on [cloudinary](https://cloudinary.com/). A couple of API are involved like [Mapbox](https://www.mapbox.com/) and [Geocoder](https://github.com/alexreisner/geocoder). Concerning management and communication, Trello and Slack are highly valued.
+Backend: [Ruby on Rails](https://rubyonrails.org/) </br>
+Frontend: HTML, Sass, Bootstrap and ES6 JavaScript compiled with [Webpack](https://webpack.js.org/)</br>
+Database: Postgres with [Active Record ORM](https://guides.rubyonrails.org/active_record_basics.html) </br>
+Management: Trello and Slack </br>
+
+If you want to contribute, the stack is very easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
 # Infrastructure
-The app is hosted on heroku under the domain name [unifyisep.com](https://www.unifyisep.com/). The staging environment simulates a production environment to test eveyrthing before pushing code to production. We follow a continuous deployment workflow automated with the master branch. The heroku pipeline can be accessed [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257).
+Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). Pipeline available [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). All images are hosted on[cloudinary](https://cloudinary.com/). </br>
 
-# App structure
-In the MVC pattern, each model has an associated controller with a specific number of actions (i.e. functions / methods). Each action is associated to a view which is an html file displaying the content of a page. </br>
-* Models are accessible in 'app/models'. </br>
-* Controllers are accessible in 'app/controllers'. </br>
-* Views are accessible in 'app/views'. </br>
-* To compile with webpack the javascript and stylesheets components are accessible in 'app/javascripts'
-
-# Database
-The database schema can be accessed [here](https://dbdiagram.io/d/5e540720ef8c251a06188009) or directly in 'db/schema.rb'.
-
-# Philosophy and values
-* Value user stories.
-* Make code reviews. 
-* Seek for the highest performance.
-* Focus on security and be aware of the potential attacks.
-* Code in english, write user ouputs in french.
-* Don't commit blocks of commented code. 
-* Care about the end user.
+# Philosophy and core values
+* Value user stories
+* Make code reviews
+* Seek for the highest performance
+* Focus on security
+* Code in english, write user ouputs in french
+* Don't commit blocks of commented code
+* Care about the end user
+* Keep up dry code
 
 # Style guide
-Only push performing readable code. </br>
-* On the frontend, make use of Sass feature and write ES6 JavaScript following [Airbnb style guide](https://github.com/airbnb/javascript).
-* On the backend, respect the the Model-View-Controller pattern and follow [Ruby on Rails doctrine](https://rubyonrails.org/doctrine/).
-* Keep up dry code and always refactor. 
+* For the frontend, make use of Sass amazing features and write good looking ES6 JavaScript code following [Airbnb style guide](https://github.com/airbnb/javascript).
+* For the backend, respect the [Rails doctrine](https://rubyonrails.org/doctrine/) and don't violate the MVC pattern.
 
 # Setup
 If you don't have rails installed on your computer, click on your Operating System and follow the steps. If you're on Windows I recommand either install ubuntu in dual boot, run ubuntu in a VM or buy a [MacBook Pro](https://www.apple.com/fr/macbook-pro/?afid=p238%7Cs19SgiikC-dc_mtid_187079nc38483_pcrid_410429749888_pgrid_41257055459_&cid=aos-fr-kwgo-mac--slid---product-).
