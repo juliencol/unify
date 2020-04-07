@@ -22,6 +22,11 @@ Unify is an open source progressive web application to manage school events at I
       </a>
     </td>
     <td>
+      <a href="https://getbootstrap.com/">
+         <img src="app/assets/images/bootstrap_logo.png" alt="Bootstrap logo" width='250px' />
+      </a>
+    </td>
+    <td>
        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
           <img src="app/assets/images/js_logo.png" alt="JS logo" width='250px' />
       </a>
