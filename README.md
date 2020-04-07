@@ -107,7 +107,12 @@ Then make sure everything works like expected and the code is clean. Comment the
 ```
 
 # Team resources
+[Google drive](https://drive.google.com/drive/folders/1vc034GAaMxUp22WMZpV6nspGkFCAyoX9) </br>
 [Trello](https://trello.com/b/KvPE3ned/unify) </br>
 [Slack](https://app.slack.com/client/TKF4P6WH4/CKEPWD9AB) </br>
-[Google drive](https://drive.google.com/drive/folders/1vc034GAaMxUp22WMZpV6nspGkFCAyoX9) </br>
+[Heroku pipeline](https://dashboard.heroku.com/pipelines/97f69283-1c1b-4766-8433-55ca17960a67) </br>
+[Travis CI](https://travis-ci.com/github/juliencol/unify) </br>
+[Database schema](https://dbdiagram.io/d/5e540720ef8c251a06188009) </br>
+[Mockup](https://xd.adobe.com/view/cfcebeeb-5a2f-4d5f-6569-b2bfd69b0d98-b9ff/?fullscreen) </br>
+
 
