@@ -39,7 +39,7 @@ Unify is an open source progressive web application to manage school events at I
   </tr>
 </table>
 
-If you want to contribute, the stack is very easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
+The stack is quite easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
 # Infrastructure
 Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). 
