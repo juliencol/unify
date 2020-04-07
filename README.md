@@ -34,7 +34,7 @@ Unify is an open source progressive web application to manage students events at
     </td>
      <td>
        <a href="https://webpack.js.org/">
-          <img src="app/assets/images/webpack_logo.png" alt="Webpack logo" width='250px' />
+          <img src="app/assets/images/webpack_logo.png" alt="Webpack logo" width='350px' />
       </a>
     </td>
   </tr>
