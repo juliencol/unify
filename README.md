@@ -13,6 +13,7 @@ If you want to contribute, the stack is very easy to learn but you will need to 
 
 # Infrastructure
 Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). 
+
 <img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' />
 
 # Philosophy and core values
