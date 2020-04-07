@@ -4,10 +4,35 @@ The following lines were written for future contributors to be able to pick up t
 Unify is an open source progressive web application to manage school events at ISEP. Among a lot of amazing features, it allows every student club to create and update events and every student to register to events. 
 
 # Stack
-Backend: [Ruby on Rails](https://rubyonrails.org/) </br>
-Frontend: HTML, [Sass](https://sass-lang.com/), [Bootstrap](https://getbootstrap.com/) and ES6 JavaScript compiled with [Webpack](https://webpack.js.org/)</br>
-Database: [Postgres](https://www.postgresql.org/) with [Active Record ORM](https://guides.rubyonrails.org/active_record_basics.html) </br>
-Management: [Trello](https://trello.com/b/KvPE3ned/unify) and [Slack](https://app.slack.com/client/TKF4P6WH4/CKEPWD9AB) </br>
+<table>
+  <tr>
+    <td>
+       <a href="https://rubyonrails.org/">
+        <img src="app/assets/images/rails_logo.png" alt="Rails logo" width='200px' />
+      </a>
+    </td>
+    <td>
+      <a href="https://www.postgresql.org/">
+        <img src="app/assets/images/postgres_logo.png" alt="Postgreslogo" width='250px' />
+      </a>
+    </td>
+    <td>
+      <a href="https://sass-lang.com/">
+         <img src="app/assets/images/sass_logo.png" alt="Sass logo" width='200px' />
+      </a>
+    </td>
+    <td>
+       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+          <img src="app/assets/images/js_logo.png" alt="JS logo" width='200px' />
+      </a>
+    </td>
+     <td>
+       <a href=https://webpack.js.org/">
+          <img src="app/assets/images/webpack_logo.png" alt="Webpack logo" width='200px' />
+      </a>
+    </td>
+  </tr>
+</table>
 
 If you want to contribute, the stack is very easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
@@ -72,3 +97,9 @@ Then make sure everything works like expected and the code is clean. Comment the
     </div>
 </div>
 ```
+
+# Team resources
+[Trello](https://trello.com/b/KvPE3ned/unify) </br>
+[Slack](https://app.slack.com/client/TKF4P6WH4/CKEPWD9AB) </br>
+[Google drive](https://drive.google.com/drive/folders/1vc034GAaMxUp22WMZpV6nspGkFCAyoX9) </br>
+
