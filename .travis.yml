@@ -15,8 +15,5 @@ before_script:
 script:
   - bundle exec rake db:schema:load
   - bundle exec rake db:test:prepare
-  - SECRET_KEY_BASE=a RAILS_ENV=production bundle exec rake assets:precompile
-  - bundle exec rake test
-  - bundle exec rake test:system
   - echo "Build done"
    
