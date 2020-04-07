@@ -1,0 +1,19 @@
+language: ruby
+cache:
+  bundler: true
+  yarn: true
+services:
+  - redis-server
+sudo: required
+before_install:
+- sudo apt-get update
+- sudo apt-get install google-chrome-stable
+addons:
+  postgresql: '9.6'
+before_script:
+  - psql -c 'create database unify_test;' -U postgres
+script:
+  - bundle exec rake db:schema:load
+  - bundle exec rake db:test:prepare
+  - echo "Build done"
+   
