@@ -43,10 +43,9 @@ Unify is an open source progressive web application to manage students events at
 The stack is quite easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
 # Infrastructure
+Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com).  </br>
+<img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' /> </br>
 [![Build Status](https://travis-ci.com/juliencol/unify.svg?token=xbg5Xhr2ukhr4x5a4adb&branch=master)](https://travis-ci.com/juliencol/unify) </br>
-Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). 
-
-<img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' />
 
 # Philosophy and core values
 * Value user stories
