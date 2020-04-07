@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/juliencol/unify.svg?token=xbg5Xhr2ukhr4x5a4adb&branch=master)](https://travis-ci.com/juliencol/unify)
-
 # Foreword
 The following lines were written for future contributors to be able to pick up the project but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
 
@@ -45,6 +43,7 @@ Unify is an open source progressive web application to manage students events at
 The stack is quite easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
 # Infrastructure
+[![Build Status](https://travis-ci.com/juliencol/unify.svg?token=xbg5Xhr2ukhr4x5a4adb&branch=master)](https://travis-ci.com/juliencol/unify) </br>
 Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). 
 
 <img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' />
