@@ -8,7 +8,7 @@ Unify is an open source progressive web application to manage school events at I
   <tr>
     <td>
        <a href="https://rubyonrails.org/">
-        <img src="app/assets/images/rails_logo.png" alt="Rails logo" width='200px' />
+        <img src="app/assets/images/rails_logo.png" alt="Rails logo" width='250px' />
       </a>
     </td>
     <td>
@@ -18,17 +18,17 @@ Unify is an open source progressive web application to manage school events at I
     </td>
     <td>
       <a href="https://sass-lang.com/">
-         <img src="app/assets/images/sass_logo.png" alt="Sass logo" width='200px' />
+         <img src="app/assets/images/sass_logo.png" alt="Sass logo" width='250px' />
       </a>
     </td>
     <td>
        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-          <img src="app/assets/images/js_logo.png" alt="JS logo" width='200px' />
+          <img src="app/assets/images/js_logo.png" alt="JS logo" width='250px' />
       </a>
     </td>
      <td>
        <a href=https://webpack.js.org/">
-          <img src="app/assets/images/webpack_logo.png" alt="Webpack logo" width='200px' />
+          <img src="app/assets/images/webpack_logo.png" alt="Webpack logo" width='250px' />
       </a>
     </td>
   </tr>
