@@ -5,14 +5,15 @@ Unify is an open source progressive web application to manage school events at I
 
 # Stack
 Backend: [Ruby on Rails](https://rubyonrails.org/) </br>
-Frontend: HTML, Sass, Bootstrap and ES6 JavaScript compiled with [Webpack](https://webpack.js.org/)</br>
+Frontend: HTML, [Sass](https://sass-lang.com/), [Bootstrap](https://getbootstrap.com/) and ES6 JavaScript compiled with [Webpack](https://webpack.js.org/)</br>
 Database: Postgres with [Active Record ORM](https://guides.rubyonrails.org/active_record_basics.html) </br>
 Management: Trello and Slack </br>
 
 If you want to contribute, the stack is very easy to learn but you will need to be familiar with the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). 
 
 # Infrastructure
-Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). Pipeline available [here](https://dashboard.heroku.com/pipelines/36cfdc96-548e-4d63-ae8c-e7e241667257). All images are hosted on[cloudinary](https://cloudinary.com/). </br>
+Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Heroku](heroku.com). 
+<img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' />
 
 # Philosophy and core values
 * Value user stories
