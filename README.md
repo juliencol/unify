@@ -30,7 +30,7 @@ Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Herok
 * For the frontend, make use of Sass amazing features and write good looking ES6 JavaScript code following [Airbnb style guide](https://github.com/airbnb/javascript).
 * For the backend, respect the [Rails doctrine](https://rubyonrails.org/doctrine/) and don't violate the MVC pattern.
 
-# Setup
+# Setup for Rails and Postgres
 If you don't have rails installed on your computer, click on your Operating System and follow the steps. If you're on Windows I recommand either install ubuntu in dual boot, run ubuntu in a VM or buy a [MacBook Pro](https://www.apple.com/fr/macbook-pro/?afid=p238%7Cs19SgiikC-dc_mtid_187079nc38483_pcrid_410429749888_pgrid_41257055459_&cid=aos-fr-kwgo-mac--slid---product-).
 <table>
   <tr>
@@ -47,76 +47,12 @@ If you don't have rails installed on your computer, click on your Operating Syst
   </tr>
 </table>
 
-Clone the repository
-```bash
-git clone git@github.com:juliencol/unify.git
-```
-
-Create the .env file to store api keys and make git ignore it
-```bash 
-touch .env
-echo  '.env*' >> .gitignore
-``` 
-You'll need to add the api keys in that file, ask me privately for the credentials.
-
-Host a local server
-```bash 
-rails s
-```
-Then open your browser and go to http://localhost:3000/
-
 # Workflow
-Steps to follow when you code a feature.
-1. Make sure the user story is crystal clear. If not ask for more information.</br>
+Follow the [Github flow](https://guides.github.com/introduction/flow/)
 
-2. Make sure your git status is clean and your local repo is up to date.
-```bash 
-git status
-git pull origin master
-``` 
-
-3. Create a new branch with the name of your feature.
-```bash 
-git checkout -b sexy-feature
-```
-
-4. Make sure all your packages are up to date. </br>
-```bash
-yarn install
-```
-
-5. Make sure all your gems are up to date. </br>
-```bash
-bundle install
-```
-
-6. Make sure the latests migrations were run and the database is up to date. </br>
-```bash
-rails db:migrate
-rails db:seed
-```
-If it's the first time you're working on the project you'll have to create the database by running 
-```bash
-rails db:create
-```
-
-7. Take the time to code your feature then push your branch and write a pull request. Don't hesitate to make several commits for the same feature. 
-```bash
-git add .
-git commit -m "sexy feature added"
-git push origin sexy-feature
-```
-
-8. Wait for someone on the team to review and merge your code and don't forget to delete the branch once it's merged.
-```bash
-git checkout master
-git pull origin master
-git branch -d sexy-feature
-```
-
-9. Be proud of yourself. I'm sure your feature is awesome and you're to! 
-
-10. Let's code another feature? 
+# Starting with Rails
+[Documentation](https://guides.rubyonrails.org/getting_started.html) </br>
+[Rails repository](https://github.com/rails/rails)
 
 # Reviews
 To review someone's code, fetch the latest changes and checkout to the feature's branch.
@@ -124,22 +60,15 @@ To review someone's code, fetch the latest changes and checkout to the feature's
 git fetch
 git checkout sexy-feature
 ```
-Then run a local server to observe the changes, make sure everything works like expected. Check the code to make sure it's clean and then merge the pull request on github. If the feature is incomplete or the code is not clean, explain why in comments of the PR. Please be nice and offer help.
+Then make sure everything works like expected and the code is clean. Comment the PR to discuss improvements and merge if the build succeeds. Don't forget to delete the branch afterwards.
 
 # HTML Structure
-When it comes to writing HTML it is important to respect the following structure since we are using a lot of [Bootstrap](https://getbootstrap.com/). Exceptions can be made for partials and components.
 ```
 <div class="container-fluid spacer">
-
     <div class="row">
-
         <div class="col">
-        
-            your content goes here...
-        
+            Code here 
         </div>
-
     </div>
-
 </div>
 ```
