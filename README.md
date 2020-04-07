@@ -31,7 +31,7 @@ Continuous integration powered by [Travis CI](https://travis-ci.com/) and [Herok
 * For the backend, respect the [Rails doctrine](https://rubyonrails.org/doctrine/) and don't violate the MVC pattern.
 
 # Setup for Rails and Postgres
-If you don't have rails installed on your computer, click on your Operating System and follow the steps. If you're on Windows I recommand either install ubuntu in dual boot, run ubuntu in a VM or buy a [MacBook Pro](https://www.apple.com/fr/macbook-pro/?afid=p238%7Cs19SgiikC-dc_mtid_187079nc38483_pcrid_410429749888_pgrid_41257055459_&cid=aos-fr-kwgo-mac--slid---product-).
+If you don't have rails installed on your computer, click on your OS and follow the steps. If you're on Windows I would recommend either installing ubuntu in dual boot, running ubuntu in a VM or buying a [MacBook Pro](https://www.apple.com/fr/macbook-pro/?afid=p238%7Cs19SgiikC-dc_mtid_187079nc38483_pcrid_410429749888_pgrid_41257055459_&cid=aos-fr-kwgo-mac--slid---product-).
 <table>
   <tr>
     <td>
