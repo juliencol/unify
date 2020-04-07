@@ -47,12 +47,12 @@ If you don't have rails installed on your computer, click on your Operating Syst
   </tr>
 </table>
 
-# Workflow
-Follow the [Github flow](https://guides.github.com/introduction/flow/)
-
 # Starting with Rails
 [Documentation](https://guides.rubyonrails.org/getting_started.html) </br>
 [Rails repository](https://github.com/rails/rails)
+
+# Workflow
+Follow the [Github flow](https://guides.github.com/introduction/flow/)
 
 # Reviews
 To review someone's code, fetch the latest changes and checkout to the feature's branch.
