@@ -52,7 +52,7 @@ If you don't have rails installed on your computer, click on your OS and follow 
 [Rails repository](https://github.com/rails/rails)
 
 # Workflow
-Follow the [Github flow](https://guides.github.com/introduction/flow/)
+[Github flow](https://guides.github.com/introduction/flow/)
 
 # Reviews
 To review someone's code, fetch the latest changes and checkout to the feature's branch.
@@ -67,7 +67,7 @@ Then make sure everything works like expected and the code is clean. Comment the
 <div class="container-fluid spacer">
     <div class="row">
         <div class="col">
-            Code here 
+            <h1>Nouvelle page web</h1>
         </div>
     </div>
 </div>
