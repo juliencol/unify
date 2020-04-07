@@ -1,7 +1,7 @@
 The following lines were written for future contributors to be able to pick up the project but any interested developer is welcome to read. If you are a recruiter lost on github, you should definitely hire me, or anyone else on the team.
 
 # Description
-Unify is an open source progressive web application to manage school events at ISEP. Among a lot of amazing features, it allows every student club to create and update events and every student to register to events. 
+Unify is an open source progressive web application to manage students events at ISEP. Among a lot of amazing features, it allows student clubs to create events and students to register to those events. 
 
 # Stack
 <table>
