@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @users = @event.users
     authorize @event
     @marker = { lat: @event.latitude, lng: @event.longitude }
   end
