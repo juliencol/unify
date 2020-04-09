@@ -9,18 +9,69 @@
 
 @media (max-width: 991px) {
 	.footer {
-		margin: 0rem 5rem 0rem 5rem;
+		margin: 0;
+
+		.main-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.left-container .right-container {
+
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
+		}
 	}
 }
 
 @media (max-width: 767px) {
 	.footer {
-		margin: 0rem 5rem 0rem 5rem;
+		margin: 0;
+
+		.main-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.left-container .right-container {
+
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
+		}
 	}
 }
 
 @media (max-width: 767px) {
 	.footer {
-		margin: 0rem 5rem 0rem 5rem;
+		margin: 0;
+
+		.main-container .left-container .right-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			
+
+			.left-container .right-container {
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
+		}
 	}
 }

@@ -1,7 +1,7 @@
 <footer class="footer bg-primary border-top">
-  <div class="container d-flex justify-content-center align-items-center">
+  <div class="container main-container d-flex justify-content-center align-items-center">
 
-    <div class="container d-flex justify-content-between">
+    <div class="container left-container d-flex justify-content-between">
       <%= link_to "A propos", about_path, class: "mr-3 text-align" %>
       <a href="https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx" target="_blank" class="ml-3 mr-3 text-align">Cookies</a>
       <a href="https://www.isep.fr/" target="_blank" class="ml-3 text-align">ISEP</a>
@@ -9,11 +9,11 @@
     </div>
 
    
-    <%= link_to root_path, class: "ml-5 mr-5" do %>
+    <%= link_to root_path, class: "ml-5 mr-5 unify-logo" do %>
       <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1583080472/unify/unify-logo-test_extqor.png", size: "30" %>
     <% end %>
 
-    <div class="container d-flex justify-content-between">
+    <div class="container right-container d-flex justify-content-between">
       <a href="https://github.com/juliencol/unify" target="_blank" class="mr-3 text-center">Code source</a>
       <a href="https://www.messenger.com/t/julien.colombain" target="_blank" class="ml-3 mr-3 text-center">Contribuer</a>
       <a href="https://www.messenger.com/t/julien.colombain" target="_blank" class="ml-3 mr-3 text-center">Signaler un bug</a>
