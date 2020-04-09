@@ -1,58 +1,24 @@
-<footer class="footer bg-primary">
-  <div class="container">
-    <div class="row text-row">
+<footer class="footer bg-primary border-top">
+  <div class="container main-container d-flex justify-content-center align-items-center">
 
-    <div class="col-xs-6 col-md-3 d-flex flex-column align-items-center">
-      <h6>Mentions légales</h6>
-      <ul class="footer-links">
-        <li><a class="text-light" href="https://www.isep.fr/" target="_blank">Données personnelles</a></li>
-        <li><a class="text-light" href="https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx" target="_blank">Utilisation de cookies</a></li>
-      </ul>
+    <div class="container left-container d-flex justify-content-between">
+      <%= link_to "A propos", about_path, class: "mr-3 text-align" %>
+      <a href="https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx" target="_blank" class="ml-3 mr-3 text-align">Cookies</a>
+      <a href="https://www.isep.fr/" target="_blank" class="ml-3 text-align">ISEP</a>
+      <%= link_to "Exodus BDE", club_bde_path(Club.find_by("name ILIKE ?", "EXODUS BDE")), class: "ml-3 mr-3 text-align" %>
     </div>
 
-    <div class="col-xs-6 col-md-3 d-flex flex-column align-items-center">
-       <h6>Améliorations</h6>
-        <ul class="footer-links">
-          <li><a class="text-light" href="https://www.messenger.com/t/julien.colombain" target="_blank">Proposer une idée de fonctionnalité</a></li>
-          <li><a class="text-light" href="https://www.messenger.com/t/julien.colombain" target="_blank">Donner un feedback sur la plateforme</a></li>
-        </ul>
-      </div>
+   
+    <%= link_to root_path, class: "ml-5 mr-5 unify-logo" do %>
+      <%= image_tag "https://res.cloudinary.com/isep/image/upload/v1583080472/unify/unify-logo-test_extqor.png", size: "30" %>
+    <% end %>
 
-    <div class="col-xs-6 col-md-3 d-flex flex-column align-items-center">
-      <h6>Impact</h6>
-      <ul class="footer-links d-flex flex-column align-items-center">
-        <li><a class="text-light" href="https://www.messenger.com/t/julien.colombain" target="_blank">Contribuer au développement</a></li>
-        <li><a class="text-light" href="https://www.messenger.com/t/julien.colombain" target="_blank">Inviter les développeurs au restaurant</a></li>
-      </ul>
+    <div class="container right-container d-flex justify-content-between">
+      <a href="https://github.com/juliencol/unify" target="_blank" class="mr-3 text-center">Code source</a>
+      <a href="https://www.messenger.com/t/julien.colombain" target="_blank" class="ml-3 mr-3 text-center">Contribuer</a>
+      <a href="https://www.messenger.com/t/julien.colombain" target="_blank" class="ml-3 mr-3 text-center">Signaler un bug</a>
+      <a href="https://www.messenger.com/t/julien.colombain" target="_blank" class="ml-3 text-center">Donner un feedback</a>
     </div>
-
-    <div class="col-xs-6 col-md-3 d-flex flex-column align-items-center">
-      <h6>Contactez-nous</h6>
-      <ul class="footer-links d-flex flex-column align-items-center">
-        <li><a class="text-light" href="https://www.messenger.com/t/julien.colombain" target="_blank">Signaler un bug</a></li>
-        <li><a class="text-light" href="https://www.messenger.com/t/nathanrolland" target="_blank">Contactez le BDE</a></li>
-      </ul>
-    </div>
-
-    </div>
-    <hr>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-6 col-xs-12 d-flex">
-        <p class="copyright-text mt-3 ml-3">&copy Exodus unify project by</p>
-        <p class="mt-3 ml-3">Julien Colombain</p>
-        <p class="mt-3 ml-3">Maëlle Jumel</p>
-        <p class="mt-3 ml-3">Andrew Pouret</p>
-        <p class="mt-3 ml-3">Tom Sanitas</p>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <ul class="social-icons">
-          <li><a class="instagram"><i class="fab fa-instagram"></i></a></li>
-          <li><a class="twitter"><i class="fab fa-twitter-square"></i></a></li>
-          <li><a class="linkedin"><i class="fab fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
+    
   </div>
 </footer>

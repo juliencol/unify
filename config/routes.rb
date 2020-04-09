@@ -9,6 +9,8 @@ Rails.application.routes.draw do
                 }            
   root to: 'events#index'
 
+  get "about", to: "pages#about", as: :about
+
   resources :users, only: [:show, :edit, :update] do 
     get "events", to: "users#events"
   end

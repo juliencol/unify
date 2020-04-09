@@ -1,132 +1,77 @@
 .footer {
-	margin-top: 10px;
-	padding: 45px 0 20px;
-	font-size: 15px;
-	line-height: 24px;
+	margin-top: 3rem;
+	padding: 2rem 0 2rem 0;
+	font-size: 12px;
 	color: silver;
+	background-color: #F2F2F7 !important;
 
-	.text-row {
-		display: flex;
-		justify-content: flex-end;
-		text-align: right;
-	}
-
-	hr {
-		border-top-color: #fff;
-		opacity: 0.5;
-
-		&.small {
-			margin: 20px 0;
-		}
-	}
-
-	h6 {
-		color: #fff;
-		font-size: 16px;
-		text-transform: uppercase;
-		margin-top: 5px;
-		letter-spacing: 2px;
-	}
-
-	.footer-links {
-		padding-left: 0;
-		list-style: none;
-
-		li {
-			display: block;
-		}
-
-		&.inline li {
-			display: inline-block;
-		}
-	}
-
-	.social-icons {
-		text-align: right;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-
-		li {
-			display: inline-block;
-			margin-bottom: 4px;
-		}
-
-		a {
-			background-color: #fff;
-			font-size: 16px;
-			display: inline-block;
-			line-height: 44px;
-			width: 44px;
-			height: 44px;
-			text-align: center;
-			margin-right: 8px;
-			border-radius: 100%;
-			-webkit-transition: all .2s linear;
-			-o-transition: all .2s linear;
-			transition: all 0.2s linear;
-		}
-
-		&.size-sm a {
-			line-height: 34px;
-			height: 34px;
-			width: 34px;
-			font-size: 14px;
-		}
-
-		a {
-			&.instagram {
-				color: #c13584;
-			}
-			&.instagram:hover {
-				background-color: #c13584;
-				color: #fff;
-			}
-
-			&.twitter {
-				color: #00aced;
-			}
-			&.twitter:hover {
-				background-color: #00aced;
-				color: #fff;
-			}
-
-			&.linkedin {
-				color: #007bb6;
-			}
-			&.linkedin:hover {
-				background-color: #007bb6;
-				color: #fff;
-			}
-		}
-	}
-
-	.copyright-text {
-		margin: 0;
-	}
 }
 
 @media (max-width: 991px) {
-	.site-footer [class^=col-] {
-		margin-bottom: 30px;
+	.footer {
+		margin: 0;
+
+		.main-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.left-container .right-container {
+
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
+		}
 	}
 }
 
 @media (max-width: 767px) {
 	.footer {
-		padding-bottom: 0;
+		margin: 0;
 
-		.copyright-text,
-		.social-icons {
-			text-align: center;
+		.main-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.left-container .right-container {
+
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
 		}
 	}
 }
 
 @media (max-width: 767px) {
-	.social-icons li.title {
-		display: block;
-		margin-right: 0;
-		font-weight: 600;
+	.footer {
+		margin: 0;
+
+		.main-container .left-container .right-container {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			
+
+			.left-container .right-container {
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		
+		.unify-logo {
+			display: none;
+		}
 	}
 }
