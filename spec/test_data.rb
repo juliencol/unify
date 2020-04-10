@@ -8,7 +8,7 @@ USER_TEST = {
   promotion: 2022,
   section: "A1",
   classe: "G10B",
-  family_id: Family.first.id
+  family_id: 1
 }
 
 CLUB_TEST = {
