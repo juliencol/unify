@@ -6,6 +6,7 @@ class ClubsController < ApplicationController
     
     def show
         @club = Club.find(params[:id])
+        @events = @club.events.includes(:themes)
         authorize @club
     end
 
@@ -27,6 +28,7 @@ class ClubsController < ApplicationController
 
     def bde
         @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+         @events = @club.events.includes(:themes)
         authorize @club
     end
 
