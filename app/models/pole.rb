@@ -1,3 +1,3 @@
 class Pole < ApplicationRecord
-  belongs_to :club, counter_cache: true
+  belongs_to :club
 end

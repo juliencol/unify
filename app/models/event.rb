@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :club, counter_cache: true
+  belongs_to :club
   has_many :user_events
   has_many :users, through: :user_events, dependent: :destroy
   has_many :event_themes

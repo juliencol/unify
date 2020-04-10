@@ -14,7 +14,6 @@ RSpec.describe Event, type: :model do
   end
 
   it 'should persist an event' do
-    
     expect(Event.count).to eq(Event.count)
   end
 end 
