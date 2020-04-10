@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :clubs, through: :user_clubs
   has_many :user_events
   has_many :events, through: :user_events
-  belongs_to :family
+  belongs_to :family, counter_cache: true
 
   # Validations
   validates :email, :presence => true, format: { with: /\A(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+.+(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+@isep.fr/,

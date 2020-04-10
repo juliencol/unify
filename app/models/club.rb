@@ -7,5 +7,6 @@ class Club < ApplicationRecord
     has_many :user_clubs
     has_many :users, through: :user_clubs
 
+    # Uncomment this line to be able to upload photos
     # mount_uploader :logo, PhotoUploader
 end
