@@ -1,11 +1,11 @@
 class ClubsController < ApplicationController
     def index
         @clubs = policy_scope(Club).sort_by{ |club| club[:name] }
-        @bde = Club.where("name ILIKE ?", "EXODUS BDE")
     end
     
     def show
         @club = Club.find(params[:id])
+        @events = @club.events.includes(:themes)
         authorize @club
     end
 
@@ -26,7 +26,8 @@ class ClubsController < ApplicationController
     end
 
     def bde
-        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        @club = @bde
+        @events = @bde.events.includes(:themes)
         authorize @club
     end
 
@@ -36,12 +37,12 @@ class ClubsController < ApplicationController
     end
 
     def partners 
-        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        @club = @bde
         authorize @club
     end
 
     def project 
-        @club = Club.where("name ILIKE ?", "EXODUS BDE").take
+        @club = @bde
         authorize @club
     end
 

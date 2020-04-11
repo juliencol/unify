@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   before_action :authenticate_user!
+  before_action :set_bde
   before_action :configure_permitted_parameters, if: :devise_controller?
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -24,6 +25,10 @@ class ApplicationController < ActionController::Base
 
   def disable_footer
     @disable_footer = true
+  end
+
+  def set_bde
+    @bde = Club.find_by("name ILIKE ?", "EXODUS BDE")
   end
 
   private

@@ -22,8 +22,8 @@
       <li class="nav-item <%= 'active' if params[:controller] == 'clubs' %>">
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(club_bde_path(Club.find_by("name ILIKE ?", "EXODUS BDE"))) %>">
-        <%= link_to "BDE EXODUS", club_bde_path(Club.find_by("name ILIKE ?", "EXODUS BDE")), class: "nav-link" %>
+      <li class="nav-item <%= 'active' if current_page?(club_bde_path(@bde)) %>">
+        <%= link_to "BDE EXODUS", club_bde_path(@bde), class: "nav-link" %>
       </li>
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ISEP</a>

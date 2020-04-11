@@ -1,6 +1,6 @@
-require_relative "shared/clubs_data"
-require_relative "shared/themes_data"
-require_relative "shared/families_data"
+require_relative "../../data/clubs_data"
+require_relative "../../data/themes_data"
+require_relative "../../data/families_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
@@ -42,7 +42,6 @@ julien = User.create!(
   twitter_url: "https://twitter.com/JulienColombain"
 )
 julien.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
-julien.clubs.push(Club.where("name ILIKE ?", "Garage"))
 julien.clubs.push(Club.where("name ILIKE ?", "ISEP Alumni"))
 
 maelle = User.create!(

@@ -5,7 +5,7 @@
       <%= link_to "A propos", about_path, class: "mr-3 text-align" %>
       <a href="https://www.marmiton.org/recettes/recette_cookies-maison_86989.aspx" target="_blank" class="ml-3 mr-3 text-align">Cookies</a>
       <a href="https://www.isep.fr/" target="_blank" class="ml-3 text-align">ISEP</a>
-      <%= link_to "Exodus BDE", club_bde_path(Club.find_by("name ILIKE ?", "EXODUS BDE")), class: "ml-3 mr-3 text-align" %>
+      <%= link_to "Exodus BDE", club_bde_path(@bde), class: "ml-3 mr-3 text-align" %>
     </div>
 
    
