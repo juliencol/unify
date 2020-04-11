@@ -12,10 +12,12 @@
     margin: 48px auto;
     width: 20rem;
     background:
-        /* gradient can be an image */
-        linear-gradient(to left,
+        /* gradient can be an image */ linear-gradient(
+            to left,
             #6a11cb 0%,
-            #2575fc 100%) left bottom #ffffff no-repeat;
+            #2575fc 100%
+        )
+        left bottom #ffffff no-repeat;
     background-size: 100% 6px;
 
     @media screen and (min-width: 480px) {
@@ -34,7 +36,7 @@
 .event-container a {
     color: $isep-bleu;
     text-decoration: none;
-    transition: .25s ease;
+    transition: 0.25s ease;
 
     &:hover {
         border-color: $isep-jaune;
@@ -45,19 +47,10 @@
 // event header
 //-------------------------
 
-
-.event-cover {
-    background-size: contain !important;
-    background-position: center !important;
-    border-radius: 1rem;
-    height: 350px;
-
-    @include media-breakpoint-between(xs, sm) {
-        height: 150px;
-    }
-
-    @include media-breakpoint-between(sm, md) {
-        height: 200px;
+.event-header {
+    .banner {
+        width: 100%;
+        z-index: 2;
     }
 }
 
@@ -68,7 +61,7 @@
     width: 80%;
 
     .event-title {
-        margin: .75rem 0;
+        margin: 0.75rem 0;
 
         h2 a {
             color: #333;
@@ -82,7 +75,7 @@
     }
 
     .event-author {
-        padding: .75rem 0;
+        padding: 0.75rem 0;
         display: flex;
 
         h3 {
@@ -98,7 +91,6 @@
         color: lighten(black, 60%);
         font-weight: 200 !important;
     }
-
 }
 
 // event footer
@@ -106,17 +98,16 @@
 .event-footer {
     border-top: 1px solid lighten(#333, 70%);
     margin: 0 auto;
-    padding: .75rem 5rem;
+    padding: 0.75rem 5rem;
     width: 100%;
 
     @include media-breakpoint-between(xs, sm) {
-        padding: .75rem 2rem;
+        padding: 0.75rem 2rem;
     }
 
     @include media-breakpoint-between(sm, md) {
-        padding: .75rem 3rem;
+        padding: 0.75rem 3rem;
     }
-
 
     ul {
         list-style: none;
@@ -129,8 +120,8 @@
             margin-right: auto;
         }
 
-        li+li {
-            margin-left: .5rem;
+        li + li {
+            margin-left: 0.5rem;
         }
 
         li {
@@ -151,8 +142,8 @@
     .event-date {
         background: $accent-background;
         color: lighten(black, 40%);
-        border-radius: .5rem;
-        padding: .25rem .75rem;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.75rem;
 
         span {
             font-weight: 600;
@@ -166,9 +157,8 @@
     .icon-user {
         height: 18px;
         width: 18px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         color: black;
         font-size: 1.1rem;
     }
-
 }

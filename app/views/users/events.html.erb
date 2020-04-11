@@ -1,24 +1,26 @@
 <div class="container-fluid spacer">
   <div class="row user-row">
-    <%= render "users/shared/user_profile_left" %>
+    <div class="col-12 col-lg-3 left-group">
+      <%= render "users/shared/user_profile_left" %>
+    </div>
     <div class="col-12 col-lg-9 right-group">
       <div class="row justify-content-center p-2">
         <div class="col">
           <div class="banner"><img src=<%= @user.family.banner %> /></div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 pt-3">
+      <div class="row d-flex justify-content-center">
+        <div class="col-11 pt-3">
           <%= render "users/shared/user_show_tabs" %>
           <% if @events.nil? || @events == [] %>
-            <div class="club-feed text-center"><p>Pas d'événements disponibles.</p></div>
+            <div class="text-center"><p>Pas d'événements disponibles.</p></div>
           <% else %>
-            <div class="club-feed d-flex flex-column justify-content-center align-content-center align-items-center">
+            <div class="d-flex flex-wrap flex-row justify-content-center align-content-center align-items-center">
               <% @events.each do |event| %>
                 <div class="event-container">
                 <div class="event-header">
                   <%= link_to event_path(event.id) do %>
-                    <div class="event-cover" style="background: url(<%= event.image %>)"></div>
+                    <div class="banner"><img src=<%= event.image %> /></div>
                   <% end %>
                 </div>
                 <div class="event-body">

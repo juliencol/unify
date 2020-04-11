@@ -7,7 +7,7 @@
         <div class="event-container">
           <div class="event-header">
             <%= link_to event_path(event.id) do %>
-              <div class="event-cover" style="background: url(<%= event.image %>)"></div>
+              <div class="banner"><img src=<%= event.image %> /></div>
             <% end %>
           </div>
           <div class="event-body">
