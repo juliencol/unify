@@ -24,3 +24,12 @@ require('../stylesheets/application');
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
+
+// Service worker for PWA
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/service-worker.js', { scope: './' })
+    .then(function (reg) {
+      console.log('[Companion]', 'Service worker registered!');
+      console.log(reg);
+    });
+}
