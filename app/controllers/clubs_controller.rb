@@ -25,6 +25,9 @@ class ClubsController < ApplicationController
         end
     end
 
+
+
+
     def bde
         @club = @bde
         @events = @bde.events.includes(:themes)
