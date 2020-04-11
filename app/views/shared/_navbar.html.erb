@@ -50,6 +50,13 @@
               <%= link_to club.name, club_path(club), class: "dropdown-item" %>
             <% end %>
             <div class="dropdown-divider"></div>
+              <% if current_user.super_admin? %>
+                <%= link_to "Admin", rails_admin_path, class: "dropdown-item" %>
+              <% end %>
+              <% if current_user.super_admin? %>
+                <%= link_to "Data", blazer_path, class: "dropdown-item" %>
+              <% end %>
+            <div class="dropdown-divider"></div>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

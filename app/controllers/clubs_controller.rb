@@ -25,6 +25,9 @@ class ClubsController < ApplicationController
         end
     end
 
+
+
+
     def bde
         @club = Club.where("name ILIKE ?", "EXODUS BDE").take
         authorize @club
