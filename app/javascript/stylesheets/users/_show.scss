@@ -32,6 +32,16 @@
         }
         .event-container {
             width: 45%;
+
+            @include media-breakpoint-between(xs, sm) {
+                width: 100%;
+            }
+
+            @include media-breakpoint-between(xs, md) {
+                .banner {
+                    height: 180px;
+                }
+            }
         }
     }
 }

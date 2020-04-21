@@ -2,191 +2,192 @@
 ---------------------------------------------------------------------- */
 
 .sidebar {
-	flex-grow: 1;
+    flex-grow: 1;
 
-	.sidebar__left,
-	.sidebar__right {
-		position: sticky;
-		top: 120px;
-		width: 80%;
-		height: 80vh;
-		overflow: hidden;
-		padding-top: 2rem;
-		margin: 0 auto;
-		background: white;
-		border: 1px solid $accent-background;
-		border-radius: .5rem;
-		box-shadow:
-			0 2.7px 6.5px rgba(0, 0, 0, 0.05),
-			0 7.5px 11.4px rgba(0, 0, 0, 0.018),
-			0 18.1px 21.2px rgba(0, 0, 0, 0.008),
-			0 60px 52px rgba(0, 0, 0, 0.003);
+    .sidebar__left,
+    .sidebar__right {
+        position: sticky;
+        top: 120px;
+        width: 80%;
+        height: 80vh;
+        overflow: hidden;
+        padding-top: 2rem;
+        margin: 0 auto;
+        background: white;
+        border: 1px solid $accent-background;
+        border-radius: 0.5rem;
+        box-shadow: 0 2.7px 6.5px rgba(0, 0, 0, 0.05), 0 7.5px 11.4px rgba(0, 0, 0, 0.018),
+            0 18.1px 21.2px rgba(0, 0, 0, 0.008), 0 60px 52px rgba(0, 0, 0, 0.003);
 
-		h3 {
-			font-size: 1.2rem;
-		}
+        h3 {
+            font-size: 1.2rem;
+        }
 
-		.controls {
-			height: 100%;
-			overflow-y: scroll;
-			padding-bottom: 2rem;
-		}
-	}
+        .controls {
+            height: 100%;
+            overflow-y: scroll;
+            padding-bottom: 2rem;
+        }
+    }
 }
-
 
 /* Controls
 ---------------------------------------------------------------------- */
 
 .check-wrap {
-	width: 100%;
-	padding: 1.1rem .2rem;
-	position: relative;
-	border-bottom: 1px solid $accent-background;
+    width: 100%;
+    padding: 1.1rem 0.2rem;
+    position: relative;
+    border-bottom: 1px solid $accent-background;
 
-	h6 {
-		z-index: 2;
-		font-weight: 400 !important;
-		margin: 0;
-	}
+    h6 {
+        z-index: 2;
+        font-weight: 400 !important;
+        margin: 0;
+    }
 
-	&.checked {
-		background:
-			/* gradient can be an image */
-			linear-gradient(to bottom,
-				$accent-purple 0%,
-				$accent-yellow 100%) left bottom rgba($accent-yellow, .05) no-repeat;
-		background-size: 4px 100%;
-	}
+    &.checked {
+        background:
+			/* gradient can be an image */ linear-gradient(
+                to bottom,
+                $accent-purple 0%,
+                $accent-yellow 100%
+            )
+            left bottom rgba($accent-yellow, 0.05) no-repeat;
+        background-size: 4px 100%;
+    }
 }
 
 .check {
-	all: unset;
-	z-index: 2;
-	cursor: pointer;
-	position: relative;
-	width: 18px;
-	height: 18px;
-	-webkit-tap-highlight-color: transparent;
-	transform: translate3d(0, 0, 0);
+    all: unset;
+    z-index: 2;
+    cursor: pointer;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
 
-	&:before {
-		content: "";
-		position: absolute;
-		top: -8px;
-		left: -12px;
-		width: 42px;
-		height: 42px;
-		border-radius: 50%;
-		background: rgba($accent-background, .3);
-		opacity: 0;
-		transition: opacity .2s ease;
-	}
+    &:before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -12px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba($accent-background, 0.3);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
 
-	svg {
-		position: relative;
-		z-index: 1;
-		fill: none;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke: #c8ccd4;
-		stroke-width: 1.5;
-		transform: translate3d(0, 0, 0);
-		transition: all .2s ease;
+    svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #c8ccd4;
+        stroke-width: 1.5;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
 
-		path {
-			stroke-dasharray: 60;
-			stroke-dashoffset: 0;
-		}
+        path {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 0;
+        }
 
-		polyline {
-			stroke-dasharray: 22;
-			stroke-dashoffset: 66;
-		}
-	}
+        polyline {
+            stroke-dasharray: 22;
+            stroke-dashoffset: 66;
+        }
+    }
 
-	&:hover {
-		&:before {
-			opacity: 1;
-		}
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
 
-		svg {
-			stroke: $isep-jaune;
-		}
-	}
+        svg {
+            stroke: $isep-jaune;
+        }
+    }
 }
 
 .check.mixitup-control-active {
+    svg {
+        stroke: $isep-jaune;
 
-	svg {
-		stroke: $isep-jaune;
+        path {
+            stroke-dashoffset: 60;
+            transition: all 0.3s linear;
+        }
 
-		path {
-			stroke-dashoffset: 60;
-			transition: all .3s linear;
-		}
-
-		polyline {
-			stroke-dashoffset: 42;
-			transition: all .2s linear;
-			transition-delay: .15s;
-		}
-	}
+        polyline {
+            stroke-dashoffset: 42;
+            transition: all 0.2s linear;
+            transition-delay: 0.15s;
+        }
+    }
 }
 
 .check:focus {
-	outline: none;
+    outline: none;
 }
-
 
 // mobile
 //-------------------------
 .mobile-filters {
-	z-index: 100;
-	position: fixed;
-	top: 64px;
-	left: 200%;
-	background: white;
-	@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    z-index: 100;
+    position: fixed;
+    top: 64px;
+    left: 200%;
+    background: white;
+    padding: 0;
+    @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
 
-	.toggle-filters {
-		all: unset;
-		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		width: 46px;
-		height: 46px;
-		line-height: 46px;
-		font-size: 18px;
-		text-align: center;
-		background: white;
-		border-radius: 50%;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
-		@include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    h3 {
+        padding: 20px 0 0 20px;
+    }
 
-		&:active {
-			color: $isep-jaune;
-			transform: translateY(2px);
-		}
-	}
+    .toggle-filters {
+        all: unset;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        font-size: 18px;
+        text-align: center;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+        @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
 
-	&.filters-shown {
-		left: 20%;
-		max-height: 100%;
-		overflow-y: scroll;
+        &:active {
+            color: $isep-jaune;
+            transform: translateY(2px);
+        }
+    }
 
-		.toggle-filters {
-			right: 82%;
-		}
+    &.filters-shown {
+        left: 20%;
+        max-height: 100%;
+        overflow-y: scroll;
 
-		@include media-breakpoint-between(md, lg) {
-			left: 50%;
+        .toggle-filters {
+            right: 82%;
+        }
 
-			.toggle-filters {
-				right: 52%;
-			}
-		}
-	}
+        @include media-breakpoint-between(md, lg) {
+            left: 50%;
+
+            .toggle-filters {
+                right: 52%;
+            }
+        }
+    }
 }
 
 @import "show";
