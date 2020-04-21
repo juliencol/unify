@@ -31,8 +31,7 @@ User.create!(
   promotion: 2022,
   section: "A1",
   classe: "G10B",
-  is_ndc: false,
-  admin: true,
+  super_admin: true,
   family_id: Family.first.id
 )
 User.create!(
@@ -43,8 +42,7 @@ User.create!(
   profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
   promotion: 2023,
   section: "I2",
-  is_ndc: false,
-  admin: true,
+  super_admin: true,
   family_id: Family.first.id
 )
 User.create!(
@@ -55,8 +53,6 @@ User.create!(
   profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
   promotion: 2023,
   section: "I2",
-  is_ndc: false,
-  admin: false,
   family_id: Family.first.id
 )
 User.create!(
@@ -67,8 +63,6 @@ User.create!(
   profile_picture: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png",
   promotion: 2023,
   section: "I2",
-  is_ndc: false,
-  admin: false,
   family_id: Family.first.id
 )
 
