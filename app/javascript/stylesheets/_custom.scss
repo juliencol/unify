@@ -1,43 +1,43 @@
 // Transforms
 
 @mixin transform($args) {
-  -webkit-transform: $args;
-  -moz-transform: $args;
-  -ms-transform: $args;
-  -o-transform: $args;
-  transform: $args;
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
 }
 
 @mixin transform-origin($args) {
-  -webkit-transform-origin: $args;
-  -moz-transform-origin: $args;
-  -ms-transform-origin: $args;
-  -o-transform-origin: $args;
-  transform-origin: $args;
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+    transform-origin: $args;
 }
 
 // Keyframes
 @mixin keyframes($animation-name) {
-  @keyframes #{$animation-name} {
-    @content;
-  }
+    @keyframes #{$animation-name} {
+        @content;
+    }
 }
 
 //animations
 @mixin animation($args) {
-  -webkit-animation: $args;
-  -moz-animation: $args;
-  -ms-animation: $args;
-  -o-animation: $args;
-  animation: $args;
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    -ms-animation: $args;
+    -o-animation: $args;
+    animation: $args;
 }
 
 @mixin animation-delay($delay) {
-  -webkit-animation-delay: $delay;
-  -moz-animation-delay: $delay;
-  -ms-animation-delay: $delay;
-  -o-animation-delay: $delay;
-  animation-delay: $delay;
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -ms-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
 }
 
 // COLORS
@@ -55,20 +55,17 @@ $accent-background: rgb(242, 242, 247);
 // Color system
 //
 
-$theme-colors: (primary: $isep-bleu,
-  secondary: $accent-yellow,
+$theme-colors: (
+    primary: $isep-bleu,
+    secondary: $accent-yellow,
 );
-
 
 // FONTS
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900|Fira+Sans:100,200,300,400,500,600,700,800,900&display=swap");
 
 // Define fonts for body and headers
-$body-font: 'Open Sans',
-sans-serif;
-$headers-font: 'Fira Sans',
-sans-serif;
-
+$body-font: "Open Sans", sans-serif;
+$headers-font: "Fira Sans", sans-serif;
 
 // General style
 $font-family-sans-serif: $body-font;
@@ -83,7 +80,6 @@ $border-radius-sm: 2px;
 // Variables
 //
 
-
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -92,7 +88,6 @@ $enable-shadows: true;
 $enable-gradients: false;
 $enable-hover-media-query: false;
 
-
 // Body
 //
 // Settings for the `<body>` element.
@@ -100,83 +95,75 @@ $enable-hover-media-query: false;
 $body-bg: $accent-background;
 $body-color: #212529;
 
-
 .z-depth-0 {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .z-depth-1 {
-  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
 }
 
 .z-depth-1-half {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 .z-depth-2 {
-  box-shadow:
-    0 1.7px 2.1px rgba(0, 0, 0, 0.02),
-    0 2.5px 4.9px rgba(0, 0, 0, 0.028),
-    0 2.9px 9.2px rgba(0, 0, 0, 0.035),
-    0 5.3px 17px rgba(0, 0, 0, 0.042),
-    0 17.8px 34.6px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1.7px 2.1px rgba(0, 0, 0, 0.02), 0 2.5px 4.9px rgba(0, 0, 0, 0.028),
+        0 2.9px 9.2px rgba(0, 0, 0, 0.035), 0 5.3px 17px rgba(0, 0, 0, 0.042),
+        0 17.8px 34.6px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .z-depth-3 {
-  box-shadow:
-    0 1.6px 1.4px rgba(0, 0, 0, 0.017),
-    0 2.1px 3.3px rgba(0, 0, 0, 0.022),
-    0 2px 6.3px rgba(0, 0, 0, 0.026),
-    0 3.3px 11.2px rgba(0, 0, 0, 0.031),
-    0 12.1px 20.9px rgba(0, 0, 0, 0.037),
-    0 100px 50px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1.6px 1.4px rgba(0, 0, 0, 0.017), 0 2.1px 3.3px rgba(0, 0, 0, 0.022),
+        0 2px 6.3px rgba(0, 0, 0, 0.026), 0 3.3px 11.2px rgba(0, 0, 0, 0.031),
+        0 12.1px 20.9px rgba(0, 0, 0, 0.037), 0 100px 50px rgba(0, 0, 0, 0.06);
 }
 
 .z-depth-4 {
-  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+    box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
 .z-depth-5 {
-  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
 .z-depth-inset {
-  box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.5) !important;
 }
 
 a {
-  // Gets rid of tap active state
-  -webkit-tap-highlight-color: transparent;
+    // Gets rid of tap active state
+    -webkit-tap-highlight-color: transparent;
 }
 
 a,
 a:focus,
 a:hover {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 //Disabled cursor
 .disabled {
-  cursor: not-allowed !important;
+    cursor: not-allowed !important;
 }
 
 .flex-center {
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 }
 
 // Media
 .media {
-  .avatar-sm {
-    width: 56px;
-    border-radius: 50%;
-  }
+    .avatar-sm {
+        width: 56px;
+        border-radius: 50%;
+    }
 }
 
 .spacer {
-  margin-top: 75px !important;
+    margin-top: 75px !important;
+    margin-bottom: 20px;
 }
