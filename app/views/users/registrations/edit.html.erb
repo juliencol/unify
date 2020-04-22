@@ -1,3 +1,5 @@
+<%- title "Gérer le compte" %>
+
 <div class="container-fluid h-100">
 
   <%= render "users/shared/background" %>
@@ -5,8 +7,8 @@
   <div class="row align-content-stretch justify-content-center align-items-center h-100 overflow-hidden">
     <div class="col-12">
       <div class="login-container">
-        <h2 class="unify-title">Unify</h2>
-        <h5 class="mt-5 mb-3 text-center">Modifier password</h5>
+        <h2 class="unify-title">UnifyISEP</h2>
+        <h5 class="mt-5 mb-3 text-center">Modifier mon mot de passe</h5>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
@@ -15,7 +17,7 @@
             <%= f.input :email, required: true, autofocus: true %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <p>En attente de confirmation pour : <%= resource.unconfirmed_email %></p>
             <% end %>
 
             <%= f.input :password,
@@ -39,7 +41,7 @@
 
   <div class="text-center mt-5">
     <h3>Supprimer mon compte</h3>
-    <p>Déçu ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûr ?" }, method: :delete %></p>
+    <p>Déçu ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Voulez-vous confirmer ?" }, method: :delete %></p>
   </div>
 
 
