@@ -16,9 +16,6 @@ Rails.application.routes.draw do
                 }            
   root to: 'events#index'
 
-  # Service Worker Routes
-  get '/manifest.json' => "service_worker#manifest"
-
   # Application routes
   get "about", to: "pages#about", as: :about
   resources :users, only: [:show, :edit, :update] do 
