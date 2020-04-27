@@ -73,4 +73,8 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.alert = true
   end
+
+  # ngrok config to test PWA
+  config.hosts << "55eea5c0.ngrok.io"
+
 end
