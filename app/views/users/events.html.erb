@@ -17,7 +17,7 @@
           <% if @events.nil? || @events == [] %>
             <div class="text-center"><p>Pas d'événements disponibles.</p></div>
           <% else %>
-            <div class="d-flex flex-wrap flex-row justify-content-center align-content-center align-items-center">
+            <div class="d-flex flex-wrap flex-row justify-content-center align-content-center align-items-start">
               <% @events.each do |event| %>
                 <div class="event-container">
                 <div class="event-header">
