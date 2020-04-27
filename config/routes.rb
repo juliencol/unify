@@ -22,12 +22,17 @@ Rails.application.routes.draw do
 
   # Application routes
   get "about", to: "pages#about", as: :about
+
   resources :users, only: [:show, :edit, :update] do 
     get "events", to: "users#events"
   end
+
   resources :events, only: [:index, :show, :edit, :update, :destroy] do
      post "register_to_event", to: 'users#register_to_event'
   end
+
+  resources :contests, only: [:index, :show]
+
   resources :clubs, only: [:index, :show, :edit, :update] do
     resources :events, only: [:new, :create]
     # get "manage_accesses", to: "clubs#manage_accesses", as: :accesses

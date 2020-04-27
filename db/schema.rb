@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_105359) do
+ActiveRecord::Schema.define(version: 2020_04_27_131310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,34 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
     t.boolean "applications_open"
     t.string "banner_image"
     t.string "short_description", limit: 60
+  end
+
+  create_table "contest_answers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "contest_id", null: false
+    t.text "content"
+    t.boolean "is_valid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contest_id"], name: "index_contest_answers_on_contest_id"
+    t.index ["user_id"], name: "index_contest_answers_on_user_id"
+  end
+
+  create_table "contests", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.string "correct_answer"
+    t.string "instagram_post_link"
+    t.string "type"
+    t.string "answer_1"
+    t.string "answer_2"
+    t.string "answer_3"
+    t.string "answer_4"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_contests_on_club_id"
   end
 
   create_table "event_themes", force: :cascade do |t|
@@ -205,6 +233,9 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contest_answers", "contests"
+  add_foreign_key "contest_answers", "users"
+  add_foreign_key "contests", "clubs"
   add_foreign_key "event_themes", "events"
   add_foreign_key "event_themes", "themes"
   add_foreign_key "events", "clubs"

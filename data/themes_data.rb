@@ -10,7 +10,6 @@ THEMES_DATA = [
     { title: "Dégustation" },
     { title: "Maraude" },
     { title: "Voyage" },
-    { title: "concour" },
     { title: "dev" },
     { title: "électronique" },
 ]

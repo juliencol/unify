@@ -1,0 +1,12 @@
+<div class="container-fluid spacer">
+  <div class="text-center mt-5" id="main-content">
+    <h1>Jeux concours</h1>
+    <div class="container">
+      <% @contests.each do |contest| %>
+        <%= link_to contest_path(contest.id) do %>
+          <p><%= contest.title %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
