@@ -1,5 +1,5 @@
 .club-content {
-    padding: .2rem 2rem;
+    padding: 0.2rem 2rem;
 
     #club-header {
         margin-top: 20px;
@@ -16,27 +16,26 @@
         .club-desc {
             margin: 0;
             margin-top: 2rem;
-            font-size: .8rem;
+            font-size: 0.9em;
             opacity: 1;
-            padding: .5rem;
+            padding: 0.5rem;
         }
 
         .club-controls {
             margin-top: 2rem;
         }
     }
-
 }
 
 @include media-breakpoint-between(xs, lg) {
     .club-content {
-        padding: .12rem .75rem;
+        padding: 0.12rem 0.75rem;
 
         #club-header {
             width: 90%;
 
             .club-desc {
-                padding: 0 .5rem;
+                padding: 0 0.5rem;
             }
         }
     }

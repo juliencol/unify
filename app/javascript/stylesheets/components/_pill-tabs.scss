@@ -7,14 +7,14 @@
     background-color: white;
     @extend .z-depth-1;
     border-radius: 2rem;
-    padding: .5rem .25rem;
+    padding: 0.5rem 0.25rem;
 
     .tab {
         text-decoration: none;
         background-color: white;
         border-radius: 2rem;
         cursor: pointer;
-        padding: .25rem .5rem;
+        padding: 0.25rem 0.5rem;
 
         span {
             color: black;
@@ -34,14 +34,33 @@
 
 @include media-breakpoint-between(xs, sm) {
     .pill-tabs {
-        font-size: .65rem;
-        padding: .5rem .2rem;
+        display: inline-flex;
+        position: static;
+        width: 80vw;
+        overflow-x: scroll;
+        font-size: 0.9em;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
 
         .tab {
-            padding: .25rem .2rem;
+            border-radius: 0;
+            padding: 0.5rem 0.2rem;
+            background-color: transparent;
 
             span {
-                padding: .5rem;
+                padding: 0.5rem;
+                font-weight: normal;
+            }
+
+            &.active {
+                background: transparent;
+                border-bottom: 2px solid $accent-blue;
+
+                span {
+                    color: $accent-blue;
+                    font-weight: bold;
+                }
             }
         }
     }

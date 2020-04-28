@@ -1,12 +1,12 @@
 html {
-	height: 100vh;
+    height: 100vh;
 }
 
 body {
-	height: 100vh;
+    height: 100vh;
 }
 
-// Our SCSS variables 
+// Our SCSS variables
 @import "custom";
 
 // External libraries
@@ -17,3 +17,11 @@ body {
 @import "users/index";
 @import "clubs/index";
 @import "events/index";
+
+.spacer {
+    margin-top: 75px !important;
+    margin-bottom: 20px;
+    @include media-breakpoint-between(xs, sm) {
+        overflow: hidden;
+    }
+}
