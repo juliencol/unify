@@ -1,6 +1,7 @@
 require_relative "../../data/clubs_data"
 require_relative "../../data/themes_data"
 require_relative "../../data/families_data"
+require_relative "../../data/companies_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
