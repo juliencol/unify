@@ -6,12 +6,15 @@ require_relative "../../data/families_data"
 
 puts "Cleaning staging database..."
 UserClub.destroy_all
+Registration.destroy_all
 User.destroy_all
 Family.destroy_all
 EventTheme.destroy_all
 Event.destroy_all
 Theme.destroy_all
 Club.destroy_all
+Company.destroy_all
+Partner.destroy_all
 
 puts "Populating staging database..."
 puts "Creating families..."
@@ -20,6 +23,8 @@ puts "Creating clubs..."
 Club.create!(CLUBS_DATA)
 puts "Creating themes..."
 Theme.create!(THEMES_DATA)
+
+BDE = Club.where("name ILIKE ?", "EXODUS BDE")
 
 puts "Creating users..."
 User.create!(
@@ -57,6 +62,17 @@ puts "Creating events..."
     date: "15/11/2019 22:00",
     price: 15,
     location: "10 rue de Vanves, Issy Les Moulineaux",
+  )
+end
+
+puts "Creating companies..."
+bde_partners = Company.create!(COMPANIES_DATA)
+
+puts "Adding BDE partners..."
+bde_partners.each do |bde_partner| 
+  Partner.create!(
+    club_id: BDE.ids[0],
+    company_id: bde_partner.id
   )
 end
 
