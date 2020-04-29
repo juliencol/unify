@@ -4,11 +4,20 @@
   <% else %>
     <div class="assos d-flex flex-wrap justify-content-start">
       <% current_user.clubs.each do |club| %>
-        <%= link_to club_path(club), :title => club.name do %>
-          <div class="d-flex flex-column align-items-center m-3 mb-0">
-            <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
-            <h4><%= club.name %></h4>
-          </div>
+        <% if club.name == "EXODUS BDE" %>
+          <%= link_to club_bde_path(@bde), :title => club.name do %>
+            <div class="d-flex flex-column align-items-center m-3 mb-0">
+              <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
+              <h4><%= club.name %></h4>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to club_path(club), :title => club.name do %>
+            <div class="d-flex flex-column align-items-center m-3 mb-0">
+              <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
+              <h4><%= club.name %></h4>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
