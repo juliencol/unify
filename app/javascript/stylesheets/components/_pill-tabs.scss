@@ -18,7 +18,6 @@
 
         span {
             color: black;
-            font-weight: bold;
             padding: 2rem;
         }
 
@@ -27,6 +26,7 @@
 
             span {
                 color: $accent-blue;
+                font-weight: bold;
             }
         }
     }
@@ -34,33 +34,23 @@
 
 @include media-breakpoint-between(xs, sm) {
     .pill-tabs {
-        display: inline-flex;
+        display: flex;
         position: static;
-        width: 80vw;
+        max-width: 80vw;
         overflow-x: scroll;
         font-size: 0.9em;
-        border-radius: 0;
-        background-color: transparent;
-        box-shadow: none;
 
         .tab {
-            border-radius: 0;
-            padding: 0.5rem 0.2rem;
-            background-color: transparent;
-
             span {
                 padding: 0.5rem;
-                font-weight: normal;
             }
 
-            &.active {
-                background: transparent;
-                border-bottom: 2px solid $accent-blue;
+            &:first-child {
+                margin-left: auto;
+            }
 
-                span {
-                    color: $accent-blue;
-                    font-weight: bold;
-                }
+            &:last-child {
+                margin-right: auto;
             }
         }
     }
