@@ -3,6 +3,9 @@ class Club < ApplicationRecord
     has_many :events, dependent: :destroy
     has_many :user_clubs, dependent: :destroy
     has_many :users, through: :user_clubs
+    has_many :partners, dependent: :destroy
+    has_many :companies, through: :partners
+
     accepts_nested_attributes_for :events, :reject_if => :all_blank, :allow_destroy => true
 
     validates :name, :presence => { message: "Votre association doit avoir un nom" }

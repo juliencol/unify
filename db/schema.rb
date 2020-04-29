@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_101223) do
+ActiveRecord::Schema.define(version: 2020_04_29_104644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,13 @@ ActiveRecord::Schema.define(version: 2020_04_29_101223) do
     t.string "short_description", limit: 60
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "event_themes", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "theme_id", null: false
@@ -138,6 +145,15 @@ ActiveRecord::Schema.define(version: 2020_04_29_101223) do
     t.string "banner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_partners_on_club_id"
+    t.index ["company_id"], name: "index_partners_on_company_id"
   end
 
   create_table "poles", force: :cascade do |t|
@@ -206,6 +222,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_101223) do
   add_foreign_key "event_themes", "events"
   add_foreign_key "event_themes", "themes"
   add_foreign_key "events", "clubs"
+  add_foreign_key "partners", "clubs"
+  add_foreign_key "partners", "companies"
   add_foreign_key "poles", "clubs"
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"

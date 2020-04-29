@@ -1,6 +1,7 @@
 require_relative "../../data/clubs_data"
 require_relative "../../data/themes_data"
 require_relative "../../data/families_data"
+require_relative "../../data/companies_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
@@ -13,6 +14,8 @@ EventTheme.destroy_all
 Event.destroy_all
 Theme.destroy_all
 Club.destroy_all
+Company.destroy_all
+Partner.destroy_all
 
 puts "Populating development database..."
 puts "Creating families..."
@@ -21,6 +24,8 @@ puts "Creating clubs..."
 Club.create!(CLUBS_DATA)
 puts "Creating themes..."
 Theme.create!(THEMES_DATA)
+
+BDE = Club.where("name ILIKE ?", "EXODUS BDE")
 
 puts "Creating users..."
 julien = User.create!(
@@ -77,4 +82,17 @@ end
 
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
+
+puts "Creating companies..."
+bde_partners = Company.create!(COMPANIES_DATA)
+
+puts "Adding BDE partners..."
+bde_partners.each do |bde_partner| 
+  Partner.create!(
+    club_id: BDE.ids[0],
+    company_id: bde_partner.id
+  )
+end
+
+
 puts "Development database was populated successfully."

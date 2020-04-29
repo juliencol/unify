@@ -8,7 +8,9 @@
 
       <div class="row mt-3">
         <div class="col members-feed">
-            Partenaires à venir.
+            <% @bde.companies.each do |company| %>
+              <img src="<%= company.logo %>" alt="">
+            <% end %>
         </div>
       </div>
 
