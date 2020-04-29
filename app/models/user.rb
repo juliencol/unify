@@ -7,8 +7,8 @@ class User < ApplicationRecord
   # Relations
   has_many :user_clubs
   has_many :clubs, through: :user_clubs
-  has_many :user_events
-  has_many :events, through: :user_events
+  has_many :registrations
+  has_many :events, through: :registrations
   belongs_to :family
 
   # Validations

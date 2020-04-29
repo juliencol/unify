@@ -6,7 +6,7 @@ require_relative "../../data/families_data"
 
 puts "Cleaning development database..."
 UserClub.destroy_all
-UserEvent.destroy_all
+Registration.destroy_all
 User.destroy_all
 Family.destroy_all
 EventTheme.destroy_all
@@ -74,18 +74,6 @@ puts "Creating events..."
     location: "10 rue de Vanves, Issy Les Moulineaux",
   )
 end
-
-Event.create!(
-  club_id:  Club.where("name ILIKE ?", "Junior ISEP").ids[0],
-  name: "Regretter de ne pas avoir recruté Julien",
-  short_description: "Réunion interne pour regretter tous ensemble.",
-  long_description: "Après avoir admiré unifyisep.com, les membres de Junior ISEP ont décidé de se réunir pour regretter tous ensemble d'avoir refusé la candidature de Julien.",
-  image: "https://res.cloudinary.com/isep/image/upload/v1585554035/unify/unnamed_wc0zbd.jpg",
-  date: "15/11/2019 22:00",
-  price: 0,
-  location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-
 
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 

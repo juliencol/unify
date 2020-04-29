@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_105359) do
+ActiveRecord::Schema.define(version: 2020_04_29_101223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,9 +116,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.bigint "club_id", null: false
     t.string "name"
-    t.string "short_description"
     t.text "long_description"
     t.string "image"
     t.datetime "date"
@@ -126,10 +124,12 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "short_description"
+    t.string "theme"
     t.string "banner"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "is_free"
+    t.bigint "club_id", null: false
     t.index ["club_id"], name: "index_events_on_club_id"
   end
 
@@ -141,11 +141,20 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
   end
 
   create_table "poles", force: :cascade do |t|
-    t.bigint "club_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "club_id", null: false
     t.index ["club_id"], name: "index_poles_on_club_id"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_registrations_on_event_id"
+    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "themes", force: :cascade do |t|
@@ -157,21 +166,10 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
   create_table "user_clubs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "club_id", null: false
-    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false, null: false
     t.index ["club_id"], name: "index_user_clubs_on_club_id"
     t.index ["user_id"], name: "index_user_clubs_on_user_id"
-  end
-
-  create_table "user_events", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -209,9 +207,9 @@ ActiveRecord::Schema.define(version: 2020_04_11_105359) do
   add_foreign_key "event_themes", "themes"
   add_foreign_key "events", "clubs"
   add_foreign_key "poles", "clubs"
+  add_foreign_key "registrations", "events"
+  add_foreign_key "registrations", "users"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
-  add_foreign_key "user_events", "events"
-  add_foreign_key "user_events", "users"
   add_foreign_key "users", "families"
 end
