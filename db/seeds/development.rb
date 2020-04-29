@@ -1,18 +1,21 @@
 require_relative "../../data/clubs_data"
 require_relative "../../data/themes_data"
 require_relative "../../data/families_data"
+require_relative "../../data/companies_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
 puts "Cleaning development database..."
 UserClub.destroy_all
-UserEvent.destroy_all
+Registration.destroy_all
 User.destroy_all
 Family.destroy_all
 EventTheme.destroy_all
 Event.destroy_all
 Theme.destroy_all
 Club.destroy_all
+Company.destroy_all
+Partner.destroy_all
 
 puts "Populating development database..."
 puts "Creating families..."
@@ -21,6 +24,8 @@ puts "Creating clubs..."
 Club.create!(CLUBS_DATA)
 puts "Creating themes..."
 Theme.create!(THEMES_DATA)
+
+BDE = Club.where("name ILIKE ?", "EXODUS BDE")
 
 puts "Creating users..."
 julien = User.create!(
@@ -75,18 +80,19 @@ puts "Creating events..."
   )
 end
 
-Event.create!(
-  club_id:  Club.where("name ILIKE ?", "Junior ISEP").ids[0],
-  name: "Regretter de ne pas avoir recruté Julien",
-  short_description: "Réunion interne pour regretter tous ensemble.",
-  long_description: "Après avoir admiré unifyisep.com, les membres de Junior ISEP ont décidé de se réunir pour regretter tous ensemble d'avoir refusé la candidature de Julien.",
-  image: "https://res.cloudinary.com/isep/image/upload/v1585554035/unify/unnamed_wc0zbd.jpg",
-  date: "15/11/2019 22:00",
-  price: 0,
-  location: "10 rue de Vanves, Issy Les Moulineaux",
-)
-
-
 puts "Giving 4 themes to all events..."
 Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
+
+puts "Creating companies..."
+bde_partners = Company.create!(COMPANIES_DATA)
+
+puts "Adding BDE partners..."
+bde_partners.each do |bde_partner| 
+  Partner.create!(
+    club_id: BDE.ids[0],
+    company_id: bde_partner.id
+  )
+end
+
+
 puts "Development database was populated successfully."
