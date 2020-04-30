@@ -10,7 +10,9 @@
         <div class="col d-flex flex-wrap justify-content-around justify-content-lg-center">
             <% @bde.companies.each do |company| %>
               <div class="white-wrapper mb-4 mr-lg-4">
-                <img src="<%= company.logo %>" width="100" alt=""/>
+                <%= link_to company.website_url, target: "_blank" do %>
+                   <img src="<%= company.logo %>" width="100" alt=""/>
+                <% end %>
               </div>
             <% end %>
         </div>
