@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_113640) do
+ActiveRecord::Schema.define(version: 2020_04_30_154048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2020_04_30_113640) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "answer_options", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "letter"
+    t.string "answer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answer_options_on_question_id"
   end
 
   create_table "blazer_audits", force: :cascade do |t|
@@ -114,6 +123,19 @@ ActiveRecord::Schema.define(version: 2020_04_30_113640) do
     t.string "website_url"
   end
 
+  create_table "contests", force: :cascade do |t|
+    t.bigint "club_id", null: false
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.string "instagram_post_url"
+    t.datetime "deadline"
+    t.string "reward"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_contests_on_club_id"
+  end
+
   create_table "event_themes", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "theme_id", null: false
@@ -165,6 +187,14 @@ ActiveRecord::Schema.define(version: 2020_04_30_113640) do
     t.index ["club_id"], name: "index_poles_on_club_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.bigint "contest_id", null: false
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contest_id"], name: "index_questions_on_contest_id"
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
@@ -187,6 +217,15 @@ ActiveRecord::Schema.define(version: 2020_04_30_113640) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["club_id"], name: "index_user_clubs_on_club_id"
     t.index ["user_id"], name: "index_user_clubs_on_user_id"
+  end
+
+  create_table "user_contests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "contest_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contest_id"], name: "index_user_contests_on_contest_id"
+    t.index ["user_id"], name: "index_user_contests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -220,15 +259,20 @@ ActiveRecord::Schema.define(version: 2020_04_30_113640) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answer_options", "questions"
+  add_foreign_key "contests", "clubs"
   add_foreign_key "event_themes", "events"
   add_foreign_key "event_themes", "themes"
   add_foreign_key "events", "clubs"
   add_foreign_key "partners", "clubs"
   add_foreign_key "partners", "companies"
   add_foreign_key "poles", "clubs"
+  add_foreign_key "questions", "contests"
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
+  add_foreign_key "user_contests", "contests"
+  add_foreign_key "user_contests", "users"
   add_foreign_key "users", "families"
 end
