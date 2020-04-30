@@ -104,6 +104,23 @@ Then make sure everything works like expected and the code is clean. Comment the
 </div>
 ```
 
+# Running PWA locally with ngrok
+Install ngrok
+* Mac OS
+```
+brew cask install ngrok
+```
+* Linux 
+```
+sudo snap install --edge ngrok
+```
+Launch an ngrok tunnel alongside your rails server
+```
+ngrok http 3000
+```
+Use the secure url provided by ngrok (e.g. https://b56de23.ngrok.io) to access your app through an Android browser. </br>
+Once your app has loaded, click on the add to homescreen shortcut Firefox a2hs button (Firefox) or click on menu Chrome menu then Add to homescreen (Chrome)
+
 # Team resources
 [Google drive](https://drive.google.com/drive/folders/1vc034GAaMxUp22WMZpV6nspGkFCAyoX9) </br>
 [Trello](https://trello.com/b/KvPE3ned/unify) </br>
