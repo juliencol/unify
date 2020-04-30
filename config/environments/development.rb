@@ -76,5 +76,6 @@ Rails.application.configure do
 
   # ngrok config to test PWA
   config.hosts << "55eea5c0.ngrok.io"
+  config.hosts << "4cd296bb.ngrok.io"
 
 end
