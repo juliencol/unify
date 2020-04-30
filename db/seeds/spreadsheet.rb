@@ -6,8 +6,9 @@ require 'bundler'
 Bundler.require
 
 session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
-spreadsheet = session.spreadsheet_by_title("Club members data")
-worksheet = spreadsheet.worksheets.first
+anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
+anecdote_contest_data_worksheet = anecdote_contest_data.worksheets.first
 
-puts worksheet.rows
-
+anecdote_contest_data_worksheet.rows.drop(1).each do |row|
+  puts row[0]
+end 
