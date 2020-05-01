@@ -1,3 +1,30 @@
 <div class="container fluid spacer">
   <h1>Jeu concours : <%= @contest.title %></h1>
-</div>
+  <p>Bienvenue dans le jeu concours</p>
+  <p>Récompense : <%= @contest.reward %></p>
+  <img src=<%= @contest.image %> class="club-logo big" >
+  <p>Tente de gagner en répondant aux questions suivantes</p>
+
+  <% if @is_done %>
+    <% if policy(@contest).get_winner? %>
+      <%= link_to "Annoncer le gagnant", contest_get_winner_path(@contest), class:"btn btn-primary", method: :post %>
+    <% end %>
+    <% if policy(@contest).remove_winner? %>
+      <%= link_to "Annuler", contest_remove_winner_path(@contest), class:"btn btn-primary", method: :post %>
+    <% end %>
+    <p>Concours terminé</p>
+    <p>Le gagnant est : <%= @contest.winner_name %></p>
+  <% else %>
+     <p>Temps restant pour participer: <%= @time_left %></p>
+  <% end %>
+  
+  <p>Si tu peux faire un compte a rebours stylé Maelle ça serait bien dar</p>
+  <p>Nombres de personnes ayant participé : <%= @contest.users.size %></p>
+
+    
+  <% if policy(@contest).quizz? %>
+    <%= link_to "C'est parti", contest_quizz_path(@contest), class:"btn btn-primary" %>
+  <% else %>
+    <p>Vous avez déjà répondu à ce quizz</p>
+  <% end %>
+</div> 
