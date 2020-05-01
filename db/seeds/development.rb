@@ -6,7 +6,7 @@ require_relative "../../data/companies_data"
 require 'bundler'
 Bundler.require
 
-# There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
+# There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment the upload lines directly on every model before running the seed to get images.
 
 puts "Cleaning development database..."
 AnswerOption.destroy_all
@@ -102,7 +102,7 @@ bde_partners.each do |bde_partner|
 end
 
 
-puts "Creating anecdote_contest by parsing Anecdote contest data file..."
+puts "Creating anecdote_contest by parsing Anecdote contest data g-sheet..."
 anecdote_contest = Contest.create!(
   club_id: BDE.ids[0],
   title: "Anecdotes",
