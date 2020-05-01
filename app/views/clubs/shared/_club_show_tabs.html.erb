@@ -1,25 +1,25 @@
 <% if @club.name == "EXODUS BDE" %>
-  <div class="pill-tabs club-show-tab">
-    <%= link_to club_bde_path(@club), class:"tab #{'active' if current_page?(club_bde_path(@club))}" do %>
-      <span>Événements</span>
+  <div class="pill-tabs club-bde-tab">
+    <%= link_to club_bde_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_bde_path(@bde)) %>>Événements</span>
     <% end %>
-    <%= link_to club_members_path(@club), class:"tab #{'active' if current_page?(club_members_path(@club))}" do %>
-      <span>Membres</span>
+    <%= link_to club_members_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_members_path(@club)) %>>Membres</span>
     <% end %>
-    <%= link_to club_project_path(@club), class:"tab #{'active' if current_page?(club_project_path(@club))}" do %>
-      <span>Projet</span>
+    <%= link_to club_project_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_project_path(@club)) %>>Projet</span>
     <% end %>
-    <%= link_to club_partners_path(@club), class:"tab #{'active' if current_page?(club_partners_path(@club))}" do %>
-      <span>Partenaires</span>
+    <%= link_to club_partners_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_partners_path(@club)) %>>Partenaires</span>
     <% end %>
   </div>
 <% else %>
-  <div class="pill-tabs club-show-tab">
-    <%= link_to club_path(@club), class:"tab #{'active' if current_page?(club_path(@club))}" do %>
-      <span>Événements</span>
+  <div class="pill-tabs">
+    <%= link_to club_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_path(@club)) %>>Événements</span>
     <% end %>
-    <%= link_to club_members_path(@club), class:"tab #{'active' if current_page?(club_members_path(@club))}" do %>
-      <span>Membres</span>
+    <%= link_to club_members_path(@club) do %>
+      <span class=<%= 'active' if current_page?(club_members_path(@club)) %>>Membres</span>
     <% end %>
   </div>
 <% end %>

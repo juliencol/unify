@@ -34,7 +34,7 @@
         height: auto;
 
         .circle {
-            @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+            @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
             position: relative;
             display: block;
             margin: 0;
@@ -44,15 +44,15 @@
             border-radius: 1.625rem;
 
             .icon {
-                @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+                @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
                 position: absolute;
                 top: 0;
                 bottom: 0;
                 margin: auto;
-                background: #FFF;
+                background: #fff;
 
                 &.arrow {
-                    @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+                    @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
                     left: 0.625rem;
                     width: 1.125rem;
                     height: 0.125rem;
@@ -60,7 +60,7 @@
 
                     &::before {
                         position: absolute;
-                        content: '';
+                        content: "";
                         top: -0.25rem;
                         right: 0.0625rem;
                         width: 0.625rem;
@@ -74,7 +74,7 @@
         }
 
         .button-text {
-            @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+            @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
             position: absolute;
             top: 0;
             left: 0;
@@ -108,7 +108,7 @@
     }
 
     &:active {
-        transform: scale(.96);
+        transform: scale(0.96);
     }
 }
 
@@ -122,27 +122,21 @@
    ------------------------------- */
 
 .button-effect-2 {
-    text-decoration: none !important;
     color: white !important;
-    box-shadow:
-        0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07),
-        0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
-        0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055),
-        0 75px 100px -10px rgba(0, 0, 0, 0.039);
 
     button {
         all: unset;
         background:
-            /* gradient can be an image */
-            linear-gradient(to bottom right,
-                $accent-purple 0%,
-                $accent-blue 100%);
-        padding: .2rem .75rem;
-        border-radius: .9rem;
-    }
-
-    @include media-breakpoint-between(xs, lg) {
-        font-size: .8rem;
+            /* gradient can be an image */ linear-gradient(
+            to bottom right,
+            $accent-purple 0%,
+            $accent-blue 100%
+        );
+        padding: 0.2rem 0.75rem;
+        border-radius: 0.9rem;
+        box-shadow: 0 1px 2.2px rgba(0, 0, 0, 0.022), 0 2px 5.3px rgba(0, 0, 0, 0.027),
+            0 3.8px 10px rgba(0, 0, 0, 0.03), 0 8.3px 17.9px rgba(0, 0, 0, 0.035),
+            0 20.5px 33.4px rgba(0, 0, 0, 0.043), 0 40px 80px rgba(0, 0, 0, 0.06);
     }
 }
 
@@ -157,35 +151,33 @@
     <% end %>
    ------------------------------- */
 
-$sites: ("website": $accent-yellow,
+$sites: (
+    "website": $accent-yellow,
     "instagram": #c13584,
     "linkedin": #007bb6,
-    "twitter": #1BA1F1,
+    "twitter": #1ba1f1,
     "snapchat": #fffc00,
-    "hustle": #C83738,
-    "move_your_as": #FFBECD,
-    "air": #FB940A,
+    "hustle": #c83738,
+    "move_your_as": #ffbecd,
+    "air": #fb940a,
     "discover_isep": #039588,
-    "dyonisos": #6D061A,
-    "isep_live": #3B15C0,
-    "junior_isep": #8871B3,
-    "ludisep": #D0090A,
+    "dyonisos": #6d061a,
+    "isep_live": #3b15c0,
+    "junior_isep": #8871b3,
+    "ludisep": #d0090a,
     "isep_gaming_club": #000102,
-    "garage": #04A9F4,
-    "genesis_bde": #CC0067,
-    "isepa": #F1C333,
-    "numeris": #1C3B8F);
+    "garage": #04a9f4,
+    "genesis_bde": #cc0067,
+    "isepa": #f1c333,
+    "numeris": #1c3b8f,
+);
 
 .animate {
-    transition: all .35s;
-    transition-timing-function: cubic-bezier(0.310,
-            -0.105,
-            0.430,
-            1.590)
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
 .btn__active {
-
     &:before {
         top: -10%;
         left: -10%;
@@ -209,7 +201,6 @@ $sites: ("website": $accent-yellow,
 }
 
 .btn__inactive {
-
     &:before {
         top: 90%;
         left: -110%;
@@ -217,15 +208,12 @@ $sites: ("website": $accent-yellow,
 
     svg,
     img {
-        transform: scale(.8);
+        transform: scale(0.8);
     }
 
     // variants
-    @each $name,
-    $color in $sites {
-
+    @each $name, $color in $sites {
         &.#{$name} {
-
             &:before {
                 background-color: $color;
             }
@@ -251,11 +239,11 @@ $sites: ("website": $accent-yellow,
     border-radius: 28%;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
     //overflow bug fix
-    opacity: .99;
+    opacity: 0.99;
 
     &:before {
         @extend .animate;
-        content: '';
+        content: "";
         width: 120%;
         height: 120%;
         position: absolute;
@@ -333,7 +321,7 @@ $color4: $accent-blue;
     cursor: pointer;
     position: relative;
     padding: 19px 22px;
-    @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+    @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
     text-decoration: none !important;
 
     &:before {
@@ -343,10 +331,10 @@ $color4: $accent-blue;
         left: 0;
         display: block;
         border-radius: 28px;
-        background: rgba($color4, .5);
+        background: rgba($color4, 0.5);
         width: 56px;
         height: 56px;
-        @include transition(all 0.45s cubic-bezier(0.65, 0, .076, 1));
+        @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
     }
 
     span {
@@ -376,12 +364,12 @@ $color4: $accent-blue;
 
         svg {
             color: white;
-            @include transition(all .45s ease);
+            @include transition(all 0.45s ease);
         }
     }
 
     &:active {
-        transform: scale(.96);
+        transform: scale(0.96);
     }
 
     @include media-breakpoint-between(xs, md) {
