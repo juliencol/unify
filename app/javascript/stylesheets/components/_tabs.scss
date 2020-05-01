@@ -69,7 +69,7 @@
 
     [data-tab] {
         position: absolute;
-        @include transition(left 0.5s ease);
+        @include transition(all 0.5s cubic-bezier(0.65, 0, 0.076, 1));
 
         &.active {
             left: 0;

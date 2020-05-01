@@ -15,6 +15,7 @@ const changeTab = (clicked) => {
             btn.classList.remove("active");
         });
         clicked.classList.add("active");
+        init();
     }
 };
 
@@ -22,7 +23,6 @@ const animateTab = (tab) => {
     const currentTab = document.querySelector(".active[data-tab]");
     currentTab.classList.remove("active");
     tab.classList.add("active");
-    setTimeout(init(), 550);
 };
 
 window.changeTab = changeTab;
