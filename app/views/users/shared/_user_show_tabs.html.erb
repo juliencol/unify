@@ -1,8 +1,4 @@
-<div class="pill-tabs club-show-tab">
-  <%= link_to user_path(@user), class:"tab #{'active' if current_page?(user_path(@user))}" do %>
-    <span>Associations</span>
-  <% end %>
-  <%= link_to user_events_path(@user), class:"tab #{'active' if current_page?(user_events_path(@user))}" do %>
-    <span>Événements</span>
-  <% end %>
+<div class="pill-tabs">
+    <span class="active" data-tab-btn="clubs" onclick="changeTab(this)">Associations</span>
+    <span data-tab-btn="events" onclick="changeTab(this)">Événements</span>
 </div>

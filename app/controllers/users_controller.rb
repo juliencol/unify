@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    authorize @user
-  end
-
-  def events
-    @user = User.find(params[:user_id])
     @events = @user.events.includes(:club, :themes)
     authorize @user
   end

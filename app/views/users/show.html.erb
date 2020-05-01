@@ -12,7 +12,10 @@
       <div class="row d-flex justify-content-center">
         <div class="col-10 pt-3">
           <%= render "users/shared/user_show_tabs" %>
-          <%= render "users/shared/user_clubs" %>
+          <div class="tabs-container">
+            <%= render "users/shared/user_clubs" %>
+            <%= render "users/shared/user_events" %>
+          </div>
         </div>
       </div>
     </div>
@@ -20,3 +23,4 @@
 </div>
 
 <%= javascript_pack_tag 'shared/navbar' %>
+<%= javascript_pack_tag 'shared/tabs' %>

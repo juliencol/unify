@@ -1,0 +1,88 @@
+.pill-tabs {
+    position: sticky;
+    z-index: 10;
+    top: 85px;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: white;
+    @extend .z-depth-1;
+    border-radius: 2rem;
+    padding: 0.45rem 0;
+
+    span {
+        text-decoration: none;
+        background-color: white;
+        border-radius: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 0.75rem;
+        color: black;
+
+        &.active {
+            color: white;
+            background: $accent-blue;
+            font-weight: bold;
+        }
+    }
+}
+
+@include media-breakpoint-between(xs, sm) {
+    .pill-tabs {
+        font-size: 0.9rem;
+    }
+
+    .club-bde-tab {
+        white-space: nowrap;
+        position: static;
+        max-width: 85vw;
+        overflow-x: scroll;
+        font-size: 0.9em;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        span {
+            &:first-child {
+                margin-left: auto;
+            }
+
+            &:last-child {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+/*
+ * ----------------------------------------
+ * tabs content
+ * ----------------------------------------
+ */
+
+.tabs-container {
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-between(xs, lg) {
+        overflow: visible;
+    }
+
+    [data-tab] {
+        position: absolute;
+        @include transition(all 0.5s cubic-bezier(0.65, 0, 0.076, 1));
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    [data-tab="events"] {
+        display: flex;
+        left: 100vw;
+    }
+
+    [data-tab="clubs"] {
+        left: -100vw;
+        width: 100%;
+    }
+}

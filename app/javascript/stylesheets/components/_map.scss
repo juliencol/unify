@@ -1,5 +1,5 @@
 .marker {
-    background-image: url('https://res.cloudinary.com/isep/image/upload/v1577087960/unify/unify-logo_qvbcvn.png');
+    background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-pack-flat-s94-1/64/Basic_UI_Icon_Pack_-_Flat_map_pointer-512.png");
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -16,15 +16,17 @@
 }
 
 #map {
-    border: 2px solid;
     position: absolute;
     top: 0;
+    left: 0;
     bottom: 0;
-    width: 90%;
+    width: 100%;
 }
 
 .map-wrapper {
     width: 90% !important;
     min-height: 200px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
