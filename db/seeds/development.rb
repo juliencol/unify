@@ -121,8 +121,8 @@ puts "Creating questions for anecdote_contest..."
 anecdote_contest_data_worksheet.rows.drop(1).each do |row|
   Question.create!(
     contest_id: anecdote_contest.id,
-    title: row[0].to_s, 
-    correct_answer: row[7].to_s
+    title: row[0], 
+    correct_answer: row[7]
   ) 
 end 
 
