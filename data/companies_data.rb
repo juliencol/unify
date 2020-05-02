@@ -24,11 +24,6 @@ COMPANIES_DATA = [
       website_url: "https://www.tipii.fr/"
     },
     {
-      name: "Signoria",
-      logo: "https://res.cloudinary.com/isep/image/upload/v1588151649/unify/bde-logos-partenaires/signoria580_ybmhp7.png",
-      website_url: ""
-    },
-    {
       name: "Monsieur student",
       logo: "https://res.cloudinary.com/isep/image/upload/v1588151649/unify/bde-logos-partenaires/mrstudent580_ktxtui.png",
       website_url: "https://www.mrstudent.fr/"
@@ -51,7 +46,7 @@ COMPANIES_DATA = [
     {
       name: "Gaelle Brode", 
       logo: "https://res.cloudinary.com/isep/image/upload/v1588151648/unify/bde-logos-partenaires/gaelleBrode580_rnhvgr.png",
-      website_url: ""
+      website_url: "https://www.etsy.com/shop/GaelleBrode"
     },
     {
       name: "Observatoire panoramique de la tour Montparnasse",
@@ -101,7 +96,7 @@ COMPANIES_DATA = [
     {
       name: "EPK",
       logo: "https://res.cloudinary.com/isep/image/upload/v1588151647/unify/bde-logos-partenaires/festival_elektrik_park580_av3ugx.png",
-      website_url: ""
+      website_url: "https://www.elektricpark.com/"
     },
     {
       name: "Agorize",

@@ -18,12 +18,15 @@ Rails.application.routes.draw do
 
   # Application routes
   get "about", to: "pages#about", as: :about
+
   resources :users, only: [:show, :edit, :update] do 
     get "events", to: "users#events"
   end
+
   resources :events, only: [:index, :show, :edit, :update, :destroy] do
      post "register_to_event", to: 'users#register_to_event'
   end
+
   resources :clubs, only: [:index, :show, :edit, :update] do
     resources :events, only: [:new, :create]
     # get "manage_accesses", to: "clubs#manage_accesses", as: :accesses
@@ -31,6 +34,13 @@ Rails.application.routes.draw do
     get "partners", to: "clubs#partners", as: :partners
     get "project", to: "clubs#project", as: :project
     get "members", to: "clubs#members", as: :members
+  end
+
+  resources :contests, only: [:index, :show] do 
+    get "quizz", to: 'contests#quizz'
+    post "send_quizz", to: 'contests#send_quizz'
+    post "get_winner", to: 'contests#get_winner'
+    post "remove_winner", to: 'contests#remove_winner'
   end
 end
 
