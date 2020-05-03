@@ -25,8 +25,18 @@
         </div>
         <div class="row p-2">
             <div class="col-12">
+                <%= @contest.description %>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12">
               <% if @is_done %>
-                <p>Le gagnant est : <%= @contest.winner_name %></p>
+                <p>Concours terminé</p>
+                <% if @contest.winner_name == nil or @contest.winner_name == "" %>
+                  <p>En train de tirer au sort le gagnant...</p>
+                <% else %>
+                  <p>Le gagnant est : <%= @contest.winner_name %></p>
+                <% end %>
               <% else %>
                 <p>Temps restant pour participer: <%= @time_left %></p>
               <% end %>

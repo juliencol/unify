@@ -21,10 +21,6 @@ class ContestPolicy < ApplicationPolicy
     user_already_submitted_quizz
   end
 
-  def get_winner?
-    user.super_admin
-  end
-
   def remove_winner?
     user.super_admin
   end
