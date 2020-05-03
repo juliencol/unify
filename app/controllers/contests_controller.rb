@@ -6,8 +6,11 @@ class ContestsController < ApplicationController
   def show
     @contest = Contest.find(params[:id])
     authorize @contest
-    @time_left = seconds_to_units(Time.now - @contest.deadline)
-    @is_done =  @contest.deadline > Time.now
+    @time_left = seconds_to_units(@contest.deadline - Time.now)
+    @is_done =  @contest.deadline < Time.now
+    if @is_done
+      get_winner
+    end
   end
 
   def quizz
@@ -32,15 +35,6 @@ class ContestsController < ApplicationController
     flash[:notice] = "Ta réponse a été prise en compte"
   end
 
-  def get_winner
-    @contest = Contest.find(params[:contest_id])
-    authorize @contest
-    winner = @contest.users.sample
-    @contest.winner_name = "#{winner.first_name} #{winner.last_name}"
-    @contest.save
-    redirect_to contest_path(@contest)
-  end
-
   def remove_winner
     @contest = Contest.find(params[:contest_id])
     authorize @contest
@@ -61,5 +55,20 @@ class ContestsController < ApplicationController
       t = o[1]
     end
     return cute_date.join(' ')
+  end
+
+  def get_winner
+    if @contest.winner_name == '' or @contest.winner_name == nil
+      if @contest.users != []
+        winner = @contest.users.sample
+        @contest.winner_name = "#{winner.first_name} #{winner.last_name}"
+        @contest.save
+        redirect_to contest_path(@contest)
+      else
+        @contest.winner_name = "Personne"
+        @contest.save
+        redirect_to contest_path(@contest)
+      end
+    end
   end
 end 

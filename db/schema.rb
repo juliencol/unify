@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_162334) do
+ActiveRecord::Schema.define(version: 2020_05_03_153626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_162334) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "winner_name"
+    t.string "reward_photo"
     t.index ["club_id"], name: "index_contests_on_club_id"
   end
 

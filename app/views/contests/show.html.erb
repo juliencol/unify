@@ -25,23 +25,21 @@
         </div>
         <div class="row p-2">
             <div class="col-12">
-              <% if @is_done %>
-                <% if policy(@contest).get_winner? %>
-                  <%= link_to "Annoncer le gagnant", contest_get_winner_path(@contest), class:"btn btn-primary", method: :post %>
-                <% end %>
-                <% if policy(@contest).remove_winner? %>
-                  <%= link_to "Annuler", contest_remove_winner_path(@contest), class:"btn btn-primary", method: :post %>
-                <% end %>
-                <p>Concours terminé</p>
-                <p>Le gagnant est : <%= @contest.winner_name %></p>
-              <% else %>
-                <p>Temps restant pour participer: <%= @time_left %></p>
-              <% end %>
+                <%= @contest.description %>
             </div>
         </div>
         <div class="row p-2">
             <div class="col-12">
-                <%= @contest.description %>
+              <% if @is_done %>
+                <p>Concours terminé</p>
+                <% if @contest.winner_name == nil or @contest.winner_name == "" %>
+                  <p>En train de tirer au sort le gagnant...</p>
+                <% else %>
+                  <p>Le gagnant est : <%= @contest.winner_name %></p>
+                <% end %>
+              <% else %>
+                <p>Temps restant pour participer: <%= @time_left %></p>
+              <% end %>
             </div>
         </div>
       </div>

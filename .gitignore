@@ -44,4 +44,4 @@ yarn-debug.log*
 node_modules
 
 # Google drive / sheets keys
-.client_secret.json*
+.client_secret.json
