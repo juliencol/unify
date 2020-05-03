@@ -9,6 +9,7 @@
   <div class="row">
     <div class="col d-flex flex-row">
     <% @contests.each do |contest| %>
+          <% @is_done = contest.deadline < Time.now %>
           <div class="contest-container">
             <div class="contest-header">
               <h5><%= contest.title %></h5>
@@ -16,13 +17,14 @@
             <div class="contest-body">
               <img src=<%= contest.reward_photo %> alt="Concours <%= contest.title %>"/>
               <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:iso8601) %>>
+                <span>Temps restant</span>
                 <table>
                   <tr class="countdown">
                   </tr>
                   <tr>
                       <td>jours</td>
                       <td>heures</td>
-                      <td>min</td>
+                      <td>min.</td>
                   </tr>
                 </table>
               </div>
@@ -31,13 +33,19 @@
                 <% if contest.users.nil? || contest.users == [] %>
                 <% else %>
                   <p>
-                    <% contest.users.each do |user| %>
-                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> />
+                    <% contest.users.take(5).each do |user| %>
+                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> title=<%= user.first_name %> />
                     <% end %>
                   </p>
                 <% end %>
-              <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                <button>Participer</button>
+              <% if @is_done %>
+                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                  <button>Détails</button>
+                <% end %>
+              <% else %>
+                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                  <button>Résultats</button>
+                <% end %>
               <% end %>
             </div>
           </div>

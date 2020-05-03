@@ -16,7 +16,7 @@
             <div class="col-12 col-md-3 col-lg-2 text-md-right">
                 <% if policy(@contest).quizz? %>
                   <%= link_to contest_quizz_path(@contest), class:"button-effect-2" do %>
-                    <button>Répondre</button>
+                    <button class="big">Participer</button>
                   <% end %>
                 <% else %>
                   <p>Vous avez déjà répondu à ce quizz</p>
@@ -42,9 +42,46 @@
               <% end %>
             </div>
         </div>
+        <div class="row p-2">
+            <div class="col-12">
+                <%= @contest.description %>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12">
+                <h4>Participants</h4>
+                <div class="participants">
+                  <% @contest.users.each do |user| %>
+                    <%= link_to user_path(user) do %>
+                      <div class="white-wrapper">
+                        <img src=<%= user.profile_picture %> />
+                        <p><%= user.first_name %><br/><%= user.last_name %></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+          <div class="col">
+            <div class="contest-show countdown-container" data-date=<%= @contest.deadline.to_formatted_s(:iso8601) %>>
+              <table>
+                <tr class="countdown">
+                </tr>
+                <tr>
+                    <td>jours</td>
+                    <td>heures</td>
+                    <td>min.</td>
+                    <td>sec.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <%= javascript_pack_tag 'shared/navbar' %>
+<%= javascript_pack_tag 'contests/countdown' %>

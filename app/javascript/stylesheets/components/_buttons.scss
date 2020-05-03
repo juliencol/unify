@@ -126,17 +126,16 @@
 
     button {
         all: unset;
-        background:
-            /* gradient can be an image */ linear-gradient(
-            to bottom right,
-            $accent-purple 0%,
-            $accent-blue 100%
-        );
+        background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
         padding: 0.2rem 0.75rem;
         border-radius: 0.9rem;
         box-shadow: 0 0px 1.7px rgba($accent-purple, 0.023), 0 0px 4px rgba($accent-purple, 0.038),
             0 0px 7.5px rgba($accent-purple, 0.047), 0 0px 13.4px rgba($accent-purple, 0.054),
             0 0px 25.1px rgba($accent-purple, 0.066), 0 0px 60px rgba($accent-purple, 0.12);
+
+        &.big {
+            font-size: 1rem;
+        }
     }
 }
 

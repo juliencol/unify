@@ -1,20 +1,40 @@
 import moment from "moment";
 
-const date = new Date($(".countdown-container").attr("data-date"));
-const deadline = moment(date);
+const setTimer = (target, showSeconds) => {
+    const date = new Date($(target).attr("data-date"));
+    const deadline = moment(date);
+    let x = setInterval(function () {
+        let diff = deadline.diff(moment());
 
-var x = setInterval(function () {
-    let diff = deadline.diff(moment());
-
-    if (diff <= 0) {
-        clearInterval(x);
-        // If the count down is finished, write some text
-        $(".countdown-container").text("Concours terminé");
-    } else {
-        $(".countdown").html(() => {
-            return `<th>${moment.utc(diff).format("DD")}</th>
+        if (diff <= 0) {
+            clearInterval(x);
+            $(target).text("Concours terminé");
+        } else {
+            if (showSeconds) {
+                $(target)
+                    .find(".countdown")
+                    .html(() => {
+                        return `<th>${moment.utc(diff).format("DD")}</th>
+                    <th>${moment.utc(diff).format("HH")}</th>
+                    <th>${moment.utc(diff).format("mm")}</th>
+                    <th>${moment.utc(diff).format("ss")}</th>`;
+                    });
+            } else {
+                $(target)
+                    .find(".countdown")
+                    .html(() => {
+                        return `<th>${moment.utc(diff).format("DD")}</th>
                     <th>${moment.utc(diff).format("HH")}</th>
                     <th>${moment.utc(diff).format("mm")}</th>`;
-        });
-    }
-}, 1000);
+                    });
+            }
+        }
+    }, 1000);
+};
+
+document
+    .querySelectorAll(".contest-body .countdown-container")
+    .forEach((container) => setTimer(container, false));
+document
+    .querySelectorAll(".contest-show.countdown-container")
+    .forEach((container) => setTimer(container, true));
