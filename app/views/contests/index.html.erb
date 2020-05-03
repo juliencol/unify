@@ -9,6 +9,7 @@
   <div class="row">
     <div class="col d-flex flex-row">
     <% @contests.each do |contest| %>
+          <% @is_done = contest.deadline < Time.now %>
           <div class="contest-container">
             <div class="contest-header">
               <h5><%= contest.title %></h5>
@@ -37,8 +38,14 @@
                     <% end %>
                   </p>
                 <% end %>
-              <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                <button>Voir</button>
+              <% if @is_done %>
+                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                  <button>Détails</button>
+                <% end %>
+              <% else %>
+                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                  <button>Résultats</button>
+                <% end %>
               <% end %>
             </div>
           </div>
