@@ -134,9 +134,9 @@
         );
         padding: 0.2rem 0.75rem;
         border-radius: 0.9rem;
-        box-shadow: 0 1px 2.2px rgba(0, 0, 0, 0.022), 0 2px 5.3px rgba(0, 0, 0, 0.027),
-            0 3.8px 10px rgba(0, 0, 0, 0.03), 0 8.3px 17.9px rgba(0, 0, 0, 0.035),
-            0 20.5px 33.4px rgba(0, 0, 0, 0.043), 0 40px 80px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 0px 1.7px rgba($accent-purple, 0.023), 0 0px 4px rgba($accent-purple, 0.038),
+            0 0px 7.5px rgba($accent-purple, 0.047), 0 0px 13.4px rgba($accent-purple, 0.054),
+            0 0px 25.1px rgba($accent-purple, 0.066), 0 0px 60px rgba($accent-purple, 0.12);
     }
 }
 

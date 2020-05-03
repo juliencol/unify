@@ -1,8 +1,50 @@
+<%- title "Concours" %>
+
 <div class="container-fluid spacer">
-  <h1>Jeux concours</h1>
-  <% @contests.each do |contest| %>
-    <div>
-       <%= link_to contest.title, contest_path(contest.id) %>
+  <div class="row text-center p-3 mb-3">
+    <div class="col">
+      <h1 class="text-center mt-3">Concours</h1>
     </div>
-  <% end %>
+  </div>
+  <div class="row">
+    <div class="col d-flex flex-row">
+    <% @contests.each do |contest| %>
+          <div class="contest-container">
+            <div class="contest-header">
+              <h5><%= contest.title %></h5>
+            </div>
+            <div class="contest-body">
+              <img src=<%= contest.image %> alt="Concours <%= contest.title %>"/>
+              <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:iso8601) %>>
+                <table>
+                  <tr class="countdown">
+                  </tr>
+                  <tr>
+                      <td>jours</td>
+                      <td>heures</td>
+                      <td>min</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="contest-footer">
+                <% if contest.users.nil? || contest.users == [] %>
+                <% else %>
+                  <p>
+                    <% contest.users.each do |user| %>
+                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> />
+                    <% end %>
+                  </p>
+                <% end %>
+              <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                <button>Participer</button>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<%= javascript_pack_tag 'shared/navbar' %>
+<%= javascript_pack_tag 'contests/countdown' %>

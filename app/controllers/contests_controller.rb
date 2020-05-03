@@ -1,6 +1,6 @@
 class ContestsController < ApplicationController
   def index
-    @contests = policy_scope(Contest).sort_by(&:created_at).reverse
+    @contests = policy_scope(Contest).includes([:user_contests]).includes([:users]).sort_by(&:created_at).reverse
   end
 
   def show
