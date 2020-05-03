@@ -23,16 +23,12 @@
     display: flex;
     flex-wrap: nowrap;
     color: black;
+    text-align: center;
 
     h5 {
-        flex: 2 2;
         margin: 0;
         padding: 0;
         padding-top: 0.5em;
-    }
-
-    .countdown {
-        flex: 1 1;
     }
 }
 

@@ -1,0 +1,35 @@
+.contest-show.countdown-container {
+    table {
+        margin: 0 auto;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 12px;
+        color: white;
+        overflow: hidden;
+        background:
+            /* gradient can be an image */ linear-gradient(
+            to bottom right,
+            $accent-purple 0%,
+            $accent-blue 100%
+        );
+        @extend .z-depth-1;
+
+        .countdown {
+            font-family: Montserrat, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+
+            th {
+                padding: 1rem 1rem 0 1rem;
+            }
+        }
+
+        td {
+            padding: 0 3rem 1rem 3rem;
+        }
+    }
+}

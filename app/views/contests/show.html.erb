@@ -16,7 +16,7 @@
             <div class="col-12 col-md-3 col-lg-2 text-md-right">
                 <% if policy(@contest).quizz? %>
                   <%= link_to contest_quizz_path(@contest), class:"button-effect-2" do %>
-                    <button>Répondre</button>
+                    <button class="big">Participer</button>
                   <% end %>
                 <% else %>
                   <p>Vous avez déjà répondu à ce quizz</p>
@@ -26,12 +26,6 @@
         <div class="row p-2">
             <div class="col-12">
               <% if @is_done %>
-                <% if policy(@contest).get_winner? %>
-                  <%= link_to "Annoncer le gagnant", contest_get_winner_path(@contest), class:"btn btn-primary", method: :post %>
-                <% end %>
-                <% if policy(@contest).remove_winner? %>
-                  <%= link_to "Annuler", contest_remove_winner_path(@contest), class:"btn btn-primary", method: :post %>
-                <% end %>
                 <p>Concours terminé</p>
                 <p>Le gagnant est : <%= @contest.winner_name %></p>
               <% else %>
@@ -44,9 +38,26 @@
                 <%= @contest.description %>
             </div>
         </div>
+        <div class="row p-2">
+          <div class="col">
+            <div class="contest-show countdown-container" data-date=<%= @contest.deadline.to_formatted_s(:iso8601) %>>
+              <table>
+                <tr class="countdown">
+                </tr>
+                <tr>
+                    <td>jours</td>
+                    <td>heures</td>
+                    <td>min.</td>
+                    <td>sec.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <%= javascript_pack_tag 'shared/navbar' %>
+<%= javascript_pack_tag 'contests/countdown' %>

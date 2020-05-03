@@ -16,13 +16,14 @@
             <div class="contest-body">
               <img src=<%= contest.image %> alt="Concours <%= contest.title %>"/>
               <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:iso8601) %>>
+                <span>Temps restant</span>
                 <table>
                   <tr class="countdown">
                   </tr>
                   <tr>
                       <td>jours</td>
                       <td>heures</td>
-                      <td>min</td>
+                      <td>min.</td>
                   </tr>
                 </table>
               </div>
@@ -37,7 +38,7 @@
                   </p>
                 <% end %>
               <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                <button>Participer</button>
+                <button>Voir</button>
               <% end %>
             </div>
           </div>
