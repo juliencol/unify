@@ -6,12 +6,7 @@
         border-radius: 12px;
         color: white;
         overflow: hidden;
-        background:
-            /* gradient can be an image */ linear-gradient(
-            to bottom right,
-            $accent-purple 0%,
-            $accent-blue 100%
-        );
+        background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
         @extend .z-depth-1;
 
         .countdown {
@@ -29,7 +24,49 @@
         }
 
         td {
-            padding: 0 3rem 1rem 3rem;
+            padding: 0 0 1rem 0;
+        }
+
+        @include media-breakpoint-between(xs, md) {
+            font-size: 0.5rem;
+
+            .countdown {
+                font-size: 2rem;
+
+                th {
+                    padding: 0.5rem 0.5rem 0 0.5rem;
+                }
+            }
+
+            td {
+                padding: 0 0 0.5rem 0;
+            }
+        }
+    }
+}
+
+.participants {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .white-wrapper {
+        flex: 1;
+        margin-right: 0.5rem;
+        width: 8rem;
+        text-align: center;
+        color: black;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            margin: 0;
         }
     }
 }

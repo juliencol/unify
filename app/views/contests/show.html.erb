@@ -26,7 +26,6 @@
         <div class="row p-2">
             <div class="col-12">
               <% if @is_done %>
-                <p>Concours terminé</p>
                 <p>Le gagnant est : <%= @contest.winner_name %></p>
               <% else %>
                 <p>Temps restant pour participer: <%= @time_left %></p>
@@ -36,6 +35,21 @@
         <div class="row p-2">
             <div class="col-12">
                 <%= @contest.description %>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-12">
+                <h4>Participants</h4>
+                <div class="participants">
+                  <% @contest.users.each do |user| %>
+                    <%= link_to user_path(user) do %>
+                      <div class="white-wrapper">
+                        <img src=<%= user.profile_picture %> />
+                        <p><%= user.first_name %><br/><%= user.last_name %></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
             </div>
         </div>
         <div class="row p-2">

@@ -33,8 +33,8 @@
                 <% if contest.users.nil? || contest.users == [] %>
                 <% else %>
                   <p>
-                    <% contest.users.each do |user| %>
-                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> />
+                    <% contest.users.take(5).each do |user| %>
+                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> title=<%= user.first_name %> />
                     <% end %>
                   </p>
                 <% end %>
