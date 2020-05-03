@@ -11,13 +11,7 @@
     font-weight: 100;
     margin: 48px auto;
     width: 20rem;
-    background:
-        /* gradient can be an image */ linear-gradient(
-            to left,
-            #6a11cb 0%,
-            #2575fc 100%
-        )
-        left bottom #ffffff no-repeat;
+    background: linear-gradient(to left, #6a11cb 0%, #2575fc 100%) left bottom #ffffff no-repeat;
     background-size: 100% 6px;
 
     @media screen and (min-width: 480px) {

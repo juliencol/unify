@@ -297,7 +297,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.1.3)
+    redis (4.1.4)
     remotipart (1.4.4)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -366,7 +366,7 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    solargraph (0.39.4)
+    solargraph (0.39.5)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)

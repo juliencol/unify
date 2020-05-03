@@ -1,16 +1,12 @@
 .members-feed {
-    min-height: 70vh;
-
     .member-wrapper {
         display: flex;
         align-items: center;
         width: 95%;
         padding: 2rem 1rem;
-        border-radius: .5rem;
-        background:
-            linear-gradient(to bottom,
-                #fa709a 0%,
-                #fee140 100%) left bottom #ffffff no-repeat;
+        border-radius: 0.5rem;
+        background: linear-gradient(to bottom, #fa709a 0%, #fee140 100%) left bottom #ffffff
+            no-repeat;
         background-size: 4px 100%;
         box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.06);
 

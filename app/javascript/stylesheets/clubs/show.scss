@@ -1,12 +1,11 @@
 .club-feed {
-	padding: 0;
-	min-height: 70vh;
+    padding: 0;
 
-	.event-container {
-		width: 88%;
+    .event-container {
+        width: 88%;
 
-		@include media-breakpoint-between(xs, lg) {
-			width: 95%;
-		}
-	}
+        @include media-breakpoint-between(xs, lg) {
+            width: 95%;
+        }
+    }
 }
