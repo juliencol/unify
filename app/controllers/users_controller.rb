@@ -34,6 +34,6 @@ class UsersController < ApplicationController
   private
 
   def set_params
-    params.require(:user).permit(:id, :email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :bio, :snapchat_url, :instagram_url, :linkedin_url, :twitter_url)
+    params.require(:user).permit(:id, :email, :first_name, :last_name, :profile_picture, :promotion, :section, :classe, :bio, :snapchat_url, :instagram_url, :linkedin_url, :twitter_url, families_attributes: [:id, :name])
   end
 end

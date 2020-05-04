@@ -11,10 +11,12 @@ class User < ApplicationRecord
   has_many :registrations
   has_many :events, through: :registrations
 
-  belongs_to :family
-
   has_many :user_contests
   has_many :contests, through: :user_contests
+  
+  belongs_to :family
+  
+  accepts_nested_attributes_for :family
 
 
   # Validations
