@@ -2,7 +2,7 @@
   <h1>Jeu concours : <%= @contest.title %></h1>
   <p>Réponds à ces <%= @contest.questions.size %> questions en choisissant une proposition pour chacune des questions</p>
 
-  <%= simple_form_for @contest, url: contest_send_quizz_path, method: :post do |f| %>
+  <%= simple_form_for @contest, url: contest_send_quizz_path(@contest), method: :post do |f| %>
     <%= f.fields_for :questions do |q| %>
       <% @questions.each do |question| %>
         <li><%= question.title %></li>
@@ -21,3 +21,4 @@
 
 <%= javascript_pack_tag 'shared/navbar' %>
 
+ 
