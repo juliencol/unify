@@ -7,11 +7,32 @@
     <% end %>
   </div>
   <div class="infos text-center pb-3">
+    <p>Concours proposé par</p>
     <h2><%= @contest.club.name %></h2>
     <ul class="table-style mt-3">
-      <li><span>Prix : </span><%= @contest.reward %></li>
+      <li><span>À gagner : </span><%= @contest.reward %></li>
       <li><span>Date limite : </span><%= @contest.deadline %></li>
       <li><span>Participants : </span><%= @contest.users.size %></li>
     </ul>
+  </div>
+  <div class="contest-show countdown-container" data-date=<%= @contest.deadline.to_formatted_s(:db) %>>
+    <h6>Temps restant pour participer :</h6>
+    <table>
+      <tr class="countdown">
+      </tr>
+      <tr>
+          <td>jours</td>
+          <td>heures</td>
+          <td>min.</td>
+          <td>sec.</td>
+      </tr>
+    </table>
+  </div>
+  <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
+        <% if !@contest.instagram_post_url.nil? and @contest.instagram_post_url != "" %>
+          <%= link_to @contest.instagram_post_url, target:"_blank", class:"mb-4" do %>
+              <div class="button-effect-3 instagram"><i class="fab fa-instagram"></i></div>
+          <% end %>
+        <% end %>
   </div>
 </div>

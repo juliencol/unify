@@ -6,49 +6,7 @@
 <div class="container-fluid spacer">
   <div class="row flex-lg-row flex-column-reverse">
     <div class="col-12 col-lg-3 mt-lg-5">
-        <div class="sticky-left-group text-center">
-            <div class="d-flex justify-content-center mb-4">
-                <% if @event.club.logo.nil? || @event.club.logo == "" %>
-                <img src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="club-logo big" >
-                <% else %>
-                <img class="club-logo big" src=<%= @event.club.logo %> >
-                <% end %>
-            </div>
-            <div class="text-center pb-3">
-                <p>Événement proposé par</p>
-                <h4><%= @event.club.name %></h4>
-                <ul class="table-style mt-3">
-                    <li><span>Date : </span><%= @event.date %></li>
-                    <li><span>Adresse : </span><%= @event.location %></li>
-                    <% if @event.price.nil? || @event.price == 0 %>
-                        <li><span>Prix : </span>Gratuit</li>
-                    <% else %>
-                        <li><span>Prix : </span><%= @event.price %> €</li>
-                    <% end %>
-                    <li>
-                        <div data-toggle="modal" data-target="#event-users-modal">
-                            <span >Participants : </span><%= @users.size %>
-                        </div> 
-                    </li>
-
-                    <div class="modal fade" id="event-users-modal" tabindex="1" role="dialog" aria-labelledby="event-users-modal-label" aria-hidden="true">
-                        <div class="modal-body">
-                            <h1 class="mt-5">Participants</h1>
-                            <% @users.each do |user| %>
-                                <p><%= user.first_name %></p>
-                                <p><%= user.last_name %></p>
-                            <% end %>
-                        </div>
-                    </div>
-
-                </ul>
-            </div>
-            <% if policy(@event).edit? %>
-                <%= link_to edit_event_path(@event), class:"button-effect-2" do %>
-                    <button>Modifier</button>
-                <% end %>
-            <% end %>
-        </div>
+        <%= render "events/components/event_show_left" %>
     </div>
     <div class="col col-lg-9 right-group">
         <div class="row justify-content-center p-2">
@@ -87,7 +45,7 @@
             </div>
         </div>
         <div class="row p-2">
-            <div class="col-12">
+            <div class="col-12 text-justify">
                 <%= @event.long_description %>
             </div>
         </div>

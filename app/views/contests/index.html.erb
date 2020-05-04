@@ -16,7 +16,7 @@
             </div>
             <div class="contest-body">
               <img src=<%= contest.reward_photo %> alt="Concours <%= contest.title %>"/>
-              <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:iso8601) %>>
+              <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:db) %>>
                 <span>Temps restant</span>
                 <table>
                   <tr class="countdown">
@@ -30,21 +30,20 @@
               </div>
             </div>
             <div class="contest-footer">
-                <% if contest.users.nil? || contest.users == [] %>
-                <% else %>
-                  <p>
-                    <% contest.users.take(5).each do |user| %>
-                      <img src=<%= user.profile_picture %> alt=<%= user.first_name %> title=<%= user.first_name %> />
-                    <% end %>
-                  </p>
-                <% end %>
+              <% if !contest.users.nil? || contest.users != [] %>
+                <p>
+                  <% contest.users.take(5).each do |user| %>
+                    <img src=<%= user.profile_picture %> alt=<%= user.first_name %> title=<%= user.first_name %> />
+                  <% end %>
+                </p>
+              <% end %>
               <% if @is_done %>
                 <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                  <button>Détails</button>
+                  <button>Résultats</button>
                 <% end %>
               <% else %>
                 <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                  <button>Résultats</button>
+                  <button>Détails</button>
                 <% end %>
               <% end %>
             </div>

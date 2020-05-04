@@ -11,12 +11,7 @@ class ContestsController < ApplicationController
     if @is_done
       get_winner
     end
-  end
-
-  def quizz
-    @contest = Contest.find(params[:contest_id])
     @questions = @contest.questions.includes([:answer_options])
-    authorize @contest
   end
 
   def send_quizz
