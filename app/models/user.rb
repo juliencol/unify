@@ -15,9 +15,7 @@ class User < ApplicationRecord
   has_many :contests, through: :user_contests
   
   belongs_to :family
-  
   accepts_nested_attributes_for :family
-
 
   # Validations
   validates :email, :presence => true, format: { with: /\A(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+.+(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+@isep.fr/,
@@ -26,7 +24,7 @@ class User < ApplicationRecord
   validates :last_name, :presence => { message: "Vous devez entrer votre nom" }
   validates :promotion, :presence => { message: "Vous devez sélectionner votre promotion" }
   validates :section, :presence => { message: "Vous devez sélectionner votre section" }
-  validates :family, :presence => { message: "Vous devez sélectionner votre famille étudiante" }
+  # validates :family, :presence => { message: "Vous devez sélectionner votre famille étudiante" }
 
   # Uncomment these lines be able to upload  photos
   # mount_uploader :profile_picture, PhotoUploader

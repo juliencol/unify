@@ -3,8 +3,8 @@
 en:
   devise:
     confirmations:
-      confirmed: "Adresse email confirmée avec succès."
-      send_instructions: "Un email d'instructions va être envoyé dans les prochaines minutes."
+      confirmed: "Adresse email confirmée avec succès"
+      send_instructions: "Un email d'instructions va être envoyé dans les prochaines minutes"
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "You are already signed in."
@@ -14,19 +14,19 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "Vous avez besoin d'être connecté avant de continuer."
-      unconfirmed: "You have to confirm your email address before continuing."
+      unauthenticated: "Vous avez besoin d'être connecté avant de continuer"
+      unconfirmed: "Vous vevez confirmer votre adress email"
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Réinitialiser les instructions de mot de passe"
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
-        subject: "Email Changed"
+        subject: "Email modifié avec succès"
       password_change:
-        subject: "Password Changed"
+        subject: "Mot de passe modifié avec succès"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -46,8 +46,8 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
-      signed_in: "Connexion réussie."
-      signed_out: "Déconnexion réussie."
+      signed_in: "Salut bg"
+      signed_out: "A la prochaine"
       already_signed_out: "Déconnexion réussie."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
