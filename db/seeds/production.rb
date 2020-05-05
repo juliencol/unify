@@ -2,10 +2,15 @@ require_relative "../../data/clubs_data"
 require_relative "../../data/themes_data"
 require_relative "../../data/families_data"
 require_relative "../../data/companies_data"
+require_relative "../../data/companies_data"
 
 # There is an issue with images. When you seed, the cloudinary url is set to nil for every attributes of an instance of a model with an upload. Please comment out the upload lines directly on every model before running the seed. 
 
 puts "Cleaning production database..."
+AnswerOption.destroy_all
+Question.destroy_all
+UserContest.destroy_all
+Contest.destroy_all
 UserClub.destroy_all
 Registration.destroy_all
 User.destroy_all
@@ -86,12 +91,6 @@ puts "Creating events..."
   )
 end
 
-puts "Adding 5 clubs to every user..."
-User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 
-puts "Giving 4 themes to all events..."
-Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
-
-
 puts "Creating companies..."
 bde_partners = Company.create!(COMPANIES_DATA)
 
@@ -102,6 +101,53 @@ bde_partners.each do |bde_partner|
     company_id: bde_partner.id
   )
 end
+
+puts "Adding 5 clubs to every user..."
+User.all.each { |user| user.clubs.push(Club.all[0], Club.all[1], Club.all[2], Club.all[3]) } 
+puts "Giving 4 themes to all events..."
+Event.all.each { |event| event.themes.push(Theme.all[0], Theme.all[1], Theme.all[2], Theme.all[3]) } 
+
+puts "Creating anecdote_contest by parsing Anecdote contest data g-sheet..."
+anecdote_contest = Contest.create!(
+  club_id: BDE.ids[0],
+  title: "Anecdotes",
+  description: "Tente de gagner un iphone en devinant le membre d'Exodus qui a vécu cette histoire",
+  image: "https://res.cloudinary.com/isep/image/upload/v1588520264/unify/anecdotes_2_ybux3t.png",
+  reward_photo: "https://res.cloudinary.com/isep/image/upload/v1587998740/unify/iphone-11-64gb-purple-d1-Format-960_lkvuiv.jpg",
+  instagram_post_url: "",
+  deadline: "15/05/2020 22:00",
+  reward: "iphone"
+)
+
+session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
+anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
+anecdote_contest_data_worksheet = anecdote_contest_data.worksheets.first
+
+puts "Creating questions for anecdote_contest..."
+anecdote_contest_data_worksheet.rows.drop(1).each do |row|
+  Question.create!(
+    contest_id: anecdote_contest.id,
+    title: row[0], 
+    correct_answer: row[7]
+  ) 
+end 
+
+puts "Creating answer options for each questions..."
+i = 0
+anecdote_contest.questions.each do |question|
+  j = 1
+  while j < 5
+    AnswerOption.create!(
+      question_id: question.id,
+      answer: anecdote_contest_data_worksheet.rows.drop(1)[i][j]
+    )
+    j += 1
+  end
+  i += 1
+end 
+
+
+
 
 
 puts "Production database was populated successfully."
