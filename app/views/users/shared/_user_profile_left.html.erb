@@ -32,7 +32,7 @@
           <% end %>
         <% end %>
         <% if !@user.snapchat_url.nil? and @user.snapchat_url != "" %>
-          <%= link_to @user.snapchat_url, class:"mb-4" do %>
+          <%= link_to @user.snapchat_url,  target:"_blank", class:"mb-4" do %>
             <div class="button-effect-3 snapchat"><i class="fab fa-snapchat-ghost"></i></div>
           <% end %>
         <% end %>
