@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col d-flex flex-row">
+    <div class="col d-flex flex-row justify-content-center justify-content-lg-start">
     <% @contests.each do |contest| %>
           <% @is_done = contest.deadline < Time.now %>
           <div class="contest-container">
@@ -16,7 +16,7 @@
             </div>
             <div class="contest-body">
               <img src=<%= contest.reward_photo %> alt="Concours <%= contest.title %>"/>
-              <div class="countdown-container" data-date=<%= contest.deadline.to_formatted_s(:db) %>>
+              <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:db) %>">
                 <span>Temps restant</span>
                 <table>
                   <tr class="countdown">
@@ -36,7 +36,7 @@
               <% if !contest.users.nil? || contest.users != [] %>
                 <p>
                   <% contest.users.take(5).each do |user| %>
-                    <img src=<%= user.profile_picture %> alt=<%= user.first_name %> title=<%= user.first_name %> />
+                    <img src="<%= user.profile_picture %>" alt="<%= user.first_name %>" title="<%= user.first_name %>" />
                   <% end %>
                 </p>
               <% end %>

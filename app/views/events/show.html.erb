@@ -17,15 +17,15 @@
             </div>
         </div>
         <div class="row p-2">
-            <div class="col-12 col-md-9 col-lg-10">
+            <div class="col-12 col-md-9">
                 <h1><%= @event.name %></h1>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 text-md-right">
-                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, :action => "register_to_event", class:"button-effect-2" do %>
+            <div class="col-12 col-md-3 text-md-right">
+                <%= link_to event_register_to_event_path(@event), method: :post, remote: true, :action => "register_to_event" do %>
                     <% if current_user.events.include? @event %>
-                        <button id="register-event-btn"><span class="button-text">Se désinscrire</span></button>
+                        <button id="register-event-btn" class="button-effect-5" data-content="Se désinscrire">Se désinscrire</button>
                     <% else %>
-                        <button id="register-event-btn"><span class="button-text">S'inscrire</span></button>
+                        <button id="register-event-btn" class="button-effect-5" data-content="S'inscrire">S'inscrire</button>
                     <% end %>
                 <% end %>       
             </div>

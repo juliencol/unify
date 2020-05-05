@@ -7,16 +7,11 @@
     </div>
     <div class="col-12 col-lg-9">
       <div class="row justify-content-center p-2">
-        <div class="col"><div class="banner"><img src=<%= @contest.image %> /></div></div>
+        <div class="col"><div class="banner"><img src="<%= @contest.image %>" /></div></div>
       </div>
       <div class="row p-2">
             <div class="col-12 col-md-9 col-lg-10">
                 <h1><%= @contest.title %></h1>
-            </div>
-            <div class="col-12 col-md-3 col-lg-2 text-md-right">
-                <% if !policy(@contest).quizz? %>
-                  <p>Vous avez déjà répondu à ce quizz</p>
-                <% end %>
             </div>
         </div>
         <div class="row p-2">
@@ -32,7 +27,7 @@
                     <% @contest.users.each do |user| %>
                       <%= link_to user_path(user) do %>
                         <div class="white-wrapper">
-                          <img src=<%= user.profile_picture %> />
+                          <img src="<%= user.profile_picture %>" />
                           <p><%= user.first_name %><br/><%= user.last_name %></p>
                         </div>
                       <% end %>
@@ -41,9 +36,15 @@
               </div>
           </div>
         <% end %>
-        <div class="row p-2">
+        <div class="row px-2 py-3">
           <div class="col-12">
-            <%= render "contests/components/quizz" %>
+            <hr/>
+            <h4>Répondre au quiz</h4>
+            <% if policy(@contest).quizz? %>
+              <%= render "contests/components/quizz" %>
+            <% else %>
+              <p>Vous avez déjà répondu à ce quiz.</p>
+            <% end %>
           </div>
         </div>
       </div>

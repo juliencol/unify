@@ -12,8 +12,6 @@ class ContestsController < ApplicationController
       get_winner
     end
     @questions = @contest.questions.includes([:answer_options])
-    @answers = AnswerOption.select(:answer_options).distinct
-    authorize @answers
   end
 
   def send_quizz
@@ -21,14 +19,13 @@ class ContestsController < ApplicationController
     @questions = @contest.questions.includes([:answer_options])
     authorize @contest
     current_user.contests << @contest
-    # Get all fields from questions
-    # TODO : MAKE THIS WORK
-    #user_choice = params[:answer_option]
-    #user_contest = current_user.contests.select { |contest| contest.title == @contest.title }.first
-    #user_contest.questions.each do |question|
-    #  question.user_answer = user_choice
-    #end
-     # TODO : make sure every questions were answered before submitting request
+    user_contest = current_user.contests.select { |contest| contest.title == @contest.title }.first
+    user_choices = params[:contest][:questions]
+    user_contest.questions.each do |question|
+      question[:user_answer] = "#{user_choices[:'#{question.id}']}"
+      question.save
+    end
+    # TODO : make sure every questions were answered before submitting request
     redirect_to contests_path
     flash[:notice] = "Ta réponse a été prise en compte"
   end
