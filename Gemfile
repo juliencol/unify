@@ -29,6 +29,7 @@ gem 'whenever', require: false
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'bullet'
+  gem 'letter_opener'
 end
 
 group :development, :test do
