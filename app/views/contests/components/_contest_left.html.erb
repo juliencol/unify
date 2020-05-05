@@ -15,7 +15,7 @@
       <li><span>Participants : </span><%= @contest.users.size %></li>
     </ul>
   </div>
-  <div class="contest-show countdown-container" data-date=<%= @contest.deadline.to_formatted_s(:db) %>>
+  <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:db) %>">
     <h6>Temps restant pour participer :</h6>
     <table>
       <tr class="countdown">
@@ -25,10 +25,10 @@
         <th>??</th>
       </tr>
       <tr>
-          <td>jours</td>
-          <td>heures</td>
-          <td>min.</td>
-          <td>sec.</td>
+        <td>jours</td>
+        <td>heures</td>
+        <td>min.</td>
+        <td>sec.</td>
       </tr>
     </table>
   </div>

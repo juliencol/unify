@@ -23,9 +23,9 @@
             <div class="col-12 col-md-3 text-md-right">
                 <%= link_to event_register_to_event_path(@event), method: :post, remote: true, :action => "register_to_event" do %>
                     <% if current_user.events.include? @event %>
-                        <button id="register-event-btn" class="button-effect-5" data-content="Se désinscrire">Se désinscrire</button>
+                        <button id="register-event-btn" class="button-effect-1" data-content="Se désinscrire">Se désinscrire</button>
                     <% else %>
-                        <button id="register-event-btn" class="button-effect-5" data-content="S'inscrire">S'inscrire</button>
+                        <button id="register-event-btn" class="button-effect-1" data-content="S'inscrire">S'inscrire</button>
                     <% end %>
                 <% end %>       
             </div>
@@ -49,6 +49,23 @@
                 <%= @event.long_description %>
             </div>
         </div>
+        <% if !@event.users.nil? and @event.users != [] %>
+          <div class="row p-2">
+              <div class="col-12">
+                  <h4>Participants</h4>
+                  <div class="list-of-users">
+                    <% @event.users.each do |user| %>
+                      <%= link_to user_path(user) do %>
+                        <div class="white-wrapper">
+                          <img src="<%= user.profile_picture %>" />
+                          <p><%= user.first_name %><br/><%= user.last_name %></p>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+              </div>
+          </div>
+        <% end %>
     <% if !@marker.nil? %>
         <div class="row mt-3">
             <div class="col">

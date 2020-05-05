@@ -37,10 +37,8 @@
                 width: 100%;
             }
 
-            @include media-breakpoint-between(xs, md) {
-                .banner {
-                    height: 180px;
-                }
+            .banner {
+                height: 180px;
             }
         }
     }

@@ -17,6 +17,10 @@
         height: 100px;
     }
 
+    @include media-breakpoint-between(md, lg) {
+        height: 200px;
+    }
+
     img {
         position: absolute;
         min-width: 1000%;

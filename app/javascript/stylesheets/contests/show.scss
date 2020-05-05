@@ -1,74 +1,50 @@
-.contest-show.countdown-container {
-    text-align: center;
-
-    table {
-        margin: 0 auto;
-        font-size: 0.8rem;
+.contest-row {
+    .contest-show.countdown-container {
         text-align: center;
-        border-radius: 12px;
-        color: white;
-        overflow: hidden;
-        background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
-        @extend .z-depth-1;
 
-        .countdown {
-            font-family: Montserrat, sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
+        table {
+            margin: 0 auto;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 1;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-
-            th {
-                padding: 1rem 0.8rem 0 0.8rem;
-            }
-        }
-
-        td {
-            padding: 0 0 1rem 0;
-        }
-
-        @include media-breakpoint-between(xs, md) {
-            font-size: 0.5rem;
+            border-radius: 12px;
+            color: white;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
+            @extend .z-depth-1;
 
             .countdown {
-                font-size: 2rem;
+                font-family: Montserrat, sans-serif;
+                font-size: 3rem;
+                font-weight: 800;
+                text-align: center;
+                line-height: 1;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
 
                 th {
-                    padding: 0.5rem 0.5rem 0 0.5rem;
+                    padding: 1rem 0.8rem 0 0.8rem;
                 }
             }
 
             td {
-                padding: 0 0 0.5rem 0;
+                padding: 0 0 1rem 0;
             }
-        }
-    }
-}
 
-.participants {
-    width: 100%;
-    display: flex;
-    overflow-x: scroll;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+            @include media-breakpoint-between(xs, md) {
+                font-size: 0.5rem;
 
-    .white-wrapper {
-        flex: 1;
-        margin-right: 0.5rem;
-        width: 8rem;
-        text-align: center;
-        color: black;
+                .countdown {
+                    font-size: 2rem;
 
-        img {
-            width: 50px;
-            height: 50px;
-        }
+                    th {
+                        padding: 0.5rem 0.5rem 0 0.5rem;
+                    }
+                }
 
-        p {
-            margin: 0;
+                td {
+                    padding: 0 0 0.5rem 0;
+                }
+            }
         }
     }
 }
