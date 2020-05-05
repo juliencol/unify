@@ -1,16 +1,25 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-  # Settings for emails
+ 
+  # Mails
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp # :letter_opener
   config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
-
-  # Path for action mailer
   config.action_mailer.preview_path = "#{Rails.root}/rails/mailers"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+  config.mailer_sender = "unifyisep@gmail.com"
 
-  # Setup for letter opener to prevent emails in development
-  config.action_mailer.delivery_method = :letter_opener
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: 'gmail.com',
+    user_name: ENV['GMAIL_ADDRESS'],
+    password: ENV['GMAIL_APP_PASSWORD'],
+    authentication: :login,
+    enable_starttls_auto: true
+  }
+
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -41,11 +50,6 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :cloudinary
-
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
-
-  config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -82,7 +86,7 @@ Rails.application.configure do
     Bullet.alert = true
   end
 
-  # ngrok config to test PWA
+  # ngrok config to test PWA locally
   config.hosts << "55eea5c0.ngrok.io"
   config.hosts << "4cd296bb.ngrok.io"
 

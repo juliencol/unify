@@ -12,7 +12,8 @@ Rails.application.routes.draw do
                   passwords: 'users/passwords',
                   confirmations: 'users/confirmations',
                   profile: 'users/profile',
-                  edit: 'users/edit'
+                  edit: 'users/edit',
+                  confirmations: 'confirmations'
                 }            
   root to: 'events#index'
 
