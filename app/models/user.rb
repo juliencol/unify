@@ -29,7 +29,7 @@ class User < ApplicationRecord
   # validates :family, :presence => { message: "Vous devez sélectionner votre famille étudiante" }
 
   # Uncomment these lines be able to upload  photos
-  # mount_uploader :profile_picture, PhotoUploader
+  mount_uploader :profile_picture, PhotoUploader
 
   private
 
