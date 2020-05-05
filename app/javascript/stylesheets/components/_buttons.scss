@@ -7,108 +7,34 @@
 /* -------------------------------
    HTML Structure needed for this effect:
 
-    <a href="#" class="button-effect-1">
-    <button class="learn-more">
-        <span class="circle" aria-hidden="true">
-        <span class="icon arrow"></span>
-        </span>
-        <span class="button-text">...</span>
-    </button>
-    </a>
+    <button class="button-effect-1"></button>
    ------------------------------- */
 
 .button-effect-1 {
-    .learn-more {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        outline: none;
-        border: 0;
-        vertical-align: middle;
-        text-decoration: none;
-        background: transparent;
-        padding: 0;
-        font-size: inherit;
-        font-family: inherit;
-        width: 12rem;
-        height: auto;
-
-        .circle {
-            @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
-            position: relative;
-            display: block;
-            margin: 0;
-            width: 3rem;
-            height: 3rem;
-            background: $accent-yellow;
-            border-radius: 1.625rem;
-
-            .icon {
-                @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                background: #fff;
-
-                &.arrow {
-                    @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
-                    left: 0.625rem;
-                    width: 1.125rem;
-                    height: 0.125rem;
-                    background: none;
-
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        top: -0.25rem;
-                        right: 0.0625rem;
-                        width: 0.625rem;
-                        height: 0.625rem;
-                        border-top: 0.125rem solid #fff;
-                        border-right: 0.125rem solid #fff;
-                        transform: rotate(45deg);
-                    }
-                }
-            }
-        }
-
-        .button-text {
-            @include transition(all 0.45s cubic-bezier(0.65, 0, 0.076, 1));
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 0.75rem 0;
-            margin: 0 0 0 1.85rem;
-            color: $black;
-            font-weight: 500;
-            line-height: 1.6;
-            text-align: center;
-            text-transform: uppercase;
-        }
-    }
+    all: unset;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.4rem 1.5rem;
+    border-radius: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    @include transition(all 0.3s ease-out);
+    box-shadow: -1px 2px 10px rgba($accent-blue, 0.2), 1px 2px 10px rgba($accent-purple, 0.2);
 
     &:hover {
-        .circle {
-            width: 100%;
-
-            .icon {
-                &.arrow {
-                    background: $white;
-                    transform: translate(1rem, 0);
-                }
-            }
-        }
-
-        .button-text {
-            color: $white;
-        }
+        transform: translateY(-2px);
+        box-shadow: -1px 4px 20px rgba($accent-blue, 0.1), 1px 4px 20px rgba($accent-purple, 0.1);
     }
 
-    &:active {
-        transform: scale(0.96);
+    &:active,
+    &:focus {
+        transform: translateY(1px);
+        outline: none;
     }
 }
 
@@ -390,37 +316,48 @@ $color4: $accent-blue;
     <%= f.button :button, "Envoyer", type: :submit, class:"button-effect-5", "data-content"=>"Envoyer" %>
    --------------------------------------- */
 
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
 .button-effect-5 {
     position: relative;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
+    padding: 0.2rem 0.75rem;
+    border-radius: 0.9rem;
     color: white;
-    border-radius: 1.2rem;
-    background: linear-gradient(-45deg, $accent-yellow, $accent-purple, $accent-blue);
-    background-size: 400% 400%;
-    background-position: 10% 10%;
-    @include transition(0.3s ease);
+    z-index: 2;
+    @include transition(0.2s ease);
 
     &:after {
-        content: attr(data-content);
+        content: "";
         @extend .button-effect-5;
         position: absolute;
         left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         z-index: -1;
-        filter: blur(20px);
-        opacity: 0.8;
+        animation: pulse 1.2s ease infinite;
     }
 
     &:hover,
     &:active,
     &:focus {
         color: white;
-        transform: translateY(-2px);
-        background-position: 90% 90%;
+        transform: translateY(2px);
     }
 
     &:active {
-        transform: translateY(-3px);
+        transform: translateY(3px);
     }
 }

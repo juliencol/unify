@@ -31,18 +31,18 @@
         <ul>
           <li class="event-date"><%= event.date.strftime("%b") %> <span><%= event.date.strftime("%d") %></span></li>
           <li class="price">
-          <i class="fas fa-euro-sign icon-euro"></i>
-          <span class="numero">
-          <% if event.price.nil? || event.price == 0 %>
-            <span>Gratuit</span>
-          <% else %>
-            <span><%= event.price %></span>
-          <% end %>
-          </span>
+            <i class="fas fa-euro-sign icon-euro"></i>
+            <span class="numero">
+            <% if event.price.nil? || event.price == 0 %>
+              <span>Gratuit</span>
+            <% else %>
+              <span><%= event.price %></span>
+            <% end %>
+            </span>
           </li>
           <li class="participants">
-          <i class="fas fa-check icon-user"></i>
-          <span class="numero"><%= event.users.size %></span>
+            <i class="fas fa-user-check icon-user"></i>
+            <span class="numero"><%= event.users.size %></span>
           </li>
         </ul> 
       </div>

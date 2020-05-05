@@ -4,4 +4,8 @@
     left: 0;
     z-index: 4;
     margin: auto;
+
+    @include media-breakpoint-between(xs, lg) {
+        position: static;
+    }
 }

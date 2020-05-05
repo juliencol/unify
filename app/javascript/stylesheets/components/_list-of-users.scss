@@ -1,0 +1,25 @@
+.list-of-users {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .white-wrapper {
+        flex: 1;
+        margin-right: 0.5rem;
+        width: 8rem;
+        text-align: center;
+        color: black;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
