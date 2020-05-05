@@ -3,79 +3,48 @@
 <div class="container-fluid spacer">
   <div class="row user-row">
     <div class="col-12 col-lg-3">
-      <%= render "contests/shared/contest_left" %>
+      <%= render "contests/components/contest_left" %>
     </div>
     <div class="col-12 col-lg-9">
       <div class="row justify-content-center p-2">
-        <div class="col"><div class="banner"><img src=<%= @contest.image %> /></div></div>
+        <div class="col"><div class="banner"><img src="<%= @contest.image %>" /></div></div>
       </div>
       <div class="row p-2">
             <div class="col-12 col-md-9 col-lg-10">
                 <h1><%= @contest.title %></h1>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 text-md-right">
-                <% if policy(@contest).quizz? %>
-                  <%= link_to contest_quizz_path(@contest), class:"button-effect-2" do %>
-                    <button class="big">Participer</button>
-                  <% end %>
-                <% else %>
-                  <p>Vous avez déjà répondu à ce quizz</p>
-                <% end %>
-            </div>
         </div>
         <div class="row p-2">
             <div class="col-12">
                 <%= @contest.description %>
             </div>
         </div>
-        <div class="row p-2">
-            <div class="col-12">
-              <% if @is_done %>
-                <p>Concours terminé</p>
-                <% if @contest.winner_name == nil or @contest.winner_name == "" %>
-                  <p>En train de tirer au sort le gagnant...</p>
-                <% else %>
-                  <p>Le gagnant est : <%= @contest.winner_name %></p>
-                <% end %>
-              <% else %>
-                <p>Temps restant pour participer: <%= @time_left %></p>
-              <% end %>
-            </div>
-        </div>
-        <div class="row p-2">
-            <div class="col-12">
-                <%= @contest.description %>
-            </div>
-        </div>
-        <div class="row p-2">
-            <div class="col-12">
-                <h4>Participants</h4>
-                <div class="participants">
-                  <% @contest.users.each do |user| %>
-                    <%= link_to user_path(user) do %>
-                      <div class="white-wrapper">
-                        <img src=<%= user.profile_picture %> />
-                        <p><%= user.first_name %><br/><%= user.last_name %></p>
-                      </div>
+        <% if !@contest.users.nil? and @contest.users != [] %>
+          <div class="row p-2">
+              <div class="col-12">
+                  <h4>Participants</h4>
+                  <div class="participants">
+                    <% @contest.users.each do |user| %>
+                      <%= link_to user_path(user) do %>
+                        <div class="white-wrapper">
+                          <img src="<%= user.profile_picture %>" />
+                          <p><%= user.first_name %><br/><%= user.last_name %></p>
+                        </div>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </div>
-            </div>
-        </div>
-        <div class="row p-2">
-          <div class="col">
-            <div class="contest-show countdown-container" data-date=<%= @contest.deadline.to_formatted_s(:iso8601) %>>
-              <table>
-                <tr class="countdown">
-                </tr>
-                <tr>
-                    <td>jours</td>
-                    <td>heures</td>
-                    <td>min.</td>
-                    <td>sec.</td>
-                </tr>
-              </table>
-            </div>
+                  </div>
+              </div>
+          </div>
+        <% end %>
+        <div class="row px-2 py-3">
+          <div class="col-12">
+            <hr/>
+            <h4>Répondre au quiz</h4>
+            <% if policy(@contest).quizz? %>
+              <%= render "contests/components/quizz" %>
+            <% else %>
+              <p>Vous avez déjà répondu à ce quiz.</p>
+            <% end %>
           </div>
         </div>
       </div>

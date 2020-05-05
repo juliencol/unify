@@ -305,7 +305,7 @@ $sites: (
     }
 }
 
-/* Effect 4: Background expending on hover */
+/* Effect 4: Background expanding on hover */
 /* ------------------------------------------
    HTML Structure needed for this effect
     <a class="button-effect-4">
@@ -381,5 +381,46 @@ $color4: $accent-blue;
         span {
             font-size: 15px;
         }
+    }
+}
+
+/* Effect 5: Gradient changing on hover */
+/* ------------------------------------------
+   HTML Structure needed for this effect
+    <%= f.button :button, "Envoyer", type: :submit, class:"button-effect-5", "data-content"=>"Envoyer" %>
+   --------------------------------------- */
+
+.button-effect-5 {
+    position: relative;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 1.2rem;
+    background: linear-gradient(-45deg, $accent-yellow, $accent-purple, $accent-blue);
+    background-size: 400% 400%;
+    background-position: 10% 10%;
+    @include transition(0.3s ease);
+
+    &:after {
+        content: attr(data-content);
+        @extend .button-effect-5;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        filter: blur(20px);
+        opacity: 0.8;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+        transform: translateY(-2px);
+        background-position: 90% 90%;
+    }
+
+    &:active {
+        transform: translateY(-3px);
     }
 }

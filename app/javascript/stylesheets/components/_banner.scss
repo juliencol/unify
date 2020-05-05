@@ -14,7 +14,7 @@
     border-radius: 12px;
 
     @include media-breakpoint-between(xs, lg) {
-        height: 200px;
+        height: 100px;
     }
 
     img {

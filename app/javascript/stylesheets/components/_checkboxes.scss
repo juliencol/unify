@@ -1,0 +1,205 @@
+/* Checkboxes for events
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <div class="check-wrap d-flex pl-4">
+        <button type="button" class="check">
+        <svg width="18px" height="18px" viewbox="0 0 18 18">
+            <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+            </path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+        </button>
+        <h6 class="ml-4">CHECKBOX VALUE</h6>
+    </div>
+--------------------------------------------------- */
+
+.check-wrap {
+    width: 100%;
+    padding: 1.1rem 0.2rem;
+    position: relative;
+    border-bottom: 1px solid $accent-background;
+
+    h6 {
+        z-index: 2;
+        font-weight: 400 !important;
+        margin: 0;
+    }
+
+    &.checked {
+        background: linear-gradient(to bottom, $accent-purple 0%, $accent-yellow 100%) left bottom
+            rgba($accent-yellow, 0.05) no-repeat;
+        background-size: 4px 100%;
+    }
+}
+
+.check {
+    all: unset;
+    z-index: 2;
+    cursor: pointer;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -12px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba($accent-background, 0.3);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #c8ccd4;
+        stroke-width: 1.5;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
+
+        path {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 0;
+        }
+
+        polyline {
+            stroke-dasharray: 22;
+            stroke-dashoffset: 66;
+        }
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+
+        svg {
+            stroke: $isep-jaune;
+        }
+    }
+}
+
+.check.mixitup-control-active,
+input[type="checkbox"]:checked + .check {
+    svg {
+        stroke: $isep-jaune;
+
+        path {
+            stroke-dashoffset: 60;
+            transition: all 0.3s linear;
+        }
+
+        polyline {
+            stroke-dashoffset: 42;
+            transition: all 0.2s linear;
+            transition-delay: 0.15s;
+        }
+    }
+}
+
+.check:focus {
+    outline: none;
+}
+
+/* Checkboxes for contests
+/* -------------------------------
+   HTML Structure needed for this effect:
+
+    <div class="inputGroup">
+        <input id="option1" name="option1" type="checkbox"/>
+        <label for="option1">Option One</label>
+    </div>
+--------------------------------------------------- */
+
+.inputGroup {
+    background-color: #fff;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 0.5rem;
+
+    label {
+        padding: 12px 30px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        color: #3c454c;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: color 200ms ease-in;
+        overflow: hidden;
+        border-radius: 0.5rem;
+
+        &:before {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            content: "";
+            background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        &:after {
+            width: 32px;
+            height: 32px;
+            content: "";
+            border: 2px solid #d1d7dc;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+            background-repeat: no-repeat;
+            background-position: 2px 3px;
+            border-radius: 50%;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+    }
+
+    input:checked ~ label {
+        color: #fff;
+
+        &:before {
+            transform: translate(-50%, -50%) scale3d(106, 106, 1);
+            opacity: 1;
+        }
+
+        &:after {
+            background-color: #54e0c7;
+            border-color: #54e0c7;
+        }
+    }
+
+    input {
+        width: 32px;
+        height: 32px;
+        order: 1;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        visibility: hidden;
+    }
+}
