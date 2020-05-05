@@ -1,9 +1,9 @@
 <div class="white-wrapper mt-5 active" data-tab="clubs">
-  <% if current_user.clubs.nil? || current_user.clubs == [] %>
+  <% if @user.clubs.nil? || @user.clubs == [] %>
     <h3 class="text-center">Membre d'aucune association</h3>
   <% else %>
     <div class="assos d-flex flex-wrap justify-content-start">
-      <% current_user.clubs.each do |club| %>
+      <% @user.clubs.each do |club| %>
         <% if club.name == "EXODUS BDE" %>
           <%= link_to club_bde_path(@bde), :title => club.name do %>
             <div class="d-flex flex-column align-items-center m-3 mb-0">
