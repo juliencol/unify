@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_05_06_183941) do
-=======
-ActiveRecord::Schema.define(version: 2020_05_06_182450) do
->>>>>>> cdbb4afb7679dfef91092831efb733bc5d35aec1
+ActiveRecord::Schema.define(version: 2020_05_06_183808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_182450) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
-    t.string "logo", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
+    t.string "logo"
     t.datetime "creation_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
