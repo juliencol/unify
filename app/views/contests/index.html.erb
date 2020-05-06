@@ -16,7 +16,7 @@
             </div>
             <div class="contest-body">
               <img src="<%= contest.reward_photo %>" alt="Concours <%= contest.title %>"/>
-              <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:db) %>">
+              <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:iso8601) %>">
                 <span>Temps restant</span>
                 <table>
                   <tr class="countdown">

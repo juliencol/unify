@@ -1,4 +1,4 @@
-<%- title "Modifier profil de #{@user.first_name}" %>
+<%- title "Modifier le profil de #{@user.first_name}" %>
 
 <div class="container-fluid spacer">
     <div class="row user-row">
@@ -14,19 +14,19 @@
                  <%= f.input :bio, class: 'form-control', label: "Bio" %>
               </div>
               <div class="form-group">
-                 <%= f.input :profile_picture, as: :file, label: "Photo de profil" %>
+                 <%= f.input :profile_picture, as: :file, label: "Photo de profil", hint: "Dimensions carrées, min 150x150" %>
               </div>
               <div class="form-group">
-                <%= f.input :instagram_url, class: 'form-control', label: "Instagram url" %>
+                <%= f.input :instagram_url, class: 'form-control', label: "Instagram url", placeholder:"https://www.instagram.com/username" %>
               </div>
               <div class="form-group">
-                <%= f.input :snapchat_url, class: 'form-control', label: "Snapchat url" %>
+                <%= f.input :snapchat_url, class: 'form-control', label: "Snapchat url", placeholder:"https://www.snapchat.com/add/username" %>
               </div>
               <div class="form-group">
-                <%= f.input :twitter_url, class: 'form-control', label: "Twitter url" %>
+                <%= f.input :twitter_url, class: 'form-control', label: "Twitter url", placeholder:"https://twitter.com/username" %>
               </div>
               <div class="form-group">
-                <%= f.input :linkedin_url, class: 'form-control', label: "Linkedin url" %>
+                <%= f.input :linkedin_url, class: 'form-control', label: "Linkedin url", placeholder:"https://www.linkedin.com/in/username" %>
               </div>
               <div class="mt-3">
                 <%= f.submit "Modifier", class: 'btn btn-primary' %>
