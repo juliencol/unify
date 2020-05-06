@@ -16,22 +16,19 @@
                           placeholder: "Soirée isépienne" %>
                       </div>
                       <div class="form-group">
-                        <%= f.label :short_description, label: "Description en 3 mots" %>
+                        <%= f.label :short_description, label: "Description en quelques mots" %>
                         <%= f.text_field :short_description, 
-                          placeholder: "on va boire", 
+                          placeholder: "On va boire", 
                           class: 'form-control' %>
                       </div>
                       <div class="form-group">
                         <%= f.input :long_description, :as => :text, 
                           label: "Description complète", 
-                          placeholder: "On va boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire, boire,boire, boire, boire, boire et boire.",
+                          placeholder: "Description longue de l'événement, vous pouvez ajouter des détails mais évitez adresse, date, prix etc car il y a un emplacement réservé juste en dessous !",
                           :input_html => {:style => 'height: 200px'} %>
                       </div>
                       <div class="form-group">
-                        <%= f.input :image, as: :file, label: "Petite image (dim)" %>
-                      </div>
-                      <div class="form-group">
-                        <%= f.input :banner, as: :file, label: "Grande image (dim)" %>
+                        <%= f.input :banner, as: :file, label: "Image", hint:"Pensez à centrer les informations car l'image risque d'être coupée (Ratio 7:2, min 1050x300)" %>
                       </div>
                       <div class="form-group">
                         <%= f.input :date, label:"Date et heure" %>

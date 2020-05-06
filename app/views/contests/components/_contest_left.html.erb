@@ -15,7 +15,7 @@
       <li><span>Participants : </span><%= @contest.users.size %></li>
     </ul>
   </div>
-  <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:db) %>">
+  <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
     <h6>Temps restant pour participer :</h6>
     <table>
       <tr class="countdown">
