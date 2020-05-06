@@ -9,11 +9,11 @@
       <div class="row mt-3">
         <div class="col d-flex flex-wrap justify-content-around justify-content-lg-center">
             <% @bde.companies.each do |company| %>
-              <div class="white-wrapper mb-4 mr-lg-4">
-                <%= link_to company.website_url, target: "_blank" do %>
+              <%= link_to company.website_url, target: "_blank", class:"mb-4 mr-lg-4" do %>
+                <div class="white-wrapper">
                    <img src="<%= company.logo %>" width="100" alt=""/>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             <% end %>
         </div>
       </div>

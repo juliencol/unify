@@ -5,13 +5,13 @@ class ContestsController < ApplicationController
 
   def show
     @contest = Contest.find(params[:id])
+    @questions = @contest.questions.includes([:answer_options])
     authorize @contest
     @time_left = seconds_to_units(@contest.deadline - Time.now)
     @is_done =  @contest.deadline < Time.now
     if @is_done
       get_winner
     end
-    @questions = @contest.questions.includes([:answer_options])
   end
 
   def send_quizz
@@ -20,9 +20,8 @@ class ContestsController < ApplicationController
     authorize @contest
     current_user.contests << @contest
     user_contest = current_user.contests.select { |contest| contest.title == @contest.title }.first
-    user_choices = params[:contest][:questions]
     user_contest.questions.each do |question|
-      question[:user_answer] = "#{user_choices[:'#{question.id}']}"
+      question[:user_answer] = params["#{question.id}"][:answer_options]
       question.save
     end
     # TODO : make sure every questions were answered before submitting request
