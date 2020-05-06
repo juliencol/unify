@@ -16,6 +16,16 @@
   </div>
   <div class="biography px-3"><p><%= @user.bio %></p></div>
   <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
+        <% if !@user.instagram_url.nil? and @user.instagram_url != "" %>
+          <%= link_to @user.instagram_url, target:"_blank", class:"mb-4" do %>
+              <div class="button-effect-3 instagram"><i class="fab fa-instagram"></i></div>
+          <% end %>
+        <% end %>
+        <% if !@user.facebook_url.nil? and @user.facebook_url != "" %>
+          <%= link_to @user.facebook_url, target:"_blank", class:"mb-4" do %>
+              <div class="button-effect-3 facebook"><i class="fab fa-facebook-f"></i></div>
+          <% end %>
+        <% end %>
         <% if !@user.twitter_url.nil? and @user.twitter_url != "" %>
           <%= link_to @user.twitter_url , target:"_blank", class:"mb-4" do %>
             <div class="button-effect-3 twitter"><i class="fab fa-twitter"></i></div>
@@ -24,11 +34,6 @@
         <% if !@user.linkedin_url.nil? and @user.linkedin_url != "" %>
           <%= link_to @user.linkedin_url, target:"_blank", class:"mb-4" do %>
             <div class="button-effect-3 linkedin"><i class="fab fa-linkedin"></i></div>
-          <% end %>
-        <% end %>
-        <% if !@user.instagram_url.nil? and @user.instagram_url != "" %>
-          <%= link_to @user.instagram_url, target:"_blank", class:"mb-4" do %>
-              <div class="button-effect-3 instagram"><i class="fab fa-instagram"></i></div>
           <% end %>
         <% end %>
         <% if !@user.snapchat_url.nil? and @user.snapchat_url != "" %>
