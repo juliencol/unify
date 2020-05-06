@@ -9,7 +9,7 @@ class Club < ApplicationRecord
     accepts_nested_attributes_for :events, :reject_if => :all_blank, :allow_destroy => true
 
     validates :name, :presence => { message: "Votre association doit avoir un nom" }
-    validates :logo, :presence => { message: "Votre association doit avoir un logo" }
+    # validates :logo, :presence => { message: "Votre association doit avoir un logo" }
     validates :short_description, :presence => { message: "Votre association doit avoir une description courte" }
     validates :description, :presence => { message: "Votre association doit avoir une description" }
 
