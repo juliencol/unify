@@ -14,5 +14,5 @@ class Club < ApplicationRecord
     validates :description, :presence => { message: "Votre association doit avoir une description" }
 
     # Uncomment this line to be able to upload club logos
-    # mount_uploader :logo, PhotoUploader
+    mount_uploader :logo, PhotoUploader
 end
