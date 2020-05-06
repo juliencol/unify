@@ -26,5 +26,12 @@
         </div>
     <% end %>
 <% end %>
+<% if !@club.discord_url.nil? and @club.discord_url != "" %>
+    <%= link_to @club.discord_url, target:"_blank", class:"mb-4" do %>
+        <div class="button-effect-3 discord">
+            <i class="fab fa-discord"></i>
+        </div>
+    <% end %>
+<% end %>
 
 
