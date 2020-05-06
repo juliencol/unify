@@ -114,7 +114,7 @@ anecdote_contest = Contest.create!(
   reward: "iphone"
 )
 
-session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
+session = GoogleDrive::Session.from_service_account_key(".client_secret.rb")
 anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
 anecdote_contest_data_worksheet = anecdote_contest_data.worksheets.first
 
