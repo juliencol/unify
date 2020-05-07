@@ -3,7 +3,7 @@ Rails.application.configure do
  
   # Mails
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
-  config.action_mailer.delivery_method = :letter_opener # :smtp
+  config.action_mailer.delivery_method = :smtp # :letter_opener
   config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
   config.action_mailer.preview_path = "#{Rails.root}/rails/mailers"
   config.action_mailer.raise_delivery_errors = true
