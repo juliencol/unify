@@ -42,6 +42,11 @@ Rails.application.routes.draw do
     post "get_winner", to: 'contests#get_winner'
     post "remove_winner", to: 'contests#remove_winner'
   end
+
+  # error pages
+  %w( 404 422 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
 end
 
 
