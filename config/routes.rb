@@ -13,7 +13,6 @@ Rails.application.routes.draw do
                   confirmations: 'users/confirmations',
                   profile: 'users/profile',
                   edit: 'users/edit',
-                  confirmations: 'confirmations'
                 }            
   root to: 'events#index'
 
