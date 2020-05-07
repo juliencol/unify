@@ -15,18 +15,29 @@ class ContestsController < ApplicationController
   end
 
   def send_quizz
+    # get user inputs
     @contest = Contest.find(params[:contest_id])
     @questions = @contest.questions.includes([:answer_options])
     authorize @contest
     current_user.contests << @contest
-    user_contest = current_user.contests.select { |contest| contest.title == @contest.title }.first
-    user_contest.questions.each do |question|
-      question[:user_answer] = params["#{question.id}"][:answer_options]
+    @questions.each do |question|
+      question.user_answer = params["#{question.id}"][:answer_options]
       question.save
     end
-    # TODO : make sure every questions were answered before submitting request
-    redirect_to contests_path
-    flash[:notice] = "Ta réponse a été prise en compte"
+
+    # check if all questions were answered
+    number_of_answers = 0
+    @questions.each do |question|
+      number_of_answers += 1 if question.user_answer?
+    end
+    if number_of_answers != @questions.size
+      flash[:notice] = "Il faut répondre à toutes les questions"
+      current_user.contests.delete(@contest)
+      render "show"
+    else
+      redirect_to contests_path
+      flash[:notice] = "Ta réponse a été prise en compte"
+    end
   end
 
   def remove_winner
