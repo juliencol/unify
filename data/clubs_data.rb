@@ -1,6 +1,6 @@
 CLUBS_DATA = [
         {
-            name: "EXODUS BDE",
+            name: "EXODUS",
             logo: "https://res.cloudinary.com/isep/image/upload/v1583065755/unify/logos-clubs/exodus_logo_n0evw9.png",
             short_description: "BDE de l'ISEP",
             description: "BDE de l'ISEP",

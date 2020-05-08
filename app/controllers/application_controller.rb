@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_bde
-    @bde = Club.find_by("name ILIKE ?", "EXODUS BDE")
+    @bde = Club.find_by("name ILIKE ?", "EXODUS")
   end
 
   private
