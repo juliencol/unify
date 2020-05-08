@@ -1,0 +1,10 @@
+<p>Salut <%= @email.split('.')[0].capitalize %> !</p>
+
+<p>Ton compte unify a été bloqué en raison d'un nombre important de connexions échouées.</p>
+
+<p>Pour le dévérouiller, clique juste <%= link_to 'ici', unlock_url(@resource, unlock_token: @token) %></p>
+
+<p>A très vite !</p>
+<br>
+<p><strong>Julien Colombain</strong></p>
+<p>Responsable technique d'Exodus</p>
