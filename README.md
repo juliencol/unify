@@ -46,10 +46,8 @@ The stack is quite easy to learn but you will need to be familiar with the [MVC 
 
 # Infrastructure
 Continuous integration powered by [Travis CI](https://travis-ci.com/) on a [Heroku](heroku.com) dyno. Images hosted in [Cloudinary](https://cloudinary.com/)</br>
-<div>
-  <img src="app/assets/images/infra.png" width='300px' />
-  <img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' />
-</div>
+<img src="app/assets/images/infra.png" width='300px' /> </br>
+<img src="app/assets/images/github_travis.png" alt="CI picture" width='300px' /> </br>
 
 
 
