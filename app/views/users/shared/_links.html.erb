@@ -1,21 +1,9 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Se connecter", new_session_path(resource_name) %>
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Créer un compte", new_registration_path(resource_name) %>
-<% end %>
-
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <div class="forgot-password"><%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %></div>
-<% end %>
-
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Instructions non reçues ?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "Instructions non reçues ?", new_confirmation_path(resource_name), class:"small-link" %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Instructions non reçues ?", new_unlock_path(resource_name) %><br />
+  <%= link_to "Instructions non reçues ?", new_unlock_path(resource_name), class:"small-link" %><br />
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>

@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_005503) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
-    t.string "logo", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
+    t.string "logo"
     t.datetime "creation_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -138,6 +138,11 @@ ActiveRecord::Schema.define(version: 2020_05_08_005503) do
     t.string "winner_name"
     t.string "reward_photo"
     t.index ["club_id"], name: "index_contests_on_club_id"
+  end
+
+  create_table "errors", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "event_themes", force: :cascade do |t|
