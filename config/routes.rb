@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # Application routes
   get "description", to: "pages#about", as: :about
-  get "tuto", to: "pages#getting_started", as: :getting_started
+  # get "tuto", to: "pages#getting_started", as: :getting_started
 
   resources :users, only: [:show, :edit, :update], :path => "isépiens"
   
