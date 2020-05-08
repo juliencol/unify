@@ -1,0 +1,51 @@
+.error-pages {
+    padding-top: 5%;
+
+    img {
+        height: calc(70vh - 10vh);
+        border-radius: 0.8rem;
+        @extend .z-depth-1;
+
+        @include media-breakpoint-between(xs, md) {
+            height: calc(50vh - 10vh);
+        }
+
+        @include media-breakpoint-between(md, lg) {
+            height: calc(50vh - 10vh);
+        }
+    }
+
+    h1 {
+        font-size: 8rem;
+
+        @include media-breakpoint-between(xs, md) {
+            font-size: 7rem;
+        }
+
+        @include media-breakpoint-between(md, lg) {
+            font-size: 7rem;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    &.not-found {
+        img {
+            background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
+        }
+    }
+
+    &.internal-error {
+        img {
+            background: linear-gradient(to top right, $accent-purple 0%, $accent-yellow 100%);
+        }
+    }
+
+    &.unacceptable {
+        img {
+            background: linear-gradient(to top left, $accent-blue 0%, $accent-purple 100%);
+        }
+    }
+}

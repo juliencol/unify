@@ -2,13 +2,18 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # email settings
-  config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = {:host => 'unifyisep.com'}
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'unifyisep.com' }
   config.action_mailer.smtp_settings = {
-    :address => "127.0.0.1",
-    :port    => 25,
-    :domain  => 'unifyisep.com'
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mail.google.com",
+    :user_name => ENV['GMAIL_ADDRESS'],
+    :password => ENV['GMAIL_APP_PASSWORD'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   # Code is not reloaded between requests.

@@ -32,7 +32,7 @@ Club.create!(CLUBS_DATA)
 puts "Creating themes..."
 Theme.create!(THEMES_DATA)
 
-BDE = Club.where("name ILIKE ?", "EXODUS BDE")
+BDE = Club.where("name ILIKE ?", "EXODUS")
 
 puts "Creating users..."
 julien = User.create!(
@@ -52,7 +52,7 @@ julien = User.create!(
   linkedin_url: "https://www.linkedin.com/in/julien-colombain/",
   twitter_url: "https://twitter.com/JulienColombain"
 )
-julien.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
+julien.clubs.push(Club.where("name ILIKE ?", "EXODUS"))
 julien.clubs.push(Club.where("name ILIKE ?", "ISEP Alumni"))
 
 maelle = User.create!(
@@ -71,12 +71,12 @@ maelle = User.create!(
   linkedin_url: "",
   twitter_url: ""
 )
-maelle.clubs.push(Club.where("name ILIKE ?", "EXODUS BDE"))
+maelle.clubs.push(Club.where("name ILIKE ?", "EXODUS"))
 
 puts "Creating events..."
 10.times do 
   Event.create!(
-    club_id:  Club.where("name ILIKE ?", "EXODUS BDE").ids[0],
+    club_id:  Club.where("name ILIKE ?", "EXODUS").ids[0],
     name: "Evenement stylé",
     short_description: "Ceci est une description courte. Elle décrit l'événement brièvement.",
     long_description: "Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus. Mauris turpis mi, efficitur id placerat vitae, laoreet id nunc. Etiam ac luctus metus. Phasellus rutrum vehicula justo at efficitur. Donec maximus, nulla eu molestie elementum, est arcu eleifend massa, sed iaculis tortor sem sed diam. Etiam sit amet erat a justo pharetra tristique quis sed velit. Pellentesque molestie est ut sem porta rhoncus vitae vitae libero. Curabitur placerat accumsan faucibus.",

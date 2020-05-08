@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_153626) do
+ActiveRecord::Schema.define(version: 2020_05_08_005503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_153626) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
-    t.string "logo"
+    t.string "logo", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
     t.datetime "creation_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -113,6 +113,8 @@ ActiveRecord::Schema.define(version: 2020_05_03_153626) do
     t.boolean "applications_open"
     t.string "banner_image"
     t.string "short_description", limit: 60
+    t.string "facebook_url"
+    t.string "discord_url"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -162,6 +164,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_153626) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "club_id", null: false
+    t.boolean "is_pinned", default: false
     t.index ["club_id"], name: "index_events_on_club_id"
   end
 
@@ -242,7 +245,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_153626) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "profile_picture"
+    t.string "profile_picture", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
     t.integer "promotion"
     t.string "section"
     t.string "classe"
@@ -256,6 +259,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_153626) do
     t.string "twitter_url"
     t.string "linkedin_url"
     t.boolean "super_admin", default: false, null: false
+    t.string "facebook_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["family_id"], name: "index_users_on_family_id"

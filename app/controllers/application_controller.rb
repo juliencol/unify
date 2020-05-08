@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def user_not_authorized
-    flash[:alert] = "Désolé, vous n'avez pas accès à cette page"
+    flash[:alert] = "Désolé, tu n'as pas accès à cette page"
     redirect_to(root_path)
   end
 
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_bde
-    @bde = Club.find_by("name ILIKE ?", "EXODUS BDE")
+    @bde = Club.find_by("name ILIKE ?", "EXODUS")
   end
 
   private

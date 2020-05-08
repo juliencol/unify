@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :set_club, only: [:new, :create]
 
   def index
-    @events = policy_scope(Event).includes(:club, :themes).sort_by(&:created_at).reverse
+    @events = policy_scope(Event.where(is_pinned: false)).includes(:club, :themes).sort_by(&:created_at).reverse
+    @pinned_events = policy_scope(Event.where(is_pinned: true)).includes(:club, :themes).sort_by(&:created_at).reverse
     @themes = Theme.all.sort_by { |theme| theme[:title] }
     @clubs = Club.all.sort_by { |club| club[:name] }
     @search = params["search"]

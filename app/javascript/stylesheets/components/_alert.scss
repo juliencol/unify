@@ -1,19 +1,14 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  left: 16px;
-  z-index: 2000;
-  padding: 1rem;
-  padding-right: 2rem;
-  background:
-    linear-gradient(to left,
-      $accent-purple 0%,
-      $accent-yellow 100%) left bottom white no-repeat;
-  background-size: 100% 4px;
-  box-shadow:
-    0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07),
-    0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
-    0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055),
-    0 75px 100px -10px rgba(0, 0, 0, 0.039);
-  border: none;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2000;
+    padding: 1rem;
+    padding-right: 3rem;
+    background: linear-gradient(to left, $accent-purple 0%, $accent-yellow 100%) left bottom white
+        no-repeat;
+    background-size: 100% 4px;
+    box-shadow: 0 3.4px 4.5px -10px rgba(0, 0, 0, 0.07), 0 9.4px 12.5px -10px rgba(0, 0, 0, 0.064),
+        0 22.6px 30.1px -10px rgba(0, 0, 0, 0.055), 0 75px 100px -10px rgba(0, 0, 0, 0.039);
+    border: none;
 }

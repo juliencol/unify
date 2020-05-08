@@ -2,45 +2,45 @@
 /* ------------------------------- */
 
 .list-group {
-  padding: .5rem 5rem;
+    padding: 0.5rem 5rem;
 
-  .club-container {
-    width: 400px;
+    .club-container {
+        width: 400px;
 
-    .club-right {
-      width: 100%;
-      min-height: 70px;
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
+        .club-right {
+            width: 100%;
+            min-height: 70px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-      .club-desc {
-        text-align: left;
+            .club-desc {
+                text-align: left;
 
-        h4 {
-          font-size: 1.2rem;
-          font-weight: 500;
-          margin: 0;
+                h4 {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                }
+            }
         }
-
-        span {
-          font-size: .85rem;
-        }
-      }
     }
-  }
 }
 
 @include media-breakpoint-between(xs, md) {
-  .list-group {
-    padding: .1rem .5rem;
+    .list-group {
+        padding: 0.1rem 0.5rem;
 
-    .club-container {
-      width: 350px;
+        .club-container {
+            width: 350px;
 
-      .club-right {
-        min-height: 60px;
-      }
+            .club-right {
+                min-height: 60px;
+            }
+        }
     }
-  }
 }
 
 /* IMPORTS */
@@ -50,3 +50,4 @@
 @import "members";
 @import "project";
 @import "shared/header";
+@import "partners";

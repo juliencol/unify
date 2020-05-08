@@ -1,13 +1,13 @@
 <% if @club.name == "EXODUS BDE" %>
   <div class="pill-tabs club-bde-tab">
-    <%= link_to club_bde_path(@club) do %>
-      <span class=<%= 'active' if current_page?(club_bde_path(@bde)) %>>Événements</span>
+    <%= link_to bde_path do %>
+      <span class=<%= 'active' if current_page?(bde_path) %>>Événements</span>
     <% end %>
     <%= link_to club_members_path(@club) do %>
       <span class=<%= 'active' if current_page?(club_members_path(@club)) %>>Membres</span>
     <% end %>
     <%= link_to club_project_path(@club) do %>
-      <span class=<%= 'active' if current_page?(club_project_path(@club)) %>>Projet</span>
+      <span class=<%= 'active' if current_page?(club_project_path(@club)) %>>Projets</span>
     <% end %>
     <%= link_to club_partners_path(@club) do %>
       <span class=<%= 'active' if current_page?(club_partners_path(@club)) %>>Partenaires</span>

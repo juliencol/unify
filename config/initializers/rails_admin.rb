@@ -10,7 +10,7 @@ RailsAdmin.config do |config|
 
   config.authorize_with do
     unless current_user.super_admin?
-      flash[:alert] = "Désolé, vous n'avez pas accès à cette page"
+      flash[:alert] = "Désolé, tu n'as pas accès à cette page"
       redirect_to main_app.root_path
     end
   end

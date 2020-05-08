@@ -1,4 +1,54 @@
 <div class="col col-lg-6 align-self-start mix-container d-flex flex-wrap justify-content-between align-items-start">
+  <% @pinned_events.each do |event| %>
+    <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %> <% end %>">
+      <div class="event-header">
+        <%= link_to event_path(event.id) do %>
+          <div class="banner"><img src=<%= event.image %> /></div>
+        <% end %>
+      </div>
+      <div class="event-body">
+        <div class="event-title">
+              <h2><%= link_to event.name, event_path(event.id) %></h2>
+            </div>
+            <%= link_to club_path(event.club.id) do %>
+              <div class="event-author">
+                <img src=<%= event.club.logo unless event.club.logo.nil? %> class="club-logo small mr-2">
+                <h3><%= event.club.name %></h3>
+              </div>
+            <% end %>
+            <div class="event-summary d-none d-md-block">
+              <p><%= event.short_description %></p>
+            </div>
+            <div class="event-tags">
+              <ul>
+                <% event.themes.each do |theme| %>
+                  <li><%= theme.title.titleize %></li>
+                <% end %>
+              </ul>
+            </div>
+      </div>
+      <div class="event-footer">
+        <ul>
+          <li class="event-date"><%= event.date.strftime("%b") %> <span><%= event.date.strftime("%d") %></span></li>
+          <li class="price">
+            <i class="fas fa-euro-sign icon-euro"></i>
+            <span class="numero">
+            <% if event.price.nil? || event.price == 0 %>
+              <span>Gratuit</span>
+            <% else %>
+              <span><%= event.price %></span>
+            <% end %>
+            </span>
+          </li>
+          <li class="participants">
+            <i class="fas fa-user-check icon-user"></i>
+            <span class="numero"><%= event.users.size %></span>
+          </li>
+        </ul> 
+      </div>
+    </div>
+  <% end %>
+
   <% @events.each do |event| %>
     <div class="event-container mix <%= event.club.name.parameterize.underscore %> <% event.themes.each do |theme| %><%= theme.title.parameterize.underscore %> <% end %>">
       <div class="event-header">
