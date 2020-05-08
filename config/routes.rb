@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   root to: 'events#index'
 
   # Application routes
-  get "about", to: "pages#about", as: :about
-  get "getting_started", to: "pages#getting_started", as: :getting_started
+  get "description", to: "pages#about", as: :about
+  get "tuto", to: "pages#getting_started", as: :getting_started
 
   resources :users, only: [:show, :edit, :update] do 
     get "events", to: "users#events"
