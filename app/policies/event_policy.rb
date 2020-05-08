@@ -18,19 +18,19 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    user_in_club_event?
+    user.super_admin
   end
 
   def edit?
-   user_in_club_event_except_for_regret_julien?
+   user.super_admin
   end
 
   def update?
-    user_in_club_event_except_for_regret_julien?
+    user.super_admin
   end
 
   def destroy?
-    user_in_club_event_except_for_regret_julien?
+    user.super_admin
   end
 
   def register_to_event?
@@ -45,13 +45,5 @@ class EventPolicy < ApplicationPolicy
 
   def is_user_profile?
     user == @user
-  end
-
-  def user_in_club_event_except_for_regret_julien?
-    if record.name == "Regretter de ne pas avoir recruté Julien"
-      false
-    else
-      user_in_club_event?
-    end
   end
 end
