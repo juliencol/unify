@@ -23,7 +23,7 @@
               <span><%= club.short_description %></span>
             </div>
             <% if club.name == "EXODUS BDE" %>
-              <%= link_to club_bde_path(@bde), class:"button-effect-2" do %>
+              <%= link_to bde_path(@bde), class:"button-effect-2" do %>
                 <button>Voir</button>
               <% end %>
             <% else %>

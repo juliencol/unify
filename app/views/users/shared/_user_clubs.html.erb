@@ -5,7 +5,7 @@
     <div class="assos d-flex flex-wrap justify-content-start">
       <% @user.clubs.each do |club| %>
         <% if club.name == "EXODUS BDE" %>
-          <%= link_to club_bde_path(@bde), :title => club.name do %>
+          <%= link_to bde_path, :title => club.name do %>
             <div class="d-flex flex-column align-items-center m-3 mb-0">
               <img src=<%= club.logo unless club.logo.nil? %> class="club-logo small">
               <h4><%= club.name %></h4>

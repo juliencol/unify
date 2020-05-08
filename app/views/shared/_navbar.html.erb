@@ -22,11 +22,11 @@
       <li class="nav-item <%= 'active' if params[:controller] == 'events' %>">
         <%= link_to "Evénements", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if params[:controller] == 'clubs' and !current_page?(club_bde_path(@bde)) and !current_page?club_members_path(@bde) and !current_page?club_project_path(@bde) and !current_page?club_partners_path(@bde)%>">
+      <li class="nav-item <%= 'active' if params[:controller] == 'clubs' and !current_page?(bde_path) and !current_page?club_members_path(@bde) and !current_page?club_project_path(@bde) and !current_page?club_partners_path(@bde)%>">
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(club_bde_path(@bde)) or current_page?club_members_path(@bde) or current_page?club_project_path(@bde) or current_page?club_partners_path(@bde)%>">
-        <%= link_to "EXODUS", club_bde_path(@bde), class: "nav-link" %>
+      <li class="nav-item <%= 'active' if current_page?(bde_path) or current_page?club_members_path(@bde) or current_page?club_project_path(@bde) or current_page?club_partners_path(@bde)%>">
+        <%= link_to "EXODUS", bde_path, class: "nav-link" %>
       </li>
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ISEP</a>
