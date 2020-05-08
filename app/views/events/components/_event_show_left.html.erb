@@ -22,17 +22,6 @@
                     <span >Participants : </span><%= @users.size %>
                 </div> 
             </li>
-
-            <div class="modal fade" id="event-users-modal" tabindex="1" role="dialog" aria-labelledby="event-users-modal-label" aria-hidden="true">
-                <div class="modal-body">
-                    <h1 class="mt-5">Participants</h1>
-                    <% @users.each do |user| %>
-                        <p><%= user.first_name %></p>
-                        <p><%= user.last_name %></p>
-                    <% end %>
-                </div>
-            </div>
-
         </ul>
     </div>
     <% if policy(@event).edit? %>
