@@ -21,10 +21,12 @@
                         required: false,
                         input_html: { autocomplete: "current-password", class: "pw-input" },
                         placeholder: "Mot de passe",
-                        hint: "#{link_to 'Mot de passe oublié ?', new_password_path(resource_name)}".html_safe,
                         label: false %>
           </div>
-          <%= render "users/shared/links" %>
+          <div class="d-flex flex-column mt-3">
+            <%= link_to "Mot de passe oublié", new_password_path(resource_name), class:"small-link" %>
+            <%= render "users/shared/links" %>
+          </div>
           <div class="form-actions">
             <%= f.button :submit, "Se connecter" %>
           </div>
