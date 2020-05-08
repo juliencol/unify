@@ -16,9 +16,6 @@
         placeholder: "Rechercher un événement" %>
     <% end %>
     <ul class="navbar-nav align-items-lg-center">
-    <li class="nav-item <%= 'active' if params[:controller] == 'pages' %>">
-        <%= link_to "Projet", about_path, class: "nav-link" %>
-      </li>
       <li class="nav-item <%= 'active' if params[:controller] == 'contests' %>">
         <%= link_to "Concours", contests_path, class: "nav-link" %>
       </li>
@@ -29,7 +26,7 @@
         <%= link_to "Associations", clubs_path, class: "nav-link" %>
       </li>
       <li class="nav-item <%= 'active' if current_page?(club_bde_path(@bde)) %>">
-        <%= link_to "BDE EXODUS", club_bde_path(@bde), class: "nav-link" %>
+        <%= link_to "EXODUS", club_bde_path(@bde), class: "nav-link" %>
       </li>
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ISEP</a>
