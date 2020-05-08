@@ -1,3 +1,5 @@
+<%- title "Se connecter" %>
+
 <div class="container-fluid h-100">
 
   <%= render "users/shared/background" %>
@@ -6,10 +8,7 @@
     <div class="col-12">
       <div class="login-container">
         <h2 class="unify-title">Unify</h2>
-        <div class="pill-tabs">
-          <span class="tab active">Se connecter</span>
-          <span class="tab"><%= render "users/shared/links" %></span>
-        </div>
+        <%= render "users/shared/user_tabs" %>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
@@ -22,9 +21,10 @@
                         required: false,
                         input_html: { autocomplete: "current-password", class: "pw-input" },
                         placeholder: "Mot de passe",
+                        hint: "#{link_to 'Mot de passe oublié ?', new_password_path(resource_name)}".html_safe,
                         label: false %>
           </div>
-
+          <%= render "users/shared/links" %>
           <div class="form-actions">
             <%= f.button :submit, "Se connecter" %>
           </div>
@@ -38,4 +38,3 @@
 </div>
 
 <%= javascript_pack_tag 'users/users' %>
-<%= javascript_pack_tag 'users/sessions/popup' %>

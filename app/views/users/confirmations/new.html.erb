@@ -7,7 +7,7 @@
 
       <div class="login-container">
         <h2 class="unify-title">Unify</h2>
-        <h3 class="mt-5 mb-3 text-center">Renvoyer l'email de confirmation</h3>
+        <h5 class="mt-5 mb-3 text-center">Renvoyer l'email de confirmation</h5>
         <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
           <%= f.error_notification %>
           <%= f.full_error :confirmation_token %>
@@ -21,13 +21,9 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Renvoyer l'email de confirmation" %>
+            <%= f.button :submit, "Envoyer" %>
           </div>
         <% end %>
-
-        <div class="text-center mt-5">
-          <%= render "users/shared/links" %>
-        </div>
       </div>
     </div>
 
@@ -36,3 +32,5 @@
   <%= render "users/shared/logos" %>
 
 </div>
+
+<%= javascript_pack_tag 'users/users' %>

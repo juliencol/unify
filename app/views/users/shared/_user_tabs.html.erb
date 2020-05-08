@@ -1,0 +1,16 @@
+<div class="pill-tabs">
+    <span class="tab <%= 'active' if controller_name == 'sessions' %>">
+        <%- if controller_name != 'sessions' %>
+            <%= link_to "Se connecter", new_session_path(resource_name) %>
+        <% else %>
+            Se connecter
+        <% end %>
+    </span>
+    <span class="tab <%= 'active' if controller_name == 'registrations' %>">
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Créer un compte", new_registration_path(resource_name) %>
+        <% else %>
+            Créer un compte
+        <% end %>
+    </span>
+</div>

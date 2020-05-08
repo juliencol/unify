@@ -26,6 +26,10 @@
     background-color: #fff;
     @extend .z-depth-2;
 
+    .small-link {
+        font-size: 80%;
+    }
+
     .unify-title {
         font-weight: 700;
     }
@@ -47,35 +51,6 @@
             &.active {
                 background: white;
                 color: black;
-            }
-        }
-
-        .forgot-password {
-            display: none;
-            position: absolute;
-            top: 100px;
-            right: -200px;
-            background: white;
-            padding: 0.75rem;
-            border-radius: 0.2rem;
-            @extend .z-depth-3;
-
-            &:after {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 50%;
-                width: 0;
-                height: 0;
-                border: 8px solid transparent;
-                border-right-color: white;
-                border-left: 0;
-                margin-top: -8px;
-                margin-left: -8px;
-            }
-
-            &.focused {
-                display: block;
             }
         }
     }
@@ -134,18 +109,6 @@
     .login-container {
         font-size: 0.8em;
     }
-
-    .forgot-password {
-        background: none !important;
-        box-shadow: none !important;
-        top: auto !important;
-        bottom: 5px;
-        right: 55px !important;
-
-        &:after {
-            display: none;
-        }
-    }
 }
 
 @include media-breakpoint-between(sm, md) {
@@ -174,11 +137,6 @@
     .btn {
         font-size: 0.9em;
     }
-
-    .forgot-password {
-        top: 190px !important;
-        right: -160px !important;
-    }
 }
 
 @include media-breakpoint-between(md, lg) {
@@ -206,11 +164,6 @@
 
     .btn {
         font-size: 1em;
-    }
-
-    .forgot-password {
-        top: 190px !important;
-        right: -160px !important;
     }
 }
 
