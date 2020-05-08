@@ -15,4 +15,7 @@ class Club < ApplicationRecord
 
     # Uncomment this line to be able to upload club logos
     mount_uploader :logo, PhotoUploader
+
+
 end
+ 
