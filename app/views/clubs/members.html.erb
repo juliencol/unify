@@ -9,17 +9,17 @@
         <div class="col members-feed">
           <% @club.users.each do |user| %>
             <%= link_to user_path(user) do %>
-              <% if user.profile_picture.nil? || user.profile_picture == "" %>
-                <div class="member-wrapper mb-3 mx-auto">
-                   <img class="avatar" src="https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png" class="user-logo" >
-                  <p><%= user.first_name %> <%= user.last_name %></p>
+              <div class="member-wrapper mb-3 mx-auto">
+                <img class="avatar" src=<%= user.profile_picture %> >
+                <div class="d-flex flex-column">
+                  <p><strong><%= user.first_name %> <%= user.last_name %></strong></p>
+                  <% user.user_clubs.includes([:club]).each do |user_club| %>
+                    <% if user_club.club == @club %>
+                      <p class="role"><%= user_club.role %></p>
+                    <% end %>
+                  <% end %>
                 </div>
-              <% else %>
-                <div class="member-wrapper mb-3 mx-auto">
-                  <img class="avatar" src=<%= user.profile_picture %> >
-                  <p><%= user.first_name %> <%= user.last_name %></p>
-                </div>
-              <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>

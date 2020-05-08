@@ -14,6 +14,6 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   # Uncomment these lines be able to upload  photos
-  mount_uploader :image, PhotoUploader
-  mount_uploader :banner, PhotoUploader
+  # mount_uploader :image, PhotoUploader
+  # mount_uploader :banner, PhotoUploader
 end
