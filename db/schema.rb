@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_182450) do
+ActiveRecord::Schema.define(version: 2020_05_08_005503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_182450) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
-    t.string "logo"
+    t.string "logo", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
     t.datetime "creation_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -140,11 +140,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_182450) do
     t.index ["club_id"], name: "index_contests_on_club_id"
   end
 
-  create_table "errors", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "event_themes", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "theme_id", null: false
@@ -169,6 +164,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_182450) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "club_id", null: false
+    t.boolean "is_pinned", default: false
     t.index ["club_id"], name: "index_events_on_club_id"
   end
 

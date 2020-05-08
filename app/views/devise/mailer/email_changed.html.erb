@@ -1,0 +1,12 @@
+<p>Salut <%= @email.split('.')[0].capitalize %> !</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Ton adresse email vient d'être modifiée à <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Ton adresse email vient d'être modifiée à <%= @resource.email %>.</p>
+<% end %>
+
+<p>A très vite !</p>
+<br>
+<p><strong>Julien Colombain</strong></p>
+<p>Responsable technique d'Exodus</p>

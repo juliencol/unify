@@ -5,9 +5,16 @@ class ClubsController < ApplicationController
     
     def show
         @club = Club.find(params[:id])
-        @events = @club.events.includes(:themes)
+        @pinned_events = []
+        @events = @club.events.includes(:themes).sort_by(&:created_at).reverse
+        @events.each do |event|
+            if event.is_pinned 
+                @events.delete(event)
+                @pinned_events << event
+            end
+        end
         authorize @club
-    end
+    end 
 
     def edit
         @club = Club.find(params[:id])
