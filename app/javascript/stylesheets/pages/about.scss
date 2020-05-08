@@ -46,7 +46,24 @@
             span {
                 svg {
                     font-size: 1.2rem;
+                    color: $accent-blue;
                 }
+            }
+        }
+    }
+
+    .about-links {
+        a {
+            font-size: 1.2rem;
+
+            svg {
+                color: $accent-blue;
+                margin-right: 1rem;
+                width: 20px;
+            }
+
+            span {
+                color: black;
             }
         }
     }

@@ -44,7 +44,8 @@
                             <img src="https://res.cloudinary.com/isep/image/upload/v1588711824/otqdzrtosgivgwdwllnd.png" alt="Julien Colombain"/>
                             <span>
                                 <h4>Julien Colombain</h4>
-                                <a href="https://www.instagram.com/juliencolombain/">
+                                <p>Backend</p>
+                                <a href="https://www.instagram.com/juliencolombain/" target="_blank">
                                     <i class="fab fa-instagram"></i>    
                                 </a>
                             </span>
@@ -53,7 +54,8 @@
                             <img src="https://res.cloudinary.com/isep/image/upload/v1588760472/bzfzodao9xevje5t8b9f.png" alt="Maëlle Jumel"/>
                             <span>
                                 <h4>Maëlle Jumel</h4>
-                                <a href="https://www.instagram.com/jml.mae/">
+                                <p>Frontend</p>
+                                <a href="https://www.instagram.com/jml.mae/" target="_blank">
                                     <i class="fab fa-instagram"></i>    
                                 </a>
                         </div>
@@ -70,11 +72,18 @@
                 </div>
             </div>
 
-            <div class="row"> 
-                <div class="col-12 col-md-8 offset-md-2">
-                    <%= link_to "Code source", "#" %><br/>
-                    <%= link_to "Contribuer", "#" %><br/>
-                    <%= link_to "Comment utiliser unify pour mon association ?", getting_started_path %>
+            <div class="row about-links"> 
+                <div class="col-12 col-md-8 offset-md-2 d-flex flex-column">
+                    <h3>Liens</h3>
+                    <%= link_to "#" do %>
+                        <i class="fab fa-github"></i><span>Code source</span>
+                    <% end %>
+                    <%= link_to "#" do %>
+                        <i class="fas fa-code-branch"></i><span>Contribuer</span>
+                    <% end %>
+                    <%= link_to getting_started_path do %>
+                        <i class="fas fa-question"></i><span>Utiliser Unify pour mon association</span>
+                    <% end %>
                 </div>
             </div>
         </div>
