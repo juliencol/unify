@@ -1,7 +1,7 @@
 const init = () => {
     const tab = document.querySelector(".active[data-tab]");
     const minHeight = tab.offsetHeight;
-    tab.parentNode.style.height = minHeight + 50 + "px";
+    tab.parentNode.style.height = minHeight + 60 + "px";
 };
 
 const changeTab = (clicked) => {
