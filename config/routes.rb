@@ -39,7 +39,6 @@ Rails.application.routes.draw do
   resources :contests, only: [:index, :show] do 
     get "quizz", to: 'contests#quizz'
     post "send_quizz", to: 'contests#send_quizz'
-    post "get_winner", to: 'contests#get_winner'
     post "remove_winner", to: 'contests#remove_winner'
   end
 
