@@ -33,7 +33,7 @@ CLUBS_DATA = [
             name: "Junior ISEP",
             logo: "https://res.cloudinary.com/isep/image/upload/v1576952902/unify/logos-clubs/juniorisep580_n0okcb.png",
             short_description: "Junior entreprise",
-            description: "Junior entreprise de l'ISEP. La légende racontent que tous les membres se mordent encore les doigts de ne pas avoir recruté le lead developer de unify.",
+            description: "Junior entreprise de l'ISEP",
             website_url: "https://juniorisep.com/",
             linkedin_url: "https://www.linkedin.com/company/junior-isep/",
             instagram_url: "https://www.instagram.com/juniorisep/"
