@@ -114,32 +114,32 @@ anecdote_contest = Contest.create!(
   reward: "iphone"
 )
 
-session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
-anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
-anecdote_contest_data_worksheet = anecdote_contest_data.worksheets.first
+# session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
+# anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
+# anecdote_contest_data_worksheet = anecdote_contest_data.worksheets.first
 
-puts "Creating questions for anecdote_contest..."
-anecdote_contest_data_worksheet.rows.drop(1).each do |row|
-  Question.create!(
-    contest_id: anecdote_contest.id,
-    title: row[0], 
-    correct_answer: row[7]
-  ) 
-end 
+# puts "Creating questions for anecdote_contest..."
+# anecdote_contest_data_worksheet.rows.drop(1).each do |row|
+#   Question.create!(
+#     contest_id: anecdote_contest.id,
+#     title: row[0], 
+#     correct_answer: row[7]
+#   ) 
+# end 
 
-puts "Creating answer options for each questions..."
-i = 0
-anecdote_contest.questions.each do |question|
-  j = 1
-  while j < 5
-    AnswerOption.create!(
-      question_id: question.id,
-      answer: anecdote_contest_data_worksheet.rows.drop(1)[i][j]
-    )
-    j += 1
-  end
-  i += 1
-end 
+# puts "Creating answer options for each questions..."
+# i = 0
+# anecdote_contest.questions.each do |question|
+#   j = 1
+#   while j < 5
+#     AnswerOption.create!(
+#       question_id: question.id,
+#       answer: anecdote_contest_data_worksheet.rows.drop(1)[i][j]
+#     )
+#     j += 1
+#   end
+#   i += 1
+# end 
 
 
 puts "Test database was populated successfully."
