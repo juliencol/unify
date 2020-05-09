@@ -8,53 +8,60 @@
   </div>
   <div class="row">
     <div class="col d-flex flex-row justify-content-center justify-content-lg-start">
-    <% @contests.each do |contest| %>
-          <% @is_done = contest.deadline < Time.now %>
-          <div class="contest-container">
-            <div class="contest-header">
-              <h5><%= contest.title %></h5>
-            </div>
-            <div class="contest-body">
-              <img src="<%= contest.reward_photo %>" alt="Concours <%= contest.title %>"/>
-              <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:iso8601) %>">
-                <span>Temps restant</span>
-                <table>
-                  <tr class="countdown">
-                    <th>??</th>
-                    <th>??</th>
-                    <th>??</th>
-                  </tr>
-                  <tr>
-                      <td>jours</td>
-                      <td>heures</td>
-                      <td>min.</td>
-                  </tr>
-                </table>
+    <!-- 
+      <% @contests.each do |contest| %>
+            <% @is_done = contest.deadline < Time.now %>
+            <div class="contest-container">
+              <div class="contest-header">
+                <h5><%= contest.title %></h5>
+              </div>
+              <div class="contest-body">
+                <img src="<%= contest.reward_photo %>" alt="Concours <%= contest.title %>"/>
+                <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:iso8601) %>">
+                  <span>Temps restant</span>
+                  <table>
+                    <tr class="countdown">
+                      <th>??</th>
+                      <th>??</th>
+                      <th>??</th>
+                    </tr>
+                    <tr>
+                        <td>jours</td>
+                        <td>heures</td>
+                        <td>min.</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="contest-footer">
+                <% if !contest.users.nil? || contest.users != [] %>
+                  <p>
+                    <% contest.users.take(5).each do |user| %>
+                      <img src="<%= user.profile_picture %>" alt="<%= user.first_name %>" title="<%= user.first_name %>" />
+                    <% end %>
+                  </p>
+                <% end %>
+                <% if @is_done %>
+                  <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                    <button>Résultats</button>
+                  <% end %>
+                <% else %>
+                  <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
+                    <button>Détails</button>
+                  <% end %>
+                <% end %>
               </div>
             </div>
-            <div class="contest-footer">
-              <% if !contest.users.nil? || contest.users != [] %>
-                <p>
-                  <% contest.users.take(5).each do |user| %>
-                    <img src="<%= user.profile_picture %>" alt="<%= user.first_name %>" title="<%= user.first_name %>" />
-                  <% end %>
-                </p>
-              <% end %>
-              <% if @is_done %>
-                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                  <button>Résultats</button>
-                <% end %>
-              <% else %>
-                <%= link_to contest_path(contest.id), class:"button-effect-2" do %>
-                  <button>Détails</button>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
+    -->
+    <div class="container text-center mb-5">
+      <p>Les jeux concours seront disponibles à partir de lundi</p>
+      <img class="coming-soon" src="https://res.cloudinary.com/isep/image/upload/v1588982162/unify/maxresdefault_kymrbl.jpg" alt="">
     </div>
   </div>
 </div>
+
 
 <%= javascript_pack_tag 'shared/navbar' %>
 <%= javascript_pack_tag 'contests/countdown' %>
