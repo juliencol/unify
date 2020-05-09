@@ -9,7 +9,8 @@ class EventsController < ApplicationController
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
-      @events = Event.where("name ILIKE ?", "%#{@name}%") 
+      @events = Event.where("name ILIKE ?", "%#{@name}%").includes(:club, :themes).sort_by(&:created_at).reverse
+      @pinned_events = policy_scope(Event.where(is_pinned: true)).where("name ILIKE ?", "%#{@name}%").includes(:club, :themes).sort_by(&:created_at).reverse
     end
   end
 
