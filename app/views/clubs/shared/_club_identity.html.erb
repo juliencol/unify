@@ -4,10 +4,10 @@
       <%= render "clubs/shared/logo" %>
     </div>
     <p class="club-desc text-center club-description-text"><%= @club.description %></p>
-    <div class="d-flex flex-row align-items-center justify-content-between mt-3 flex-wrap">
+    <div class="d-flex flex-row align-items-center mt-3 flex-wrap">
       <%= render "clubs/shared/links" %>
     </div>
-    <div class="club-controls d-flex flex-column align-items-center align-items-start">
+    <div class="club-controls d-flex flex-column align-items-center">
       <% if policy(@club).edit?  %>
         <%= render "clubs/shared/club_admin_buttons" %>
       <% end %>
