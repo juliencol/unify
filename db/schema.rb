@@ -140,11 +140,6 @@ ActiveRecord::Schema.define(version: 2020_05_08_213000) do
     t.index ["club_id"], name: "index_contests_on_club_id"
   end
 
-  create_table "errors", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "event_themes", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "theme_id", null: false
