@@ -52,28 +52,15 @@
           <div class="row p-2">
             <div class="col-12">
               <h4>Gagnants</h4>
-              <% $WINNERS.each do |winner| %>
-                <% if @contest.rewards.size == 1 %>
-                  <%= link_to user_path(winner) do %>
-                    <div class="member-wrapper mb-3 mx-auto">
-                      <img class="avatar" src=<%= winner.profile_picture %> >
-                      <div class="d-flex flex-column">
-                        <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
-                      </div>
+              <% @winners_and_rewards.each do |winner_and_reward| %>
+                <%= link_to user_path(winner_and_reward[0]) do %>
+                  <div class="member-wrapper mb-3 mx-auto">
+                    <img class="avatar" src=<%= winner_and_reward[0].profile_picture %> >
+                    <div class="d-flex flex-column">
+                      <p><strong><%= winner_and_reward[0].first_name %> <%= winner_and_reward[0].last_name %></strong></p>
+                      <p class="role">Gagnant du lot <%= winner_and_reward[1].name %></p>
                     </div>
-                  <% end %>
-                <% else %>
-                  <% @contest.rewards.each do |reward| %>
-                    <%= link_to user_path(winner) do %>
-                      <div class="member-wrapper mb-3 mx-auto">
-                        <img class="avatar" src=<%= winner.profile_picture %> >
-                        <div class="d-flex flex-column">
-                          <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
-                          <p class="role">Gagnant du lot <%= reward.name %></p>
-                        </div>
-                      </div>
-                    <% end %>
-                  <% end %>
+                  </div>
                 <% end %>
               <% end %>
             </div>
@@ -82,7 +69,6 @@
           <div class="row px-2 py-3">
             <div class="col-12">
               <hr/>
-              
               <% if @contest.questions == [] %>
                 <h4>Participer</h4>
               <% else %>

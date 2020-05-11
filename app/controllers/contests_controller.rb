@@ -13,6 +13,10 @@ class ContestsController < ApplicationController
     @time_left = seconds_to_units(@contest.deadline - Time.now)
     @is_done =  @contest.deadline < Time.now
     @potential_winners = deep_clone(@contest.users)
+    @winners_and_rewards = Array.new($NUMBER_OF_WINNERS)
+    (0 .. $NUMBER_OF_WINNERS - 1).each do |i|
+      @winners_and_rewards[i] = [$WINNERS[i], @contest.rewards[i]]
+    end
     if @is_done
       while $NUMBER_OF_WINNERS != @contest.rewards.size
         @random_winner = @potential_winners.sample 
