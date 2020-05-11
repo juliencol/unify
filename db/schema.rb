@@ -132,10 +132,11 @@ ActiveRecord::Schema.define(version: 2020_05_11_082603) do
     t.string "image"
     t.string "instagram_post_url"
     t.datetime "deadline"
+    t.string "reward"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "is_open", default: true
-    t.string "miniature"
+    t.string "winner_name"
+    t.string "reward_photo"
     t.index ["club_id"], name: "index_contests_on_club_id"
   end
 
@@ -210,15 +211,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_082603) do
     t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
-  create_table "rewards", force: :cascade do |t|
-    t.bigint "contest_id", null: false
-    t.string "name"
-    t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["contest_id"], name: "index_rewards_on_contest_id"
-  end
-
   create_table "themes", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -287,7 +279,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_082603) do
   add_foreign_key "questions", "contests"
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
-  add_foreign_key "rewards", "contests"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
   add_foreign_key "user_contests", "contests"
