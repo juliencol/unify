@@ -4,7 +4,7 @@ class Contest < ApplicationRecord
   has_many :user_contests
   has_many :users, through: :user_contests
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   has_many :rewards
 end
