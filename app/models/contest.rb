@@ -5,4 +5,6 @@ class Contest < ApplicationRecord
   has_many :users, through: :user_contests
 
   has_many :questions
+
+  has_many :rewards
 end

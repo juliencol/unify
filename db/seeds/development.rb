@@ -108,10 +108,9 @@ anecdote_contest = Contest.create!(
   title: "Anecdotes",
   description: "Tente de gagner un iPhone en devinant le membre d'Exodus qui a vécu cette histoire",
   image: "https://res.cloudinary.com/isep/image/upload/v1588520264/unify/anecdotes_2_ybux3t.png",
-  reward_photo: "https://res.cloudinary.com/isep/image/upload/v1587998740/unify/iphone-11-64gb-purple-d1-Format-960_lkvuiv.jpg",
   instagram_post_url: "",
   deadline: "15/05/2020 22:00",
-  reward: "iPhone"
+  miniature: "https://dyw7ncnq1en5l.cloudfront.net/optim/produits/71/41065/apple-iphone-x_a852c78bb1bb937b__450_400.jpg"
 )
 
 session = GoogleDrive::Session.from_service_account_key(".client_secret.json")

@@ -1,7 +1,10 @@
 class ContestsController < ApplicationController
+  $NUMBER_OF_WINNERS = 0
+  $WINNERS = []
+
   def index
-    @contests = policy_scope(Contest).includes([:user_contests]).includes([:users]).sort_by(&:created_at).reverse
-  end
+    @contests = policy_scope(Contest.where(is_open: true)).includes([:user_contests]).includes([:users]).sort_by(&:created_at).reverse
+  end 
 
   def show
     @contest = Contest.find(params[:id])
@@ -9,8 +12,18 @@ class ContestsController < ApplicationController
     authorize @contest
     @time_left = seconds_to_units(@contest.deadline - Time.now)
     @is_done =  @contest.deadline < Time.now
+    @potential_winners = deep_clone(@contest.users)
+    @winners_and_rewards = Array.new($NUMBER_OF_WINNERS)
+    (0 .. $NUMBER_OF_WINNERS - 1).each do |i|
+      @winners_and_rewards[i] = [$WINNERS[i], @contest.rewards[i]]
+    end
     if @is_done
-      get_winner
+      while $NUMBER_OF_WINNERS != @contest.rewards.size
+        @random_winner = @potential_winners.sample 
+        $WINNERS << @random_winner 
+        @potential_winners.delete(@random_winner) 
+        $NUMBER_OF_WINNERS += 1
+      end
     end
   end
 
@@ -62,18 +75,15 @@ class ContestsController < ApplicationController
     return cute_date.join(' ')
   end
 
-  def get_winner
-    if @contest.winner_name == '' or @contest.winner_name == nil
-      if @contest.users != []
-        winner = @contest.users.sample
-        @contest.winner_name = "#{winner.first_name} #{winner.last_name}"
-        @contest.save
-        redirect_to contest_path(@contest)
-      else
-        @contest.winner_name = "Personne"
-        @contest.save
-        redirect_to contest_path(@contest)
-      end
-    end
+  def contest_params
+    params.require(:contest).permit(:club_id, :title, :description, :image, :instagram_post_url, :deadline, :reward, :winner_name, :reward_photo, :is_open)
   end
-end 
+
+  def deep_clone(input_array)
+    cloned_array = []
+    input_array.each do |instance|
+      cloned_array << instance
+    end
+    cloned_array
+  end
+end

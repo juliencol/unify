@@ -11,12 +11,23 @@
       </div>
       <div class="row p-2">
             <div class="col-12 col-md-9 col-lg-10">
-                <h1><%= @contest.title %></h1>
+                <h1>Concours <%= @contest.title %></h1>
             </div>
         </div>
         <div class="row p-2">
             <div class="col-12">
                 <%= @contest.description %>
+                <div class="mt-3">
+                  <% @contest.rewards.each do |reward| %>
+                    <% if @contest.rewards.size == 1 %>
+                      <p>Lot  : <%= reward.name %></p>
+                    <% else %>
+                      <ul>
+                        <li>Lot <%= @contest.rewards.find_index(reward) + 1 %> : <%= reward.name %></li>
+                      </ul>
+                    <% end %>
+                  <% end %>
+                </div>
             </div>
         </div>
         <% if !@contest.users.nil? and @contest.users != [] %>
@@ -36,17 +47,41 @@
               </div>
           </div>
         <% end %>
-        <div class="row px-2 py-3">
-          <div class="col-12">
-            <hr/>
-            <h4>Répondre au quiz</h4>
-            <% if policy(@contest).quizz? %>
-              <%= render "contests/components/quizz" %>
-            <% else %>
-              <p>Tu as déjà répondu à ce quiz.</p>
-            <% end %>
+        
+        <% if @is_done %>
+          <div class="row p-2">
+            <div class="col-12">
+              <h4>Gagnants</h4>
+              <% @winners_and_rewards.each do |winner_and_reward| %>
+                <%= link_to user_path(winner_and_reward[0]) do %>
+                  <div class="member-wrapper mb-3 mx-auto">
+                    <img class="avatar" src=<%= winner_and_reward[0].profile_picture %> >
+                    <div class="d-flex flex-column">
+                      <p><strong><%= winner_and_reward[0].first_name %> <%= winner_and_reward[0].last_name %></strong></p>
+                      <p class="role">Gagnant du lot <%= winner_and_reward[1].name %></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="row px-2 py-3">
+            <div class="col-12">
+              <hr/>
+              <% if @contest.questions == [] %>
+                <h4>Participer</h4>
+              <% else %>
+                <h4>Répondre au quiz</h4>
+              <% end %>
+              <% if policy(@contest).quizz? %>
+                <%= render "contests/components/quizz" %>
+              <% else %>
+                <p>Tu as déjà participé. Les gagnants seront affichés bientôt.</p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

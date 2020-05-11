@@ -8,13 +8,6 @@ const setTimer = (target, showSeconds) => {
 
         if (diff <= 0) {
             clearInterval(x);
-            $(target).html(() => {
-                `<% if @contest.winner_name == nil or @contest.winner_name == "" %>
-                    <p>En train de tirer au sort le gagnant...</p>
-                <% else %>
-                    <p>Le gagnant est : <%= @contest.winner_name %></p>
-                <% end %>`;
-            });
         } else {
             if (showSeconds) {
                 $(target)
