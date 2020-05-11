@@ -18,18 +18,16 @@
   </div>
   
   <% if @is_done %>
-     <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
-      <h6>Concours terminé</h6>
-    </div>
+    <h6>Concours terminé</h6>
   <% else %>
-    <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
+    <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_s(:db) %>">
       <h6>Temps restant pour participer :</h6>
       <table>
         <tr class="countdown">
-          <th>??</th>
-          <th>??</th>
-          <th>??</th>
-          <th>??</th>
+          <th>00</th>
+          <th>00</th>
+          <th>00</th>
+          <th>00</th>
         </tr>
         <tr>
           <td>jours</td>

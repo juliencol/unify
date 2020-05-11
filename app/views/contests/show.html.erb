@@ -54,10 +54,26 @@
             <% $WINNERS.each do |winner| %>
               <div class="member-wrapper mb-3 mx-auto d-flex align-items-center">
                 <% if @contest.rewards.size == 1 %>
-                  <p>Gagnant : <%= winner.first_name  %> <%= winner.last_name %></p>
+                  <%= link_to user_path(winner) do %>
+                    <div class="member-wrapper mb-3 mx-auto">
+                      <img class="avatar" src=<%= winner.profile_picture %> >
+                      <div class="d-flex flex-column">
+                        <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
+                      </div>
+                    </div>
+                  <% end %>
                 <% else %>
+                  <%= link_to user_path(winner) do %>
+                    <div class="member-wrapper mb-3 mx-auto">
+                      <img class="avatar" src=<%= winner.profile_picture %> >
+                      <div class="d-flex flex-column">
+                        <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
+                        <p class="role">Gagnant du lot <%= $WINNERS.find_index(winner) + 1 %></p>
+                      </div>
+                    </div>
+                  <% end %>
                   <ul>
-                    <li> <p>Gagnant du lot <%= $WINNERS.find_index(winner) + 1 %> : <%= winner.first_name  %> <%= winner.last_name %></p></li>
+                    <li>Gagnant du lot <%= $WINNERS.find_index(winner) + 1 %> : <%= winner.first_name  %> <%= winner.last_name %></li>
                   </ul>
                 <% end %>
               </div>
@@ -76,7 +92,7 @@
               <% if policy(@contest).quizz? %>
                 <%= render "contests/components/quizz" %>
               <% else %>
-                <p>Tu as déjà participé. Le nom des gagnants sera affiché bientôt.</p>
+                <p>Tu as déjà participé. Les gagnants seront affichés bientôt.</p>
               <% end %>
             </div>
           </div>

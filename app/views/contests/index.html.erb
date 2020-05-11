@@ -20,16 +20,19 @@
                   <h5><%= contest.title %></h5>
                 </div>
                 <div class="contest-body">
-                  <img src="<%= contest.miniature %>" alt="Concours <%= contest.title %>"/>
+                  <div class="banner">
+                    <img src="<%= contest.miniature %>" alt="Concours <%= contest.title %>"/>
+                  </div>
                   <% if @is_done %>
+                    <p>Concours terminé</p>
                   <% else %>
-                    <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:iso8601) %>">
+                    <div class="countdown-container" data-date="<%= contest.deadline.to_s(:db) %>">
                       <span>Temps restant</span>
                       <table>
                         <tr class="countdown">
-                          <th>??</th>
-                          <th>??</th>
-                          <th>??</th>
+                          <th>00</th>
+                          <th>00</th>
+                          <th>00</th>
                         </tr>
                         <tr>
                             <td>jours</td>
