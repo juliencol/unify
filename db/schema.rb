@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_213000) do
+ActiveRecord::Schema.define(version: 2020_05_11_082603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -246,7 +246,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_213000) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "profile_picture", default: "https://res.cloudinary.com/isep/image/upload/v1577132733/unify/download_wqralk.png"
+    t.string "profile_picture", default: "https://res.cloudinary.com/isep/image/upload/v1589185526/unify/96787342_627913184431169_851529222651379712_n_gupc6y.png"
     t.integer "promotion"
     t.string "section"
     t.string "classe"
