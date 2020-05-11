@@ -20,7 +20,7 @@
   <% if @is_done %>
     <h6 class="text-center">Concours terminé</h6>
   <% else %>
-    <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_s(:db) %>">
+    <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:long) %>">
       <h6>Temps restant pour participer :</h6>
       <table>
         <tr class="countdown">
