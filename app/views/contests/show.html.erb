@@ -23,7 +23,7 @@
                       <p>Lot  : <%= reward.name %></p>
                     <% else %>
                       <ul>
-                        <li><p>Lot <%= @contest.rewards.find_index(reward) + 1 %> : <%= reward.name %></p></li>
+                        <li>Lot <%= @contest.rewards.find_index(reward) + 1 %> : <%= reward.name %></li>
                       </ul>
                     <% end %>
                   <% end %>
@@ -47,12 +47,12 @@
               </div>
           </div>
         <% end %>
-
         
         <% if @is_done %>
-          <div class="mt-5">
-            <% $WINNERS.each do |winner| %>
-              <div class="member-wrapper mb-3 mx-auto d-flex align-items-center">
+          <div class="row p-2">
+            <div class="col-12">
+              <h4>Gagnants</h4>
+              <% $WINNERS.each do |winner| %>
                 <% if @contest.rewards.size == 1 %>
                   <%= link_to user_path(winner) do %>
                     <div class="member-wrapper mb-3 mx-auto">
@@ -63,21 +63,20 @@
                     </div>
                   <% end %>
                 <% else %>
-                  <%= link_to user_path(winner) do %>
-                    <div class="member-wrapper mb-3 mx-auto">
-                      <img class="avatar" src=<%= winner.profile_picture %> >
-                      <div class="d-flex flex-column">
-                        <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
-                        <p class="role">Gagnant du lot <%= $WINNERS.find_index(winner) + 1 %></p>
+                  <% @contest.rewards.each do |reward| %>
+                    <%= link_to user_path(winner) do %>
+                      <div class="member-wrapper mb-3 mx-auto">
+                        <img class="avatar" src=<%= winner.profile_picture %> >
+                        <div class="d-flex flex-column">
+                          <p><strong><%= winner.first_name %> <%= winner.last_name %></strong></p>
+                          <p class="role">Gagnant du lot <%= reward.name %></p>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
                   <% end %>
-                  <ul>
-                    <li>Gagnant du lot <%= $WINNERS.find_index(winner) + 1 %> : <%= winner.first_name  %> <%= winner.last_name %></li>
-                  </ul>
                 <% end %>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         <% else %>
           <div class="row px-2 py-3">

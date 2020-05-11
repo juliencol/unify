@@ -24,7 +24,7 @@
                     <img src="<%= contest.miniature %>" alt="Concours <%= contest.title %>"/>
                   </div>
                   <% if @is_done %>
-                    <p>Concours terminé</p>
+                    <h6 class="p-2">Concours<br/>terminé</h6>
                   <% else %>
                     <div class="countdown-container" data-date="<%= contest.deadline.to_s(:db) %>">
                       <span>Temps restant</span>
