@@ -67,11 +67,16 @@
           <div class="row px-2 py-3">
             <div class="col-12">
               <hr/>
-              <h4>Répondre au quiz</h4>
+              
+              <% if @contest.questions == [] %>
+                <h4>Participer</h4>
+              <% else %>
+                <h4>Répondre au quiz</h4>
+              <% end %>
               <% if policy(@contest).quizz? %>
                 <%= render "contests/components/quizz" %>
               <% else %>
-                <p>Tu as déjà répondu à ce quiz. Le nom des gagnants sera affiché bientôt.</p>
+                <p>Tu as déjà participé. Le nom des gagnants sera affiché bientôt.</p>
               <% end %>
             </div>
           </div>
