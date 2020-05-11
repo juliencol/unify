@@ -7,31 +7,40 @@
     <% end %>
   </div>
   <div class="infos text-center pb-3">
+    <img src=<%= @contest.club.logo unless @contest.club.logo.nil? %> alt="" class="club-logo small mr-2">
     <p>Concours proposé par</p>
     <h2><%= @contest.club.name %></h2>
     <ul class="table-style mt-3">
-      <li><span>À gagner : </span><%= @contest.reward %></li>
+      <li><span>Nombres de lots </span><%= @contest.rewards.size %></li>
       <li><span>Date limite : </span><%= @contest.deadline %></li>
       <li><span>Participants : </span><%= @contest.users.size %></li>
     </ul>
   </div>
-  <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
-    <h6>Temps restant pour participer :</h6>
-    <table>
-      <tr class="countdown">
-        <th>??</th>
-        <th>??</th>
-        <th>??</th>
-        <th>??</th>
-      </tr>
-      <tr>
-        <td>jours</td>
-        <td>heures</td>
-        <td>min.</td>
-        <td>sec.</td>
-      </tr>
-    </table>
-  </div>
+  
+  <% if @is_done %>
+     <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
+      <h6>Concours terminé</h6>
+    </div>
+  <% else %>
+    <div class="contest-show countdown-container" data-date="<%= @contest.deadline.to_formatted_s(:iso8601) %>">
+      <h6>Temps restant pour participer :</h6>
+      <table>
+        <tr class="countdown">
+          <th>??</th>
+          <th>??</th>
+          <th>??</th>
+          <th>??</th>
+        </tr>
+        <tr>
+          <td>jours</td>
+          <td>heures</td>
+          <td>min.</td>
+          <td>sec.</td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+  
   <div class="d-flex flex-wrap align-items-start justify-content-between justify-content-md-start">
         <% if !@contest.instagram_post_url.nil? and @contest.instagram_post_url != "" %>
           <%= link_to @contest.instagram_post_url, target:"_blank", class:"mb-4" do %>
@@ -39,4 +48,4 @@
           <% end %>
         <% end %>
   </div>
-</div>
+</div> 
