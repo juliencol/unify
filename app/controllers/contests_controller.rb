@@ -72,7 +72,7 @@ class ContestsController < ApplicationController
   end
 
   def contest_params
-    params.require(:contest).permit(:club_id, :title, :description, :image, :instagram_post_url, :deadline, :reward, :winner_name, :reward_photo, :is_open, :reward_2, :reward_3, :reward_photo_2, :reward_photo_3, :winner_name_2, :winner_name_3)
+    params.require(:contest).permit(:club_id, :title, :description, :image, :instagram_post_url, :deadline, :reward, :winner_name, :reward_photo, :is_open)
   end
 
   def deep_clone(input_array)
