@@ -102,15 +102,16 @@ bde_partners.each do |bde_partner|
 end
 
 
-puts "Creating anecdote_contest by parsing Anecdote contest data g-sheet..."
-anecdote_contest = Contest.create!(
-  club_id: BDE.ids[0],
-  title: "Anecdotes",
-  description: "Tente de gagner un iphone en devinant le membre d'Exodus qui a vécu cette histoire",
-  image: "https://res.cloudinary.com/isep/image/upload/v1588520264/unify/anecdotes_2_ybux3t.png",
-  instagram_post_url: "",
-  deadline: "15/05/2020 22:00"
-)
+# puts "Creating anecdote_contest by parsing Anecdote contest data g-sheet..."
+# anecdote_contest = Contest.create!(
+#   club_id: BDE.ids[0],
+#   title: "Anecdotes",
+#   description: "Tente de gagner un iphone en devinant le membre d'Exodus qui a vécu cette histoire",
+#   image: "https://res.cloudinary.com/isep/image/upload/v1588520264/unify/anecdotes_2_ybux3t.png",
+#   miniature: "https://res.cloudinary.com/isep/image/upload/v1587998740/unify/iphone-11-64gb-purple-d1-Format-960_lkvuiv.jpg",
+#   instagram_post_url: "",
+#   deadline: "15/05/2020 22:00",
+# )
 
 # session = GoogleDrive::Session.from_service_account_key(".client_secret.json")
 # anecdote_contest_data = session.spreadsheet_by_title("Anecdote contest data")
