@@ -37,7 +37,7 @@ class ClubsController < ApplicationController
 
     def bde
         @club = @bde
-        @events = @bde.events.includes(:themes)
+        @events =  @bde.events.includes(:themes).sort_by(&:created_at).reverse
         authorize @club
     end
 
