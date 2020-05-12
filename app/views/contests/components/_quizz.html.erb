@@ -6,12 +6,14 @@
 <%= simple_form_for @contest, url: contest_send_quizz_path(@contest), method: :post do |f| %>
     <% @questions.each do |question| %>
       <h4 class="mt-5"><%= question.title %></h4>
-      <% if !question.user_answer.nil? and question.user_answer != "" %>
-          <% checked_answer = question.answer_options.select {|option| option.answer == question.user_answer } %>
-          <%= checked_answer = checked_answer.at(0)[:answer] %>
-      <% end %>
+      <!-- 
+        <% if !question.user_answer.nil? and question.user_answer != "" %>
+            <% checked_answer = question.answer_options.select {|option| option.answer == question.user_answer }  %>
+            <% checked_answer = checked_answer.at(0)[:answer]  %> 
+        <% end %>
+      -->
       <%= collection_radio_buttons(
-        question.id, :answer_options, question.answer_options, :answer_option_text, :answer_option_text, {checked: checked_answer}
+        question.id, :answer_options, question.answer_options, :answer_option_text, :answer_option_text #, {checked: checked_answer}
       ) do |b| %>
         <div class="inputGroup">
           <%= b.radio_button %>

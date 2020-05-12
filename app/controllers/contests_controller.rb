@@ -7,7 +7,7 @@ class ContestsController < ApplicationController
   end 
 
   def show
-    @contest = Contest.find(params[:id]).where(is_open: true)
+    @contest = Contest.find(params[:id])
     @questions = @contest.questions.includes([:answer_options])
     authorize @contest
     @time_left = seconds_to_units(@contest.deadline - Time.now)
@@ -29,7 +29,7 @@ class ContestsController < ApplicationController
 
   def send_quizz
     # get user inputs
-    @contest = Contest.find(params[:contest_id])
+    @contest = Contest.where(is_open: true).find(params[:contest_id])
     @questions = @contest.questions.includes([:answer_options])
     authorize @contest
     current_user.contests << @contest
