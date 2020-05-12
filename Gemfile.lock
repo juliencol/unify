@@ -259,6 +259,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-timeout (0.6.0)
     rails (6.0.2.2)
       actioncable (= 6.0.2.2)
       actionmailbox (= 6.0.2.2)
@@ -458,6 +459,7 @@ DEPENDENCIES
   pry-rails
   puma
   pundit
+  rack-timeout
   rails (= 6.0.2.2)
   rails_admin (~> 2.0)
   redis
