@@ -33,14 +33,16 @@
         </div>
     <% end %>
 <% end %>
-<%= link_to "https://www.youtube.com/watch?v=7yxAj1uwnho", target:"_blank", class:"button-effect-3 mb-4" do %>
-    <div class="film">
-        <i class="fas fa-film"></i>
-    </div>
-<% end %>
-<%= link_to "https://www.youtube.com/watch?v=knoUFtp-0GI", target:"_blank", class:"button-effect-3 mb-4" do %>
-    <div class="clip">
-        <i class="fas fa-headphones-alt"></i>
-    </div>
+<% if @club.name == "EXODUS" %>
+    <%= link_to "https://www.youtube.com/watch?v=7yxAj1uwnho", target:"_blank", class:"button-effect-3 mb-4" do %>
+        <div class="film">
+            <i class="fas fa-film"></i>
+        </div>
+    <% end %>
+    <%= link_to "https://www.youtube.com/watch?v=knoUFtp-0GI", target:"_blank", class:"button-effect-3 mb-4" do %>
+        <div class="clip">
+            <i class="fas fa-headphones-alt"></i>
+        </div>
+    <% end %>
 <% end %>
 
