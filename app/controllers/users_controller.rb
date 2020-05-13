@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @events = @user.events.includes(:club, :themes)
+    @events = @user.events.includes(:club, :themes).sort_by(&:created_at).reverse
     authorize @user
   end
 
