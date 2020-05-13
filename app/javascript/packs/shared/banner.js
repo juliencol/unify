@@ -6,9 +6,11 @@ const resizeBanner = (banner) => {
     banner.style.opacity = 1;
 };
 
-const target = document.querySelector(".banner");
+const targets = document.querySelectorAll(".banner");
 
-if (target) {
-    resizeBanner(target);
-    window.onresize = resizeBanner(target);
+if (targets) {
+    targets.forEach((target) => {
+        resizeBanner(target);
+        window.onresize = resizeBanner(target);
+    });
 }
