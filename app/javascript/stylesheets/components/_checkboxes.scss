@@ -172,7 +172,7 @@ input[type="checkbox"]:checked + .check {
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            transition: all 200ms ease-in;
+            @include transition(all 200ms ease-in);
         }
     }
 
@@ -180,7 +180,20 @@ input[type="checkbox"]:checked + .check {
         color: #fff;
 
         &:before {
-            transform: translate(-50%, -50%) scale3d(106, 106, 1);
+            transform: translate(-50%, -50%) scale3d(108, 108, 1);
+
+            @include media-breakpoint-between(xs, sm) {
+                transform: translate(-50%, -50%) scale3d(38, 38, 1);
+            }
+
+            @include media-breakpoint-between(sm, md) {
+                transform: translate(-50%, -50%) scale3d(88, 88, 1);
+            }
+
+            @include media-breakpoint-between(lg, xl) {
+                transform: translate(-50%, -50%) scale3d(148, 148, 1);
+            }
+
             opacity: 1;
         }
 

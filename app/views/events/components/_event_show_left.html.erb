@@ -8,7 +8,9 @@
     </div>
     <div class="text-center pb-3">
         <p>Événement proposé par</p>
-        <h4><%= @event.club.name %></h4>
+        <%= link_to club_path(@event.club.id) do %>
+            <h4><%= @event.club.name %></h4>
+        <% end %>
         <ul class="table-style mt-3">
             <li><span>Date : </span><%= @event.date %></li>
             <li><span>Adresse : </span><%= @event.location %></li>

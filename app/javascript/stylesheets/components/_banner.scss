@@ -8,18 +8,9 @@
 
 .banner {
     width: 100%;
-    height: 300px;
     overflow: hidden;
     position: relative;
     border-radius: 12px;
-
-    @include media-breakpoint-between(xs, lg) {
-        height: 100px;
-    }
-
-    @include media-breakpoint-between(md, lg) {
-        height: 200px;
-    }
 
     img {
         position: absolute;

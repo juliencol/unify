@@ -69,8 +69,8 @@
 /* -------------------------------
    HTML Structure needed for this effect:
 
-    <%= link_to ... do %>
-        <div class="button-effect-3 ...">
+    <%= link_to ..., class:"button-effect-3" do %>
+        <div class="name-for-color">
             <i class="fas fa-..."></i>
         </div>
     <% end %>
