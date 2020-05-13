@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  self.primary_key = 'id'
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -17,6 +19,8 @@ class User < ApplicationRecord
   belongs_to :family
   accepts_nested_attributes_for :family
 
+  belongs_to :pole, optional: true
+
   # Validations
   validates :email, :presence => true, format: { with: /\A(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+.+(([A-Za-z0-9]*\.+*_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\+)|([A-Za-z0-9]+\+))*[A-Z‌​a-z0-9]+@isep.fr/,
   message: "adresse isep uniquement" }
@@ -28,4 +32,4 @@ class User < ApplicationRecord
 
   # Uncomment these lines be able to upload  photos
   mount_uploader :profile_picture, PhotoUploader
-end
+end 

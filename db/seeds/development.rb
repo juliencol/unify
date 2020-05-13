@@ -20,6 +20,7 @@ Family.destroy_all
 EventTheme.destroy_all
 Event.destroy_all
 Theme.destroy_all
+Pole.destroy_all
 Club.destroy_all
 Company.destroy_all
 Partner.destroy_all
@@ -31,6 +32,12 @@ puts "Creating clubs..."
 Club.create!(CLUBS_DATA)
 puts "Creating themes..."
 Theme.create!(THEMES_DATA)
+
+puts "Creating poles...."
+Pole.create!(
+  club_id: Club.where("name ILIKE ?", "EXODUS").ids[0],
+  name: "Bureau"
+)
 
 BDE = Club.where("name ILIKE ?", "EXODUS")
 

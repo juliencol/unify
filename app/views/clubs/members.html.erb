@@ -7,9 +7,10 @@
       <%= render "clubs/shared/club_show_tabs" %>
       <div class="row mt-3">
         <div class="col members-feed">
-          <% @club.users.each do |user| %>
-            <%= link_to user_path(user) do %>
-              <div class="member-wrapper mb-3 mx-auto">
+          <% @club.poles.each do |pole| %>
+            <h1><%= pole.name %></h1>
+            <% pole.users.each do |user| %>
+               <div class="member-wrapper mb-3 mx-auto">
                 <img class="avatar" src=<%= user.profile_picture %> >
                 <div class="d-flex flex-column">
                   <p><strong><%= user.first_name %> <%= user.last_name %></strong></p>
@@ -30,3 +31,4 @@
 
 <%= javascript_pack_tag 'shared/navbar' %>
 <%= javascript_pack_tag 'clubs/header' %>
+ 
