@@ -10,21 +10,9 @@
     border-radius: 1rem 1rem 5px 5px;
     font-weight: 100;
     margin: 48px auto;
-    width: 20rem;
+    width: 90%;
     background: linear-gradient(to left, #6a11cb 0%, #2575fc 100%) left bottom #ffffff no-repeat;
     background-size: 100% 6px;
-
-    @media screen and (min-width: 480px) {
-        width: 28rem;
-    }
-
-    @media screen and (min-width: 767px) {
-        width: 40rem;
-    }
-
-    @media screen and (min-width: 959px) {
-        width: 50rem;
-    }
 }
 
 .event-container a {

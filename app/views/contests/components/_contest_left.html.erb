@@ -6,9 +6,11 @@
         <img class="club-logo big" src=<%= @contest.club.logo %> >
     <% end %>
   </div>
-  <div class="infos text-center pb-3">
+  <div class="text-center pb-3">
     <p>Concours proposé par</p>
-    <h2><%= @contest.club.name %></h2>
+    <%= link_to club_path(@contest.club.id) do %>
+        <h4><%= @contest.club.name %></h4>
+    <% end %>
     <ul class="table-style mt-3">
       <li><span>Nombres de lots : </span><%= @contest.rewards.size %></li>
       <li><span>Date limite : </span><%= @contest.deadline %></li>
