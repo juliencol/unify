@@ -6,6 +6,9 @@ const setTimer = (target, showSeconds) => {
     const date = new Date($(target).attr("data-date"));
     const deadline = moment(date, "fr");
     if (deadline.isValid()) {
+        function customTemplate() {
+            return this.duration.asSeconds() >= 86400 ? "D [jour(s)] HH:mm:ss" : "HH:mm:ss";
+        }
         let x = setInterval(function () {
             let diff = deadline.diff(moment());
 
@@ -16,18 +19,13 @@ const setTimer = (target, showSeconds) => {
                     $(target)
                         .find(".countdown")
                         .html(() => {
-                            return `<th>${moment.duration(diff).format("dd")}</th>
-                    <th>${moment.utc(diff).format("HH")}</th>
-                    <th>${moment.utc(diff).format("mm")}</th>
-                    <th>${moment.utc(diff).format("ss")}</th>`;
+                            return `${moment.duration(diff).format(customTemplate)}`;
                         });
                 } else {
                     $(target)
                         .find(".countdown")
                         .html(() => {
-                            return `<th>${moment.duration(diff).format("dd")}</th>
-                    <th>${moment.utc(diff).format("HH")}</th>
-                    <th>${moment.utc(diff).format("mm")}</th>`;
+                            return `${moment.duration(diff).format("DD[j] HH[h] mm[m]")}`;
                         });
                 }
             }
