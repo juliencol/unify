@@ -2,11 +2,12 @@
     .contest-show.countdown-container {
         text-align: center;
 
-        table {
+        div {
             margin: 0 auto;
             font-size: 0.8rem;
             text-align: center;
             border-radius: 12px;
+            padding: 1rem;
             color: white;
             overflow: hidden;
             background: linear-gradient(to bottom right, $accent-purple 0%, $accent-blue 100%);
@@ -14,20 +15,11 @@
 
             .countdown {
                 font-family: Montserrat, sans-serif;
-                font-size: 2.6rem;
-                font-weight: 800;
+                font-size: 2rem;
+                font-weight: 700;
                 text-align: center;
                 line-height: 1;
                 letter-spacing: 0.02em;
-                text-transform: uppercase;
-
-                th {
-                    padding: 1rem 0.8rem 0 0.8rem;
-                }
-            }
-
-            td {
-                padding: 0 0 1rem 0;
             }
 
             @include media-breakpoint-between(md, lg) {
@@ -35,14 +27,6 @@
 
                 .countdown {
                     font-size: 2rem;
-
-                    th {
-                        padding: 0.5rem 0.5rem 0 0.5rem;
-                    }
-                }
-
-                td {
-                    padding: 0 0 0.5rem 0;
                 }
             }
 
@@ -51,14 +35,6 @@
 
                 .countdown {
                     font-size: 5rem;
-
-                    th {
-                        padding: 0.5rem 0.5rem 0 0.5rem;
-                    }
-                }
-
-                td {
-                    padding: 0 0 0.5rem 0;
                 }
             }
 
@@ -67,14 +43,6 @@
 
                 .countdown {
                     font-size: 2.5rem;
-
-                    th {
-                        padding: 0.5rem 0.5rem 0 0.5rem;
-                    }
-                }
-
-                td {
-                    padding: 0 0 0.5rem 0;
                 }
             }
         }
