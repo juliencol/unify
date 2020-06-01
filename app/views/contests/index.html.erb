@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col d-flex flex-row justify-content-center justify-content-lg-start">
+    <div class="col d-flex flex-row flex-wrap justify-content-center justify-content-lg-start">
       <% if @contests == [] %>
         <div class="white-wrapper w-100 mt-5 active mr-5 ml-5">
           <h3 class="text-center">Aucun concours disponible pour l'instant</h3>
@@ -26,20 +26,11 @@
                   <% if @is_done %>
                     <h6 class="p-2">Concours<br/>terminé</h6>
                   <% else %>
-                    <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:long) %>">
+                    <div class="countdown-container" data-date="<%= contest.deadline.to_formatted_s(:rfc822) %>">
                       <span>Temps restant</span>
-                      <table>
-                        <tr class="countdown">
-                          <th>00</th>
-                          <th>00</th>
-                          <th>00</th>
-                        </tr>
-                        <tr>
-                            <td>jours</td>
-                            <td>heures</td>
-                            <td>min.</td>
-                        </tr>
-                      </table>
+                      <div>
+                        <span class="countdown"></span>
+                      </div>
                     </div>
                   <% end %>
                 </div>
