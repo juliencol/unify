@@ -67,7 +67,7 @@ GEM
     backport (1.1.2)
     bcrypt (3.1.13)
     benchmark (0.1.0)
-    better_errors (2.7.0)
+    better_errors (2.8.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -98,7 +98,7 @@ GEM
     cloudinary (1.14.0)
       aws_cf_signer
       rest-client
-    coderay (1.1.2)
+    coderay (1.1.3)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     debug_inspector (0.0.3)
@@ -119,7 +119,7 @@ GEM
       railties (>= 3.2, < 6.1)
     e2mmap (0.1.0)
     errbase (0.2.0)
-    erubi (1.9.0)
+    erubi (1.10.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
